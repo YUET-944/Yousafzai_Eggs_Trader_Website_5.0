@@ -1,0 +1,1170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yousafzai EGRO — Egg Traders | International B2B Egg Supply & Trading</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0B2545;
+  --navy-2:#123A6B;
+  --navy-deep:#071A30;
+  --navy-glow:rgba(18,58,107,0.35);
+  --gold:#C8A24A;
+  --gold-lt:#F1E4C3;
+  --gold-dk:#9C7B2E;
+  --white:#FFFFFF;
+  --gray-900:#1B2230;
+  --gray-700:#444C5C;
+  --gray-500:#707888;
+  --gray-300:#DBDFE6;
+  --gray-150:#EEF1F5;
+  --gray-100:#F5F7FA;
+  --bg:#F7F8FA;
+  --radius-sm:10px;
+  --radius-md:16px;
+  --radius-lg:24px;
+  --radius-xl:32px;
+  --shadow-sm:0 2px 10px rgba(11,37,69,0.06);
+  --shadow-md:0 14px 36px rgba(11,37,69,0.10);
+  --shadow-lg:0 28px 70px rgba(11,37,69,0.16);
+  --font-display:'Space Grotesk',sans-serif;
+  --font-body:'Inter',sans-serif;
+  --ease:cubic-bezier(.22,1,.36,1);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--font-body);background:var(--bg);color:var(--gray-900);line-height:1.65;overflow-x:hidden;}
+img{max-width:100%;display:block;}
+a{color:inherit;text-decoration:none;}
+ul{list-style:none;}
+button{font-family:inherit;}
+.container{max-width:1240px;margin:0 auto;padding:0 32px;}
+::selection{background:var(--gold-lt);color:var(--navy);}
+
+@media (prefers-reduced-motion: reduce){
+  *{animation-duration:0.001ms !important;animation-iteration-count:1 !important;transition-duration:0.001ms !important;scroll-behavior:auto !important;}
+}
+
+/* ───────────────────── Reveal animation ───────────────────── */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .8s var(--ease),transform .8s var(--ease);}
+.reveal.in{opacity:1;transform:translateY(0);}
+.reveal-stagger > *{opacity:0;transform:translateY(24px);transition:opacity .7s var(--ease),transform .7s var(--ease);}
+.reveal-stagger.in > *{opacity:1;transform:translateY(0);}
+.reveal-stagger.in > *:nth-child(1){transition-delay:.05s}
+.reveal-stagger.in > *:nth-child(2){transition-delay:.12s}
+.reveal-stagger.in > *:nth-child(3){transition-delay:.19s}
+.reveal-stagger.in > *:nth-child(4){transition-delay:.26s}
+.reveal-stagger.in > *:nth-child(5){transition-delay:.33s}
+.reveal-stagger.in > *:nth-child(6){transition-delay:.40s}
+
+/* ───────────────────── Loader ───────────────────── */
+#loader{position:fixed;inset:0;background:var(--navy-deep);z-index:9999;display:flex;align-items:center;justify-content:center;transition:opacity .6s ease, visibility .6s ease;}
+#loader.hide{opacity:0;visibility:hidden;}
+.loader-mark{font-family:var(--font-display);color:var(--white);font-size:15px;letter-spacing:.18em;display:flex;flex-direction:column;align-items:center;gap:18px;}
+.loader-ring{width:46px;height:46px;border-radius:50%;border:2px solid rgba(255,255,255,.18);border-top-color:var(--gold);animation:spin 0.9s linear infinite;}
+@keyframes spin{to{transform:rotate(360deg);}}
+
+/* ───────────────────── Navbar ───────────────────── */
+.nav{position:fixed;top:0;left:0;right:0;z-index:500;padding:22px 0;transition:all .4s var(--ease);}
+.nav-inner{max-width:1240px;margin:0 auto;padding:0 32px;display:flex;align-items:center;justify-content:space-between;}
+.nav.scrolled{padding:12px 0;background:rgba(255,255,255,0.86);backdrop-filter:blur(16px) saturate(160%);box-shadow:0 1px 0 rgba(11,37,69,0.06);}
+.brand{display:flex;align-items:center;gap:12px;}
+.brand-mark{width:42px;height:42px;border-radius:11px;background:linear-gradient(145deg,var(--navy),var(--navy-2));display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 6px 16px rgba(11,37,69,0.28);}
+.brand-mark svg{width:22px;height:22px;}
+.brand-text{display:flex;flex-direction:column;line-height:1.1;}
+.brand-name{font-family:var(--font-display);font-weight:700;font-size:16px;letter-spacing:.02em;color:var(--navy);transition:color .4s;}
+.nav:not(.scrolled) .brand-name{color:var(--white);}
+.brand-sub{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-dk);font-weight:600;}
+.nav:not(.scrolled) .brand-sub{color:var(--gold);}
+.nav-links{display:flex;align-items:center;gap:36px;}
+.nav-links a{font-size:13.5px;font-weight:500;color:var(--white);opacity:.86;position:relative;padding:6px 0;transition:opacity .25s, color .4s;}
+.nav.scrolled .nav-links a{color:var(--gray-700);opacity:1;}
+.nav-links a::after{content:'';position:absolute;left:0;bottom:0;width:0;height:2px;background:var(--gold);transition:width .3s var(--ease);}
+.nav-links a:hover{opacity:1;}
+.nav-links a:hover::after,.nav-links a.active::after{width:100%;}
+.nav.scrolled .nav-links a.active{color:var(--navy);font-weight:600;}
+.nav-cta{display:flex;align-items:center;gap:18px;}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:var(--font-body);font-weight:600;font-size:13.5px;padding:13px 26px;border-radius:9px;border:none;cursor:pointer;position:relative;overflow:hidden;transition:transform .25s var(--ease),box-shadow .25s var(--ease),background .25s;white-space:nowrap;}
+.btn span{position:relative;z-index:2;display:flex;align-items:center;gap:8px;}
+.btn-gold{background:linear-gradient(120deg,var(--gold-dk),var(--gold) 55%,var(--gold-lt));color:var(--navy-deep);box-shadow:0 10px 24px rgba(200,162,74,0.35);}
+.btn-gold:hover{transform:translateY(-2px);box-shadow:0 16px 32px rgba(200,162,74,0.45);}
+.btn-navy{background:var(--navy);color:var(--white);}
+.btn-navy:hover{transform:translateY(-2px);box-shadow:0 14px 28px rgba(11,37,69,0.35);}
+.btn-outline{background:transparent;border:1.4px solid rgba(255,255,255,0.45);color:var(--white);}
+.nav.scrolled .btn-outline{border-color:var(--gray-300);color:var(--navy);}
+.btn-outline:hover{border-color:var(--gold);background:rgba(255,255,255,0.06);}
+.btn-sm{padding:10px 20px;font-size:13px;}
+.btn-block{width:100%;}
+/* ripple */
+.btn .ripple{position:absolute;border-radius:50%;background:rgba(255,255,255,0.55);transform:scale(0);animation:ripple .6s ease-out;pointer-events:none;}
+@keyframes ripple{to{transform:scale(3.2);opacity:0;}}
+.menu-toggle{display:none;width:36px;height:36px;background:transparent;border:none;cursor:pointer;flex-direction:column;align-items:center;justify-content:center;gap:5px;position:relative;z-index:510;padding:0;}
+.menu-toggle span{display:block;width:22px;height:2px;background:var(--white);border-radius:2px;transition:all .3s cubic-bezier(.22,1,.36,1);transform-origin:center;}
+.nav.scrolled .menu-toggle span{background:var(--navy);}
+.menu-toggle.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.menu-toggle.open span:nth-child(2){opacity:0;transform:scaleX(0);}
+.menu-toggle.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+
+.mobile-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.45);z-index:490;opacity:0;visibility:hidden;transition:opacity .35s ease,visibility .35s ease;}
+.mobile-overlay.open{opacity:1;visibility:visible;}
+.mobile-panel{position:fixed;top:0;right:0;bottom:0;width:300px;max-width:85vw;background:var(--navy-deep);z-index:495;transform:translateX(100%);transition:transform .4s cubic-bezier(.22,1,.36,1);display:flex;flex-direction:column;padding:80px 32px 32px;overflow-y:auto;}
+.mobile-panel.open{transform:translateX(0);}
+.mobile-panel .mp-brand{font-family:var(--font-display);font-weight:700;font-size:18px;color:#fff;margin-bottom:4px;}
+.mobile-panel .mp-sub{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-lt);font-weight:600;margin-bottom:40px;display:block;}
+.mobile-panel a{color:rgba(255,255,255,0.8);font-size:17px;font-family:var(--font-display);text-decoration:none;padding:12px 0;border-bottom:1px solid rgba(255,255,255,0.06);transition:color .25s;}
+.mobile-panel a:hover{color:var(--gold-lt);}
+.mobile-panel .mp-cta{margin-top:24px;color:var(--gold-lt);font-size:17px;font-family:var(--font-display);text-decoration:none;padding:14px 0;font-weight:600;border-top:1px solid rgba(255,255,255,0.1);display:flex;align-items:center;gap:8px;}
+
+/* ───────────────────── Hero ───────────────────── */
+.hero{position:relative;min-height:100vh;background:radial-gradient(120% 100% at 80% 0%,#173E72 0%,var(--navy) 45%,var(--navy-deep) 100%);overflow:hidden;display:flex;align-items:center;padding:140px 0 90px;}
+.hero::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle at 1px 1px, rgba(255,255,255,0.07) 1px, transparent 0);background-size:34px 34px;opacity:.5;}
+.hero-glow{position:absolute;width:680px;height:680px;border-radius:50%;background:radial-gradient(circle,rgba(200,162,74,0.22),transparent 70%);top:-220px;right:-180px;filter:blur(10px);animation:float1 12s ease-in-out infinite;}
+.hero-glow.b{width:420px;height:420px;background:radial-gradient(circle,rgba(60,120,210,0.28),transparent 70%);bottom:-160px;left:-120px;top:auto;right:auto;animation:float2 14s ease-in-out infinite;}
+@keyframes float1{0%,100%{transform:translate(0,0);}50%{transform:translate(-30px,30px);}}
+@keyframes float2{0%,100%{transform:translate(0,0);}50%{transform:translate(25px,-22px);}}
+.hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:center;}
+.eyebrow{display:inline-flex;align-items:center;gap:9px;font-size:11.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-lt);background:rgba(200,162,74,0.12);border:1px solid rgba(200,162,74,0.32);padding:8px 16px;border-radius:30px;margin-bottom:28px;}
+.eyebrow .dot{width:6px;height:6px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 0 rgba(200,162,74,0.6);animation:pulse 2s infinite;}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(200,162,74,0.55);}70%{box-shadow:0 0 0 8px rgba(200,162,74,0);}100%{box-shadow:0 0 0 0 rgba(200,162,74,0);}}
+.hero h1{font-family:var(--font-display);font-weight:600;font-size:clamp(2.6rem,4.6vw,4.3rem);line-height:1.06;color:var(--white);letter-spacing:-0.01em;margin-bottom:24px;}
+.hero h1 em{font-style:normal;color:var(--gold);position:relative;}
+.hero p.lead{font-size:17px;color:rgba(255,255,255,0.72);max-width:520px;margin-bottom:38px;}
+.hero-actions{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:54px;}
+.trust-row{display:flex;align-items:center;gap:28px;flex-wrap:wrap;}
+.trust-row .t-item{display:flex;align-items:center;gap:9px;font-size:12.5px;color:rgba(255,255,255,0.62);font-weight:500;}
+.trust-row svg{width:16px;height:16px;color:var(--gold);flex-shrink:0;}
+
+/* hero visual */
+.hero-visual{position:relative;height:520px;}
+.hv-card{position:absolute;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.16);backdrop-filter:blur(14px);border-radius:18px;padding:18px 20px;box-shadow:0 20px 50px rgba(0,0,0,0.25);animation:bob 6s ease-in-out infinite;}
+.hv-card .hv-num{font-family:var(--font-display);font-size:26px;font-weight:700;color:var(--white);line-height:1;}
+.hv-card .hv-lbl{font-size:11px;color:rgba(255,255,255,0.6);margin-top:4px;letter-spacing:.02em;}
+.hv-card.c1{top:6%;left:2%;animation-delay:0s;}
+.hv-card.c2{top:40%;right:0%;animation-delay:1.4s;}
+.hv-card.c3{bottom:6%;left:10%;animation-delay:2.6s;}
+@keyframes bob{0%,100%{transform:translateY(0);}50%{transform:translateY(-14px);}}
+.hv-core{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:300px;height:300px;border-radius:50%;background:radial-gradient(circle at 35% 30%, rgba(200,162,74,0.25), rgba(255,255,255,0.02) 60%);border:1px solid rgba(255,255,255,0.14);display:flex;align-items:center;justify-content:center;}
+.hv-core::before{content:'';position:absolute;inset:30px;border-radius:50%;border:1px dashed rgba(255,255,255,0.18);animation:spin 30s linear infinite;}
+.hv-core svg{width:108px;height:108px;color:var(--gold-lt);opacity:.9;}
+
+/* ───────────────────── Stat strip ───────────────────── */
+.stat-strip{background:var(--white);border-top:1px solid var(--gray-150);position:relative;z-index:3;margin-top:-1px;}
+.stat-strip .container{display:grid;grid-template-columns:repeat(4,1fr);padding:46px 32px;}
+.stat-strip .stat{text-align:center;border-right:1px solid var(--gray-150);padding:0 18px;}
+.stat-strip .stat:last-child{border-right:none;}
+.stat-num{font-family:var(--font-display);font-size:clamp(1.8rem,2.6vw,2.6rem);font-weight:700;color:var(--navy);display:flex;justify-content:center;align-items:baseline;gap:3px;}
+.stat-num .suffix{color:var(--gold-dk);font-size:.6em;}
+.stat-cap{font-size:12.5px;color:var(--gray-500);margin-top:6px;}
+
+/* ───────────────────── Section basics ───────────────────── */
+section{padding:120px 0;position:relative;}
+.section-alt{background:var(--white);}
+.tag-eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:11.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-dk);margin-bottom:18px;}
+.tag-eyebrow::before{content:'';width:22px;height:1.6px;background:var(--gold-dk);}
+.sec-head{max-width:680px;margin-bottom:64px;}
+.sec-head.center{margin-left:auto;margin-right:auto;text-align:center;}
+.sec-title{font-family:var(--font-display);font-weight:600;font-size:clamp(1.9rem,3vw,2.7rem);color:var(--navy);line-height:1.18;letter-spacing:-0.01em;}
+.sec-sub{font-size:15.5px;color:var(--gray-500);margin-top:16px;line-height:1.75;}
+
+/* ───────────────────── About / overview split ───────────────────── */
+.about-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:72px;align-items:start;}
+.quote-block{background:linear-gradient(155deg,var(--navy),var(--navy-2));border-radius:var(--radius-xl);padding:48px 44px;color:var(--white);position:relative;overflow:hidden;}
+.quote-block::after{content:'"';position:absolute;top:-30px;right:18px;font-family:var(--font-display);font-size:180px;color:rgba(255,255,255,0.06);}
+.quote-block p.q{font-family:var(--font-display);font-size:23px;font-weight:500;line-height:1.5;position:relative;z-index:2;}
+.quote-block .q-foot{margin-top:24px;font-size:13px;color:rgba(255,255,255,0.6);position:relative;z-index:2;}
+.value-list{display:flex;flex-direction:column;gap:0;margin-top:30px;}
+.value-item{display:flex;gap:18px;padding:22px 0;border-bottom:1px solid var(--gray-150);}
+.value-item:first-child{padding-top:0;}
+.v-icon{width:46px;height:46px;border-radius:12px;background:var(--gray-100);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--navy);}
+.v-icon svg{width:21px;height:21px;}
+.v-title{font-weight:700;font-size:15px;color:var(--navy);margin-bottom:5px;}
+.v-body{font-size:13.5px;color:var(--gray-500);line-height:1.65;}
+.about-text p{font-size:15.5px;color:var(--gray-700);margin-bottom:18px;}
+
+.team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:56px;}
+.team-card{background:var(--gray-100);border-radius:var(--radius-lg);padding:32px 28px;transition:transform .35s var(--ease),box-shadow .35s var(--ease);}
+.team-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-md);background:var(--white);}
+.team-avatar{width:56px;height:56px;border-radius:14px;background:linear-gradient(145deg,var(--navy),var(--navy-2));display:flex;align-items:center;justify-content:center;color:var(--gold-lt);margin-bottom:18px;}
+.team-avatar svg{width:24px;height:24px;}
+.team-name{font-weight:700;font-size:15px;color:var(--navy);}
+.team-role{font-size:12px;color:var(--gold-dk);font-weight:600;margin:4px 0 12px;text-transform:uppercase;letter-spacing:.04em;}
+.team-bio{font-size:13px;color:var(--gray-500);line-height:1.6;}
+
+/* ───────────────────── Overview table ───────────────────── */
+.overview-wrap{display:grid;grid-template-columns:1fr 1fr;gap:0;border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-md);}
+.overview-row{display:flex;justify-content:space-between;align-items:center;padding:20px 30px;background:var(--white);border-bottom:1px solid var(--gray-150);}
+.overview-row:nth-child(odd){background:var(--gray-100);}
+.ov-label{font-size:13px;color:var(--gray-500);font-weight:600;text-transform:uppercase;letter-spacing:.03em;}
+.ov-val{font-size:14.5px;color:var(--navy);font-weight:700;text-align:right;}
+
+/* ───────────────────── Cards / grids ───────────────────── */
+.card-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;}
+.card-grid.cols-3{grid-template-columns:repeat(3,1fr);}
+.feature-card{background:var(--white);border:1px solid var(--gray-150);border-radius:var(--radius-lg);padding:34px 28px;transition:transform .4s var(--ease),box-shadow .4s var(--ease),border-color .4s;position:relative;overflow:hidden;}
+.feature-card::before{content:'';position:absolute;left:0;top:0;width:100%;height:3px;background:linear-gradient(90deg,var(--gold-dk),var(--gold));transform:scaleX(0);transform-origin:left;transition:transform .45s var(--ease);}
+.feature-card:hover{transform:translateY(-8px);box-shadow:var(--shadow-lg);border-color:transparent;}
+.feature-card:hover::before{transform:scaleX(1);}
+.f-icon{width:52px;height:52px;border-radius:14px;background:linear-gradient(145deg,var(--navy),var(--navy-2));display:flex;align-items:center;justify-content:center;color:var(--gold-lt);margin-bottom:22px;}
+.f-icon svg{width:23px;height:23px;}
+.f-title{font-weight:700;font-size:16px;color:var(--navy);margin-bottom:10px;}
+.f-body{font-size:13.5px;color:var(--gray-500);line-height:1.7;}
+
+/* ───────────────────── Product showcase ───────────────────── */
+.product-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;}
+.product-card{background:var(--white);border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--gray-150);transition:transform .4s var(--ease),box-shadow .4s var(--ease);}
+.product-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-md);}
+.product-top{height:128px;display:flex;align-items:center;justify-content:center;position:relative;background:linear-gradient(145deg,var(--navy),var(--navy-2));}
+.product-top svg{width:46px;height:46px;color:var(--gold-lt);}
+.product-top .p-badge{position:absolute;top:12px;right:12px;font-size:10px;font-weight:700;letter-spacing:.04em;background:rgba(255,255,255,0.16);color:var(--white);padding:4px 10px;border-radius:20px;text-transform:uppercase;}
+.product-body{padding:22px 20px;}
+.p-name{font-weight:700;font-size:14.5px;color:var(--navy);margin-bottom:8px;}
+.p-desc{font-size:12.5px;color:var(--gray-500);line-height:1.6;margin-bottom:14px;min-height:62px;}
+.p-tags{display:flex;gap:6px;flex-wrap:wrap;}
+.p-tag{font-size:10.5px;font-weight:600;padding:4px 10px;border-radius:20px;background:var(--gray-100);color:var(--gray-700);}
+.p-tag.gold{background:var(--gold-lt);color:var(--gold-dk);}
+
+.spec-table-wrap{margin-top:56px;border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--gray-150);box-shadow:var(--shadow-sm);}
+table{width:100%;border-collapse:collapse;background:var(--white);}
+thead th{background:var(--navy);color:var(--white);font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:16px 20px;text-align:left;}
+tbody td{padding:16px 20px;font-size:13.5px;color:var(--gray-700);border-bottom:1px solid var(--gray-150);}
+tbody tr:last-child td{border-bottom:none;}
+tbody tr:hover td{background:var(--gray-100);}
+.status-pill{font-size:11px;font-weight:700;padding:4px 12px;border-radius:20px;display:inline-block;}
+.status-stock{background:#E6F4EA;color:#1F7A3D;}
+.status-limited{background:var(--gold-lt);color:var(--gold-dk);}
+
+/* ───────────────────── Tiers (Trading solutions) ───────────────────── */
+.tier-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+.tier-card{background:var(--white);border:1px solid var(--gray-150);border-radius:var(--radius-lg);padding:0;overflow:hidden;transition:transform .4s var(--ease),box-shadow .4s var(--ease);display:flex;flex-direction:column;}
+.tier-card:hover{transform:translateY(-8px);box-shadow:var(--shadow-lg);}
+.tier-card.featured{border:2px solid var(--gold);position:relative;}
+.tier-card.featured::before{content:'Most Selected';position:absolute;top:18px;right:-34px;background:var(--gold);color:var(--navy-deep);font-size:10.5px;font-weight:700;padding:5px 38px;transform:rotate(40deg);letter-spacing:.04em;}
+.tier-head{padding:30px 28px;background:var(--gray-100);}
+.tier-card.featured .tier-head{background:linear-gradient(155deg,var(--navy),var(--navy-2));color:var(--white);}
+.tier-badge{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--gold-dk);margin-bottom:10px;display:block;}
+.tier-card.featured .tier-badge{color:var(--gold-lt);}
+.tier-name{font-family:var(--font-display);font-size:22px;font-weight:600;color:var(--navy);}
+.tier-card.featured .tier-name{color:var(--white);}
+.tier-desc{font-size:13px;color:var(--gray-500);margin-top:6px;}
+.tier-card.featured .tier-desc{color:rgba(255,255,255,0.65);}
+.tier-feats{padding:26px 28px 30px;flex:1;display:flex;flex-direction:column;gap:14px;}
+.tf-item{display:flex;align-items:flex-start;gap:10px;font-size:13.5px;color:var(--gray-700);}
+.tf-item svg{width:16px;height:16px;color:var(--gold-dk);flex-shrink:0;margin-top:2px;}
+
+/* ───────────────────── Supply chain flow (signature) ───────────────────── */
+.flow-wrap{position:relative;display:flex;justify-content:space-between;margin-top:50px;}
+.flow-line{position:absolute;top:34px;left:5%;right:5%;height:2px;background:var(--gray-300);z-index:0;}
+.flow-line .fill{position:absolute;left:0;top:0;height:100%;width:0%;background:linear-gradient(90deg,var(--gold-dk),var(--gold));transition:width 1.6s var(--ease);}
+.flow-step{position:relative;z-index:2;flex:1;text-align:center;padding:0 10px;}
+.flow-dot{width:68px;height:68px;border-radius:50%;background:var(--white);border:2px solid var(--gray-300);display:flex;align-items:center;justify-content:center;margin:0 auto 18px;color:var(--navy);transition:border-color .4s,color .4s,transform .4s;position:relative;}
+.flow-dot svg{width:26px;height:26px;}
+.flow-wrap.lit .flow-dot{border-color:var(--gold);color:var(--gold-dk);}
+.flow-title{font-weight:700;font-size:13.5px;color:var(--navy);margin-bottom:6px;}
+.flow-desc{font-size:11.5px;color:var(--gray-500);line-height:1.5;max-width:160px;margin:0 auto;}
+
+/* ───────────────────── Why us ───────────────────── */
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.why-card{background:var(--white);border:1px solid var(--gray-150);border-radius:var(--radius-lg);padding:30px;display:flex;gap:22px;align-items:flex-start;transition:box-shadow .35s,transform .35s;}
+.why-card:hover{box-shadow:var(--shadow-md);transform:translateY(-4px);}
+.why-num{font-family:var(--font-display);font-size:38px;font-weight:700;color:var(--gold-lt);line-height:1;-webkit-text-stroke:1.5px var(--gold-dk);min-width:48px;}
+.why-title{font-weight:700;font-size:15px;color:var(--navy);margin-bottom:8px;}
+.why-body{font-size:13.5px;color:var(--gray-500);line-height:1.7;}
+
+/* ───────────────────── Stats animated band ───────────────────── */
+.stats-band{background:linear-gradient(155deg,var(--navy-deep),var(--navy) 60%,var(--navy-2));position:relative;overflow:hidden;}
+.stats-band::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle at 1px 1px, rgba(255,255,255,0.05) 1px, transparent 0);background-size:30px 30px;}
+.stats-band-grid{position:relative;z-index:2;display:grid;grid-template-columns:repeat(4,1fr);gap:30px;}
+.sb-card{text-align:center;padding:14px;}
+.sb-num{font-family:var(--font-display);font-size:clamp(2.2rem,3.4vw,3.2rem);font-weight:700;color:var(--white);}
+.sb-num .suffix{color:var(--gold);}
+.sb-lbl{font-size:13px;color:rgba(255,255,255,0.6);margin-top:10px;}
+.sb-divider{width:34px;height:2px;background:var(--gold);margin:14px auto 0;}
+
+/* ───────────────────── Industries ───────────────────── */
+.industry-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:18px;}
+.industry-card{background:var(--gray-100);border-radius:var(--radius-md);padding:28px 18px;text-align:center;transition:background .35s,transform .35s;}
+.industry-card:hover{background:var(--navy);transform:translateY(-5px);}
+.ind-icon{width:50px;height:50px;margin:0 auto 16px;border-radius:13px;background:var(--white);display:flex;align-items:center;justify-content:center;color:var(--navy);transition:background .35s,color .35s;}
+.industry-card:hover .ind-icon{background:var(--gold);color:var(--navy-deep);}
+.ind-icon svg{width:22px;height:22px;}
+.ind-name{font-size:13px;font-weight:600;color:var(--navy);transition:color .35s;}
+.industry-card:hover .ind-name{color:var(--white);}
+
+/* ───────────────────── Process timeline ───────────────────── */
+.process-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+.proc-card{background:var(--white);border:1px solid var(--gray-150);border-radius:var(--radius-lg);padding:30px;position:relative;}
+.proc-num{position:absolute;top:24px;right:26px;font-family:var(--font-display);font-size:32px;font-weight:700;color:var(--gray-150);}
+.proc-icon{width:48px;height:48px;border-radius:13px;background:var(--gray-100);display:flex;align-items:center;justify-content:center;color:var(--navy);margin-bottom:20px;}
+.proc-icon svg{width:21px;height:21px;}
+.proc-title{font-weight:700;font-size:15px;color:var(--navy);margin-bottom:10px;}
+.proc-body{font-size:13px;color:var(--gray-500);line-height:1.65;}
+
+/* ───────────────────── Quality / traceability ───────────────────── */
+.trace-panel{background:var(--white);border:1px solid var(--gray-150);border-radius:var(--radius-xl);padding:0;overflow:hidden;box-shadow:var(--shadow-md);margin-bottom:60px;}
+.trace-top{padding:24px 34px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--gray-150);}
+.trace-top-title{font-weight:700;font-size:15px;color:var(--navy);}
+.trace-top-sub{font-size:12px;color:var(--gray-500);margin-top:3px;}
+.trace-id{font-family:monospace;font-size:12.5px;background:var(--gray-100);padding:6px 14px;border-radius:6px;color:var(--gray-700);}
+.trace-steps{display:flex;padding:40px 34px 34px;position:relative;}
+.trace-steps .flow-line{top:20px;}
+.cert-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+.cert-card{background:var(--white);border:1px solid var(--gray-150);border-radius:var(--radius-md);padding:24px;display:flex;align-items:center;gap:16px;transition:box-shadow .3s,transform .3s;}
+.cert-card:hover{box-shadow:var(--shadow-sm);transform:translateY(-3px);}
+.cert-ic{width:44px;height:44px;border-radius:11px;background:var(--gray-100);display:flex;align-items:center;justify-content:center;color:var(--navy);flex-shrink:0;}
+.cert-ic svg{width:19px;height:19px;}
+.cert-name{font-weight:700;font-size:13.5px;color:var(--navy);}
+.cert-body{font-size:11.5px;color:var(--gray-500);margin-top:3px;}
+.cert-status{font-size:9.5px;font-weight:700;color:#1F7A3D;background:#E6F4EA;padding:2px 8px;border-radius:20px;margin-top:6px;display:inline-block;}
+
+/* ───────────────────── Testimonials ───────────────────── */
+.test-track-wrap{overflow:hidden;position:relative;}
+.test-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+.test-card{background:var(--white);border:1px solid var(--gray-150);border-radius:var(--radius-lg);padding:32px;position:relative;}
+.test-quote-icon{color:var(--gold-lt);margin-bottom:18px;}
+.test-quote-icon svg{width:30px;height:30px;}
+.test-text{font-size:14.5px;color:var(--gray-700);line-height:1.75;margin-bottom:24px;min-height:120px;}
+.test-person{display:flex;align-items:center;gap:14px;border-top:1px solid var(--gray-150);padding-top:18px;}
+.test-avatar{width:42px;height:42px;border-radius:50%;background:linear-gradient(145deg,var(--navy),var(--navy-2));color:var(--gold-lt);display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:700;font-size:14px;}
+.test-name{font-weight:700;font-size:13.5px;color:var(--navy);}
+.test-role{font-size:11.5px;color:var(--gray-500);}
+
+/* ───────────────────── FAQ ───────────────────── */
+.faq-list{max-width:780px;margin:0 auto;}
+.faq-item{border-bottom:1px solid var(--gray-150);}
+.faq-q{display:flex;justify-content:space-between;align-items:center;padding:26px 4px;cursor:pointer;font-weight:600;font-size:15px;color:var(--navy);}
+.faq-q .plus{width:26px;height:26px;border-radius:50%;background:var(--gray-100);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform .35s var(--ease),background .3s;}
+.faq-q .plus svg{width:12px;height:12px;transition:transform .35s var(--ease);}
+.faq-item.open .plus{background:var(--gold);}
+.faq-item.open .plus svg{transform:rotate(45deg);color:var(--navy-deep);}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .4s var(--ease);}
+.faq-a-inner{padding:0 4px 26px;font-size:13.5px;color:var(--gray-500);line-height:1.75;max-width:680px;}
+
+/* ───────────────────── CTA ───────────────────── */
+.cta-band{background:linear-gradient(135deg,var(--navy-deep),var(--navy));border-radius:var(--radius-xl);padding:70px 60px;display:flex;justify-content:space-between;align-items:center;gap:40px;position:relative;overflow:hidden;}
+.cta-band::before{content:'';position:absolute;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(200,162,74,0.22),transparent 70%);top:-160px;right:-100px;}
+.cta-left{position:relative;z-index:2;}
+.cta-title{font-family:var(--font-display);font-size:clamp(1.7rem,2.6vw,2.3rem);font-weight:600;color:var(--white);margin-bottom:12px;}
+.cta-sub{font-size:14.5px;color:rgba(255,255,255,0.65);max-width:440px;}
+.cta-actions{display:flex;gap:14px;position:relative;z-index:2;flex-shrink:0;}
+
+/* ───────────────────── Contact ───────────────────── */
+.contact-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:48px;}
+.contact-info{display:flex;flex-direction:column;gap:26px;}
+.ci-item{display:flex;gap:16px;align-items:flex-start;}
+.ci-icon{width:44px;height:44px;border-radius:12px;background:var(--gray-100);display:flex;align-items:center;justify-content:center;color:var(--navy);flex-shrink:0;}
+.ci-icon svg{width:19px;height:19px;}
+.ci-label{font-size:11px;color:var(--gray-500);text-transform:uppercase;letter-spacing:.06em;font-weight:600;margin-bottom:4px;}
+.ci-value{font-size:14.5px;color:var(--navy);font-weight:600;}
+.form-card{background:var(--white);border:1px solid var(--gray-150);border-radius:var(--radius-xl);padding:42px;box-shadow:var(--shadow-md);}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+.f-group{margin-bottom:20px;}
+.f-label{display:block;font-size:12.5px;font-weight:600;color:var(--navy);margin-bottom:8px;}
+.f-input{width:100%;padding:13px 16px;border:1.4px solid var(--gray-300);border-radius:9px;font-size:13.5px;font-family:var(--font-body);color:var(--gray-900);background:var(--white);transition:border-color .25s,box-shadow .25s;}
+.f-input:focus{outline:none;border-color:var(--navy-2);box-shadow:0 0 0 3px rgba(18,58,107,0.1);}
+select.f-input{appearance:none;background-image:url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L5 5L9 1' stroke='%23707888' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center;padding-right:38px;}
+textarea.f-input{resize:vertical;min-height:90px;}
+.form-note{font-size:12px;color:var(--gray-500);text-align:center;margin-top:14px;}
+
+/* ───────────────────── Footer ───────────────────── */
+footer{background:var(--navy-deep);color:rgba(255,255,255,0.7);padding:80px 0 0;}
+.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:50px;padding-bottom:60px;border-bottom:1px solid rgba(255,255,255,0.08);}
+.footer-brand .brand-name{color:var(--white);}
+.footer-desc{font-size:13.5px;color:rgba(255,255,255,0.5);margin-top:18px;line-height:1.7;max-width:300px;}
+.footer-col-title{font-size:12.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--white);margin-bottom:20px;}
+.footer-col a{display:block;font-size:13.5px;color:rgba(255,255,255,0.55);margin-bottom:12px;transition:color .25s;}
+.footer-col a:hover{color:var(--gold);}
+.social-row{display:flex;gap:10px;margin-top:22px;}
+.social-row a{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:center;}
+.social-row svg{width:15px;height:15px;}
+.social-row a:hover{background:var(--gold);color:var(--navy-deep);}
+.footer-bottom{padding:26px 0;display:flex;justify-content:space-between;font-size:12.5px;color:rgba(255,255,255,0.45);}
+
+/* ───────────────────── Back to top ───────────────────── */
+.back-top{position:fixed;bottom:28px;right:28px;width:48px;height:48px;border-radius:50%;background:var(--navy);color:var(--white);display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:var(--shadow-md);opacity:0;transform:translateY(10px);transition:opacity .3s,transform .3s,background .3s;z-index:300;}
+.back-top.show{opacity:1;transform:translateY(0);}
+.back-top:hover{background:var(--gold);color:var(--navy-deep);}
+.back-top svg{width:18px;height:18px;}
+
+/* ───────────────────── Responsive ───────────────────── */
+@media (max-width:1080px){
+  .card-grid{grid-template-columns:repeat(2,1fr);}
+  .product-grid{grid-template-columns:repeat(2,1fr);}
+  .industry-grid{grid-template-columns:repeat(3,1fr);}
+  .tier-grid{grid-template-columns:1fr;}
+  .test-grid{grid-template-columns:1fr;}
+  .process-grid{grid-template-columns:1fr 1fr;}
+  .why-grid{grid-template-columns:1fr;}
+  .footer-grid{grid-template-columns:1fr 1fr;}
+}
+@media (max-width:860px){
+  .nav-links{display:none;}
+  .menu-toggle{display:flex;}
+  .hero-grid{grid-template-columns:1fr;}
+  .hero-visual{display:none;}
+  .about-grid,.contact-grid{grid-template-columns:1fr;}
+  .stat-strip .container{grid-template-columns:repeat(2,1fr);gap:24px;}
+  .stat-strip .stat{border-right:none;border-bottom:1px solid var(--gray-150);padding-bottom:20px;}
+  .stats-band-grid{grid-template-columns:repeat(2,1fr);gap:34px;}
+  .overview-wrap{grid-template-columns:1fr;}
+  .card-grid,.product-grid{grid-template-columns:1fr;}
+  .industry-grid{grid-template-columns:repeat(2,1fr);}
+  .team-grid{grid-template-columns:1fr;}
+  .cert-grid{grid-template-columns:1fr;}
+  .process-grid{grid-template-columns:1fr;}
+  .flow-wrap{flex-direction:column;gap:30px;}
+  .flow-line{display:none;}
+  .cta-band{flex-direction:column;text-align:center;padding:50px 32px;}
+  .form-row{grid-template-columns:1fr;}
+  section{padding:80px 0;}
+}
+@media (max-width:640px){
+  .brand-name{font-size:13px !important;}
+  .brand-sub{display:none !important;}
+  .brand{gap:8px !important;}
+  .mobile-panel{padding:72px 24px 24px;}
+}
+@media (max-width:420px){
+  .nav .nav-inner{padding-left:16px !important;padding-right:16px !important;}
+  .brand img{height:36px !important;}
+  .btn-sm{padding:8px 14px !important;font-size:11.5px !important;}
+  .btn-sm span{gap:4px !important;}
+  .mobile-panel{padding:64px 20px 20px;width:100%;max-width:100%;}
+}
+</style>
+</head>
+<body>
+
+<div id="loader"><div class="loader-mark"><div class="loader-ring"></div>YOUSAFZAI EGRO</div></div>
+
+<!-- ════════════════ NAV ════════════════ -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#home" class="brand">
+      <img src="src/assets/logo.svg" alt="Yousafzai EGRO" style="height:42px;width:auto">
+    </a>
+    <div class="nav-links">
+      <a href="#about" class="nav-link">About Us</a>
+      <a href="#products" class="nav-link">Products</a>
+      <a href="#solutions" class="nav-link">Solutions</a>
+      <a href="#process" class="nav-link">Process</a>
+      <a href="#quality" class="nav-link">Quality</a>
+      <a href="#contact" class="nav-link">Contact Us</a>
+    </div>
+    <div class="nav-cta">
+      <a href="#contact" class="btn btn-gold btn-sm" data-ripple><span>Request Quote</span></a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<!-- mobile overlay + panel -->
+<div class="mobile-overlay" id="mobileOverlay"></div>
+<div class="mobile-panel" id="mobilePanel">
+  <span class="mp-brand">Egg Traders</span>
+  <span class="mp-sub">Poultry Marketplace</span>
+  <a href="#about" class="m-link">About Us</a>
+  <a href="#products" class="m-link">Products</a>
+  <a href="#solutions" class="m-link">Solutions</a>
+  <a href="#process" class="m-link">Process</a>
+  <a href="#quality" class="m-link">Quality</a>
+  <a href="#contact" class="m-link">Contact Us</a>
+  <a href="#contact" class="mp-cta">Start Trading<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+</div>
+
+<!-- ════════════════ HERO ════════════════ -->
+<header class="hero" id="home">
+  <div class="hero-glow"></div>
+  <div class="hero-glow b"></div>
+  <div class="container hero-grid">
+    <div>
+      <div class="eyebrow"><span class="dot"></span>International B2B Egg Trading & Supply</div>
+      <h1>Trusted Egg Traders<br>Built for <em>Global Standards</em></h1>
+      <p class="lead">Yousafzai EGRO is Pakistan's compliance-first egg trading and supply house — connecting certified farms to hotels, retailers, manufacturers and institutions across the region, with full traceability on every batch.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn btn-gold" data-ripple><span>Request a B2B Quote
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+        <a href="#supply-chain" class="btn btn-outline" data-ripple><span>Explore Our Supply Chain</span></a>
+      </div>
+      <div class="trust-row">
+        <div class="t-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l8 4v6c0 5-3.6 8-8 10-4.4-2-8-5-8-10V6l8-4z"/></svg> ISO 22000 Certified</div>
+        <div class="t-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg> PSQCA & Halal Compliant</div>
+        <div class="t-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11l9-8 9 8M5 10v10h14V10"/></svg> 25+ Cities Served</div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hv-core"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M12 2C8 7 5 11.5 5 15a7 7 0 0014 0c0-3.5-3-8-7-13z"/></svg></div>
+      <div class="hv-card c1"><div class="hv-num">500K+</div><div class="hv-lbl">Eggs traded weekly</div></div>
+      <div class="hv-card c2"><div class="hv-num">100%</div><div class="hv-lbl">Batch traceability</div></div>
+      <div class="hv-card c3"><div class="hv-num">99%</div><div class="hv-lbl">On-time delivery</div></div>
+    </div>
+  </div>
+</header>
+
+<!-- ════════════════ STAT STRIP ════════════════ -->
+<div class="stat-strip">
+  <div class="container">
+    <div class="stat"><div class="stat-num"><span data-count="280">0</span><span class="suffix">+</span></div><div class="stat-cap">Active B2B partners & clients</div></div>
+    <div class="stat"><div class="stat-num"><span data-count="40">0</span><span class="suffix">+</span></div><div class="stat-cap">Vetted partner farms</div></div>
+    <div class="stat"><div class="stat-num"><span data-count="8">0</span><span class="suffix">+</span></div><div class="stat-cap">Active certifications</div></div>
+    <div class="stat"><div class="stat-num"><span data-count="99">0</span><span class="suffix">%</span></div><div class="stat-cap">On-time, in-spec delivery</div></div>
+  </div>
+</div>
+
+<!-- ════════════════ ABOUT ════════════════ -->
+<section id="about">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div class="tag-eyebrow">About Yousafzai EGRO</div>
+      <h2 class="sec-title">Connecting Farms to Businesses, With Compliance at the Core</h2>
+      <p class="sec-sub">Yousafzai EGRO unites specialist egg trading with compliance-first B2B supply — bridging high-quality Pakistani farms and the businesses that depend on consistent, fully documented egg supply.</p>
+    </div>
+    <div class="about-grid">
+      <div class="reveal">
+        <div class="quote-block">
+          <p class="q">"To make egg supply predictable, sustainable, and profitable for every partner in our ecosystem — certified, traceable, and accountable at every step."</p>
+          <div class="q-foot">Our Mission Statement</div>
+        </div>
+        <div class="value-list">
+          <div class="value-item">
+            <div class="v-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3v18M5 8l7-5 7 5M5 8v8l7 5 7-5V8"/></svg></div>
+            <div><div class="v-title">Transparency</div><div class="v-body">Every batch, every test result, every audit is available to clients on demand through our portal.</div></div>
+          </div>
+          <div class="value-item">
+            <div class="v-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l8 4v6c0 5-3.6 8-8 10-4.4-2-8-5-8-10V6l8-4z"/></svg></div>
+            <div><div class="v-title">Compliance First</div><div class="v-body">We never ship anything that isn't certifiably compliant. Our QA team can hold any shipment, at any time.</div></div>
+          </div>
+          <div class="value-item">
+            <div class="v-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
+            <div><div class="v-title">Reliability</div><div class="v-body">A 99%+ on-time, in-spec delivery rate is the foundation of every partner relationship we build.</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="about-text reveal">
+        <p>Founded in 2010 in Peshawar, Khyber Pakhtunkhwa, Yousafzai EGRO has grown into a specialist egg trading and B2B supply house — serving hotels, restaurants, bakeries, retailers, manufacturers and institutions with one unified, dependable source.</p>
+        <p>We believe the egg supply chain in Pakistan can be more efficient, more transparent, and more equitable for everyone — from the farmer to the final commercial buyer. That belief shapes a single-minded focus on documentation, compliance infrastructure, and account services built for serious B2B buyers.</p>
+        <p>Today, our trading and supply operation moves over 500,000 eggs weekly through a network of 40+ vetted partner farms, supported by a dedicated cold-chain fleet and three regional distribution hubs.</p>
+        <div class="team-grid">
+          <div class="team-card">
+            <div class="team-avatar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-7 8-7s8 3 8 7"/></svg></div>
+            <div class="team-name">Tariq Yousafzai</div><div class="team-role">Managing Director</div>
+            <div class="team-bio">Built the trading business from scratch, bringing 18 years of commodity experience in agricultural markets.</div>
+          </div>
+          <div class="team-card">
+            <div class="team-avatar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-7 8-7s8 3 8 7"/></svg></div>
+            <div class="team-name">Nadia Rehman</div><div class="team-role">Head of Partnerships</div>
+            <div class="team-bio">Manages a 280+ partner network, driving retention and growth across every partner tier.</div>
+          </div>
+          <div class="team-card">
+            <div class="team-avatar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-7 8-7s8 3 8 7"/></svg></div>
+            <div class="team-name">Bilal Hussain</div><div class="team-role">Logistics Director</div>
+            <div class="team-bio">Oversees the cold-chain fleet and last-mile delivery across 25 operational cities.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════ COMPANY OVERVIEW ════════════════ -->
+<section class="section-alt" id="overview">
+  <div class="container">
+    <div class="sec-head center reveal" style="margin-left:auto;margin-right:auto">
+      <div class="tag-eyebrow" style="justify-content:center">Company Overview</div>
+      <h2 class="sec-title">The Numbers Behind Our Business</h2>
+      <p class="sec-sub">A consolidated profile of Yousafzai EGRO's trading and B2B supply operation.</p>
+    </div>
+    <div class="overview-wrap reveal">
+      <div class="overview-row"><span class="ov-label">Company Name</span><span class="ov-val">Yousafzai EGRO (Pvt.) Ltd. — Egg Traders</span></div>
+      <div class="overview-row"><span class="ov-label">Established</span><span class="ov-val">2010, Peshawar, Khyber Pakhtunkhwa</span></div>
+      <div class="overview-row"><span class="ov-label">Business Type</span><span class="ov-val">B2B Egg Trading, Supply & Distribution</span></div>
+      <div class="overview-row"><span class="ov-label">Trading Volume</span><span class="ov-val">500,000+ eggs / week</span></div>
+      <div class="overview-row"><span class="ov-label">Active Partners & Clients</span><span class="ov-val">280+ businesses</span></div>
+      <div class="overview-row"><span class="ov-label">Farm Network</span><span class="ov-val">40+ vetted supplier farms</span></div>
+      <div class="overview-row"><span class="ov-label">Cold-Chain Fleet</span><span class="ov-val">35 refrigerated vehicles</span></div>
+      <div class="overview-row"><span class="ov-label">ESG Rating</span><span class="ov-val">92/100 (Third-party audited)</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════ PRODUCTS ════════════════ -->
+<section id="products">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div class="tag-eyebrow">Products</div>
+      <h2 class="sec-title">Full-Range Egg Trading & Supply Portfolio</h2>
+      <p class="sec-sub">One reliable partner for every egg procurement need — sourced, graded and supplied across all commercial grades and categories.</p>
+    </div>
+    <div class="product-grid reveal-stagger">
+      <div class="product-card">
+        <div class="product-top"><span class="p-badge">Grade A</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M12 2C8 7 5 11.5 5 15a7 7 0 0014 0c0-3.5-3-8-7-13z"/></svg></div>
+        <div class="product-body">
+          <div class="p-name">Commercial Grade A White</div>
+          <div class="p-desc">Consistent Grade A white shell eggs for hotels, restaurants and caterers, with daily fresh delivery and full documentation.</div>
+          <div class="p-tags"><span class="p-tag gold">Daily Supply</span><span class="p-tag">S–XL</span></div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-top" style="background:linear-gradient(145deg,#4F3A22,#7A5A33)"><span class="p-badge">Welfare Cert.</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M12 2C8 7 5 11.5 5 15a7 7 0 0014 0c0-3.5-3-8-7-13z"/></svg></div>
+        <div class="product-body">
+          <div class="p-name">Free-Range Brown</div>
+          <div class="p-desc">Free-range certified brown eggs for premium food service applications, with welfare certification on every order.</div>
+          <div class="p-tags"><span class="p-tag gold">Free Range</span><span class="p-tag">M, L</span></div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-top" style="background:linear-gradient(145deg,#1F5E3A,#2F7D4E)"><span class="p-badge">Organic</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M12 2C8 7 5 11.5 5 15a7 7 0 0014 0c0-3.5-3-8-7-13z"/></svg></div>
+        <div class="product-body">
+          <div class="p-name">Certified Organic</div>
+          <div class="p-desc">Organic-certified shell eggs with complete chain-of-custody documentation for premium manufacturers and retailers.</div>
+          <div class="p-tags"><span class="p-tag gold">Non-GMO</span><span class="p-tag">L</span></div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-top" style="background:linear-gradient(145deg,#3A3A52,#52527A)"><span class="p-badge">Bulk</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="4" y="8" width="16" height="11" rx="1.5"/><path d="M8 8V6a4 4 0 018 0v2"/></svg></div>
+        <div class="product-body">
+          <div class="p-name">Processing Grade / Liquid Whole Egg</div>
+          <div class="p-desc">High-volume processing grade and liquid whole egg for food manufacturers, bakeries and industrial kitchens.</div>
+          <div class="p-tags"><span class="p-tag gold">Industrial</span><span class="p-tag">kg / Bulk</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="spec-table-wrap reveal">
+      <table>
+        <thead><tr><th>Product</th><th>Grade</th><th>Available Sizes</th><th>Min. Order</th><th>Lead Time</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td><strong>White Shell Eggs</strong></td><td>Grade A</td><td>S, M, L, XL</td><td>500 trays/week</td><td>24 hrs</td><td><span class="status-pill status-stock">In Stock</span></td></tr>
+          <tr><td><strong>Brown Farm Eggs</strong></td><td>Grade A</td><td>M, L</td><td>200 trays/week</td><td>48 hrs</td><td><span class="status-pill status-stock">In Stock</span></td></tr>
+          <tr><td><strong>Organic Eggs</strong></td><td>Organic Grade A</td><td>L</td><td>50 trays/week</td><td>72 hrs</td><td><span class="status-pill status-limited">Limited</span></td></tr>
+          <tr><td><strong>Omega-3 Eggs</strong></td><td>Specialty</td><td>L, XL</td><td>100 trays/week</td><td>72 hrs</td><td><span class="status-pill status-stock">In Stock</span></td></tr>
+          <tr><td><strong>Liquid Whole Egg</strong></td><td>Processing Grade</td><td>N/A (kg)</td><td>500 kg/week</td><td>72 hrs</td><td><span class="status-pill status-stock">In Stock</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════ TRADING SOLUTIONS ════════════════ -->
+<section class="section-alt" id="solutions">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div class="tag-eyebrow">Trading Solutions</div>
+      <h2 class="sec-title">Grow With Us — Three Tiers, One Mission</h2>
+      <p class="sec-sub">Whether you're a corner store or a national chain, our Partner Program gives you preferential pricing, dedicated support, and the tools to grow — backed by weekly market intelligence and ESG-aligned trading practices.</p>
+    </div>
+    <div class="tier-grid reveal-stagger">
+      <div class="tier-card">
+        <div class="tier-head"><span class="tier-badge">Silver Partner</span><div class="tier-name">Silver</div><div class="tier-desc">100–499 trays per week</div></div>
+        <div class="tier-feats">
+          <div class="tf-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>5% volume discount</div>
+          <div class="tf-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>Email account support</div>
+          <div class="tf-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>Weekly supply forecast</div>
+          <div class="tf-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>Standard packaging</div>
+        </div>
+      </div>
+      <div class="tier-card featured">
+        <div class="tier-head"><span class="tier-badge">Gold Partner</span><div class="tier-name">Gold</div><div class="tier-desc">500–1,999 trays per week</div></div>
+        <div class="tier-feats">
+          <div class="tf-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>12% volume discount</div>
+          <div class="tf-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>Dedicated account manager</div>
+          <div class="tf-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>Priority supply access</div>
+          <div class="tf-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>Co-branded packaging</div>
+          <div class="tf-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>Monthly market reports</div>
+          <div class="tf-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>Net-30 payment terms</div>
+        </div>
+      </div>
+      <div class="tier-card">
+        <div class="tier-head"><span class="tier-badge">Platinum Partner</span><div class="tier-name">Platinum</div><div class="tier-desc">2,000+ trays per week</div></div>
+        <div class="tier-feats">
+          <div class="tf-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>20%+ custom discount</div>
+          <div class="tf-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>C-Suite relationship access</div>
+          <div class="tf-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>Guaranteed supply contracts</div>
+          <div class="tf-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>Full private label support</div>
+          <div class="tf-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>Net-60 payment terms</div>
+          <div class="tf-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>ESG co-reporting</div>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:44px" class="reveal"><a href="#contact" class="btn btn-navy" data-ripple><span>Apply for Partner Program →</span></a></div>
+  </div>
+</section>
+
+<!-- ════════════════ SUPPLY CHAIN ════════════════ -->
+<section id="supply-chain">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div class="tag-eyebrow">Supply Chain</div>
+      <h2 class="sec-title">A Fully Integrated, Cold-Chain-Managed Flow</h2>
+      <p class="sec-sub">From farm gate to your delivery dock — every stage is monitored, documented and quality-checked.</p>
+    </div>
+    <div class="flow-wrap reveal" id="flowWrap">
+      <div class="flow-line"><div class="fill" id="flowFill"></div></div>
+      <div class="flow-step"><div class="flow-dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2C8 7 5 11.5 5 15a7 7 0 0014 0c0-3.5-3-8-7-13z"/></svg></div><div class="flow-title">Farm Sourcing</div><div class="flow-desc">Vetted partner farms across Khyber Pakhtunkhwa, Punjab, and Sindh</div></div>
+      <div class="flow-step"><div class="flow-dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 3v6l-4 9a2 2 0 002 3h10a2 2 0 002-3l-4-9V3"/></svg></div><div class="flow-title">Quality Check</div><div class="flow-desc">Lab testing, candling, and grading at collection point</div></div>
+      <div class="flow-step"><div class="flow-dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="6" width="16" height="14" rx="2"/><path d="M9 10v6M15 10v6"/></svg></div><div class="flow-title">Cold Storage</div><div class="flow-desc">2–5°C controlled storage across 3 regional hubs</div></div>
+      <div class="flow-step"><div class="flow-dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="8" width="16" height="11" rx="1.5"/><path d="M8 8V6a4 4 0 018 0v2"/></svg></div><div class="flow-title">Packing</div><div class="flow-desc">Partner-branded or standard packaging applied</div></div>
+      <div class="flow-step"><div class="flow-dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 16V8a1 1 0 011-1h9v9M3 16h11M16 16h2l2-3v-3h-4M6 18a2 2 0 100-4 2 2 0 000 4zM17 18a2 2 0 100-4 2 2 0 000 4z"/></svg></div><div class="flow-title">Delivery</div><div class="flow-desc">Refrigerated last-mile delivery to partner premises</div></div>
+    </div>
+
+    <div class="card-grid cols-3 reveal-stagger" style="margin-top:70px">
+      <div class="feature-card">
+        <div class="f-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"/></svg></div>
+        <div class="f-title">Cold Chain Management</div>
+        <div class="f-body">Continuous 2–5°C temperature monitoring from collection to delivery, with IoT loggers and real-time GPS on every vehicle.</div>
+      </div>
+      <div class="feature-card">
+        <div class="f-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 11l9-8 9 8M5 10v10h14V10M9 21V14h6v7"/></svg></div>
+        <div class="f-title">Regional Distribution Hubs</div>
+        <div class="f-body">Three hubs in Lahore, Karachi, and Peshawar ensure next-day delivery to 25+ cities at a 98% success rate.</div>
+      </div>
+      <div class="feature-card">
+        <div class="f-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="7" cy="7" r="3"/><circle cx="17" cy="7" r="3"/><circle cx="12" cy="17" r="3"/><path d="M9.5 8.5L14.5 15.5M14.5 8.5L9.5 15.5"/></svg></div>
+        <div class="f-title">Farm Network</div>
+        <div class="f-body">40+ vetted farm partners across Pakistan, audited annually for animal welfare, hygiene, and environmental compliance.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════ EXPORT & DISTRIBUTION ════════════════ -->
+<section class="section-alt" id="distribution">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div class="tag-eyebrow">Export & Distribution</div>
+      <h2 class="sec-title">A Distribution Network Built for Scale</h2>
+      <p class="sec-sub">A cold-chain fleet and regional hub network designed to move volume reliably — with B2B quoting fast enough to keep pace with your demand.</p>
+    </div>
+    <div class="card-grid cols-3 reveal-stagger">
+      <div class="feature-card">
+        <div class="f-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 16V8a1 1 0 011-1h9v9M3 16h11M16 16h2l2-3v-3h-4M6 18a2 2 0 100-4 2 2 0 000 4zM17 18a2 2 0 100-4 2 2 0 000 4z"/></svg></div>
+        <div class="f-title">35-Vehicle Cold-Chain Fleet</div>
+        <div class="f-body">A dedicated refrigerated fleet running fixed and on-demand routes across our full delivery footprint.</div>
+      </div>
+      <div class="feature-card">
+        <div class="f-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 010 18M12 3a14 14 0 000 18"/></svg></div>
+        <div class="f-title">25+ Cities Covered</div>
+        <div class="f-body">Distribution from Lahore, Karachi, and Peshawar hubs reaches every major commercial center in the region.</div>
+      </div>
+      <div class="feature-card">
+        <div class="f-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 12l2 2 4-4M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
+        <div class="f-title">4-Hour B2B Quoting</div>
+        <div class="f-body">Submit a quote request and receive a formal proposal within 4 business hours, with contracts active in 3 working days.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════ WHY CHOOSE US ════════════════ -->
+<section id="why-us">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div class="tag-eyebrow">Why Choose Us</div>
+      <h2 class="sec-title">A Single, Dependable Source for Egg Trading & Supply</h2>
+    </div>
+    <div class="why-grid reveal-stagger">
+      <div class="why-card"><div class="why-num">01</div><div><div class="why-title">Managed Supply Chain</div><div class="why-body">End-to-end logistics from farm gate to delivery dock — sourcing, quality checks, cold chain, and last-mile delivery all handled for you.</div></div></div>
+      <div class="why-card"><div class="why-num">02</div><div><div class="why-title">Full Documentation, Every Time</div><div class="why-body">Every delivery comes with batch certificates, lab results, temperature logs, and chain-of-custody paperwork ready for your auditors.</div></div></div>
+      <div class="why-card"><div class="why-num">03</div><div><div class="why-title">Batch-Level Traceability</div><div class="why-body">Scan any box to trace the eggs back to the specific farm, hen flock, collection date, and processing time — in real time.</div></div></div>
+      <div class="why-card"><div class="why-num">04</div><div><div class="why-title">Partner Program & Market Intelligence</div><div class="why-body">A three-tier partner framework with volume pricing, dedicated support, and weekly price and supply forecasts.</div></div></div>
+      <div class="why-card"><div class="why-num">05</div><div><div class="why-title">ESG-Aligned Trading</div><div class="why-body">Practices audited annually for environmental impact, fair labor, and ethical governance — a 92/100 third-party ESG score.</div></div></div>
+      <div class="why-card"><div class="why-num">06</div><div><div class="why-title">Compliance Assured</div><div class="why-body">All products meet PSQCA, Halal, and ISO 22000 standards, so your procurement team doesn't have to chase paperwork.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════ COMPANY STATISTICS ════════════════ -->
+<section class="stats-band" id="stats">
+  <div class="container">
+    <div class="sec-head center reveal" style="margin-left:auto;margin-right:auto">
+      <div class="tag-eyebrow" style="justify-content:center;color:var(--gold-lt)">Company Statistics</div>
+      <h2 class="sec-title" style="color:#fff">Performance That Speaks for Itself</h2>
+    </div>
+    <div class="stats-band-grid reveal-stagger">
+      <div class="sb-card"><div class="sb-num"><span class="sb-count" data-count="280">0</span><span class="suffix">+</span></div><div class="sb-divider"></div><div class="sb-lbl">Active partners & B2B clients</div></div>
+      <div class="sb-card"><div class="sb-num"><span class="sb-count" data-count="500">0</span><span class="suffix">K</span></div><div class="sb-divider"></div><div class="sb-lbl">Eggs traded & supplied weekly</div></div>
+      <div class="sb-card"><div class="sb-num"><span class="sb-count" data-count="92">0</span><span class="suffix">/100</span></div><div class="sb-divider"></div><div class="sb-lbl">ESG sustainability score</div></div>
+      <div class="sb-card"><div class="sb-num"><span class="sb-count" data-count="100">0</span><span class="suffix">%</span></div><div class="sb-divider"></div><div class="sb-lbl">Batches fully traceable</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════ INDUSTRIES SERVED ════════════════ -->
+<section class="section-alt" id="industries">
+  <div class="container">
+    <div class="sec-head center reveal" style="margin-left:auto;margin-right:auto">
+      <div class="tag-eyebrow" style="justify-content:center">Industries Served</div>
+      <h2 class="sec-title">Built for Every Commercial Food Buyer</h2>
+    </div>
+    <div class="industry-grid reveal-stagger">
+      <div class="industry-card"><div class="ind-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6"/></svg></div><div class="ind-name">Hotels & Restaurants</div></div>
+      <div class="industry-card"><div class="ind-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 14h16l-1.5 6h-13L4 14zM6 14V8a6 6 0 0112 0v6"/></svg></div><div class="ind-name">Bakery & Confectionery</div></div>
+      <div class="industry-card"><div class="ind-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 9l1-5h16l1 5M4 9v11h16V9M9 21v-5h6v5"/></svg></div><div class="ind-name">Retail & Supermarkets</div></div>
+      <div class="industry-card"><div class="ind-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 012-2h4a2 2 0 012 2v2"/></svg></div><div class="ind-name">Food Manufacturers</div></div>
+      <div class="industry-card"><div class="ind-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2v20M5 7h14M5 12h14M5 17h14"/></svg></div><div class="ind-name">Hospitals & Institutions</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════ OUR PROCESS ════════════════ -->
+<section id="process">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div class="tag-eyebrow">Our Process</div>
+      <h2 class="sec-title">A Documented, Auditable Process at Every Stage</h2>
+    </div>
+    <div class="process-grid reveal-stagger">
+      <div class="proc-card"><div class="proc-num">01</div><div class="proc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2C8 7 5 11.5 5 15a7 7 0 0014 0c0-3.5-3-8-7-13z"/></svg></div><div class="proc-title">Collection</div><div class="proc-body">Eggs collected from certified farms within 6 hours of laying. Each collection logged with farm ID, flock ID and timestamp.</div></div>
+      <div class="proc-card"><div class="proc-num">02</div><div class="proc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 3h6M10 3v5l-5 9a2 2 0 002 3h10a2 2 0 002-3l-5-9V3"/></svg></div><div class="proc-title">Laboratory Testing</div><div class="proc-body">Salmonella swabs, shell strength, interior quality (Haugh units) and yolk color measured on every batch.</div></div>
+      <div class="proc-card"><div class="proc-num">03</div><div class="proc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3v2m0 14v2m9-9h-2M5 12H3m14.5-6.5l-1.4 1.4M7 17.5l-1.4 1.4m11.9 0L16 17.5M7 6.5L5.6 5.1"/><circle cx="12" cy="12" r="4"/></svg></div><div class="proc-title">Candling & Grading</div><div class="proc-body">Automated candling detects cracks, blood spots and internal defects. Eggs are graded by size and shell quality.</div></div>
+      <div class="proc-card"><div class="proc-num">04</div><div class="proc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18M7 14h2"/></svg></div><div class="proc-title">Marking & Coding</div><div class="proc-body">Each egg is stamped with a batch code linking to the full digital audit trail accessible via our client portal.</div></div>
+      <div class="proc-card"><div class="proc-num">05</div><div class="proc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="8" width="16" height="11" rx="1.5"/><path d="M8 8V6a4 4 0 018 0v2"/></svg></div><div class="proc-title">Packing</div><div class="proc-body">Packed under hygienic conditions in client-specified or standard packaging, with batch certs included in every box.</div></div>
+      <div class="proc-card"><div class="proc-num">06</div><div class="proc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 16V8a1 1 0 011-1h9v9M3 16h11M16 16h2l2-3v-3h-4M6 18a2 2 0 100-4 2 2 0 000 4zM17 18a2 2 0 100-4 2 2 0 000 4z"/></svg></div><div class="proc-title">Cold-Chain Delivery</div><div class="proc-body">Refrigerated delivery with IoT temperature logging. Delivery receipts include full chain-of-custody sign-off.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════ QUALITY ASSURANCE ════════════════ -->
+<section class="section-alt" id="quality">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div class="tag-eyebrow">Quality Assurance</div>
+      <h2 class="sec-title">Certified. Audited. Fully Traceable.</h2>
+      <p class="sec-sub">From the hen that laid it to the business that received it — our digital traceability system gives you complete visibility over every egg in your supply chain.</p>
+    </div>
+
+    <div class="trace-panel reveal">
+      <div class="trace-top">
+        <div><div class="trace-top-title">Sample Batch Trace</div><div class="trace-top-sub">Live example — batch delivered 22 June 2025</div></div>
+        <div class="trace-id">BATCH-2025-06-22-A47</div>
+      </div>
+      <div class="trace-steps flow-wrap" id="traceWrap">
+        <div class="flow-line"><div class="fill" id="traceFill"></div></div>
+        <div class="flow-step"><div class="flow-dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg></div><div class="flow-title">Farm Collected</div><div class="flow-desc">06:15 AM</div></div>
+        <div class="flow-step"><div class="flow-dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg></div><div class="flow-title">Lab Tested</div><div class="flow-desc">09:30 AM</div></div>
+        <div class="flow-step"><div class="flow-dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg></div><div class="flow-title">Graded & Packed</div><div class="flow-desc">11:00 AM</div></div>
+        <div class="flow-step"><div class="flow-dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg></div><div class="flow-title">Dispatched</div><div class="flow-desc">01:00 PM</div></div>
+        <div class="flow-step"><div class="flow-dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg></div><div class="flow-title">Delivered</div><div class="flow-desc">04:45 PM</div></div>
+      </div>
+    </div>
+
+    <div class="sec-head reveal" style="margin-bottom:30px">
+      <div class="tag-eyebrow">Active Certifications</div>
+    </div>
+    <div class="cert-grid reveal-stagger">
+      <div class="cert-card"><div class="cert-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></div><div><div class="cert-name">ISO 22000:2018</div><div class="cert-body">Food Safety Management System</div><span class="cert-status">Active</span></div></div>
+      <div class="cert-card"><div class="cert-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l8 4v6c0 5-3.6 8-8 10-4.4-2-8-5-8-10V6l8-4z"/></svg></div><div><div class="cert-name">PSQCA</div><div class="cert-body">Pakistan Standards & Quality Control</div><span class="cert-status">Active</span></div></div>
+      <div class="cert-card"><div class="cert-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg></div><div><div class="cert-name">Halal Certified</div><div class="cert-body">PNAC-accredited Halal certification</div><span class="cert-status">Active</span></div></div>
+      <div class="cert-card"><div class="cert-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-7 8-7s8 3 8 7"/></svg></div><div><div class="cert-name">Animal Welfare</div><div class="cert-body">Farm animal welfare standard compliance</div><span class="cert-status">Active</span></div></div>
+      <div class="cert-card"><div class="cert-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"/></svg></div><div><div class="cert-name">Environmental Audit</div><div class="cert-body">Annual third-party environmental assessment</div><span class="cert-status">Active</span></div></div>
+      <div class="cert-card"><div class="cert-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 3h6M10 3v5l-5 9a2 2 0 002 3h10a2 2 0 002-3l-5-9V3"/></svg></div><div><div class="cert-name">HACCP</div><div class="cert-body">Hazard Analysis Critical Control Points</div><span class="cert-status">Active</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════ TESTIMONIALS ════════════════ -->
+<section id="testimonials">
+  <div class="container">
+    <div class="sec-head center reveal" style="margin-left:auto;margin-right:auto">
+      <div class="tag-eyebrow" style="justify-content:center">Client Testimonials</div>
+      <h2 class="sec-title">Trusted by Commercial Buyers Across the Region</h2>
+    </div>
+    <div class="test-grid reveal-stagger">
+      <div class="test-card">
+        <div class="test-quote-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 7h4v4l-3 6H5l2-6H4V7zm9 0h4v4l-3 6h-3l2-6h-3V7z"/></svg></div>
+        <div class="test-text">Their batch documentation has made our audits effortless — every certificate and lab result is ready before our team even asks for it.</div>
+        <div class="test-person"><div class="test-avatar">HM</div><div><div class="test-name">Procurement Manager</div><div class="test-role">Hotel Chain, Lahore</div></div></div>
+      </div>
+      <div class="test-card">
+        <div class="test-quote-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 7h4v4l-3 6H5l2-6H4V7zm9 0h4v4l-3 6h-3l2-6h-3V7z"/></svg></div>
+        <div class="test-text">As a Gold Partner, the volume pricing and dedicated account manager have completely changed how predictable our supply costs are.</div>
+        <div class="test-person"><div class="test-avatar">BR</div><div><div class="test-name">Operations Director</div><div class="test-role">Bakery Group, Karachi</div></div></div>
+      </div>
+      <div class="test-card">
+        <div class="test-quote-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 7h4v4l-3 6H5l2-6H4V7zm9 0h4v4l-3 6h-3l2-6h-3V7z"/></svg></div>
+        <div class="test-text">The QR traceability is a genuine differentiator — our quality team can verify a batch's full history in seconds, without a single phone call.</div>
+        <div class="test-person"><div class="test-avatar">FM</div><div><div class="test-name">QA Lead</div><div class="test-role">Food Manufacturer, Peshawar</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════ FAQ ════════════════ -->
+<section class="section-alt" id="faq">
+  <div class="container">
+    <div class="sec-head center reveal" style="margin-left:auto;margin-right:auto">
+      <div class="tag-eyebrow" style="justify-content:center">FAQ</div>
+      <h2 class="sec-title">Frequently Asked Questions</h2>
+    </div>
+    <div class="faq-list reveal">
+      <div class="faq-item">
+        <div class="faq-q">How quickly can I receive a formal B2B quote?<div class="plus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg></div></div>
+        <div class="faq-a"><div class="faq-a-inner">Submit a quote request and our commercial team responds with a formal quotation within 4 business hours. Contracts can be activated within 3 working days.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What is the minimum order quantity?<div class="plus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg></div></div>
+        <div class="faq-a"><div class="faq-a-inner">Minimum orders vary by product — from 50 trays/week for organic eggs up to 500 trays/week for standard Grade A white shell eggs. Liquid whole egg starts at 500kg/week.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Which certifications and standards do you comply with?<div class="plus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg></div></div>
+        <div class="faq-a"><div class="faq-a-inner">All products meet ISO 22000:2018, PSQCA, and PNAC-accredited Halal standards, alongside active Animal Welfare, Environmental Audit, and HACCP certifications.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Can I trace a specific delivered batch?<div class="plus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg></div></div>
+        <div class="faq-a"><div class="faq-a-inner">Yes. Every box carries a batch code — scan it or look it up in the client portal to see farm collection, lab testing, grading, dispatch and delivery timestamps.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">How does the Partner Program pricing work?<div class="plus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg></div></div>
+        <div class="faq-a"><div class="faq-a-inner">Pricing is tiered by weekly volume — Silver (100–499 trays), Gold (500–1,999 trays), and Platinum (2,000+ trays) — each unlocking deeper discounts and additional services.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Which cities and regions do you deliver to?<div class="plus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg></div></div>
+        <div class="faq-a"><div class="faq-a-inner">Our distribution hubs in Lahore, Karachi, and Peshawar serve 25+ cities directly, with next-day delivery at a 98% success rate.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════ CTA ════════════════ -->
+<section>
+  <div class="container">
+    <div class="cta-band reveal">
+      <div class="cta-left">
+        <div class="cta-title">Ready for predictable, certified egg supply?</div>
+        <div class="cta-sub">Get a formal B2B quotation in 4 business hours, or speak with our partnerships team about the right tier for your business.</div>
+      </div>
+      <div class="cta-actions">
+        <a href="#contact" class="btn btn-gold" data-ripple><span>Request a Quote</span></a>
+        <a href="#contact" class="btn btn-outline" data-ripple><span>Talk to Us</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════ CONTACT ════════════════ -->
+<section class="section-alt" id="contact">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div class="tag-eyebrow">Contact Us</div>
+      <h2 class="sec-title">B2B Egg Supply — Custom Pricing in 4 Hours</h2>
+      <p class="sec-sub">Fill in the form below. Our commercial team will respond with a formal quotation within 4 business hours.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info reveal">
+        <div class="ci-item"><div class="ci-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 5a2 2 0 012-2h3l2 5-2 1a11 11 0 005 5l1-2 5 2v3a2 2 0 01-2 2A16 16 0 013 7V5z"/></svg></div><div><div class="ci-label">Phone</div><div class="ci-value">+92 XXX XXXXXXX</div></div></div>
+        <div class="ci-item"><div class="ci-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></div><div><div class="ci-label">Email</div><div class="ci-value">b2b@yousafzaiegro.com</div></div></div>
+        <div class="ci-item"><div class="ci-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s7-7.5 7-12a7 7 0 10-14 0c0 4.5 7 12 7 12z"/><circle cx="12" cy="9" r="2.4"/></svg></div><div><div class="ci-label">Headquarters</div><div class="ci-value">Peshawar, Khyber Pakhtunkhwa, Pakistan</div></div></div>
+        <div class="ci-item"><div class="ci-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div><div><div class="ci-label">Response Time</div><div class="ci-value">Formal quotation within 4 business hours</div></div></div>
+      </div>
+      <div class="form-card reveal">
+        <div class="form-row">
+          <div class="f-group"><label class="f-label">Company Name *</label><input class="f-input" type="text" placeholder="Your company name"></div>
+          <div class="f-group"><label class="f-label">Industry *</label>
+            <select class="f-input"><option>Hotel / Restaurant / Café</option><option>Bakery / Confectionery</option><option>Retail / Supermarket</option><option>Food Manufacturer</option><option>Hospital / Institution</option><option>Other</option></select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="f-group"><label class="f-label">Contact Name *</label><input class="f-input" type="text" placeholder="Full name"></div>
+          <div class="f-group"><label class="f-label">Job Title</label><input class="f-input" type="text" placeholder="e.g. Procurement Manager"></div>
+        </div>
+        <div class="form-row">
+          <div class="f-group"><label class="f-label">Email *</label><input class="f-input" type="email" placeholder="you@company.com"></div>
+          <div class="f-group"><label class="f-label">Phone *</label><input class="f-input" type="tel" placeholder="+92 XXX XXXXXXX"></div>
+        </div>
+        <div class="form-row">
+          <div class="f-group"><label class="f-label">Product Type *</label>
+            <select class="f-input"><option>Commercial Grade A White</option><option>Free-Range Brown</option><option>Certified Organic</option><option>Processing Grade</option><option>Mixed / Multiple</option></select>
+          </div>
+          <div class="f-group"><label class="f-label">Weekly Volume (trays) *</label>
+            <select class="f-input"><option>Under 50</option><option>50–199</option><option>200–499</option><option>500–1,999</option><option>2,000+</option></select>
+          </div>
+        </div>
+        <div class="f-group"><label class="f-label">Delivery Location *</label><input class="f-input" type="text" placeholder="City / address for delivery"></div>
+        <div class="f-group"><label class="f-label">Additional Notes</label><textarea class="f-input" placeholder="Special requirements, certifications needed, start date, etc."></textarea></div>
+        <button class="btn btn-navy btn-block" data-ripple type="button"><span>Submit Quote Request →</span></button>
+        <div class="form-note">⏱ You'll receive a formal quotation within 4 business hours. No commitment required.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════ FOOTER ════════════════ -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="brand">
+          <img src="src/assets/logo.svg" alt="Yousafzai EGRO" style="height:42px;width:auto">
+        </div>
+        <p class="footer-desc">International B2B egg trading and supply, built on traceability, compliance, and reliable delivery — from certified farms to your business.</p>
+        <div class="social-row">
+          <a href="#"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 10-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.7-3.9 1.1 0 2.2.2 2.5.3v2.7h-1.7c-1.3 0-1.6.6-1.6 1.5V12h2.9l-.5 2.9h-2.4v7A10 10 0 0022 12z"/></svg></a>
+          <a href="#"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h14zM8.3 18V9.7H5.7V18h2.6zM7 8.6a1.5 1.5 0 100-3 1.5 1.5 0 000 3zM18.3 18v-4.6c0-2.5-1.3-3.6-3-3.6-1.4 0-2 .8-2.4 1.3V9.7H10.3c0 .3 0 8.3 0 8.3h2.6v-4.6c0-.3 0-.5.1-.7.2-.6.8-1.2 1.7-1.2 1.2 0 1.7.9 1.7 2.2V18h2.6z"/></svg></a>
+          <a href="#"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm5.7 6.4l-1.6 7.5c-.1.6-.4.7-.9.5l-2.5-1.8-1.2 1.2c-.1.1-.3.2-.4.2l.2-2.5 4.6-4.1c.2-.2 0-.3-.2-.1l-5.6 3.6-2.4-.8c-.5-.2-.5-.5.1-.7l9.4-3.6c.4-.2.8.1.5.6z"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Company</div>
+        <a href="#about">About Us</a><a href="#overview">Company Overview</a><a href="#why-us">Why Choose Us</a><a href="#testimonials">Testimonials</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Solutions</div>
+        <a href="#products">Products</a><a href="#solutions">Trading Solutions</a><a href="#supply-chain">Supply Chain</a><a href="#distribution">Export & Distribution</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Resources</div>
+        <a href="#process">Our Process</a><a href="#quality">Quality Assurance</a><a href="#faq">FAQ</a><a href="#contact">Contact Us</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Yousafzai EGRO (Pvt.) Ltd. — Egg Traders. All rights reserved.</span>
+      <span>Peshawar · Lahore · Karachi</span>
+    </div>
+  </div>
+</footer>
+
+<div class="back-top" id="backTop"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg></div>
+
+<script>
+/* loader */
+window.addEventListener('load', () => {
+  setTimeout(() => document.getElementById('loader').classList.add('hide'), 500);
+});
+
+/* navbar scroll state */
+const nav = document.getElementById('nav');
+const backTop = document.getElementById('backTop');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 40) { nav.classList.add('scrolled'); } else { nav.classList.remove('scrolled'); }
+  if (window.scrollY > 600) { backTop.classList.add('show'); } else { backTop.classList.remove('show'); }
+});
+backTop.addEventListener('click', () => window.scrollTo({top:0,behavior:'smooth'}));
+
+/* mobile menu */
+const menuToggle = document.getElementById('menuToggle');
+const mobileOverlay = document.getElementById('mobileOverlay');
+const mobilePanel = document.getElementById('mobilePanel');
+function openMobile() {
+  menuToggle.classList.add('open');
+  mobileOverlay.classList.add('open');
+  mobilePanel.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeMobile() {
+  menuToggle.classList.remove('open');
+  mobileOverlay.classList.remove('open');
+  mobilePanel.classList.remove('open');
+  document.body.style.overflow = '';
+}
+menuToggle.addEventListener('click', () => {
+  if (menuToggle.classList.contains('open')) { closeMobile(); } else { openMobile(); }
+});
+mobileOverlay.addEventListener('click', closeMobile);
+document.querySelectorAll('.m-link').forEach(l => l.addEventListener('click', closeMobile));
+
+/* scroll-spy active nav link */
+const navLinks = document.querySelectorAll('.nav-link');
+const sections = ['about','products','solutions','process','quality','contact'].map(id => document.getElementById(id));
+const spyObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      navLinks.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#'+entry.target.id));
+    }
+  });
+}, {rootMargin: '-45% 0px -50% 0px'});
+sections.forEach(s => s && spyObserver.observe(s));
+
+/* reveal on scroll */
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) { entry.target.classList.add('in'); revealObserver.unobserve(entry.target); }
+  });
+}, {threshold: 0.15});
+document.querySelectorAll('.reveal, .reveal-stagger').forEach(el => revealObserver.observe(el));
+
+/* counter animation */
+function animateCount(el, target, suffixEl) {
+  let start = 0;
+  const dur = 1600;
+  const startTime = performance.now();
+  function step(now) {
+    const progress = Math.min((now - startTime) / dur, 1);
+    const eased = 1 - Math.pow(1 - progress, 3);
+    el.textContent = Math.floor(eased * target);
+    if (progress < 1) requestAnimationFrame(step);
+    else el.textContent = target;
+  }
+  requestAnimationFrame(step);
+}
+const countObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const el = entry.target;
+      const target = parseInt(el.getAttribute('data-count'), 10);
+      animateCount(el, target);
+      countObserver.unobserve(el);
+    }
+  });
+}, {threshold: 0.4});
+document.querySelectorAll('[data-count]').forEach(el => countObserver.observe(el));
+
+/* flow line fill animation */
+function lineFillObserver(wrapId, fillId) {
+  const wrap = document.getElementById(wrapId);
+  const fill = document.getElementById(fillId);
+  if (!wrap || !fill) return;
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        wrap.classList.add('lit');
+        fill.style.width = '100%';
+        obs.unobserve(entry.target);
+      }
+    });
+  }, {threshold: 0.3});
+  obs.observe(wrap);
+}
+lineFillObserver('flowWrap','flowFill');
+lineFillObserver('traceWrap','traceFill');
+
+/* FAQ accordion */
+document.querySelectorAll('.faq-item').forEach(item => {
+  const q = item.querySelector('.faq-q');
+  const a = item.querySelector('.faq-a');
+  q.addEventListener('click', () => {
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => { i.classList.remove('open'); i.querySelector('.faq-a').style.maxHeight = null; });
+    if (!isOpen) { item.classList.add('open'); a.style.maxHeight = a.scrollHeight + 'px'; }
+  });
+});
+
+/* button ripple */
+document.querySelectorAll('[data-ripple]').forEach(btn => {
+  btn.addEventListener('click', function(e) {
+    const rect = this.getBoundingClientRect();
+    const ripple = document.createElement('span');
+    const size = Math.max(rect.width, rect.height);
+    ripple.className = 'ripple';
+    ripple.style.width = ripple.style.height = size + 'px';
+    ripple.style.left = (e.clientX - rect.left - size/2) + 'px';
+    ripple.style.top = (e.clientY - rect.top - size/2) + 'px';
+    this.appendChild(ripple);
+    setTimeout(() => ripple.remove(), 650);
+  });
+});
+
+/* hero parallax float on mouse move */
+const heroVisual = document.querySelector('.hero-visual');
+if (heroVisual) {
+  document.querySelector('.hero').addEventListener('mousemove', (e) => {
+    const x = (e.clientX / window.innerWidth - 0.5) * 14;
+    const y = (e.clientY / window.innerHeight - 0.5) * 14;
+    heroVisual.style.transform = `translate(${x}px, ${y}px)`;
+  });
+}
+</script>
+</body>
+</html>

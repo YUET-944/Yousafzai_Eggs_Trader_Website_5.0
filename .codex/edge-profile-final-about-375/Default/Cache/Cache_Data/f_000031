@@ -1,0 +1,1362 @@
+export const defaultContent = {
+	hero: {
+		eyebrow: "Egg Trading & Poultry Farms — Since 1960",
+		backgroundImage: "",
+		h1Line1: "Trusted Egg Traders",
+		h1Highlight: "Quality & Trust",
+		h1Line2: "Built on",
+		body: "Yousafzai Eggs Traders is a leading supplier and distributor of high-quality fresh eggs in KPK, Pakistan. We deliver hygienic, farm-fresh eggs with consistent quality and reliable service.",
+		primaryCta: {
+			label: "Contact Us",
+			action: "/contact"
+		},
+		secondaryCta: {
+			label: "Explore Our Supply Chain",
+			action: "/"
+		},
+		trustItems: [
+			{
+				icon: "ShieldCheck",
+				text: "HACCP Certified"
+			},
+			{
+				icon: "CheckCircle2",
+				text: "IHC Halal Certified"
+			},
+			{
+				icon: "Home",
+				text: "KPK, Punjab & Sindh"
+			}
+		],
+		cards: [
+			{
+				value: "60+",
+				label: "Years of experience"
+			},
+			{
+				value: "100%",
+				label: "Halal certified"
+			},
+			{
+				value: "500K+",
+				label: "Eggs traded weekly"
+			}
+		],
+		stats: [
+			{
+				value: "60",
+				suffix: "+",
+				label: "Years of experience"
+			},
+			{
+				value: "500",
+				suffix: "K+",
+				label: "Eggs traded weekly"
+			},
+			{
+				value: "3",
+				suffix: "",
+				label: "Provinces covered"
+			},
+			{
+				value: "100",
+				suffix: "%",
+				label: "Halal certified supply"
+			}
+		]
+	},
+	about: {
+		eyebrow: "About Yousafzai Eggs Traders",
+		title: "A Trusted Name in Egg Trading & Poultry Farming",
+		subtitle: "Yousafzai Eggs Traders is a trusted name in the poultry and egg distribution industry. With years of experience, we have built a strong supply network connecting farms to markets efficiently. Our focus is on quality assurance, timely delivery, and long-term business relationships.",
+		quote: "\"At Yousafzai Eggs Traders, we believe in quality, trust, and innovation. Our goal is not only to supply eggs but to transform the poultry industry by introducing modern processing solutions such as liquid egg production.\"",
+		quoteFooter: "Chairman's Message",
+		values: [
+			{
+				icon: "Box",
+				title: "Quality Assurance",
+				body: "Eggs sourced from approved and traceable poultry farms with regular quality inspection, grading, and hygienic handling."
+			},
+			{
+				icon: "ShieldCheck",
+				title: "Food Safety",
+				body: "Compliance with HACCP, Halal, and local food authority regulations. Hygienic storage and temperature-controlled transportation."
+			},
+			{
+				icon: "Clock",
+				title: "Reliable Supply",
+				body: "Consistent quality and grading with timely delivery and flexible order volumes through our strong supplier network."
+			}
+		],
+		paragraphs: [
+			"Established in 1960 in Mardan, Khyber Pakhtunkhwa, M/S Yousafzai Eggs Traders (Registration No. C955423) has over six decades of experience in the egg trading business. The company specializes in the procurement, candling, and distribution of fresh, Halal-certified table eggs to households, retailers, hotels, and institutional customers across KPK and other regions of Pakistan.",
+			"Over the years, the company has evolved from a traditional trading operation into a vertically integrated enterprise by investing in modern poultry farms at China Chowk, Attock (est. 2022) and Phalai Interchange, Malakand (est. 2025), and expanding its distribution network across KPK, Punjab, and Sindh.",
+			"Understanding the growing demand for processed and value-added food products, the company is expanding under the name Yousafzai Agri Foods (Pvt Ltd), establishing an Egg Liquid Processing Plant at Rashakai SEZ with a capacity to process 45,000 eggs per hour. Commercial production is planned by end of 2026."
+		],
+		team: [],
+		leadership: [{
+			name: "Chairman",
+			role: "Chairman & Founder",
+			bio: "At Yousafzai Eggs Traders, we believe in quality, trust, and innovation. Our goal is not only to supply eggs but to transform the poultry industry by introducing modern processing solutions.",
+			image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=400&fit=crop"
+		}]
+	},
+	overview: { rows: [
+		{
+			label: "Company Name",
+			value: "M/S Yousafzai Eggs Traders & Poultry Farms"
+		},
+		{
+			label: "Registration",
+			value: "C955423 (SECP Registered)"
+		},
+		{
+			label: "Established",
+			value: "1960, Mardan, Khyber Pakhtunkhwa"
+		},
+		{
+			label: "Business Type",
+			value: "Egg Trading, Poultry Farming & Distribution"
+		},
+		{
+			label: "Trading Volume",
+			value: "500,000+ eggs / week"
+		},
+		{
+			label: "Coverage",
+			value: "KPK, Punjab & Sindh — All major dealers"
+		},
+		{
+			label: "Farms",
+			value: "China Chowk, Attock (2022) · Phalai, Malakand (2025)"
+		},
+		{
+			label: "Future Expansion",
+			value: "Yousafzai Agri Foods (Pvt Ltd) — Rashakai SEZ"
+		}
+	] },
+	products: {
+		eyebrow: "Products",
+		title: "Egg Products for Commercial Supply",
+		subtitle: "Compare available egg products, formats, and grade references. Final specifications can be confirmed with our team during quoting.",
+		items: [
+			{
+				badge: "Grade A",
+				icon: "Feather",
+				gradient: "from-navy to-navy-2",
+				name: "Commercial Grade A White Eggs",
+				grade: "Grade A",
+				format: "White shell eggs",
+				packaging: "Packaging options to be confirmed",
+				suitableFor: "Hotels, restaurants, caterers, and commercial kitchens",
+				description: "Consistent white shell eggs for commercial buyers, with final sizes and supply details confirmed during quoting.",
+				tags: ["Daily Supply", "S-XL"],
+				image: "https://images.unsplash.com/photo-1582722872445-44dc5f7e3c8f?w=600&h=400&fit=crop"
+			},
+			{
+				badge: "Free Range",
+				icon: "Feather",
+				gradient: "from-amber-800 to-amber-600",
+				name: "Free-Range Brown Eggs",
+				grade: "Grade details pending verification",
+				format: "Brown shell eggs",
+				packaging: "Packaging options to be confirmed",
+				suitableFor: "Premium food service and retail-style requirements",
+				description: "Brown shell egg options for buyers who need a free-range product category. Certification details should be confirmed during quoting.",
+				tags: ["Free Range", "M, L"],
+				image: "https://images.unsplash.com/photo-1598965675045-45c5e72c7d05?w=600&h=400&fit=crop"
+			},
+			{
+				badge: "Organic",
+				icon: "Feather",
+				gradient: "from-green-800 to-green-600",
+				name: "Organic Egg Options",
+				grade: "Organic grade details pending verification",
+				format: "Shell eggs",
+				packaging: "Packaging options to be confirmed",
+				suitableFor: "Buyers seeking organic-positioned egg supply",
+				description: "Shell egg options for buyers seeking organic supply. Certification and documentation details should be confirmed during quoting.",
+				tags: ["Organic", "L"],
+				image: "https://images.unsplash.com/photo-1498654077810-12c21d4d6dc3?w=600&h=400&fit=crop"
+			},
+			{
+				badge: "Processing",
+				icon: "Package",
+				gradient: "from-indigo-800 to-indigo-600",
+				name: "Liquid Whole Egg",
+				grade: "Processing grade",
+				format: "Liquid whole egg",
+				packaging: "Bulk packaging to be confirmed",
+				suitableFor: "Food manufacturers, bakeries, and industrial kitchens",
+				description: "Liquid whole egg option for commercial food production. Processing and packaging details should be confirmed during quoting.",
+				tags: ["Industrial", "Bulk"],
+				image: "https://images.unsplash.com/photo-1587486913049-53fc88980cfc?w=600&h=400&fit=crop"
+			}
+		],
+		specs: [
+			{
+				name: "White Shell Eggs",
+				grade: "Grade A",
+				sizes: "S, M, L, XL",
+				moq: "500 trays/week",
+				lead: "24 hrs",
+				status: "In Stock",
+				statusClass: "stock"
+			},
+			{
+				name: "Brown Farm Eggs",
+				grade: "Grade A",
+				sizes: "M, L",
+				moq: "200 trays/week",
+				lead: "48 hrs",
+				status: "In Stock",
+				statusClass: "stock"
+			},
+			{
+				name: "Organic Eggs",
+				grade: "Organic Grade A",
+				sizes: "L",
+				moq: "50 trays/week",
+				lead: "72 hrs",
+				status: "Limited",
+				statusClass: "limited"
+			},
+			{
+				name: "Omega-3 Eggs",
+				grade: "Specialty",
+				sizes: "L, XL",
+				moq: "100 trays/week",
+				lead: "72 hrs",
+				status: "In Stock",
+				statusClass: "stock"
+			},
+			{
+				name: "Liquid Whole Egg",
+				grade: "Processing Grade",
+				sizes: "N/A (kg)",
+				moq: "500 kg/week",
+				lead: "72 hrs",
+				status: "In Stock",
+				statusClass: "stock"
+			}
+		]
+	},
+	solutions: {
+		eyebrow: "Trading Solutions",
+		title: "Grow With Us — Three Tiers, One Mission",
+		subtitle: "Whether you're a corner store or a national chain, our Partner Program gives you preferential pricing, dedicated support, and the tools to grow — backed by weekly market intelligence and ESG-aligned trading practices.",
+		tiers: [
+			{
+				badge: "Silver Partner",
+				name: "Silver",
+				desc: "100–499 trays per week",
+				featured: false,
+				features: [
+					"5% volume discount",
+					"Email account support",
+					"Weekly supply forecast",
+					"Standard packaging"
+				]
+			},
+			{
+				badge: "Gold Partner",
+				name: "Gold",
+				desc: "500–1,999 trays per week",
+				featured: true,
+				features: [
+					"12% volume discount",
+					"Dedicated account manager",
+					"Priority supply access",
+					"Co-branded packaging",
+					"Monthly market reports",
+					"Net-30 payment terms"
+				]
+			},
+			{
+				badge: "Platinum Partner",
+				name: "Platinum",
+				desc: "2,000+ trays per week",
+				featured: false,
+				features: [
+					"20%+ custom discount",
+					"C-Suite relationship access",
+					"Guaranteed supply contracts",
+					"Full private label support",
+					"Net-60 payment terms",
+					"ESG co-reporting"
+				]
+			}
+		]
+	},
+	supplyChain: {
+		eyebrow: "Supply Chain",
+		title: "A fully integrated cold chain",
+		subtitle: "From farm gate to your delivery dock — every stage is monitored, documented, and quality-checked.",
+		steps: [
+			{
+				icon: "Feather",
+				title: "Farm Sourcing",
+				desc: "Vetted partner farms across KP, Punjab, and Sindh — audited quarterly"
+			},
+			{
+				icon: "FlaskConical",
+				title: "Quality Check",
+				desc: "Salmonella swabs, Haugh unit testing, candling, and USDA grading"
+			},
+			{
+				icon: "Snowflake",
+				title: "Cold Storage",
+				desc: "2–5°C controlled storage across 3 regional hubs with IoT monitoring"
+			},
+			{
+				icon: "Package",
+				title: "Packing",
+				desc: "Client-specified or standard 30-egg tray packaging with batch labels"
+			},
+			{
+				icon: "Truck",
+				title: "Delivery",
+				desc: "Refrigerated last-mile delivery with real-time GPS and temp logging"
+			}
+		],
+		features: [
+			{
+				icon: "Sun",
+				title: "Cold Chain Management",
+				body: "Continuous 2–5°C temperature monitoring from collection to delivery, with IoT loggers and real-time GPS on every vehicle."
+			},
+			{
+				icon: "Home",
+				title: "Regional Distribution Hubs",
+				body: "Three hubs in Lahore, Karachi, and Mardan ensure next-day delivery to 25+ cities at a 98% success rate."
+			},
+			{
+				icon: "Share2",
+				title: "Farm Network",
+				body: "40+ vetted farm partners across Pakistan, audited annually for animal welfare, hygiene, and environmental compliance."
+			}
+		]
+	},
+	distribution: {
+		eyebrow: "Export & Distribution",
+		title: "A distribution network built for reliable volume",
+		subtitle: "A cold-chain fleet and regional hub network designed to move volume reliably — with fast B2B quoting and dependable delivery.",
+		features: [
+			{
+				icon: "Truck",
+				title: "35-Vehicle Cold-Chain Fleet",
+				body: "A dedicated refrigerated fleet running fixed and on-demand routes across our full delivery footprint."
+			},
+			{
+				icon: "Globe2",
+				title: "25+ Cities Covered",
+				body: "Distribution from Lahore, Karachi, and Mardan hubs reaches every major commercial center in the region."
+			},
+			{
+				icon: "CheckCircle2",
+				title: "4-Hour B2B Quoting",
+				body: "Submit a quote request and receive a formal proposal within 4 business hours, with contracts active in 3 working days."
+			}
+		]
+	},
+	whyUs: {
+		eyebrow: "Supply Chain Control",
+		title: "Supply Chain Control Center",
+		reasons: [
+			{
+				num: "01",
+				icon: "Warehouse",
+				title: "Certified Farms",
+				body: "Only certified partner farms with continuous quality monitoring.",
+				kpi: "120 Certified Farms",
+				status: "VERIFIED"
+			},
+			{
+				num: "02",
+				icon: "PackageOpen",
+				title: "Collection Center",
+				body: "GPS-verified hubs consolidating daily farm yields.",
+				kpi: "Daily Output Logged",
+				status: "CONSOLIDATED"
+			},
+			{
+				num: "03",
+				icon: "Microscope",
+				title: "Quality Inspection",
+				body: "AI vision, shell testing, and temperature checks.",
+				kpi: "98.6% Pass Rate",
+				status: "QUALITY PASSED"
+			},
+			{
+				num: "04",
+				icon: "FileCheck2",
+				title: "Documentation",
+				body: "Immutable batch certificates and lab results generated.",
+				kpi: "Blockchain Verified",
+				status: "CLEARED"
+			},
+			{
+				num: "05",
+				icon: "Snowflake",
+				title: "Cold Chain",
+				body: "Maintained via IoT sensors across 3 regional hubs.",
+				kpi: "2-5°C Maintained",
+				status: "TEMP CONTROLLED"
+			},
+			{
+				num: "06",
+				icon: "Truck",
+				title: "Customer Delivery",
+				body: "Refrigerated last-mile deployment to your dock.",
+				kpi: "100% On-Time",
+				status: "COMPLETED"
+			}
+		]
+	},
+	statsBand: { stats: [
+		{
+			value: "280",
+			suffix: "+",
+			label: "Active partners & B2B clients"
+		},
+		{
+			value: "500",
+			suffix: "K",
+			label: "Eggs traded & supplied weekly"
+		},
+		{
+			value: "92",
+			suffix: "/100",
+			label: "ESG sustainability score"
+		},
+		{
+			value: "100",
+			suffix: "%",
+			label: "Batches fully traceable"
+		}
+	] },
+	industries: [
+		{
+			icon: "Building2",
+			name: "Hotels & Restaurants"
+		},
+		{
+			icon: "ChefHat",
+			name: "Bakery & Confectionery"
+		},
+		{
+			icon: "Store",
+			name: "Retail & Supermarkets"
+		},
+		{
+			icon: "Factory",
+			name: "Food Manufacturers"
+		},
+		{
+			icon: "Hospital",
+			name: "Hospitals & Institutions"
+		}
+	],
+	process: [
+		{
+			num: "01",
+			icon: "Feather",
+			title: "Collection",
+			body: "Eggs are collected from certified farms within 6 hours of laying. Each collection is logged with farm ID, flock ID, and timestamp."
+		},
+		{
+			num: "02",
+			icon: "FlaskConical",
+			title: "Laboratory Testing",
+			body: "Salmonella swabs, shell strength, interior quality (Haugh units), and yolk color measured on every batch."
+		},
+		{
+			num: "03",
+			icon: "ScanLine",
+			title: "Candling & Grading",
+			body: "Automated candling detects cracks, blood spots and internal defects. Eggs are graded by size and shell quality."
+		},
+		{
+			num: "04",
+			icon: "Printer",
+			title: "Marking & Coding",
+			body: "Each egg is stamped with a batch code linking to the full digital audit trail accessible via our client portal."
+		},
+		{
+			num: "05",
+			icon: "Package",
+			title: "Packing",
+			body: "Packed under hygienic conditions in client-specified or standard packaging, with batch certificates included in every box."
+		},
+		{
+			num: "06",
+			icon: "Truck",
+			title: "Cold-Chain Delivery",
+			body: "Refrigerated delivery with IoT temperature logging. Delivery receipts include delivery documentation."
+		}
+	],
+	quality: {
+		eyebrow: "Quality Assurance",
+		title: "Quality You Can Verify",
+		subtitle: "Our traceability process helps customers follow each batch from collection to delivery.",
+		batch: {
+			id: "BATCH-2025-06-22-A47",
+			title: "Sample Batch Trace",
+			subtitle: "Sample batch delivered 22 June 2025",
+			steps: [
+				{
+					title: "Farm Collected",
+					time: "06:15 AM"
+				},
+				{
+					title: "Lab Tested",
+					time: "09:30 AM"
+				},
+				{
+					title: "Graded & Packed",
+					time: "11:00 AM"
+				},
+				{
+					title: "Dispatched",
+					time: "01:00 PM"
+				},
+				{
+					title: "Delivered",
+					time: "04:45 PM"
+				}
+			]
+		},
+		certs: [
+			{
+				icon: "ClipboardList",
+				name: "SECP Registration",
+				body: "Certificate of Incorporation — Registration No. C955423",
+				status: "Active"
+			},
+			{
+				icon: "ShieldCheck",
+				name: "FBR NTN Certificate",
+				body: "Federal Board of Revenue — National Tax Number",
+				status: "Active"
+			},
+			{
+				icon: "CheckCircle2",
+				name: "STRN",
+				body: "Sales Tax Registration Number — Provincial Revenue",
+				status: "Active"
+			},
+			{
+				icon: "Users",
+				name: "Chamber of Commerce",
+				body: "Mardan Chamber of Commerce & Industry Membership",
+				status: "Active"
+			},
+			{
+				icon: "FlaskConical",
+				name: "ACI HACCP",
+				body: "Hazard Analysis Critical Control Points — Yousafzai Agri Foods (2026–2029)",
+				status: "Active"
+			},
+			{
+				icon: "Leaf",
+				name: "IHC Halal",
+				body: "International Halal Certification — Yousafzai Agri Foods (2026–2029)",
+				status: "Active"
+			}
+		]
+	},
+	testimonials: [
+		{
+			initials: "LD",
+			name: "Local Distributor",
+			role: "KPK Region",
+			company: "",
+			rating: 4.8,
+			text: "Our experience with Yousafzai Eggs Traders has been excellent. Their quality and service have been consistently reliable."
+		},
+		{
+			initials: "RP",
+			name: "Retail Partner",
+			role: "Punjab",
+			company: "",
+			rating: 4.5,
+			text: "Reliable supplier with consistent quality and timely delivery. We have been working with them for years."
+		},
+		{
+			initials: "RO",
+			name: "Restaurant Owner",
+			role: "Lahore",
+			company: "",
+			rating: 4.6,
+			text: "Egg Traders has completely changed how I source eggs. I can compare farms, check quality scores, and order in minutes."
+		},
+		{
+			initials: "FM",
+			name: "Farm Manager",
+			role: "Mardan",
+			company: "",
+			rating: 4.4,
+			text: "Being on the platform has given us direct access to commercial buyers we could never reach before."
+		},
+		{
+			initials: "PH",
+			name: "Procurement Head",
+			role: "Karachi",
+			company: "",
+			rating: 4.7,
+			text: "Every batch is documented and every delivery is on time."
+		}
+	],
+	faq: [
+		{
+			q: "How quickly can I receive a formal B2B quote?",
+			a: "Submit a quote request and our commercial team responds with a formal quotation within 4 business hours. Contracts can be activated within 3 working days."
+		},
+		{
+			q: "What is the minimum order quantity?",
+			a: "Minimum orders vary by product — from 50 trays/week for organic eggs up to 500 trays/week for standard Grade A white shell eggs. Liquid whole egg starts at 500kg/week."
+		},
+		{
+			q: "Which certifications and standards do you comply with?",
+			a: "All products meet ISO 22000:2018, PSQCA, and PNAC-accredited Halal standards, alongside active Animal Welfare, Environmental Audit, and HACCP certifications."
+		},
+		{
+			q: "Can I trace a specific delivered batch?",
+			a: "Yes. Every box carries a batch code — scan it or look it up in the client portal to see farm collection, lab testing, grading, dispatch and delivery timestamps."
+		},
+		{
+			q: "How does the Partner Program pricing work?",
+			a: "Pricing is tiered by weekly volume — Silver (100–499 trays), Gold (500–1,999 trays), and Platinum (2,000+ trays) — each unlocking deeper discounts and additional services."
+		},
+		{
+			q: "Which cities and regions do you deliver to?",
+			a: "Our distribution hubs in Mardan, Attock, and Malakand serve 25+ cities directly, with next-day delivery at a 98% success rate."
+		}
+	],
+	contact: {
+		eyebrow: "Contact Us",
+		title: "Get in Touch — Yousafzai Eggs Traders",
+		subtitle: "Reach out for orders, partnerships, or inquiries. We are always happy to connect.",
+		info: [
+			{
+				icon: "Phone",
+				label: "Phone",
+				value: "+92 937 269601"
+			},
+			{
+				icon: "Mail",
+				label: "Email",
+				value: "info@yousafzaiagrifoods.com"
+			},
+			{
+				icon: "MapPin",
+				label: "Head Office",
+				value: "Opposite Mardan Press Club, Mardan, KPK, Pakistan"
+			},
+			{
+				icon: "Mail",
+				label: "Additional Emails",
+				value: "Sana-Ullah@yousafzaiagrifoods.com · Saeed_rehman@yousafzaiagrifoods.com"
+			}
+		]
+	},
+	company: {
+		name: "YOUSAFZAI",
+		sub: "Eggs Traders & Poultry Farms",
+		tagline: "A trusted name in egg trading and poultry farming since 1960 — delivering quality, freshness, and reliability from farm to market."
+	},
+	ourCompanies: {
+		eyebrow: "",
+		title: "Our Companies",
+		subtitle: "Explore the specialized brands under the Yousafzai Eggs Traders group — each serving distinct market segments with the same commitment to quality and compliance.",
+		companies: [{
+			id: "yousafzai-egro",
+			name: "Yousafzai Eggs Traders",
+			tagline: "International B2B Egg Trading & Supply",
+			description: "Our flagship brand for international B2B egg trading, supply chain management, and compliance-first distribution across Pakistan and beyond.",
+			color: "#B8860B",
+			url: "/",
+			logo: null
+		}, {
+			id: "egg-traders",
+			name: "Egg Traders",
+			tagline: "Specialized Poultry & Egg Marketplace",
+			description: "A dedicated platform connecting verified poultry farms directly to commercial buyers with real-time pricing, quality scores, and seamless procurement.",
+			color: "#0D6B3D",
+			url: "/egg-traders",
+			logo: null
+		}]
+	},
+	eggTraders: {
+		company: {
+			name: "Egg Traders",
+			sub: "Poultry Trading",
+			tagline: "A Yousafzai Eggs Traders company connecting verified poultry farms with commercial buyers through a clear supply process."
+		},
+		hero: {
+			eyebrow: "",
+			backgroundImage: "",
+			h1Line1: "Your trusted",
+			h1Highlight: "egg marketplace",
+			h1Line2: "",
+			body: "Egg Traders connects verified poultry farms with commercial buyers through clear pricing information, quality details, and a simpler ordering process.",
+			primaryCta: {
+				label: "Request a Quote",
+				action: "/egg-traders/contact"
+			},
+			secondaryCta: {
+				label: "How it works",
+				action: "/egg-traders/about"
+			},
+			trustItems: [
+				{
+					icon: "ShieldCheck",
+					text: "Verified farms"
+				},
+				{
+					icon: "CheckCircle2",
+					text: "Quality guaranteed"
+				},
+				{
+					icon: "Home",
+					text: "Delivery coordination"
+				}
+			],
+			stats: [
+				{
+					value: "200",
+					suffix: "+",
+					label: "Verified poultry farms"
+				},
+				{
+					value: "12",
+					suffix: "K+",
+					label: "Completed transactions"
+				},
+				{
+					value: "98",
+					suffix: "%",
+					label: "Buyer satisfaction rate"
+				},
+				{
+					value: "28",
+					suffix: "+",
+					label: "Cities covered"
+				}
+			]
+		},
+		about: {
+			eyebrow: "",
+			title: "A clearer way to trade eggs",
+			subtitle: "Egg Traders brings clearer communication and traceability to the poultry supply chain, giving buyers direct access to verified farms.",
+			quote: "Our goal is to make commercial egg procurement clearer, faster, and easier to manage for both buyers and farms.",
+			quoteFooter: "Our Mission",
+			paragraphs: [
+				"Founded as a Yousafzai Eggs Traders venture, Egg Traders was built to connect verified farms directly with commercial buyers.",
+				"The service helps buyers compare supply options, review quality information, and manage orders through a clearer procurement process.",
+				"Egg Traders supports commercial egg procurement across Pakistan with a focus on traceability, reliability, and responsive service."
+			],
+			features: [
+				{
+					icon: "Feather",
+					title: "Verified farms only",
+					body: "Sellers are reviewed before listing so buyers can make decisions with more confidence."
+				},
+				{
+					icon: "TrendingUp",
+					title: "Clear pricing",
+					body: "Buyers receive practical pricing information for commercial supply."
+				},
+				{
+					icon: "Package",
+					title: "Simple procurement",
+					body: "From order to delivery, the process is organized around clear communication and reliable follow-up."
+				}
+			],
+			team: [{
+				initials: "CH",
+				name: "Chairman",
+				role: "Founder",
+				bio: "Leads the Egg Traders vision with deep experience in poultry commodity markets."
+			}, {
+				initials: "AK",
+				name: "Ahmed Khan",
+				role: "Operations lead",
+				bio: "Supports service development and buyer-seller coordination across operating cities."
+			}]
+		},
+		services: [
+			{
+				num: "01",
+				title: "Farm Discovery",
+				body: "Browse and connect with verified poultry farms ranked by quality score, delivery reliability, and buyer reviews from real commercial buyers."
+			},
+			{
+				num: "02",
+				title: "Smart Matching",
+				body: "Our algorithm matches your order requirements with the best-suited farms based on location, weekly capacity, and active certifications."
+			},
+			{
+				num: "03",
+				title: "Secure Trading",
+				body: "Every transaction is secured with escrow protection, quality-based release, and dispute resolution support for both parties."
+			},
+			{
+				num: "04",
+				title: "Logistics Support",
+				body: "Coordinated cold-chain logistics with real-time tracking, IoT temperature monitoring, and delivery confirmation at every stop."
+			}
+		],
+		products: {
+			eyebrow: "",
+			title: "Egg products for commercial buyers",
+			subtitle: "Browse verified egg products from our poultry farm network for direct commercial supply.",
+			items: [
+				{
+					badge: "Premium",
+					grade: "Grade A / select large",
+					name: "Farm-fresh white eggs",
+					description: "Grade A white shell eggs from verified farms, available in small to extra-large sizes with traceability support.",
+					specs: [
+						"Weight: 53g - 63g+",
+						"Shell strength: high",
+						"Packaging: 30-egg trays / cartons"
+					],
+					tags: ["Daily supply", "S to XL"],
+					image: "https://images.unsplash.com/photo-1582722872445-44dc5f7e3c8f?w=600&h=400&fit=crop"
+				},
+				{
+					badge: "Free range",
+					grade: "Free range",
+					name: "Free-range brown eggs",
+					description: "Brown egg options for buyers with premium food-service requirements. Final documentation can be confirmed during quoting.",
+					specs: [
+						"Free-range option",
+						"Premium food service",
+						"Eco-pulp packaging"
+					],
+					tags: ["Free range", "M, L"],
+					image: "https://images.unsplash.com/photo-1598965675045-45c5e72c7d05?w=600&h=400&fit=crop"
+				},
+				{
+					badge: "Organic",
+					grade: "Organic option",
+					name: "Organic egg options",
+					description: "Organic egg options for buyers seeking documented supply. Certification details can be confirmed during quoting.",
+					specs: [
+						"Organic option",
+						"Documentation available",
+						"Eco-pulp packaging"
+					],
+					tags: ["Organic", "L"],
+					image: "https://images.unsplash.com/photo-1498654077810-12c21d4d6dc3?w=600&h=400&fit=crop"
+				},
+				{
+					badge: "Bulk",
+					grade: "Processing grade",
+					name: "Liquid whole egg",
+					description: "Liquid whole egg for food manufacturers, bakeries, and industrial kitchens. Processing and packaging details are confirmed during quoting.",
+					specs: [
+						"Whole egg option",
+						"Bulk packaging",
+						"Chilled supply"
+					],
+					tags: ["Industrial", "kg"],
+					image: "https://images.unsplash.com/photo-1587486913049-53fc88980cfc?w=600&h=400&fit=crop"
+				}
+			],
+			specs: [
+				{
+					name: "White shell eggs",
+					grade: "Grade A",
+					sizes: "S, M, L, XL",
+					moq: "100 trays",
+					lead: "24 hrs",
+					status: "Available",
+					statusClass: "stock"
+				},
+				{
+					name: "Brown farm eggs",
+					grade: "Grade A",
+					sizes: "M, L",
+					moq: "50 trays",
+					lead: "48 hrs",
+					status: "Available",
+					statusClass: "stock"
+				},
+				{
+					name: "Organic eggs",
+					grade: "Organic A",
+					sizes: "L",
+					moq: "20 trays",
+					lead: "72 hrs",
+					status: "Limited",
+					statusClass: "limited"
+				},
+				{
+					name: "Liquid whole egg",
+					grade: "Processing",
+					sizes: "N/A (kg)",
+					moq: "200 kg",
+					lead: "72 hrs",
+					status: "Available",
+					statusClass: "stock"
+				}
+			]
+		},
+		solutions: {
+			eyebrow: "",
+			title: "Choose your trading plan",
+			subtitle: "Choose a plan based on your buying or selling needs.",
+			tiers: [
+				{
+					badge: "Basic buyer",
+					name: "Basic",
+					desc: "Up to 50 trays/week",
+					featured: false,
+					features: [
+						"Access to verified farms",
+						"Standard pricing",
+						"Email support",
+						"Order tracking"
+					]
+				},
+				{
+					badge: "Premium buyer",
+					name: "Premium",
+					desc: "50-500 trays/week",
+					featured: true,
+					features: [
+						"Priority farm matching",
+						"Volume pricing",
+						"Dedicated account manager",
+						"Order tracking",
+						"Monthly summaries",
+						"Flexible payment terms"
+					]
+				},
+				{
+					badge: "Enterprise",
+					name: "Enterprise",
+					desc: "500+ trays/week",
+					featured: false,
+					features: [
+						"Custom contracts",
+						"Custom supply terms",
+						"Account coordination",
+						"Dedicated support team",
+						"Flexible payment terms",
+						"Procurement reporting"
+					]
+				}
+			]
+		},
+		process: {
+			eyebrow: "",
+			title: "From farm to business in four steps",
+			subtitle: "A clear procurement process for commercial buyers who need reliable supply and traceability.",
+			steps: [
+				{
+					num: "01",
+					icon: "Search",
+					title: "Browse and select",
+					body: "Browse verified farms, compare quality information, and select the best match for your volume and delivery needs."
+				},
+				{
+					num: "02",
+					icon: "FileText",
+					title: "Place order",
+					body: "Submit your purchase order with your requirements. Receive confirmation and an estimated delivery window."
+				},
+				{
+					num: "03",
+					icon: "Package",
+					title: "Quality check",
+					body: "Each batch is checked before dispatch. Quality details and batch records are shared for review."
+				},
+				{
+					num: "04",
+					icon: "Truck",
+					title: "Delivery and confirmation",
+					body: "Receive delivery updates, confirm receipt, and complete the order record in one organized process."
+				}
+			]
+		},
+		quality: {
+			eyebrow: "",
+			title: "Quality you can verify every time",
+			subtitle: "Every egg traded through Egg Traders is supported by farm-level quality information, batch records, and buyer feedback.",
+			batch: {
+				id: "Batch ET-2026-07-14-A01",
+				title: "Sample batch trace",
+				subtitle: "Example from a recent transaction",
+				steps: [
+					{
+						title: "Order placed",
+						time: "08:00 AM"
+					},
+					{
+						title: "Farm confirmed",
+						time: "09:15 AM"
+					},
+					{
+						title: "Quality checked",
+						time: "11:30 AM"
+					},
+					{
+						title: "Dispatched",
+						time: "01:00 PM"
+					},
+					{
+						title: "Delivered",
+						time: "04:30 PM"
+					}
+				]
+			},
+			certs: [
+				{
+					icon: "ShieldCheck",
+					name: "Farm verified",
+					body: "Every farm is audited before listing",
+					status: "Active"
+				},
+				{
+					icon: "CheckCircle2",
+					name: "Quality score",
+					body: "Updated quality rating process",
+					status: "Active"
+				},
+				{
+					icon: "Users",
+					name: "Buyer support",
+					body: "Transaction support for commercial buyers",
+					status: "Active"
+				},
+				{
+					icon: "Leaf",
+					name: "Responsible sourcing",
+					body: "Supplier practices reviewed during onboarding",
+					status: "Active"
+				}
+			],
+			testimonials: [
+				{
+					initials: "RM",
+					name: "Restaurant Owner",
+					role: "Lahore",
+					text: "Egg Traders has made sourcing eggs easier. I can compare farms, review quality information, and place orders quickly."
+				},
+				{
+					initials: "AK",
+					name: "Farm Manager",
+					role: "Mardan",
+					text: "Egg Traders has given us direct access to commercial buyers we could not reach before."
+				},
+				{
+					initials: "SN",
+					name: "Procurement Head",
+					role: "Karachi",
+					text: "The traceability is helpful. Every batch is documented, and delivery information is easy to follow."
+				}
+			]
+		},
+		contact: {
+			eyebrow: "",
+			title: "Contact Egg Traders",
+			subtitle: "Fill in the form below. Our team will reach out within 2 business hours to help with your request.",
+			info: [
+				{
+					icon: "Phone",
+					label: "Phone",
+					value: "+92 937 269601"
+				},
+				{
+					icon: "Mail",
+					label: "Email",
+					value: "info@yousafzaiagrifoods.com"
+				},
+				{
+					icon: "MapPin",
+					label: "Office",
+					value: "Opposite Mardan Press Club, Mardan, KPK"
+				},
+				{
+					icon: "Clock",
+					label: "Response Time",
+					value: "Within 2 business hours"
+				}
+			]
+		}
+	},
+	banners: {
+		main: {
+			contact: {
+				title: "Contact Us",
+				subtitle: "Ready to partner? Get a formal B2B quotation in 4 business hours or speak with our partnerships team.",
+				images: []
+			},
+			process: {
+				title: "Our Process",
+				subtitle: "A clear process from sourcing and grading to cold-chain delivery.",
+				images: []
+			},
+			products: {
+				title: "Products & Grades",
+				subtitle: "Explore egg products, formats, and grade references for commercial supply.",
+				images: [],
+				video: ""
+			},
+			quality: {
+				title: "Quality",
+				subtitle: "Focused on quality, traceability, and responsible handling at every stage.",
+				images: ["/images/yousafzai-packaging.png"]
+			},
+			solutions: {
+				title: "Solutions",
+				subtitle: "Tailored B2B trading partnerships designed for hotels, distributors, bakeries, and institutional buyers.",
+				images: []
+			},
+			team: {
+				title: "Leadership & Operations",
+				subtitle: "Meet the experienced executives and agricultural specialists driving Yousafzai Eggs Traders.",
+				images: []
+			}
+		},
+		eggTraders: {
+			about: {
+				title: "About Egg Traders",
+				subtitle: "Learn about Egg Traders, our mission, values, and the team behind the poultry trading service."
+			},
+			contact: {
+				title: "Contact Egg Traders",
+				subtitle: "Ready to work with Egg Traders? Share your requirements and our team will respond within 2 business hours."
+			},
+			products: {
+				title: "Products",
+				subtitle: "Browse verified egg products from our poultry farm network for direct commercial supply."
+			},
+			quality: {
+				title: "Quality",
+				subtitle: "Every egg traded through Egg Traders is supported by farm-level quality information, batch records, and buyer feedback."
+			},
+			solutions: {
+				title: "Solutions",
+				subtitle: "Choose the right trading plan for your business, from basic access to custom commercial supply terms."
+			},
+			process: {
+				title: "Process",
+				subtitle: "A clear procurement process for commercial buyers who need reliable supply and traceability."
+			}
+		}
+	},
+	cta: {
+		eyebrow: "",
+		title: "Need a Reliable Supply Partner?",
+		sub: "Tell us what you need, and our team will get back to you with a tailored quote.",
+		primaryCta: {
+			label: "Request a Quote",
+			action: "/contact"
+		},
+		secondaryCta: {
+			label: "Talk to Us",
+			action: "/contact"
+		}
+	},
+	aboutScenes: {
+		hero: {
+			coordinates: "Mardan, Khyber Pakhtunkhwa, Pakistan",
+			eyebrow: "",
+			h1Line1: "Built on",
+			h1Highlight: "Quality & Trust",
+			paragraph: "Since 1960, Yousafzai Eggs Traders has been a trusted name in Pakistan's poultry and egg distribution industry. With over six decades of experience, we connect certified farms to hotels, retailers, manufacturers, and institutions across KPK, Punjab, and Sindh — delivering fresh, Halal-certified eggs with full traceability.",
+			ctaLabel: "Explore Our Heritage",
+			stamp: "",
+			stats: [
+				{
+					value: "60+",
+					label: "Years of Experience"
+				},
+				{
+					value: "500K+",
+					label: "Eggs Traded Weekly"
+				},
+				{
+					value: "3",
+					label: "Provinces Covered"
+				},
+				{
+					value: "100%",
+					label: "Halal Certified"
+				}
+			],
+			slides: [
+				"https://images.unsplash.com/photo-1548550023-2bf3c49b71d9?w=1920&q=80",
+				"https://images.unsplash.com/photo-1569288052389-dac9b01c9c05?w=1920&q=80",
+				"https://images.unsplash.com/photo-1612170153139-6f881ff067e0?w=1920&q=80",
+				"https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=1920&q=80",
+				"https://images.unsplash.com/photo-1623239524387-0b57a0eab64e?w=1920&q=80",
+				"https://images.unsplash.com/photo-1605882174146-a464b70cf691?w=1920&q=80",
+				"https://images.unsplash.com/photo-1574781330855-d0db8cc6a79c?w=1920&q=80",
+				"https://images.unsplash.com/photo-1591197172062-c718f82aba20?w=1920&q=80",
+				"https://images.unsplash.com/photo-1582722872445-44dc5f7e3c8f?w=1920&q=80",
+				"https://images.unsplash.com/photo-1598965675045-45c5e72c7d05?w=1920&q=80",
+				"https://images.unsplash.com/photo-1506976785307-8732e854ad03?w=1920&q=80",
+				"https://images.unsplash.com/photo-1489726024920-b5ddc1c04b09?w=1920&q=80",
+				"https://images.unsplash.com/photo-1498654077810-12c21d4d6dc3?w=1920&q=80",
+				"https://images.unsplash.com/photo-1587486913049-53fc88980cfc?w=1920&q=80",
+				"https://images.unsplash.com/photo-1607690424560-35d967079aac?w=1920&q=80",
+				"https://images.unsplash.com/photo-1518569656558-1f25e69d93d7?w=1920&q=80",
+				"https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=1920&q=80",
+				"https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1920&q=80",
+				"https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1920&q=80",
+				"https://images.unsplash.com/photo-1605000797499-95a51c5269ae?w=1920&q=80",
+				"https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1920&q=80",
+				"https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=1920&q=80",
+				"https://images.unsplash.com/photo-1553413077-190dd305871c?w=1920&q=80",
+				"https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?w=1920&q=80",
+				"https://images.unsplash.com/photo-1494412574643-ff11b0a5eb19?w=1920&q=80",
+				"https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1920&q=80",
+				"https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1920&q=80",
+				"https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=1920&q=80",
+				"https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=1920&q=80"
+			]
+		},
+		chairman: {
+			eyebrow: "",
+			quote: "\"At Yousafzai Eggs Traders, we believe in quality, trust, and innovation. Our goal is not only to supply eggs but to transform the poultry industry by introducing modern processing solutions.\"",
+			name: "Chairman",
+			role: "Chairman & Founder",
+			image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=450&h=550&fit=crop",
+			seal: ""
+		},
+		ourStory: {
+			eyebrow: "",
+			title: "Our Legacy",
+			subtext: "Six decades of growth — from a single retail shop to a vertically integrated enterprise.",
+			milestones: [
+				{
+					id: "1960",
+					year: "1960",
+					title: "Retail Origins",
+					desc: "Established a retail shop in Mardan for egg trading.",
+					img: "https://images.unsplash.com/photo-1498654077810-12c21d4d6dc3?w=1920&q=80",
+					stats: "RETAIL ORIGINS",
+					metric: "60+",
+					metricLabel: "Years of Trust"
+				},
+				{
+					id: "2000",
+					year: "2000",
+					title: "Supply Network",
+					desc: "Built a strong supply network connecting farms to markets across KPK.",
+					img: "https://images.unsplash.com/photo-1569288052389-dac9b01c9c05?w=1920&q=80",
+					stats: "FARM TO MARKET",
+					metric: "100+",
+					metricLabel: "Partner Farms"
+				},
+				{
+					id: "2020",
+					year: "2020",
+					title: "Sales Expansion",
+					desc: "Opened a second sales point in Attock.",
+					img: "https://images.unsplash.com/photo-1604719312566-8912e9227c6a?w=1920&q=80",
+					stats: "ATTOCK SALES",
+					metric: "2",
+					metricLabel: "Sales Points"
+				},
+				{
+					id: "2022",
+					year: "2022",
+					title: "Poultry Farm",
+					desc: "Established a poultry farm in Attock, Punjab.",
+					img: "https://images.unsplash.com/photo-1598965675045-45c5e72c7d05?w=1920&q=80",
+					stats: "POULTRY FARM",
+					metric: "10K+",
+					metricLabel: "Daily Capacity"
+				}
+			]
+		},
+		visionMission: {
+			bgImage: "https://images.unsplash.com/photo-1508680415307-e160e15777bd?w=1920&q=80",
+			eyebrow: "",
+			title: "Vision & Mission",
+			vision: {
+				eyebrow: "",
+				marker: "",
+				title: "Transforming the Value Chain",
+				desc: "To become a leading Eggs-food company in Pakistan and international markets by providing high-quality egg products, including liquid and processed eggs, with global standards."
+			},
+			mission: {
+				eyebrow: "",
+				marker: "",
+				title: "Quality & Value Creation",
+				items: [
+					"Supply fresh & hygienic eggs",
+					"Maintain strict quality control & food safety",
+					"Expand into value-added egg products like liquid eggs",
+					"Build long-term trust with clients & partners"
+				]
+			}
+		}
+	},
+	footer: {
+		copyright: "© 2026 M/S Yousafzai Eggs Traders & Poultry Farms. All rights reserved.",
+		locations: "Mardan · Attock · Malakand",
+		quickLinks: [
+			{
+				label: "About Us",
+				href: "/about"
+			},
+			{
+				label: "Company Overview",
+				href: "/about"
+			},
+			{
+				label: "Why Choose Us",
+				href: "/"
+			},
+			{
+				label: "Testimonials",
+				href: "/"
+			}
+		],
+		solutionsLinks: [
+			{
+				label: "Products",
+				href: "/products"
+			},
+			{
+				label: "Trading Solutions",
+				href: "/solutions"
+			},
+			{
+				label: "Supply Chain",
+				href: "/"
+			},
+			{
+				label: "Export & Distribution",
+				href: "/"
+			}
+		],
+		resourcesLinks: [
+			{
+				label: "Our Process",
+				href: "/process"
+			},
+			{
+				label: "Quality Assurance",
+				href: "/quality"
+			},
+			{
+				label: "FAQ",
+				href: "/"
+			},
+			{
+				label: "Contact Us",
+				href: "/contact"
+			}
+		]
+	}
+};
+
+//# sourceMappingURL=data:application/json;base64,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Q2Q7SUFBRSxPQUFPO0lBQWUsTUFBTTtHQUFXO0dBQ3pDO0lBQUUsT0FBTztJQUFxQixNQUFNO0dBQVc7R0FDL0M7SUFBRSxPQUFPO0lBQU8sTUFBTTtHQUFJO0dBQzFCO0lBQUUsT0FBTztJQUFjLE1BQU07R0FBVztFQUMxQztDQUNGO0FBQ0YiLCJuYW1lcyI6W10sInNvdXJjZXMiOlsiZGVmYXVsdENvbnRlbnQuanMiXSwidmVyc2lvbiI6Mywic291cmNlc0NvbnRlbnQiOlsiZXhwb3J0IGNvbnN0IGRlZmF1bHRDb250ZW50ID0ge1xyXG4gIGhlcm86IHtcclxuICAgIGV5ZWJyb3c6ICdFZ2cgVHJhZGluZyAmIFBvdWx0cnkgRmFybXMg4oCUIFNpbmNlIDE5NjAnLFxyXG4gICAgYmFja2dyb3VuZEltYWdlOiAnJyxcclxuICAgIGgxTGluZTE6ICdUcnVzdGVkIEVnZyBUcmFkZXJzJyxcclxuICAgIGgxSGlnaGxpZ2h0OiAnUXVhbGl0eSAmIFRydXN0JyxcclxuICAgIGgxTGluZTI6ICdCdWlsdCBvbicsXHJcbiAgICBib2R5OiAnWW91c2FmemFpIEVnZ3MgVHJhZGVycyBpcyBhIGxlYWRpbmcgc3VwcGxpZXIgYW5kIGRpc3RyaWJ1dG9yIG9mIGhpZ2gtcXVhbGl0eSBmcmVzaCBlZ2dzIGluIEtQSywgUGFraXN0YW4uIFdlIGRlbGl2ZXIgaHlnaWVuaWMsIGZhcm0tZnJlc2ggZWdncyB3aXRoIGNvbnNpc3RlbnQgcXVhbGl0eSBhbmQgcmVsaWFibGUgc2VydmljZS4nLFxyXG4gICAgcHJpbWFyeUN0YTogeyBsYWJlbDogJ0NvbnRhY3QgVXMnLCBhY3Rpb246ICcvY29udGFjdCcgfSxcclxuICAgIHNlY29uZGFyeUN0YTogeyBsYWJlbDogJ0V4cGxvcmUgT3VyIFN1cHBseSBDaGFpbicsIGFjdGlvbjogJy8nIH0sXHJcbiAgICB0cnVzdEl0ZW1zOiBbXHJcbiAgICAgIHsgaWNvbjogJ1NoaWVsZENoZWNrJywgdGV4dDogJ0hBQ0NQIENlcnRpZmllZCcgfSxcclxuICAgICAgeyBpY29uOiAnQ2hlY2tDaXJjbGUyJywgdGV4dDogJ0lIQyBIYWxhbCBDZXJ0aWZpZWQnIH0sXHJcbiAgICAgIHsgaWNvbjogJ0hvbWUnLCB0ZXh0OiAnS1BLLCBQdW5qYWIgJiBTaW5kaCcgfSxcclxuICAgIF0sXHJcbiAgICBjYXJkczogW1xyXG4gICAgICB7IHZhbHVlOiAnNjArJywgbGFiZWw6ICdZZWFycyBvZiBleHBlcmllbmNlJyB9LFxyXG4gICAgICB7IHZhbHVlOiAnMTAwJScsIGxhYmVsOiAnSGFsYWwgY2VydGlmaWVkJyB9LFxyXG4gICAgICB7IHZhbHVlOiAnNTAwSysnLCBsYWJlbDogJ0VnZ3MgdHJhZGVkIHdlZWtseScgfSxcclxuICAgIF0sXHJcbiAgICBzdGF0czogW1xyXG4gICAgICB7IHZhbHVlOiAnNjAnLCBzdWZmaXg6ICcrJywgbGFiZWw6ICdZZWFycyBvZiBleHBlcmllbmNlJyB9LFxyXG4gICAgICB7IHZhbHVlOiAnNTAwJywgc3VmZml4OiAnSysnLCBsYWJlbDogJ0VnZ3MgdHJhZGVkIHdlZWtseScgfSxcclxuICAgICAgeyB2YWx1ZTogJzMnLCBzdWZmaXg6ICcnLCBsYWJlbDogJ1Byb3ZpbmNlcyBjb3ZlcmVkJyB9LFxyXG4gICAgICB7IHZhbHVlOiAnMTAwJywgc3VmZml4OiAnJScsIGxhYmVsOiAnSGFsYWwgY2VydGlmaWVkIHN1cHBseScgfSxcclxuICAgIF0sXHJcbiAgfSxcclxuICBhYm91dDoge1xyXG4gICAgZXllYnJvdzogJ0Fib3V0IFlvdXNhZnphaSBFZ2dzIFRyYWRlcnMnLFxyXG4gICAgdGl0bGU6ICdBIFRydXN0ZWQgTmFtZSBpbiBFZ2cgVHJhZGluZyAmIFBvdWx0cnkgRmFybWluZycsXHJcbiAgICBzdWJ0aXRsZTogJ1lvdXNhZnphaSBFZ2dzIFRyYWRlcnMgaXMgYSB0cnVzdGVkIG5hbWUgaW4gdGhlIHBvdWx0cnkgYW5kIGVnZyBkaXN0cmlidXRpb24gaW5kdXN0cnkuIFdpdGggeWVhcnMgb2YgZXhwZXJpZW5jZSwgd2UgaGF2ZSBidWlsdCBhIHN0cm9uZyBzdXBwbHkgbmV0d29yayBjb25uZWN0aW5nIGZhcm1zIHRvIG1hcmtldHMgZWZmaWNpZW50bHkuIE91ciBmb2N1cyBpcyBvbiBxdWFsaXR5IGFzc3VyYW5jZSwgdGltZWx5IGRlbGl2ZXJ5LCBhbmQgbG9uZy10ZXJtIGJ1c2luZXNzIHJlbGF0aW9uc2hpcHMuJyxcclxuICAgIHF1b3RlOiAnXCJBdCBZb3VzYWZ6YWkgRWdncyBUcmFkZXJzLCB3ZSBiZWxpZXZlIGluIHF1YWxpdHksIHRydXN0LCBhbmQgaW5ub3ZhdGlvbi4gT3VyIGdvYWwgaXMgbm90IG9ubHkgdG8gc3VwcGx5IGVnZ3MgYnV0IHRvIHRyYW5zZm9ybSB0aGUgcG91bHRyeSBpbmR1c3RyeSBieSBpbnRyb2R1Y2luZyBtb2Rlcm4gcHJvY2Vzc2luZyBzb2x1dGlvbnMgc3VjaCBhcyBsaXF1aWQgZWdnIHByb2R1Y3Rpb24uXCInLFxyXG4gICAgcXVvdGVGb290ZXI6ICdDaGFpcm1hblxcJ3MgTWVzc2FnZScsXHJcbiAgICB2YWx1ZXM6IFtcclxuICAgICAgeyBpY29uOiAnQm94JywgdGl0bGU6ICdRdWFsaXR5IEFzc3VyYW5jZScsIGJvZHk6ICdFZ2dzIHNvdXJjZWQgZnJvbSBhcHByb3ZlZCBhbmQgdHJhY2VhYmxlIHBvdWx0cnkgZmFybXMgd2l0aCByZWd1bGFyIHF1YWxpdHkgaW5zcGVjdGlvbiwgZ3JhZGluZywgYW5kIGh5Z2llbmljIGhhbmRsaW5nLicgfSxcclxuICAgICAgeyBpY29uOiAnU2hpZWxkQ2hlY2snLCB0aXRsZTogJ0Zvb2QgU2FmZXR5JywgYm9keTogJ0NvbXBsaWFuY2Ugd2l0aCBIQUNDUCwgSGFsYWwsIGFuZCBsb2NhbCBmb29kIGF1dGhvcml0eSByZWd1bGF0aW9ucy4gSHlnaWVuaWMgc3RvcmFnZSBhbmQgdGVtcGVyYXR1cmUtY29udHJvbGxlZCB0cmFuc3BvcnRhdGlvbi4nIH0sXHJcbiAgICAgIHsgaWNvbjogJ0Nsb2NrJywgdGl0bGU6ICdSZWxpYWJsZSBTdXBwbHknLCBib2R5OiAnQ29uc2lzdGVudCBxdWFsaXR5IGFuZCBncmFkaW5nIHdpdGggdGltZWx5IGRlbGl2ZXJ5IGFuZCBmbGV4aWJsZSBvcmRlciB2b2x1bWVzIHRocm91Z2ggb3VyIHN0cm9uZyBzdXBwbGllciBuZXR3b3JrLicgfSxcclxuICAgIF0sXHJcbiAgICBwYXJhZ3JhcGhzOiBbXHJcbiAgICAgICdFc3RhYmxpc2hlZCBpbiAxOTYwIGluIE1hcmRhbiwgS2h5YmVyIFBha2h0dW5raHdhLCBNL1MgWW91c2FmemFpIEVnZ3MgVHJhZGVycyAoUmVnaXN0cmF0aW9uIE5vLiBDOTU1NDIzKSBoYXMgb3ZlciBzaXggZGVjYWRlcyBvZiBleHBlcmllbmNlIGluIHRoZSBlZ2cgdHJhZGluZyBidXNpbmVzcy4gVGhlIGNvbXBhbnkgc3BlY2lhbGl6ZXMgaW4gdGhlIHByb2N1cmVtZW50LCBjYW5kbGluZywgYW5kIGRpc3RyaWJ1dGlvbiBvZiBmcmVzaCwgSGFsYWwtY2VydGlmaWVkIHRhYmxlIGVnZ3MgdG8gaG91c2Vob2xkcywgcmV0YWlsZXJzLCBob3RlbHMsIGFuZCBpbnN0aXR1dGlvbmFsIGN1c3RvbWVycyBhY3Jvc3MgS1BLIGFuZCBvdGhlciByZWdpb25zIG9mIFBha2lzdGFuLicsXHJcbiAgICAgICdPdmVyIHRoZSB5ZWFycywgdGhlIGNvbXBhbnkgaGFzIGV2b2x2ZWQgZnJvbSBhIHRyYWRpdGlvbmFsIHRyYWRpbmcgb3BlcmF0aW9uIGludG8gYSB2ZXJ0aWNhbGx5IGludGVncmF0ZWQgZW50ZXJwcmlzZSBieSBpbnZlc3RpbmcgaW4gbW9kZXJuIHBvdWx0cnkgZmFybXMgYXQgQ2hpbmEgQ2hvd2ssIEF0dG9jayAoZXN0LiAyMDIyKSBhbmQgUGhhbGFpIEludGVyY2hhbmdlLCBNYWxha2FuZCAoZXN0LiAyMDI1KSwgYW5kIGV4cGFuZGluZyBpdHMgZGlzdHJpYnV0aW9uIG5ldHdvcmsgYWNyb3NzIEtQSywgUHVuamFiLCBhbmQgU2luZGguJyxcclxuICAgICAgJ1VuZGVyc3RhbmRpbmcgdGhlIGdyb3dpbmcgZGVtYW5kIGZvciBwcm9jZXNzZWQgYW5kIHZhbHVlLWFkZGVkIGZvb2QgcHJvZHVjdHMsIHRoZSBjb21wYW55IGlzIGV4cGFuZGluZyB1bmRlciB0aGUgbmFtZSBZb3VzYWZ6YWkgQWdyaSBGb29kcyAoUHZ0IEx0ZCksIGVzdGFibGlzaGluZyBhbiBFZ2cgTGlxdWlkIFByb2Nlc3NpbmcgUGxhbnQgYXQgUmFzaGFrYWkgU0VaIHdpdGggYSBjYXBhY2l0eSB0byBwcm9jZXNzIDQ1LDAwMCBlZ2dzIHBlciBob3VyLiBDb21tZXJjaWFsIHByb2R1Y3Rpb24gaXMgcGxhbm5lZCBieSBlbmQgb2YgMjAyNi4nLFxyXG4gICAgXSxcclxuICAgIHRlYW06IFtdLFxyXG4gICAgbGVhZGVyc2hpcDogW1xyXG4gICAgICB7IG5hbWU6ICdDaGFpcm1hbicsIHJvbGU6ICdDaGFpcm1hbiAmIEZvdW5kZXInLCBiaW86ICdBdCBZb3VzYWZ6YWkgRWdncyBUcmFkZXJzLCB3ZSBiZWxpZXZlIGluIHF1YWxpdHksIHRydXN0LCBhbmQgaW5ub3ZhdGlvbi4gT3VyIGdvYWwgaXMgbm90IG9ubHkgdG8gc3VwcGx5IGVnZ3MgYnV0IHRvIHRyYW5zZm9ybSB0aGUgcG91bHRyeSBpbmR1c3RyeSBieSBpbnRyb2R1Y2luZyBtb2Rlcm4gcHJvY2Vzc2luZyBzb2x1dGlvbnMuJywgaW1hZ2U6ICdodHRwczovL2ltYWdlcy51bnNwbGFzaC5jb20vcGhvdG8tMTU2MDI1MDA5Ny0wYjkzNTI4YzMxMWE/dz00MDAmaD00MDAmZml0PWNyb3AnIH0sXHJcbiAgICBdXHJcbiAgfSxcclxuICBvdmVydmlldzoge1xyXG4gICAgcm93czogW1xyXG4gICAgICB7IGxhYmVsOiAnQ29tcGFueSBOYW1lJywgdmFsdWU6ICdNL1MgWW91c2FmemFpIEVnZ3MgVHJhZGVycyAmIFBvdWx0cnkgRmFybXMnIH0sXHJcbiAgICAgIHsgbGFiZWw6ICdSZWdpc3RyYXRpb24nLCB2YWx1ZTogJ0M5NTU0MjMgKFNFQ1AgUmVnaXN0ZXJlZCknIH0sXHJcbiAgICAgIHsgbGFiZWw6ICdFc3RhYmxpc2hlZCcsIHZhbHVlOiAnMTk2MCwgTWFyZGFuLCBLaHliZXIgUGFraHR1bmtod2EnIH0sXHJcbiAgICAgIHsgbGFiZWw6ICdCdXNpbmVzcyBUeXBlJywgdmFsdWU6ICdFZ2cgVHJhZGluZywgUG91bHRyeSBGYXJtaW5nICYgRGlzdHJpYnV0aW9uJyB9LFxyXG4gICAgICB7IGxhYmVsOiAnVHJhZGluZyBWb2x1bWUnLCB2YWx1ZTogJzUwMCwwMDArIGVnZ3MgLyB3ZWVrJyB9LFxyXG4gICAgICB7IGxhYmVsOiAnQ292ZXJhZ2UnLCB2YWx1ZTogJ0tQSywgUHVuamFiICYgU2luZGgg4oCUIEFsbCBtYWpvciBkZWFsZXJzJyB9LFxyXG4gICAgICB7IGxhYmVsOiAnRmFybXMnLCB2YWx1ZTogJ0NoaW5hIENob3drLCBBdHRvY2sgKDIwMjIpIMK3IFBoYWxhaSwgTWFsYWthbmQgKDIwMjUpJyB9LFxyXG4gICAgICB7IGxhYmVsOiAnRnV0dXJlIEV4cGFuc2lvbicsIHZhbHVlOiAnWW91c2FmemFpIEFncmkgRm9vZHMgKFB2dCBMdGQpIOKAlCBSYXNoYWthaSBTRVonIH0sXHJcbiAgICBdLFxyXG4gIH0sXHJcbiAgcHJvZHVjdHM6IHtcclxuICAgIGV5ZWJyb3c6ICdQcm9kdWN0cycsXHJcbiAgICB0aXRsZTogJ0VnZyBQcm9kdWN0cyBmb3IgQ29tbWVyY2lhbCBTdXBwbHknLFxyXG4gICAgc3VidGl0bGU6ICdDb21wYXJlIGF2YWlsYWJsZSBlZ2cgcHJvZHVjdHMsIGZvcm1hdHMsIGFuZCBncmFkZSByZWZlcmVuY2VzLiBGaW5hbCBzcGVjaWZpY2F0aW9ucyBjYW4gYmUgY29uZmlybWVkIHdpdGggb3VyIHRlYW0gZHVyaW5nIHF1b3RpbmcuJyxcclxuICAgIGl0ZW1zOiBbXHJcbiAgICAgIHsgYmFkZ2U6ICdHcmFkZSBBJywgaWNvbjogJ0ZlYXRoZXInLCBncmFkaWVudDogJ2Zyb20tbmF2eSB0by1uYXZ5LTInLCBuYW1lOiAnQ29tbWVyY2lhbCBHcmFkZSBBIFdoaXRlIEVnZ3MnLCBncmFkZTogJ0dyYWRlIEEnLCBmb3JtYXQ6ICdXaGl0ZSBzaGVsbCBlZ2dzJywgcGFja2FnaW5nOiAnUGFja2FnaW5nIG9wdGlvbnMgdG8gYmUgY29uZmlybWVkJywgc3VpdGFibGVGb3I6ICdIb3RlbHMsIHJlc3RhdXJhbnRzLCBjYXRlcmVycywgYW5kIGNvbW1lcmNpYWwga2l0Y2hlbnMnLCBkZXNjcmlwdGlvbjogJ0NvbnNpc3RlbnQgd2hpdGUgc2hlbGwgZWdncyBmb3IgY29tbWVyY2lhbCBidXllcnMsIHdpdGggZmluYWwgc2l6ZXMgYW5kIHN1cHBseSBkZXRhaWxzIGNvbmZpcm1lZCBkdXJpbmcgcXVvdGluZy4nLCB0YWdzOiBbJ0RhaWx5IFN1cHBseScsICdTLVhMJ10sIGltYWdlOiAnaHR0cHM6Ly9pbWFnZXMudW5zcGxhc2guY29tL3Bob3RvLTE1ODI3MjI4NzI0NDUtNDRkYzVmN2UzYzhmP3c9NjAwJmg9NDAwJmZpdD1jcm9wJyB9LFxyXG4gICAgICB7IGJhZGdlOiAnRnJlZSBSYW5nZScsIGljb246ICdGZWF0aGVyJywgZ3JhZGllbnQ6ICdmcm9tLWFtYmVyLTgwMCB0by1hbWJlci02MDAnLCBuYW1lOiAnRnJlZS1SYW5nZSBCcm93biBFZ2dzJywgZ3JhZGU6ICdHcmFkZSBkZXRhaWxzIHBlbmRpbmcgdmVyaWZpY2F0aW9uJywgZm9ybWF0OiAnQnJvd24gc2hlbGwgZWdncycsIHBhY2thZ2luZzogJ1BhY2thZ2luZyBvcHRpb25zIHRvIGJlIGNvbmZpcm1lZCcsIHN1aXRhYmxlRm9yOiAnUHJlbWl1bSBmb29kIHNlcnZpY2UgYW5kIHJldGFpbC1zdHlsZSByZXF1aXJlbWVudHMnLCBkZXNjcmlwdGlvbjogJ0Jyb3duIHNoZWxsIGVnZyBvcHRpb25zIGZvciBidXllcnMgd2hvIG5lZWQgYSBmcmVlLXJhbmdlIHByb2R1Y3QgY2F0ZWdvcnkuIENlcnRpZmljYXRpb24gZGV0YWlscyBzaG91bGQgYmUgY29uZmlybWVkIGR1cmluZyBxdW90aW5nLicsIHRhZ3M6IFsnRnJlZSBSYW5nZScsICdNLCBMJ10sIGltYWdlOiAnaHR0cHM6Ly9pbWFnZXMudW5zcGxhc2guY29tL3Bob3RvLTE1OTg5NjU2NzUwNDUtNDVjNWU3MmM3ZDA1P3c9NjAwJmg9NDAwJmZpdD1jcm9wJyB9LFxyXG4gICAgICB7IGJhZGdlOiAnT3JnYW5pYycsIGljb246ICdGZWF0aGVyJywgZ3JhZGllbnQ6ICdmcm9tLWdyZWVuLTgwMCB0by1ncmVlbi02MDAnLCBuYW1lOiAnT3JnYW5pYyBFZ2cgT3B0aW9ucycsIGdyYWRlOiAnT3JnYW5pYyBncmFkZSBkZXRhaWxzIHBlbmRpbmcgdmVyaWZpY2F0aW9uJywgZm9ybWF0OiAnU2hlbGwgZWdncycsIHBhY2thZ2luZzogJ1BhY2thZ2luZyBvcHRpb25zIHRvIGJlIGNvbmZpcm1lZCcsIHN1aXRhYmxlRm9yOiAnQnV5ZXJzIHNlZWtpbmcgb3JnYW5pYy1wb3NpdGlvbmVkIGVnZyBzdXBwbHknLCBkZXNjcmlwdGlvbjogJ1NoZWxsIGVnZyBvcHRpb25zIGZvciBidXllcnMgc2Vla2luZyBvcmdhbmljIHN1cHBseS4gQ2VydGlmaWNhdGlvbiBhbmQgZG9jdW1lbnRhdGlvbiBkZXRhaWxzIHNob3VsZCBiZSBjb25maXJtZWQgZHVyaW5nIHF1b3RpbmcuJywgdGFnczogWydPcmdhbmljJywgJ0wnXSwgaW1hZ2U6ICdodHRwczovL2ltYWdlcy51bnNwbGFzaC5jb20vcGhvdG8tMTQ5ODY1NDA3NzgxMC0xMmMyMWQ0ZDZkYzM/dz02MDAmaD00MDAmZml0PWNyb3AnIH0sXHJcbiAgICAgIHsgYmFkZ2U6ICdQcm9jZXNzaW5nJywgaWNvbjogJ1BhY2thZ2UnLCBncmFkaWVudDogJ2Zyb20taW5kaWdvLTgwMCB0by1pbmRpZ28tNjAwJywgbmFtZTogJ0xpcXVpZCBXaG9sZSBFZ2cnLCBncmFkZTogJ1Byb2Nlc3NpbmcgZ3JhZGUnLCBmb3JtYXQ6ICdMaXF1aWQgd2hvbGUgZWdnJywgcGFja2FnaW5nOiAnQnVsayBwYWNrYWdpbmcgdG8gYmUgY29uZmlybWVkJywgc3VpdGFibGVGb3I6ICdGb29kIG1hbnVmYWN0dXJlcnMsIGJha2VyaWVzLCBhbmQgaW5kdXN0cmlhbCBraXRjaGVucycsIGRlc2NyaXB0aW9uOiAnTGlxdWlkIHdob2xlIGVnZyBvcHRpb24gZm9yIGNvbW1lcmNpYWwgZm9vZCBwcm9kdWN0aW9uLiBQcm9jZXNzaW5nIGFuZCBwYWNrYWdpbmcgZGV0YWlscyBzaG91bGQgYmUgY29uZmlybWVkIGR1cmluZyBxdW90aW5nLicsIHRhZ3M6IFsnSW5kdXN0cmlhbCcsICdCdWxrJ10sIGltYWdlOiAnaHR0cHM6Ly9pbWFnZXMudW5zcGxhc2guY29tL3Bob3RvLTE1ODc0ODY5MTMwNDktNTNmYzg4OTgwY2ZjP3c9NjAwJmg9NDAwJmZpdD1jcm9wJyB9LFxyXG4gICAgXSxcclxuICAgIHNwZWNzOiBbXHJcbiAgICAgIHsgbmFtZTogJ1doaXRlIFNoZWxsIEVnZ3MnLCBncmFkZTogJ0dyYWRlIEEnLCBzaXplczogJ1MsIE0sIEwsIFhMJywgbW9xOiAnNTAwIHRyYXlzL3dlZWsnLCBsZWFkOiAnMjQgaHJzJywgc3RhdHVzOiAnSW4gU3RvY2snLCBzdGF0dXNDbGFzczogJ3N0b2NrJyB9LFxyXG4gICAgICB7IG5hbWU6ICdCcm93biBGYXJtIEVnZ3MnLCBncmFkZTogJ0dyYWRlIEEnLCBzaXplczogJ00sIEwnLCBtb3E6ICcyMDAgdHJheXMvd2VlaycsIGxlYWQ6ICc0OCBocnMnLCBzdGF0dXM6ICdJbiBTdG9jaycsIHN0YXR1c0NsYXNzOiAnc3RvY2snIH0sXHJcbiAgICAgIHsgbmFtZTogJ09yZ2FuaWMgRWdncycsIGdyYWRlOiAnT3JnYW5pYyBHcmFkZSBBJywgc2l6ZXM6ICdMJywgbW9xOiAnNTAgdHJheXMvd2VlaycsIGxlYWQ6ICc3MiBocnMnLCBzdGF0dXM6ICdMaW1pdGVkJywgc3RhdHVzQ2xhc3M6ICdsaW1pdGVkJyB9LFxyXG4gICAgICB7IG5hbWU6ICdPbWVnYS0zIEVnZ3MnLCBncmFkZTogJ1NwZWNpYWx0eScsIHNpemVzOiAnTCwgWEwnLCBtb3E6ICcxMDAgdHJheXMvd2VlaycsIGxlYWQ6ICc3MiBocnMnLCBzdGF0dXM6ICdJbiBTdG9jaycsIHN0YXR1c0NsYXNzOiAnc3RvY2snIH0sXHJcbiAgICAgIHsgbmFtZTogJ0xpcXVpZCBXaG9sZSBFZ2cnLCBncmFkZTogJ1Byb2Nlc3NpbmcgR3JhZGUnLCBzaXplczogJ04vQSAoa2cpJywgbW9xOiAnNTAwIGtnL3dlZWsnLCBsZWFkOiAnNzIgaHJzJywgc3RhdHVzOiAnSW4gU3RvY2snLCBzdGF0dXNDbGFzczogJ3N0b2NrJyB9LFxyXG4gICAgXSxcclxuICB9LFxyXG4gIHNvbHV0aW9uczoge1xyXG4gICAgZXllYnJvdzogJ1RyYWRpbmcgU29sdXRpb25zJyxcclxuICAgIHRpdGxlOiAnR3JvdyBXaXRoIFVzIOKAlCBUaHJlZSBUaWVycywgT25lIE1pc3Npb24nLFxyXG4gICAgc3VidGl0bGU6ICdXaGV0aGVyIHlvdVxcJ3JlIGEgY29ybmVyIHN0b3JlIG9yIGEgbmF0aW9uYWwgY2hhaW4sIG91ciBQYXJ0bmVyIFByb2dyYW0gZ2l2ZXMgeW91IHByZWZlcmVudGlhbCBwcmljaW5nLCBkZWRpY2F0ZWQgc3VwcG9ydCwgYW5kIHRoZSB0b29scyB0byBncm93IOKAlCBiYWNrZWQgYnkgd2Vla2x5IG1hcmtldCBpbnRlbGxpZ2VuY2UgYW5kIEVTRy1hbGlnbmVkIHRyYWRpbmcgcHJhY3RpY2VzLicsXHJcbiAgICB0aWVyczogW1xyXG4gICAgICB7IGJhZGdlOiAnU2lsdmVyIFBhcnRuZXInLCBuYW1lOiAnU2lsdmVyJywgZGVzYzogJzEwMOKAkzQ5OSB0cmF5cyBwZXIgd2VlaycsIGZlYXR1cmVkOiBmYWxzZSwgZmVhdHVyZXM6IFsnNSUgdm9sdW1lIGRpc2NvdW50JywgJ0VtYWlsIGFjY291bnQgc3VwcG9ydCcsICdXZWVrbHkgc3VwcGx5IGZvcmVjYXN0JywgJ1N0YW5kYXJkIHBhY2thZ2luZyddIH0sXHJcbiAgICAgIHsgYmFkZ2U6ICdHb2xkIFBhcnRuZXInLCBuYW1lOiAnR29sZCcsIGRlc2M6ICc1MDDigJMxLDk5OSB0cmF5cyBwZXIgd2VlaycsIGZlYXR1cmVkOiB0cnVlLCBmZWF0dXJlczogWycxMiUgdm9sdW1lIGRpc2NvdW50JywgJ0RlZGljYXRlZCBhY2NvdW50IG1hbmFnZXInLCAnUHJpb3JpdHkgc3VwcGx5IGFjY2VzcycsICdDby1icmFuZGVkIHBhY2thZ2luZycsICdNb250aGx5IG1hcmtldCByZXBvcnRzJywgJ05ldC0zMCBwYXltZW50IHRlcm1zJ10gfSxcclxuICAgICAgeyBiYWRnZTogJ1BsYXRpbnVtIFBhcnRuZXInLCBuYW1lOiAnUGxhdGludW0nLCBkZXNjOiAnMiwwMDArIHRyYXlzIHBlciB3ZWVrJywgZmVhdHVyZWQ6IGZhbHNlLCBmZWF0dXJlczogWycyMCUrIGN1c3RvbSBkaXNjb3VudCcsICdDLVN1aXRlIHJlbGF0aW9uc2hpcCBhY2Nlc3MnLCAnR3VhcmFudGVlZCBzdXBwbHkgY29udHJhY3RzJywgJ0Z1bGwgcHJpdmF0ZSBsYWJlbCBzdXBwb3J0JywgJ05ldC02MCBwYXltZW50IHRlcm1zJywgJ0VTRyBjby1yZXBvcnRpbmcnXSB9LFxyXG4gICAgXSxcclxuICB9LFxyXG4gIHN1cHBseUNoYWluOiB7XHJcbiAgICBleWVicm93OiAnU3VwcGx5IENoYWluJyxcclxuICAgIHRpdGxlOiAnQSBmdWxseSBpbnRlZ3JhdGVkIGNvbGQgY2hhaW4nLFxyXG4gICAgc3VidGl0bGU6ICdGcm9tIGZhcm0gZ2F0ZSB0byB5b3VyIGRlbGl2ZXJ5IGRvY2sg4oCUIGV2ZXJ5IHN0YWdlIGlzIG1vbml0b3JlZCwgZG9jdW1lbnRlZCwgYW5kIHF1YWxpdHktY2hlY2tlZC4nLFxyXG4gICAgc3RlcHM6IFtcclxuICAgICAgeyBpY29uOiAnRmVhdGhlcicsIHRpdGxlOiAnRmFybSBTb3VyY2luZycsIGRlc2M6ICdWZXR0ZWQgcGFydG5lciBmYXJtcyBhY3Jvc3MgS1AsIFB1bmphYiwgYW5kIFNpbmRoIOKAlCBhdWRpdGVkIHF1YXJ0ZXJseScgfSxcclxuICAgICAgeyBpY29uOiAnRmxhc2tDb25pY2FsJywgdGl0bGU6ICdRdWFsaXR5IENoZWNrJywgZGVzYzogJ1NhbG1vbmVsbGEgc3dhYnMsIEhhdWdoIHVuaXQgdGVzdGluZywgY2FuZGxpbmcsIGFuZCBVU0RBIGdyYWRpbmcnIH0sXHJcbiAgICAgIHsgaWNvbjogJ1Nub3dmbGFrZScsIHRpdGxlOiAnQ29sZCBTdG9yYWdlJywgZGVzYzogJzLigJM1wrBDIGNvbnRyb2xsZWQgc3RvcmFnZSBhY3Jvc3MgMyByZWdpb25hbCBodWJzIHdpdGggSW9UIG1vbml0b3JpbmcnIH0sXHJcbiAgICAgIHsgaWNvbjogJ1BhY2thZ2UnLCB0aXRsZTogJ1BhY2tpbmcnLCBkZXNjOiAnQ2xpZW50LXNwZWNpZmllZCBvciBzdGFuZGFyZCAzMC1lZ2cgdHJheSBwYWNrYWdpbmcgd2l0aCBiYXRjaCBsYWJlbHMnIH0sXHJcbiAgICAgIHsgaWNvbjogJ1RydWNrJywgdGl0bGU6ICdEZWxpdmVyeScsIGRlc2M6ICdSZWZyaWdlcmF0ZWQgbGFzdC1taWxlIGRlbGl2ZXJ5IHdpdGggcmVhbC10aW1lIEdQUyBhbmQgdGVtcCBsb2dnaW5nJyB9LFxyXG4gICAgXSxcclxuICAgIGZlYXR1cmVzOiBbXHJcbiAgICAgIHsgaWNvbjogJ1N1bicsIHRpdGxlOiAnQ29sZCBDaGFpbiBNYW5hZ2VtZW50JywgYm9keTogJ0NvbnRpbnVvdXMgMuKAkzXCsEMgdGVtcGVyYXR1cmUgbW9uaXRvcmluZyBmcm9tIGNvbGxlY3Rpb24gdG8gZGVsaXZlcnksIHdpdGggSW9UIGxvZ2dlcnMgYW5kIHJlYWwtdGltZSBHUFMgb24gZXZlcnkgdmVoaWNsZS4nIH0sXHJcbiAgICAgIHsgaWNvbjogJ0hvbWUnLCB0aXRsZTogJ1JlZ2lvbmFsIERpc3RyaWJ1dGlvbiBIdWJzJywgYm9keTogJ1RocmVlIGh1YnMgaW4gTGFob3JlLCBLYXJhY2hpLCBhbmQgTWFyZGFuIGVuc3VyZSBuZXh0LWRheSBkZWxpdmVyeSB0byAyNSsgY2l0aWVzIGF0IGEgOTglIHN1Y2Nlc3MgcmF0ZS4nIH0sXHJcbiAgICAgIHsgaWNvbjogJ1NoYXJlMicsIHRpdGxlOiAnRmFybSBOZXR3b3JrJywgYm9keTogJzQwKyB2ZXR0ZWQgZmFybSBwYXJ0bmVycyBhY3Jvc3MgUGFraXN0YW4sIGF1ZGl0ZWQgYW5udWFsbHkgZm9yIGFuaW1hbCB3ZWxmYXJlLCBoeWdpZW5lLCBhbmQgZW52aXJvbm1lbnRhbCBjb21wbGlhbmNlLicgfSxcclxuICAgIF0sXHJcbiAgfSxcclxuICBkaXN0cmlidXRpb246IHtcclxuICAgIGV5ZWJyb3c6ICdFeHBvcnQgJiBEaXN0cmlidXRpb24nLFxyXG4gICAgdGl0bGU6ICdBIGRpc3RyaWJ1dGlvbiBuZXR3b3JrIGJ1aWx0IGZvciByZWxpYWJsZSB2b2x1bWUnLFxyXG4gICAgc3VidGl0bGU6ICdBIGNvbGQtY2hhaW4gZmxlZXQgYW5kIHJlZ2lvbmFsIGh1YiBuZXR3b3JrIGRlc2lnbmVkIHRvIG1vdmUgdm9sdW1lIHJlbGlhYmx5IOKAlCB3aXRoIGZhc3QgQjJCIHF1b3RpbmcgYW5kIGRlcGVuZGFibGUgZGVsaXZlcnkuJyxcclxuICAgIGZlYXR1cmVzOiBbXHJcbiAgICAgIHsgaWNvbjogJ1RydWNrJywgdGl0bGU6ICczNS1WZWhpY2xlIENvbGQtQ2hhaW4gRmxlZXQnLCBib2R5OiAnQSBkZWRpY2F0ZWQgcmVmcmlnZXJhdGVkIGZsZWV0IHJ1bm5pbmcgZml4ZWQgYW5kIG9uLWRlbWFuZCByb3V0ZXMgYWNyb3NzIG91ciBmdWxsIGRlbGl2ZXJ5IGZvb3RwcmludC4nIH0sXHJcbiAgICAgIHsgaWNvbjogJ0dsb2JlMicsIHRpdGxlOiAnMjUrIENpdGllcyBDb3ZlcmVkJywgYm9keTogJ0Rpc3RyaWJ1dGlvbiBmcm9tIExhaG9yZSwgS2FyYWNoaSwgYW5kIE1hcmRhbiBodWJzIHJlYWNoZXMgZXZlcnkgbWFqb3IgY29tbWVyY2lhbCBjZW50ZXIgaW4gdGhlIHJlZ2lvbi4nIH0sXHJcbiAgICAgIHsgaWNvbjogJ0NoZWNrQ2lyY2xlMicsIHRpdGxlOiAnNC1Ib3VyIEIyQiBRdW90aW5nJywgYm9keTogJ1N1Ym1pdCBhIHF1b3RlIHJlcXVlc3QgYW5kIHJlY2VpdmUgYSBmb3JtYWwgcHJvcG9zYWwgd2l0aGluIDQgYnVzaW5lc3MgaG91cnMsIHdpdGggY29udHJhY3RzIGFjdGl2ZSBpbiAzIHdvcmtpbmcgZGF5cy4nIH0sXHJcbiAgICBdLFxyXG4gIH0sXHJcbiAgd2h5VXM6IHtcclxuICAgIGV5ZWJyb3c6ICdTdXBwbHkgQ2hhaW4gQ29udHJvbCcsXHJcbiAgICB0aXRsZTogJ1N1cHBseSBDaGFpbiBDb250cm9sIENlbnRlcicsXHJcbiAgICByZWFzb25zOiBbXHJcbiAgICAgIHsgbnVtOiAnMDEnLCBpY29uOiAnV2FyZWhvdXNlJywgdGl0bGU6ICdDZXJ0aWZpZWQgRmFybXMnLCBib2R5OiAnT25seSBjZXJ0aWZpZWQgcGFydG5lciBmYXJtcyB3aXRoIGNvbnRpbnVvdXMgcXVhbGl0eSBtb25pdG9yaW5nLicsIGtwaTogJzEyMCBDZXJ0aWZpZWQgRmFybXMnLCBzdGF0dXM6ICdWRVJJRklFRCcgfSxcclxuICAgICAgeyBudW06ICcwMicsIGljb246ICdQYWNrYWdlT3BlbicsIHRpdGxlOiAnQ29sbGVjdGlvbiBDZW50ZXInLCBib2R5OiAnR1BTLXZlcmlmaWVkIGh1YnMgY29uc29saWRhdGluZyBkYWlseSBmYXJtIHlpZWxkcy4nLCBrcGk6ICdEYWlseSBPdXRwdXQgTG9nZ2VkJywgc3RhdHVzOiAnQ09OU09MSURBVEVEJyB9LFxyXG4gICAgICB7IG51bTogJzAzJywgaWNvbjogJ01pY3Jvc2NvcGUnLCB0aXRsZTogJ1F1YWxpdHkgSW5zcGVjdGlvbicsIGJvZHk6ICdBSSB2aXNpb24sIHNoZWxsIHRlc3RpbmcsIGFuZCB0ZW1wZXJhdHVyZSBjaGVja3MuJywga3BpOiAnOTguNiUgUGFzcyBSYXRlJywgc3RhdHVzOiAnUVVBTElUWSBQQVNTRUQnIH0sXHJcbiAgICAgIHsgbnVtOiAnMDQnLCBpY29uOiAnRmlsZUNoZWNrMicsIHRpdGxlOiAnRG9jdW1lbnRhdGlvbicsIGJvZHk6ICdJbW11dGFibGUgYmF0Y2ggY2VydGlmaWNhdGVzIGFuZCBsYWIgcmVzdWx0cyBnZW5lcmF0ZWQuJywga3BpOiAnQmxvY2tjaGFpbiBWZXJpZmllZCcsIHN0YXR1czogJ0NMRUFSRUQnIH0sXHJcbiAgICAgIHsgbnVtOiAnMDUnLCBpY29uOiAnU25vd2ZsYWtlJywgdGl0bGU6ICdDb2xkIENoYWluJywgYm9keTogJ01haW50YWluZWQgdmlhIElvVCBzZW5zb3JzIGFjcm9zcyAzIHJlZ2lvbmFsIGh1YnMuJywga3BpOiAnMi01wrBDIE1haW50YWluZWQnLCBzdGF0dXM6ICdURU1QIENPTlRST0xMRUQnIH0sXHJcbiAgICAgIHsgbnVtOiAnMDYnLCBpY29uOiAnVHJ1Y2snLCB0aXRsZTogJ0N1c3RvbWVyIERlbGl2ZXJ5JywgYm9keTogJ1JlZnJpZ2VyYXRlZCBsYXN0LW1pbGUgZGVwbG95bWVudCB0byB5b3VyIGRvY2suJywga3BpOiAnMTAwJSBPbi1UaW1lJywgc3RhdHVzOiAnQ09NUExFVEVEJyB9LFxyXG4gICAgXSxcclxuICB9LFxyXG4gIHN0YXRzQmFuZDoge1xyXG4gICAgc3RhdHM6IFtcclxuICAgICAgeyB2YWx1ZTogJzI4MCcsIHN1ZmZpeDogJysnLCBsYWJlbDogJ0FjdGl2ZSBwYXJ0bmVycyAmIEIyQiBjbGllbnRzJyB9LFxyXG4gICAgICB7IHZhbHVlOiAnNTAwJywgc3VmZml4OiAnSycsIGxhYmVsOiAnRWdncyB0cmFkZWQgJiBzdXBwbGllZCB3ZWVrbHknIH0sXHJcbiAgICAgIHsgdmFsdWU6ICc5MicsIHN1ZmZpeDogJy8xMDAnLCBsYWJlbDogJ0VTRyBzdXN0YWluYWJpbGl0eSBzY29yZScgfSxcclxuICAgICAgeyB2YWx1ZTogJzEwMCcsIHN1ZmZpeDogJyUnLCBsYWJlbDogJ0JhdGNoZXMgZnVsbHkgdHJhY2VhYmxlJyB9LFxyXG4gICAgXSxcclxuICB9LFxyXG4gIGluZHVzdHJpZXM6IFtcclxuICAgIHsgaWNvbjogJ0J1aWxkaW5nMicsIG5hbWU6ICdIb3RlbHMgJiBSZXN0YXVyYW50cycgfSxcclxuICAgIHsgaWNvbjogJ0NoZWZIYXQnLCBuYW1lOiAnQmFrZXJ5ICYgQ29uZmVjdGlvbmVyeScgfSxcclxuICAgIHsgaWNvbjogJ1N0b3JlJywgbmFtZTogJ1JldGFpbCAmIFN1cGVybWFya2V0cycgfSxcclxuICAgIHsgaWNvbjogJ0ZhY3RvcnknLCBuYW1lOiAnRm9vZCBNYW51ZmFjdHVyZXJzJyB9LFxyXG4gICAgeyBpY29uOiAnSG9zcGl0YWwnLCBuYW1lOiAnSG9zcGl0YWxzICYgSW5zdGl0dXRpb25zJyB9LFxyXG4gIF0sXHJcbiAgcHJvY2VzczogW1xyXG4gICAgeyBudW06ICcwMScsIGljb246ICdGZWF0aGVyJywgdGl0bGU6ICdDb2xsZWN0aW9uJywgYm9keTogJ0VnZ3MgYXJlIGNvbGxlY3RlZCBmcm9tIGNlcnRpZmllZCBmYXJtcyB3aXRoaW4gNiBob3VycyBvZiBsYXlpbmcuIEVhY2ggY29sbGVjdGlvbiBpcyBsb2dnZWQgd2l0aCBmYXJtIElELCBmbG9jayBJRCwgYW5kIHRpbWVzdGFtcC4nIH0sXHJcbiAgICB7IG51bTogJzAyJywgaWNvbjogJ0ZsYXNrQ29uaWNhbCcsIHRpdGxlOiAnTGFib3JhdG9yeSBUZXN0aW5nJywgYm9keTogJ1NhbG1vbmVsbGEgc3dhYnMsIHNoZWxsIHN0cmVuZ3RoLCBpbnRlcmlvciBxdWFsaXR5IChIYXVnaCB1bml0cyksIGFuZCB5b2xrIGNvbG9yIG1lYXN1cmVkIG9uIGV2ZXJ5IGJhdGNoLicgfSxcclxuICAgIHsgbnVtOiAnMDMnLCBpY29uOiAnU2NhbkxpbmUnLCB0aXRsZTogJ0NhbmRsaW5nICYgR3JhZGluZycsIGJvZHk6ICdBdXRvbWF0ZWQgY2FuZGxpbmcgZGV0ZWN0cyBjcmFja3MsIGJsb29kIHNwb3RzIGFuZCBpbnRlcm5hbCBkZWZlY3RzLiBFZ2dzIGFyZSBncmFkZWQgYnkgc2l6ZSBhbmQgc2hlbGwgcXVhbGl0eS4nIH0sXHJcbiAgICB7IG51bTogJzA0JywgaWNvbjogJ1ByaW50ZXInLCB0aXRsZTogJ01hcmtpbmcgJiBDb2RpbmcnLCBib2R5OiAnRWFjaCBlZ2cgaXMgc3RhbXBlZCB3aXRoIGEgYmF0Y2ggY29kZSBsaW5raW5nIHRvIHRoZSBmdWxsIGRpZ2l0YWwgYXVkaXQgdHJhaWwgYWNjZXNzaWJsZSB2aWEgb3VyIGNsaWVudCBwb3J0YWwuJyB9LFxyXG4gICAgeyBudW06ICcwNScsIGljb246ICdQYWNrYWdlJywgdGl0bGU6ICdQYWNraW5nJywgYm9keTogJ1BhY2tlZCB1bmRlciBoeWdpZW5pYyBjb25kaXRpb25zIGluIGNsaWVudC1zcGVjaWZpZWQgb3Igc3RhbmRhcmQgcGFja2FnaW5nLCB3aXRoIGJhdGNoIGNlcnRpZmljYXRlcyBpbmNsdWRlZCBpbiBldmVyeSBib3guJyB9LFxyXG4gICAgeyBudW06ICcwNicsIGljb246ICdUcnVjaycsIHRpdGxlOiAnQ29sZC1DaGFpbiBEZWxpdmVyeScsIGJvZHk6ICdSZWZyaWdlcmF0ZWQgZGVsaXZlcnkgd2l0aCBJb1QgdGVtcGVyYXR1cmUgbG9nZ2luZy4gRGVsaXZlcnkgcmVjZWlwdHMgaW5jbHVkZSBkZWxpdmVyeSBkb2N1bWVudGF0aW9uLicgfSxcclxuICBdLFxyXG4gIHF1YWxpdHk6IHtcclxuICAgIGV5ZWJyb3c6ICdRdWFsaXR5IEFzc3VyYW5jZScsXHJcbiAgICB0aXRsZTogJ1F1YWxpdHkgWW91IENhbiBWZXJpZnknLFxyXG4gICAgc3VidGl0bGU6ICdPdXIgdHJhY2VhYmlsaXR5IHByb2Nlc3MgaGVscHMgY3VzdG9tZXJzIGZvbGxvdyBlYWNoIGJhdGNoIGZyb20gY29sbGVjdGlvbiB0byBkZWxpdmVyeS4nLFxyXG4gICAgYmF0Y2g6IHtcclxuICAgICAgaWQ6ICdCQVRDSC0yMDI1LTA2LTIyLUE0NycsXHJcbiAgICAgIHRpdGxlOiAnU2FtcGxlIEJhdGNoIFRyYWNlJyxcclxuICAgICAgc3VidGl0bGU6ICdTYW1wbGUgYmF0Y2ggZGVsaXZlcmVkIDIyIEp1bmUgMjAyNScsXHJcbiAgICAgIHN0ZXBzOiBbXHJcbiAgICAgICAgeyB0aXRsZTogJ0Zhcm0gQ29sbGVjdGVkJywgdGltZTogJzA2OjE1IEFNJyB9LFxyXG4gICAgICAgIHsgdGl0bGU6ICdMYWIgVGVzdGVkJywgdGltZTogJzA5OjMwIEFNJyB9LFxyXG4gICAgICAgIHsgdGl0bGU6ICdHcmFkZWQgJiBQYWNrZWQnLCB0aW1lOiAnMTE6MDAgQU0nIH0sXHJcbiAgICAgICAgeyB0aXRsZTogJ0Rpc3BhdGNoZWQnLCB0aW1lOiAnMDE6MDAgUE0nIH0sXHJcbiAgICAgICAgeyB0aXRsZTogJ0RlbGl2ZXJlZCcsIHRpbWU6ICcwNDo0NSBQTScgfSxcclxuICAgICAgXSxcclxuICAgIH0sXHJcbiAgICBjZXJ0czogW1xyXG4gICAgICB7IGljb246ICdDbGlwYm9hcmRMaXN0JywgbmFtZTogJ1NFQ1AgUmVnaXN0cmF0aW9uJywgYm9keTogJ0NlcnRpZmljYXRlIG9mIEluY29ycG9yYXRpb24g4oCUIFJlZ2lzdHJhdGlvbiBOby4gQzk1NTQyMycsIHN0YXR1czogJ0FjdGl2ZScgfSxcclxuICAgICAgeyBpY29uOiAnU2hpZWxkQ2hlY2snLCBuYW1lOiAnRkJSIE5UTiBDZXJ0aWZpY2F0ZScsIGJvZHk6ICdGZWRlcmFsIEJvYXJkIG9mIFJldmVudWUg4oCUIE5hdGlvbmFsIFRheCBOdW1iZXInLCBzdGF0dXM6ICdBY3RpdmUnIH0sXHJcbiAgICAgIHsgaWNvbjogJ0NoZWNrQ2lyY2xlMicsIG5hbWU6ICdTVFJOJywgYm9keTogJ1NhbGVzIFRheCBSZWdpc3RyYXRpb24gTnVtYmVyIOKAlCBQcm92aW5jaWFsIFJldmVudWUnLCBzdGF0dXM6ICdBY3RpdmUnIH0sXHJcbiAgICAgIHsgaWNvbjogJ1VzZXJzJywgbmFtZTogJ0NoYW1iZXIgb2YgQ29tbWVyY2UnLCBib2R5OiAnTWFyZGFuIENoYW1iZXIgb2YgQ29tbWVyY2UgJiBJbmR1c3RyeSBNZW1iZXJzaGlwJywgc3RhdHVzOiAnQWN0aXZlJyB9LFxyXG4gICAgICB7IGljb246ICdGbGFza0NvbmljYWwnLCBuYW1lOiAnQUNJIEhBQ0NQJywgYm9keTogJ0hhemFyZCBBbmFseXNpcyBDcml0aWNhbCBDb250cm9sIFBvaW50cyDigJQgWW91c2FmemFpIEFncmkgRm9vZHMgKDIwMjbigJMyMDI5KScsIHN0YXR1czogJ0FjdGl2ZScgfSxcclxuICAgICAgeyBpY29uOiAnTGVhZicsIG5hbWU6ICdJSEMgSGFsYWwnLCBib2R5OiAnSW50ZXJuYXRpb25hbCBIYWxhbCBDZXJ0aWZpY2F0aW9uIOKAlCBZb3VzYWZ6YWkgQWdyaSBGb29kcyAoMjAyNuKAkzIwMjkpJywgc3RhdHVzOiAnQWN0aXZlJyB9LFxyXG4gICAgXSxcclxuICB9LFxyXG4gIHRlc3RpbW9uaWFsczogW1xuICAgIHsgaW5pdGlhbHM6ICdMRCcsIG5hbWU6ICdMb2NhbCBEaXN0cmlidXRvcicsIHJvbGU6ICdLUEsgUmVnaW9uJywgY29tcGFueTogJycsIHJhdGluZzogNC44LCB0ZXh0OiAnT3VyIGV4cGVyaWVuY2Ugd2l0aCBZb3VzYWZ6YWkgRWdncyBUcmFkZXJzIGhhcyBiZWVuIGV4Y2VsbGVudC4gVGhlaXIgcXVhbGl0eSBhbmQgc2VydmljZSBoYXZlIGJlZW4gY29uc2lzdGVudGx5IHJlbGlhYmxlLicgfSxcbiAgICB7IGluaXRpYWxzOiAnUlAnLCBuYW1lOiAnUmV0YWlsIFBhcnRuZXInLCByb2xlOiAnUHVuamFiJywgY29tcGFueTogJycsIHJhdGluZzogNC41LCB0ZXh0OiAnUmVsaWFibGUgc3VwcGxpZXIgd2l0aCBjb25zaXN0ZW50IHF1YWxpdHkgYW5kIHRpbWVseSBkZWxpdmVyeS4gV2UgaGF2ZSBiZWVuIHdvcmtpbmcgd2l0aCB0aGVtIGZvciB5ZWFycy4nIH0sXG4gICAgeyBpbml0aWFsczogJ1JPJywgbmFtZTogJ1Jlc3RhdXJhbnQgT3duZXInLCByb2xlOiAnTGFob3JlJywgY29tcGFueTogJycsIHJhdGluZzogNC42LCB0ZXh0OiAnRWdnIFRyYWRlcnMgaGFzIGNvbXBsZXRlbHkgY2hhbmdlZCBob3cgSSBzb3VyY2UgZWdncy4gSSBjYW4gY29tcGFyZSBmYXJtcywgY2hlY2sgcXVhbGl0eSBzY29yZXMsIGFuZCBvcmRlciBpbiBtaW51dGVzLicgfSxcbiAgICB7IGluaXRpYWxzOiAnRk0nLCBuYW1lOiAnRmFybSBNYW5hZ2VyJywgcm9sZTogJ01hcmRhbicsIGNvbXBhbnk6ICcnLCByYXRpbmc6IDQuNCwgdGV4dDogJ0JlaW5nIG9uIHRoZSBwbGF0Zm9ybSBoYXMgZ2l2ZW4gdXMgZGlyZWN0IGFjY2VzcyB0byBjb21tZXJjaWFsIGJ1eWVycyB3ZSBjb3VsZCBuZXZlciByZWFjaCBiZWZvcmUuJyB9LFxuICAgIHsgaW5pdGlhbHM6ICdQSCcsIG5hbWU6ICdQcm9jdXJlbWVudCBIZWFkJywgcm9sZTogJ0thcmFjaGknLCBjb21wYW55OiAnJywgcmF0aW5nOiA0LjcsIHRleHQ6ICdFdmVyeSBiYXRjaCBpcyBkb2N1bWVudGVkIGFuZCBldmVyeSBkZWxpdmVyeSBpcyBvbiB0aW1lLicgfSxcbiAgXSxcbiAgZmFxOiBbXHJcbiAgICB7IHE6ICdIb3cgcXVpY2tseSBjYW4gSSByZWNlaXZlIGEgZm9ybWFsIEIyQiBxdW90ZT8nLCBhOiAnU3VibWl0IGEgcXVvdGUgcmVxdWVzdCBhbmQgb3VyIGNvbW1lcmNpYWwgdGVhbSByZXNwb25kcyB3aXRoIGEgZm9ybWFsIHF1b3RhdGlvbiB3aXRoaW4gNCBidXNpbmVzcyBob3Vycy4gQ29udHJhY3RzIGNhbiBiZSBhY3RpdmF0ZWQgd2l0aGluIDMgd29ya2luZyBkYXlzLicgfSxcclxuICAgIHsgcTogJ1doYXQgaXMgdGhlIG1pbmltdW0gb3JkZXIgcXVhbnRpdHk/JywgYTogJ01pbmltdW0gb3JkZXJzIHZhcnkgYnkgcHJvZHVjdCDigJQgZnJvbSA1MCB0cmF5cy93ZWVrIGZvciBvcmdhbmljIGVnZ3MgdXAgdG8gNTAwIHRyYXlzL3dlZWsgZm9yIHN0YW5kYXJkIEdyYWRlIEEgd2hpdGUgc2hlbGwgZWdncy4gTGlxdWlkIHdob2xlIGVnZyBzdGFydHMgYXQgNTAwa2cvd2Vlay4nIH0sXHJcbiAgICB7IHE6ICdXaGljaCBjZXJ0aWZpY2F0aW9ucyBhbmQgc3RhbmRhcmRzIGRvIHlvdSBjb21wbHkgd2l0aD8nLCBhOiAnQWxsIHByb2R1Y3RzIG1lZXQgSVNPIDIyMDAwOjIwMTgsIFBTUUNBLCBhbmQgUE5BQy1hY2NyZWRpdGVkIEhhbGFsIHN0YW5kYXJkcywgYWxvbmdzaWRlIGFjdGl2ZSBBbmltYWwgV2VsZmFyZSwgRW52aXJvbm1lbnRhbCBBdWRpdCwgYW5kIEhBQ0NQIGNlcnRpZmljYXRpb25zLicgfSxcclxuICAgIHsgcTogJ0NhbiBJIHRyYWNlIGEgc3BlY2lmaWMgZGVsaXZlcmVkIGJhdGNoPycsIGE6ICdZZXMuIEV2ZXJ5IGJveCBjYXJyaWVzIGEgYmF0Y2ggY29kZSDigJQgc2NhbiBpdCBvciBsb29rIGl0IHVwIGluIHRoZSBjbGllbnQgcG9ydGFsIHRvIHNlZSBmYXJtIGNvbGxlY3Rpb24sIGxhYiB0ZXN0aW5nLCBncmFkaW5nLCBkaXNwYXRjaCBhbmQgZGVsaXZlcnkgdGltZXN0YW1wcy4nIH0sXHJcbiAgICB7IHE6ICdIb3cgZG9lcyB0aGUgUGFydG5lciBQcm9ncmFtIHByaWNpbmcgd29yaz8nLCBhOiAnUHJpY2luZyBpcyB0aWVyZWQgYnkgd2Vla2x5IHZvbHVtZSDigJQgU2lsdmVyICgxMDDigJM0OTkgdHJheXMpLCBHb2xkICg1MDDigJMxLDk5OSB0cmF5cyksIGFuZCBQbGF0aW51bSAoMiwwMDArIHRyYXlzKSDigJQgZWFjaCB1bmxvY2tpbmcgZGVlcGVyIGRpc2NvdW50cyBhbmQgYWRkaXRpb25hbCBzZXJ2aWNlcy4nIH0sXHJcbiAgICB7IHE6ICdXaGljaCBjaXRpZXMgYW5kIHJlZ2lvbnMgZG8geW91IGRlbGl2ZXIgdG8/JywgYTogJ091ciBkaXN0cmlidXRpb24gaHVicyBpbiBNYXJkYW4sIEF0dG9jaywgYW5kIE1hbGFrYW5kIHNlcnZlIDI1KyBjaXRpZXMgZGlyZWN0bHksIHdpdGggbmV4dC1kYXkgZGVsaXZlcnkgYXQgYSA5OCUgc3VjY2VzcyByYXRlLicgfSxcclxuICBdLFxyXG4gIGNvbnRhY3Q6IHtcclxuICAgIGV5ZWJyb3c6ICdDb250YWN0IFVzJyxcclxuICAgIHRpdGxlOiAnR2V0IGluIFRvdWNoIOKAlCBZb3VzYWZ6YWkgRWdncyBUcmFkZXJzJyxcclxuICAgIHN1YnRpdGxlOiAnUmVhY2ggb3V0IGZvciBvcmRlcnMsIHBhcnRuZXJzaGlwcywgb3IgaW5xdWlyaWVzLiBXZSBhcmUgYWx3YXlzIGhhcHB5IHRvIGNvbm5lY3QuJyxcclxuICAgIGluZm86IFtcclxuICAgICAgeyBpY29uOiAnUGhvbmUnLCBsYWJlbDogJ1Bob25lJywgdmFsdWU6ICcrOTIgOTM3IDI2OTYwMScgfSxcbiAgICAgIHsgaWNvbjogJ01haWwnLCBsYWJlbDogJ0VtYWlsJywgdmFsdWU6ICdpbmZvQHlvdXNhZnphaWFncmlmb29kcy5jb20nIH0sXHJcbiAgICAgIHsgaWNvbjogJ01hcFBpbicsIGxhYmVsOiAnSGVhZCBPZmZpY2UnLCB2YWx1ZTogJ09wcG9zaXRlIE1hcmRhbiBQcmVzcyBDbHViLCBNYXJkYW4sIEtQSywgUGFraXN0YW4nIH0sXHJcbiAgICAgIHsgaWNvbjogJ01haWwnLCBsYWJlbDogJ0FkZGl0aW9uYWwgRW1haWxzJywgdmFsdWU6ICdTYW5hLVVsbGFoQHlvdXNhZnphaWFncmlmb29kcy5jb20gwrcgU2FlZWRfcmVobWFuQHlvdXNhZnphaWFncmlmb29kcy5jb20nIH0sXHJcbiAgICBdLFxyXG4gIH0sXHJcbiAgY29tcGFueToge1xyXG4gICAgbmFtZTogJ1lPVVNBRlpBSScsXHJcbiAgICBzdWI6ICdFZ2dzIFRyYWRlcnMgJiBQb3VsdHJ5IEZhcm1zJyxcclxuICAgIHRhZ2xpbmU6ICdBIHRydXN0ZWQgbmFtZSBpbiBlZ2cgdHJhZGluZyBhbmQgcG91bHRyeSBmYXJtaW5nIHNpbmNlIDE5NjAg4oCUIGRlbGl2ZXJpbmcgcXVhbGl0eSwgZnJlc2huZXNzLCBhbmQgcmVsaWFiaWxpdHkgZnJvbSBmYXJtIHRvIG1hcmtldC4nLFxyXG4gIH0sXHJcbiAgb3VyQ29tcGFuaWVzOiB7XHJcbiAgICBleWVicm93OiAnJyxcclxuICAgIHRpdGxlOiAnT3VyIENvbXBhbmllcycsXHJcbiAgICBzdWJ0aXRsZTogJ0V4cGxvcmUgdGhlIHNwZWNpYWxpemVkIGJyYW5kcyB1bmRlciB0aGUgWW91c2FmemFpIEVnZ3MgVHJhZGVycyBncm91cCDigJQgZWFjaCBzZXJ2aW5nIGRpc3RpbmN0IG1hcmtldCBzZWdtZW50cyB3aXRoIHRoZSBzYW1lIGNvbW1pdG1lbnQgdG8gcXVhbGl0eSBhbmQgY29tcGxpYW5jZS4nLFxyXG4gICAgY29tcGFuaWVzOiBbXHJcbiAgICAgIHtcclxuICAgICAgICBpZDogJ3lvdXNhZnphaS1lZ3JvJyxcclxuICAgICAgICBuYW1lOiAnWW91c2FmemFpIEVnZ3MgVHJhZGVycycsXHJcbiAgICAgICAgdGFnbGluZTogJ0ludGVybmF0aW9uYWwgQjJCIEVnZyBUcmFkaW5nICYgU3VwcGx5JyxcclxuICAgICAgICBkZXNjcmlwdGlvbjogJ091ciBmbGFnc2hpcCBicmFuZCBmb3IgaW50ZXJuYXRpb25hbCBCMkIgZWdnIHRyYWRpbmcsIHN1cHBseSBjaGFpbiBtYW5hZ2VtZW50LCBhbmQgY29tcGxpYW5jZS1maXJzdCBkaXN0cmlidXRpb24gYWNyb3NzIFBha2lzdGFuIGFuZCBiZXlvbmQuJyxcclxuICAgICAgICBjb2xvcjogJyNCODg2MEInLFxyXG4gICAgICAgIHVybDogJy8nLFxyXG4gICAgICAgIGxvZ286IG51bGwsXHJcbiAgICAgIH0sXHJcbiAgICAgIHtcclxuICAgICAgICBpZDogJ2VnZy10cmFkZXJzJyxcclxuICAgICAgICBuYW1lOiAnRWdnIFRyYWRlcnMnLFxyXG4gICAgICAgIHRhZ2xpbmU6ICdTcGVjaWFsaXplZCBQb3VsdHJ5ICYgRWdnIE1hcmtldHBsYWNlJyxcclxuICAgICAgICBkZXNjcmlwdGlvbjogJ0EgZGVkaWNhdGVkIHBsYXRmb3JtIGNvbm5lY3RpbmcgdmVyaWZpZWQgcG91bHRyeSBmYXJtcyBkaXJlY3RseSB0byBjb21tZXJjaWFsIGJ1eWVycyB3aXRoIHJlYWwtdGltZSBwcmljaW5nLCBxdWFsaXR5IHNjb3JlcywgYW5kIHNlYW1sZXNzIHByb2N1cmVtZW50LicsXHJcbiAgICAgICAgY29sb3I6ICcjMEQ2QjNEJyxcclxuICAgICAgICB1cmw6ICcvZWdnLXRyYWRlcnMnLFxyXG4gICAgICAgIGxvZ286IG51bGwsXHJcbiAgICAgIH0sXHJcbiAgICBdLFxyXG4gIH0sXHJcbiAgZWdnVHJhZGVyczoge1xyXG4gICAgY29tcGFueToge1xyXG4gICAgICBuYW1lOiAnRWdnIFRyYWRlcnMnLFxuICAgICAgc3ViOiAnUG91bHRyeSBUcmFkaW5nJyxcbiAgICAgIHRhZ2xpbmU6ICdBIFlvdXNhZnphaSBFZ2dzIFRyYWRlcnMgY29tcGFueSBjb25uZWN0aW5nIHZlcmlmaWVkIHBvdWx0cnkgZmFybXMgd2l0aCBjb21tZXJjaWFsIGJ1eWVycyB0aHJvdWdoIGEgY2xlYXIgc3VwcGx5IHByb2Nlc3MuJyxcbiAgICB9LFxyXG4gICAgaGVybzoge1xyXG4gICAgICBleWVicm93OiAnJyxcbiAgICAgIGJhY2tncm91bmRJbWFnZTogJycsXG4gICAgICBoMUxpbmUxOiAnWW91ciB0cnVzdGVkJyxcbiAgICAgIGgxSGlnaGxpZ2h0OiAnZWdnIG1hcmtldHBsYWNlJyxcbiAgICAgIGgxTGluZTI6ICcnLFxuICAgICAgYm9keTogJ0VnZyBUcmFkZXJzIGNvbm5lY3RzIHZlcmlmaWVkIHBvdWx0cnkgZmFybXMgd2l0aCBjb21tZXJjaWFsIGJ1eWVycyB0aHJvdWdoIGNsZWFyIHByaWNpbmcgaW5mb3JtYXRpb24sIHF1YWxpdHkgZGV0YWlscywgYW5kIGEgc2ltcGxlciBvcmRlcmluZyBwcm9jZXNzLicsXG4gICAgICBwcmltYXJ5Q3RhOiB7IGxhYmVsOiAnUmVxdWVzdCBhIFF1b3RlJywgYWN0aW9uOiAnL2VnZy10cmFkZXJzL2NvbnRhY3QnIH0sXG4gICAgICBzZWNvbmRhcnlDdGE6IHsgbGFiZWw6ICdIb3cgaXQgd29ya3MnLCBhY3Rpb246ICcvZWdnLXRyYWRlcnMvYWJvdXQnIH0sXG4gICAgICB0cnVzdEl0ZW1zOiBbXHJcbiAgICAgICAgeyBpY29uOiAnU2hpZWxkQ2hlY2snLCB0ZXh0OiAnVmVyaWZpZWQgZmFybXMnIH0sXG4gICAgICAgIHsgaWNvbjogJ0NoZWNrQ2lyY2xlMicsIHRleHQ6ICdRdWFsaXR5IGd1YXJhbnRlZWQnIH0sXG4gICAgICAgIHsgaWNvbjogJ0hvbWUnLCB0ZXh0OiAnRGVsaXZlcnkgY29vcmRpbmF0aW9uJyB9LFxuICAgICAgXSxcclxuICAgICAgc3RhdHM6IFtcclxuICAgICAgICB7IHZhbHVlOiAnMjAwJywgc3VmZml4OiAnKycsIGxhYmVsOiAnVmVyaWZpZWQgcG91bHRyeSBmYXJtcycgfSxcbiAgICAgICAgeyB2YWx1ZTogJzEyJywgc3VmZml4OiAnSysnLCBsYWJlbDogJ0NvbXBsZXRlZCB0cmFuc2FjdGlvbnMnIH0sXHJcbiAgICAgICAgeyB2YWx1ZTogJzk4Jywgc3VmZml4OiAnJScsIGxhYmVsOiAnQnV5ZXIgc2F0aXNmYWN0aW9uIHJhdGUnIH0sXHJcbiAgICAgICAgeyB2YWx1ZTogJzI4Jywgc3VmZml4OiAnKycsIGxhYmVsOiAnQ2l0aWVzIGNvdmVyZWQnIH0sXHJcbiAgICAgIF0sXHJcbiAgICB9LFxyXG4gICAgYWJvdXQ6IHtcclxuICAgICAgZXllYnJvdzogJycsXG4gICAgICB0aXRsZTogJ0EgY2xlYXJlciB3YXkgdG8gdHJhZGUgZWdncycsXG4gICAgICBzdWJ0aXRsZTogJ0VnZyBUcmFkZXJzIGJyaW5ncyBjbGVhcmVyIGNvbW11bmljYXRpb24gYW5kIHRyYWNlYWJpbGl0eSB0byB0aGUgcG91bHRyeSBzdXBwbHkgY2hhaW4sIGdpdmluZyBidXllcnMgZGlyZWN0IGFjY2VzcyB0byB2ZXJpZmllZCBmYXJtcy4nLFxuICAgICAgcXVvdGU6ICdPdXIgZ29hbCBpcyB0byBtYWtlIGNvbW1lcmNpYWwgZWdnIHByb2N1cmVtZW50IGNsZWFyZXIsIGZhc3RlciwgYW5kIGVhc2llciB0byBtYW5hZ2UgZm9yIGJvdGggYnV5ZXJzIGFuZCBmYXJtcy4nLFxuICAgICAgcXVvdGVGb290ZXI6ICdPdXIgTWlzc2lvbicsXHJcbiAgICAgIHBhcmFncmFwaHM6IFtcclxuICAgICAgICAnRm91bmRlZCBhcyBhIFlvdXNhZnphaSBFZ2dzIFRyYWRlcnMgdmVudHVyZSwgRWdnIFRyYWRlcnMgd2FzIGJ1aWx0IHRvIGNvbm5lY3QgdmVyaWZpZWQgZmFybXMgZGlyZWN0bHkgd2l0aCBjb21tZXJjaWFsIGJ1eWVycy4nLFxuICAgICAgICAnVGhlIHNlcnZpY2UgaGVscHMgYnV5ZXJzIGNvbXBhcmUgc3VwcGx5IG9wdGlvbnMsIHJldmlldyBxdWFsaXR5IGluZm9ybWF0aW9uLCBhbmQgbWFuYWdlIG9yZGVycyB0aHJvdWdoIGEgY2xlYXJlciBwcm9jdXJlbWVudCBwcm9jZXNzLicsXG4gICAgICAgICdFZ2cgVHJhZGVycyBzdXBwb3J0cyBjb21tZXJjaWFsIGVnZyBwcm9jdXJlbWVudCBhY3Jvc3MgUGFraXN0YW4gd2l0aCBhIGZvY3VzIG9uIHRyYWNlYWJpbGl0eSwgcmVsaWFiaWxpdHksIGFuZCByZXNwb25zaXZlIHNlcnZpY2UuJyxcbiAgICAgIF0sXHJcbiAgICAgIGZlYXR1cmVzOiBbXHJcbiAgICAgICAgeyBpY29uOiAnRmVhdGhlcicsIHRpdGxlOiAnVmVyaWZpZWQgZmFybXMgb25seScsIGJvZHk6ICdTZWxsZXJzIGFyZSByZXZpZXdlZCBiZWZvcmUgbGlzdGluZyBzbyBidXllcnMgY2FuIG1ha2UgZGVjaXNpb25zIHdpdGggbW9yZSBjb25maWRlbmNlLicgfSxcbiAgICAgICAgeyBpY29uOiAnVHJlbmRpbmdVcCcsIHRpdGxlOiAnQ2xlYXIgcHJpY2luZycsIGJvZHk6ICdCdXllcnMgcmVjZWl2ZSBwcmFjdGljYWwgcHJpY2luZyBpbmZvcm1hdGlvbiBmb3IgY29tbWVyY2lhbCBzdXBwbHkuJyB9LFxuICAgICAgICB7IGljb246ICdQYWNrYWdlJywgdGl0bGU6ICdTaW1wbGUgcHJvY3VyZW1lbnQnLCBib2R5OiAnRnJvbSBvcmRlciB0byBkZWxpdmVyeSwgdGhlIHByb2Nlc3MgaXMgb3JnYW5pemVkIGFyb3VuZCBjbGVhciBjb21tdW5pY2F0aW9uIGFuZCByZWxpYWJsZSBmb2xsb3ctdXAuJyB9LFxuICAgICAgXSxcclxuICAgICAgdGVhbTogW1xyXG4gICAgICAgIHsgaW5pdGlhbHM6ICdDSCcsIG5hbWU6ICdDaGFpcm1hbicsIHJvbGU6ICdGb3VuZGVyJywgYmlvOiAnTGVhZHMgdGhlIEVnZyBUcmFkZXJzIHZpc2lvbiB3aXRoIGRlZXAgZXhwZXJpZW5jZSBpbiBwb3VsdHJ5IGNvbW1vZGl0eSBtYXJrZXRzLicgfSxcbiAgICAgICAgeyBpbml0aWFsczogJ0FLJywgbmFtZTogJ0FobWVkIEtoYW4nLCByb2xlOiAnT3BlcmF0aW9ucyBsZWFkJywgYmlvOiAnU3VwcG9ydHMgc2VydmljZSBkZXZlbG9wbWVudCBhbmQgYnV5ZXItc2VsbGVyIGNvb3JkaW5hdGlvbiBhY3Jvc3Mgb3BlcmF0aW5nIGNpdGllcy4nIH0sXG4gICAgICBdLFxyXG4gICAgfSxcclxuICAgIHNlcnZpY2VzOiBbXHJcbiAgICAgIHsgbnVtOiAnMDEnLCB0aXRsZTogJ0Zhcm0gRGlzY292ZXJ5JywgYm9keTogJ0Jyb3dzZSBhbmQgY29ubmVjdCB3aXRoIHZlcmlmaWVkIHBvdWx0cnkgZmFybXMgcmFua2VkIGJ5IHF1YWxpdHkgc2NvcmUsIGRlbGl2ZXJ5IHJlbGlhYmlsaXR5LCBhbmQgYnV5ZXIgcmV2aWV3cyBmcm9tIHJlYWwgY29tbWVyY2lhbCBidXllcnMuJyB9LFxyXG4gICAgICB7IG51bTogJzAyJywgdGl0bGU6ICdTbWFydCBNYXRjaGluZycsIGJvZHk6ICdPdXIgYWxnb3JpdGhtIG1hdGNoZXMgeW91ciBvcmRlciByZXF1aXJlbWVudHMgd2l0aCB0aGUgYmVzdC1zdWl0ZWQgZmFybXMgYmFzZWQgb24gbG9jYXRpb24sIHdlZWtseSBjYXBhY2l0eSwgYW5kIGFjdGl2ZSBjZXJ0aWZpY2F0aW9ucy4nIH0sXHJcbiAgICAgIHsgbnVtOiAnMDMnLCB0aXRsZTogJ1NlY3VyZSBUcmFkaW5nJywgYm9keTogJ0V2ZXJ5IHRyYW5zYWN0aW9uIGlzIHNlY3VyZWQgd2l0aCBlc2Nyb3cgcHJvdGVjdGlvbiwgcXVhbGl0eS1iYXNlZCByZWxlYXNlLCBhbmQgZGlzcHV0ZSByZXNvbHV0aW9uIHN1cHBvcnQgZm9yIGJvdGggcGFydGllcy4nIH0sXHJcbiAgICAgIHsgbnVtOiAnMDQnLCB0aXRsZTogJ0xvZ2lzdGljcyBTdXBwb3J0JywgYm9keTogJ0Nvb3JkaW5hdGVkIGNvbGQtY2hhaW4gbG9naXN0aWNzIHdpdGggcmVhbC10aW1lIHRyYWNraW5nLCBJb1QgdGVtcGVyYXR1cmUgbW9uaXRvcmluZywgYW5kIGRlbGl2ZXJ5IGNvbmZpcm1hdGlvbiBhdCBldmVyeSBzdG9wLicgfSxcclxuICAgIF0sXHJcbiAgICBwcm9kdWN0czoge1xuICAgICAgZXllYnJvdzogJycsXG4gICAgICB0aXRsZTogJ0VnZyBwcm9kdWN0cyBmb3IgY29tbWVyY2lhbCBidXllcnMnLFxuICAgICAgc3VidGl0bGU6ICdCcm93c2UgdmVyaWZpZWQgZWdnIHByb2R1Y3RzIGZyb20gb3VyIHBvdWx0cnkgZmFybSBuZXR3b3JrIGZvciBkaXJlY3QgY29tbWVyY2lhbCBzdXBwbHkuJyxcbiAgICAgIGl0ZW1zOiBbXG4gICAgICAgIHsgYmFkZ2U6ICdQcmVtaXVtJywgZ3JhZGU6ICdHcmFkZSBBIC8gc2VsZWN0IGxhcmdlJywgbmFtZTogJ0Zhcm0tZnJlc2ggd2hpdGUgZWdncycsIGRlc2NyaXB0aW9uOiAnR3JhZGUgQSB3aGl0ZSBzaGVsbCBlZ2dzIGZyb20gdmVyaWZpZWQgZmFybXMsIGF2YWlsYWJsZSBpbiBzbWFsbCB0byBleHRyYS1sYXJnZSBzaXplcyB3aXRoIHRyYWNlYWJpbGl0eSBzdXBwb3J0LicsIHNwZWNzOiBbJ1dlaWdodDogNTNnIC0gNjNnKycsICdTaGVsbCBzdHJlbmd0aDogaGlnaCcsICdQYWNrYWdpbmc6IDMwLWVnZyB0cmF5cyAvIGNhcnRvbnMnXSwgdGFnczogWydEYWlseSBzdXBwbHknLCAnUyB0byBYTCddLCBpbWFnZTogJ2h0dHBzOi8vaW1hZ2VzLnVuc3BsYXNoLmNvbS9waG90by0xNTgyNzIyODcyNDQ1LTQ0ZGM1ZjdlM2M4Zj93PTYwMCZoPTQwMCZmaXQ9Y3JvcCcgfSxcbiAgICAgICAgeyBiYWRnZTogJ0ZyZWUgcmFuZ2UnLCBncmFkZTogJ0ZyZWUgcmFuZ2UnLCBuYW1lOiAnRnJlZS1yYW5nZSBicm93biBlZ2dzJywgZGVzY3JpcHRpb246ICdCcm93biBlZ2cgb3B0aW9ucyBmb3IgYnV5ZXJzIHdpdGggcHJlbWl1bSBmb29kLXNlcnZpY2UgcmVxdWlyZW1lbnRzLiBGaW5hbCBkb2N1bWVudGF0aW9uIGNhbiBiZSBjb25maXJtZWQgZHVyaW5nIHF1b3RpbmcuJywgc3BlY3M6IFsnRnJlZS1yYW5nZSBvcHRpb24nLCAnUHJlbWl1bSBmb29kIHNlcnZpY2UnLCAnRWNvLXB1bHAgcGFja2FnaW5nJ10sIHRhZ3M6IFsnRnJlZSByYW5nZScsICdNLCBMJ10sIGltYWdlOiAnaHR0cHM6Ly9pbWFnZXMudW5zcGxhc2guY29tL3Bob3RvLTE1OTg5NjU2NzUwNDUtNDVjNWU3MmM3ZDA1P3c9NjAwJmg9NDAwJmZpdD1jcm9wJyB9LFxuICAgICAgICB7IGJhZGdlOiAnT3JnYW5pYycsIGdyYWRlOiAnT3JnYW5pYyBvcHRpb24nLCBuYW1lOiAnT3JnYW5pYyBlZ2cgb3B0aW9ucycsIGRlc2NyaXB0aW9uOiAnT3JnYW5pYyBlZ2cgb3B0aW9ucyBmb3IgYnV5ZXJzIHNlZWtpbmcgZG9jdW1lbnRlZCBzdXBwbHkuIENlcnRpZmljYXRpb24gZGV0YWlscyBjYW4gYmUgY29uZmlybWVkIGR1cmluZyBxdW90aW5nLicsIHNwZWNzOiBbJ09yZ2FuaWMgb3B0aW9uJywgJ0RvY3VtZW50YXRpb24gYXZhaWxhYmxlJywgJ0Vjby1wdWxwIHBhY2thZ2luZyddLCB0YWdzOiBbJ09yZ2FuaWMnLCAnTCddLCBpbWFnZTogJ2h0dHBzOi8vaW1hZ2VzLnVuc3BsYXNoLmNvbS9waG90by0xNDk4NjU0MDc3ODEwLTEyYzIxZDRkNmRjMz93PTYwMCZoPTQwMCZmaXQ9Y3JvcCcgfSxcbiAgICAgICAgeyBiYWRnZTogJ0J1bGsnLCBncmFkZTogJ1Byb2Nlc3NpbmcgZ3JhZGUnLCBuYW1lOiAnTGlxdWlkIHdob2xlIGVnZycsIGRlc2NyaXB0aW9uOiAnTGlxdWlkIHdob2xlIGVnZyBmb3IgZm9vZCBtYW51ZmFjdHVyZXJzLCBiYWtlcmllcywgYW5kIGluZHVzdHJpYWwga2l0Y2hlbnMuIFByb2Nlc3NpbmcgYW5kIHBhY2thZ2luZyBkZXRhaWxzIGFyZSBjb25maXJtZWQgZHVyaW5nIHF1b3RpbmcuJywgc3BlY3M6IFsnV2hvbGUgZWdnIG9wdGlvbicsICdCdWxrIHBhY2thZ2luZycsICdDaGlsbGVkIHN1cHBseSddLCB0YWdzOiBbJ0luZHVzdHJpYWwnLCAna2cnXSwgaW1hZ2U6ICdodHRwczovL2ltYWdlcy51bnNwbGFzaC5jb20vcGhvdG8tMTU4NzQ4NjkxMzA0OS01M2ZjODg5ODBjZmM/dz02MDAmaD00MDAmZml0PWNyb3AnIH0sXG4gICAgICBdLFxyXG4gICAgICBzcGVjczogW1xyXG4gICAgICAgIHsgbmFtZTogJ1doaXRlIHNoZWxsIGVnZ3MnLCBncmFkZTogJ0dyYWRlIEEnLCBzaXplczogJ1MsIE0sIEwsIFhMJywgbW9xOiAnMTAwIHRyYXlzJywgbGVhZDogJzI0IGhycycsIHN0YXR1czogJ0F2YWlsYWJsZScsIHN0YXR1c0NsYXNzOiAnc3RvY2snIH0sXG4gICAgICAgIHsgbmFtZTogJ0Jyb3duIGZhcm0gZWdncycsIGdyYWRlOiAnR3JhZGUgQScsIHNpemVzOiAnTSwgTCcsIG1vcTogJzUwIHRyYXlzJywgbGVhZDogJzQ4IGhycycsIHN0YXR1czogJ0F2YWlsYWJsZScsIHN0YXR1c0NsYXNzOiAnc3RvY2snIH0sXG4gICAgICAgIHsgbmFtZTogJ09yZ2FuaWMgZWdncycsIGdyYWRlOiAnT3JnYW5pYyBBJywgc2l6ZXM6ICdMJywgbW9xOiAnMjAgdHJheXMnLCBsZWFkOiAnNzIgaHJzJywgc3RhdHVzOiAnTGltaXRlZCcsIHN0YXR1c0NsYXNzOiAnbGltaXRlZCcgfSxcbiAgICAgICAgeyBuYW1lOiAnTGlxdWlkIHdob2xlIGVnZycsIGdyYWRlOiAnUHJvY2Vzc2luZycsIHNpemVzOiAnTi9BIChrZyknLCBtb3E6ICcyMDAga2cnLCBsZWFkOiAnNzIgaHJzJywgc3RhdHVzOiAnQXZhaWxhYmxlJywgc3RhdHVzQ2xhc3M6ICdzdG9jaycgfSxcbiAgICAgIF0sXHJcbiAgICB9LFxyXG4gICAgc29sdXRpb25zOiB7XG4gICAgICBleWVicm93OiAnJyxcbiAgICAgIHRpdGxlOiAnQ2hvb3NlIHlvdXIgdHJhZGluZyBwbGFuJyxcbiAgICAgIHN1YnRpdGxlOiAnQ2hvb3NlIGEgcGxhbiBiYXNlZCBvbiB5b3VyIGJ1eWluZyBvciBzZWxsaW5nIG5lZWRzLicsXG4gICAgICB0aWVyczogW1xyXG4gICAgICAgIHsgYmFkZ2U6ICdCYXNpYyBidXllcicsIG5hbWU6ICdCYXNpYycsIGRlc2M6ICdVcCB0byA1MCB0cmF5cy93ZWVrJywgZmVhdHVyZWQ6IGZhbHNlLCBmZWF0dXJlczogWydBY2Nlc3MgdG8gdmVyaWZpZWQgZmFybXMnLCAnU3RhbmRhcmQgcHJpY2luZycsICdFbWFpbCBzdXBwb3J0JywgJ09yZGVyIHRyYWNraW5nJ10gfSxcbiAgICAgICAgeyBiYWRnZTogJ1ByZW1pdW0gYnV5ZXInLCBuYW1lOiAnUHJlbWl1bScsIGRlc2M6ICc1MC01MDAgdHJheXMvd2VlaycsIGZlYXR1cmVkOiB0cnVlLCBmZWF0dXJlczogWydQcmlvcml0eSBmYXJtIG1hdGNoaW5nJywgJ1ZvbHVtZSBwcmljaW5nJywgJ0RlZGljYXRlZCBhY2NvdW50IG1hbmFnZXInLCAnT3JkZXIgdHJhY2tpbmcnLCAnTW9udGhseSBzdW1tYXJpZXMnLCAnRmxleGlibGUgcGF5bWVudCB0ZXJtcyddIH0sXG4gICAgICAgIHsgYmFkZ2U6ICdFbnRlcnByaXNlJywgbmFtZTogJ0VudGVycHJpc2UnLCBkZXNjOiAnNTAwKyB0cmF5cy93ZWVrJywgZmVhdHVyZWQ6IGZhbHNlLCBmZWF0dXJlczogWydDdXN0b20gY29udHJhY3RzJywgJ0N1c3RvbSBzdXBwbHkgdGVybXMnLCAnQWNjb3VudCBjb29yZGluYXRpb24nLCAnRGVkaWNhdGVkIHN1cHBvcnQgdGVhbScsICdGbGV4aWJsZSBwYXltZW50IHRlcm1zJywgJ1Byb2N1cmVtZW50IHJlcG9ydGluZyddIH0sXG4gICAgICBdLFxyXG4gICAgfSxcclxuICAgIHByb2Nlc3M6IHtcbiAgICAgIGV5ZWJyb3c6ICcnLFxuICAgICAgdGl0bGU6ICdGcm9tIGZhcm0gdG8gYnVzaW5lc3MgaW4gZm91ciBzdGVwcycsXG4gICAgICBzdWJ0aXRsZTogJ0EgY2xlYXIgcHJvY3VyZW1lbnQgcHJvY2VzcyBmb3IgY29tbWVyY2lhbCBidXllcnMgd2hvIG5lZWQgcmVsaWFibGUgc3VwcGx5IGFuZCB0cmFjZWFiaWxpdHkuJyxcbiAgICAgIHN0ZXBzOiBbXG4gICAgICAgIHsgbnVtOiAnMDEnLCBpY29uOiAnU2VhcmNoJywgdGl0bGU6ICdCcm93c2UgYW5kIHNlbGVjdCcsIGJvZHk6ICdCcm93c2UgdmVyaWZpZWQgZmFybXMsIGNvbXBhcmUgcXVhbGl0eSBpbmZvcm1hdGlvbiwgYW5kIHNlbGVjdCB0aGUgYmVzdCBtYXRjaCBmb3IgeW91ciB2b2x1bWUgYW5kIGRlbGl2ZXJ5IG5lZWRzLicgfSxcbiAgICAgICAgeyBudW06ICcwMicsIGljb246ICdGaWxlVGV4dCcsIHRpdGxlOiAnUGxhY2Ugb3JkZXInLCBib2R5OiAnU3VibWl0IHlvdXIgcHVyY2hhc2Ugb3JkZXIgd2l0aCB5b3VyIHJlcXVpcmVtZW50cy4gUmVjZWl2ZSBjb25maXJtYXRpb24gYW5kIGFuIGVzdGltYXRlZCBkZWxpdmVyeSB3aW5kb3cuJyB9LFxuICAgICAgICB7IG51bTogJzAzJywgaWNvbjogJ1BhY2thZ2UnLCB0aXRsZTogJ1F1YWxpdHkgY2hlY2snLCBib2R5OiAnRWFjaCBiYXRjaCBpcyBjaGVja2VkIGJlZm9yZSBkaXNwYXRjaC4gUXVhbGl0eSBkZXRhaWxzIGFuZCBiYXRjaCByZWNvcmRzIGFyZSBzaGFyZWQgZm9yIHJldmlldy4nIH0sXG4gICAgICAgIHsgbnVtOiAnMDQnLCBpY29uOiAnVHJ1Y2snLCB0aXRsZTogJ0RlbGl2ZXJ5IGFuZCBjb25maXJtYXRpb24nLCBib2R5OiAnUmVjZWl2ZSBkZWxpdmVyeSB1cGRhdGVzLCBjb25maXJtIHJlY2VpcHQsIGFuZCBjb21wbGV0ZSB0aGUgb3JkZXIgcmVjb3JkIGluIG9uZSBvcmdhbml6ZWQgcHJvY2Vzcy4nIH0sXG4gICAgICBdLFxuICAgIH0sXG4gICAgcXVhbGl0eToge1xuICAgICAgZXllYnJvdzogJycsXG4gICAgICB0aXRsZTogJ1F1YWxpdHkgeW91IGNhbiB2ZXJpZnkgZXZlcnkgdGltZScsXG4gICAgICBzdWJ0aXRsZTogJ0V2ZXJ5IGVnZyB0cmFkZWQgdGhyb3VnaCBFZ2cgVHJhZGVycyBpcyBzdXBwb3J0ZWQgYnkgZmFybS1sZXZlbCBxdWFsaXR5IGluZm9ybWF0aW9uLCBiYXRjaCByZWNvcmRzLCBhbmQgYnV5ZXIgZmVlZGJhY2suJyxcbiAgICAgIGJhdGNoOiB7XHJcbiAgICAgICAgaWQ6ICdCYXRjaCBFVC0yMDI2LTA3LTE0LUEwMScsXG4gICAgICAgIHRpdGxlOiAnU2FtcGxlIGJhdGNoIHRyYWNlJyxcbiAgICAgICAgc3VidGl0bGU6ICdFeGFtcGxlIGZyb20gYSByZWNlbnQgdHJhbnNhY3Rpb24nLFxuICAgICAgICBzdGVwczogW1xyXG4gICAgICAgICAgeyB0aXRsZTogJ09yZGVyIHBsYWNlZCcsIHRpbWU6ICcwODowMCBBTScgfSxcbiAgICAgICAgICB7IHRpdGxlOiAnRmFybSBjb25maXJtZWQnLCB0aW1lOiAnMDk6MTUgQU0nIH0sXG4gICAgICAgICAgeyB0aXRsZTogJ1F1YWxpdHkgY2hlY2tlZCcsIHRpbWU6ICcxMTozMCBBTScgfSxcbiAgICAgICAgICB7IHRpdGxlOiAnRGlzcGF0Y2hlZCcsIHRpbWU6ICcwMTowMCBQTScgfSxcclxuICAgICAgICAgIHsgdGl0bGU6ICdEZWxpdmVyZWQnLCB0aW1lOiAnMDQ6MzAgUE0nIH0sXHJcbiAgICAgICAgXSxcclxuICAgICAgfSxcclxuICAgICAgY2VydHM6IFtcclxuICAgICAgICB7IGljb246ICdTaGllbGRDaGVjaycsIG5hbWU6ICdGYXJtIHZlcmlmaWVkJywgYm9keTogJ0V2ZXJ5IGZhcm0gaXMgYXVkaXRlZCBiZWZvcmUgbGlzdGluZycsIHN0YXR1czogJ0FjdGl2ZScgfSxcbiAgICAgICAgeyBpY29uOiAnQ2hlY2tDaXJjbGUyJywgbmFtZTogJ1F1YWxpdHkgc2NvcmUnLCBib2R5OiAnVXBkYXRlZCBxdWFsaXR5IHJhdGluZyBwcm9jZXNzJywgc3RhdHVzOiAnQWN0aXZlJyB9LFxuICAgICAgICB7IGljb246ICdVc2VycycsIG5hbWU6ICdCdXllciBzdXBwb3J0JywgYm9keTogJ1RyYW5zYWN0aW9uIHN1cHBvcnQgZm9yIGNvbW1lcmNpYWwgYnV5ZXJzJywgc3RhdHVzOiAnQWN0aXZlJyB9LFxuICAgICAgICB7IGljb246ICdMZWFmJywgbmFtZTogJ1Jlc3BvbnNpYmxlIHNvdXJjaW5nJywgYm9keTogJ1N1cHBsaWVyIHByYWN0aWNlcyByZXZpZXdlZCBkdXJpbmcgb25ib2FyZGluZycsIHN0YXR1czogJ0FjdGl2ZScgfSxcbiAgICAgIF0sXHJcbiAgICAgIHRlc3RpbW9uaWFsczogW1xuICAgICAgICB7IGluaXRpYWxzOiAnUk0nLCBuYW1lOiAnUmVzdGF1cmFudCBPd25lcicsIHJvbGU6ICdMYWhvcmUnLCB0ZXh0OiAnRWdnIFRyYWRlcnMgaGFzIG1hZGUgc291cmNpbmcgZWdncyBlYXNpZXIuIEkgY2FuIGNvbXBhcmUgZmFybXMsIHJldmlldyBxdWFsaXR5IGluZm9ybWF0aW9uLCBhbmQgcGxhY2Ugb3JkZXJzIHF1aWNrbHkuJyB9LFxuICAgICAgICB7IGluaXRpYWxzOiAnQUsnLCBuYW1lOiAnRmFybSBNYW5hZ2VyJywgcm9sZTogJ01hcmRhbicsIHRleHQ6ICdFZ2cgVHJhZGVycyBoYXMgZ2l2ZW4gdXMgZGlyZWN0IGFjY2VzcyB0byBjb21tZXJjaWFsIGJ1eWVycyB3ZSBjb3VsZCBub3QgcmVhY2ggYmVmb3JlLicgfSxcbiAgICAgICAgeyBpbml0aWFsczogJ1NOJywgbmFtZTogJ1Byb2N1cmVtZW50IEhlYWQnLCByb2xlOiAnS2FyYWNoaScsIHRleHQ6ICdUaGUgdHJhY2VhYmlsaXR5IGlzIGhlbHBmdWwuIEV2ZXJ5IGJhdGNoIGlzIGRvY3VtZW50ZWQsIGFuZCBkZWxpdmVyeSBpbmZvcm1hdGlvbiBpcyBlYXN5IHRvIGZvbGxvdy4nIH0sXG4gICAgICBdLFxuICAgIH0sXG4gICAgY29udGFjdDoge1xuICAgICAgZXllYnJvdzogJycsXG4gICAgICB0aXRsZTogJ0NvbnRhY3QgRWdnIFRyYWRlcnMnLFxuICAgICAgc3VidGl0bGU6ICdGaWxsIGluIHRoZSBmb3JtIGJlbG93LiBPdXIgdGVhbSB3aWxsIHJlYWNoIG91dCB3aXRoaW4gMiBidXNpbmVzcyBob3VycyB0byBoZWxwIHdpdGggeW91ciByZXF1ZXN0LicsXG4gICAgICBpbmZvOiBbXHJcbiAgICAgIHsgaWNvbjogJ1Bob25lJywgbGFiZWw6ICdQaG9uZScsIHZhbHVlOiAnKzkyIDkzNyAyNjk2MDEnIH0sXG4gICAgICB7IGljb246ICdNYWlsJywgbGFiZWw6ICdFbWFpbCcsIHZhbHVlOiAnaW5mb0B5b3VzYWZ6YWlhZ3JpZm9vZHMuY29tJyB9LFxyXG4gICAgICB7IGljb246ICdNYXBQaW4nLCBsYWJlbDogJ09mZmljZScsIHZhbHVlOiAnT3Bwb3NpdGUgTWFyZGFuIFByZXNzIENsdWIsIE1hcmRhbiwgS1BLJyB9LFxyXG4gICAgICB7IGljb246ICdDbG9jaycsIGxhYmVsOiAnUmVzcG9uc2UgVGltZScsIHZhbHVlOiAnV2l0aGluIDIgYnVzaW5lc3MgaG91cnMnIH0sXHJcbiAgICAgIF0sXHJcbiAgICB9LFxyXG4gIH0sXHJcbiAgYmFubmVyczoge1xyXG4gICAgbWFpbjoge1xyXG4gICAgICBjb250YWN0OiB7XHJcbiAgICAgICAgdGl0bGU6ICdDb250YWN0IFVzJyxcclxuICAgICAgICBzdWJ0aXRsZTogJ1JlYWR5IHRvIHBhcnRuZXI/IEdldCBhIGZvcm1hbCBCMkIgcXVvdGF0aW9uIGluIDQgYnVzaW5lc3MgaG91cnMgb3Igc3BlYWsgd2l0aCBvdXIgcGFydG5lcnNoaXBzIHRlYW0uJyxcclxuICAgICAgICBpbWFnZXM6IFtdLFxyXG4gICAgICB9LFxyXG4gICAgICBwcm9jZXNzOiB7XHJcbiAgICAgICAgdGl0bGU6ICdPdXIgUHJvY2VzcycsXHJcbiAgICAgICAgc3VidGl0bGU6ICdBIGNsZWFyIHByb2Nlc3MgZnJvbSBzb3VyY2luZyBhbmQgZ3JhZGluZyB0byBjb2xkLWNoYWluIGRlbGl2ZXJ5LicsXHJcbiAgICAgICAgaW1hZ2VzOiBbXSxcclxuICAgICAgfSxcclxuICAgICAgcHJvZHVjdHM6IHtcclxuICAgICAgICB0aXRsZTogJ1Byb2R1Y3RzICYgR3JhZGVzJyxcclxuICAgICAgICBzdWJ0aXRsZTogJ0V4cGxvcmUgZWdnIHByb2R1Y3RzLCBmb3JtYXRzLCBhbmQgZ3JhZGUgcmVmZXJlbmNlcyBmb3IgY29tbWVyY2lhbCBzdXBwbHkuJyxcclxuICAgICAgICBpbWFnZXM6IFtdLFxyXG4gICAgICAgIHZpZGVvOiAnJyxcclxuICAgICAgfSxcclxuICAgICAgcXVhbGl0eToge1xyXG4gICAgICAgIHRpdGxlOiAnUXVhbGl0eScsXHJcbiAgICAgICAgc3VidGl0bGU6ICdGb2N1c2VkIG9uIHF1YWxpdHksIHRyYWNlYWJpbGl0eSwgYW5kIHJlc3BvbnNpYmxlIGhhbmRsaW5nIGF0IGV2ZXJ5IHN0YWdlLicsXHJcbiAgICAgICAgaW1hZ2VzOiBbJy9pbWFnZXMveW91c2FmemFpLXBhY2thZ2luZy5wbmcnXSxcclxuICAgICAgfSxcclxuICAgICAgc29sdXRpb25zOiB7XHJcbiAgICAgICAgdGl0bGU6ICdTb2x1dGlvbnMnLFxyXG4gICAgICAgIHN1YnRpdGxlOiAnVGFpbG9yZWQgQjJCIHRyYWRpbmcgcGFydG5lcnNoaXBzIGRlc2lnbmVkIGZvciBob3RlbHMsIGRpc3RyaWJ1dG9ycywgYmFrZXJpZXMsIGFuZCBpbnN0aXR1dGlvbmFsIGJ1eWVycy4nLFxyXG4gICAgICAgIGltYWdlczogW10sXHJcbiAgICAgIH0sXHJcbiAgICAgIHRlYW06IHtcclxuICAgICAgICB0aXRsZTogJ0xlYWRlcnNoaXAgJiBPcGVyYXRpb25zJyxcclxuICAgICAgICBzdWJ0aXRsZTogJ01lZXQgdGhlIGV4cGVyaWVuY2VkIGV4ZWN1dGl2ZXMgYW5kIGFncmljdWx0dXJhbCBzcGVjaWFsaXN0cyBkcml2aW5nIFlvdXNhZnphaSBFZ2dzIFRyYWRlcnMuJyxcclxuICAgICAgICBpbWFnZXM6IFtdLFxyXG4gICAgICB9LFxyXG4gICAgfSxcclxuICAgIGVnZ1RyYWRlcnM6IHtcclxuICAgICAgYWJvdXQ6IHtcclxuICAgICAgICB0aXRsZTogJ0Fib3V0IEVnZyBUcmFkZXJzJyxcbiAgICAgICAgc3VidGl0bGU6IFwiTGVhcm4gYWJvdXQgRWdnIFRyYWRlcnMsIG91ciBtaXNzaW9uLCB2YWx1ZXMsIGFuZCB0aGUgdGVhbSBiZWhpbmQgdGhlIHBvdWx0cnkgdHJhZGluZyBzZXJ2aWNlLlwiLFxuICAgICAgfSxcclxuICAgICAgY29udGFjdDoge1xyXG4gICAgICAgIHRpdGxlOiAnQ29udGFjdCBFZ2cgVHJhZGVycycsXG4gICAgICAgIHN1YnRpdGxlOiAnUmVhZHkgdG8gd29yayB3aXRoIEVnZyBUcmFkZXJzPyBTaGFyZSB5b3VyIHJlcXVpcmVtZW50cyBhbmQgb3VyIHRlYW0gd2lsbCByZXNwb25kIHdpdGhpbiAyIGJ1c2luZXNzIGhvdXJzLicsXG4gICAgICB9LFxyXG4gICAgICBwcm9kdWN0czoge1xuICAgICAgICB0aXRsZTogJ1Byb2R1Y3RzJyxcbiAgICAgICAgc3VidGl0bGU6ICdCcm93c2UgdmVyaWZpZWQgZWdnIHByb2R1Y3RzIGZyb20gb3VyIHBvdWx0cnkgZmFybSBuZXR3b3JrIGZvciBkaXJlY3QgY29tbWVyY2lhbCBzdXBwbHkuJyxcbiAgICAgIH0sXHJcbiAgICAgIHF1YWxpdHk6IHtcclxuICAgICAgICB0aXRsZTogJ1F1YWxpdHknLFxyXG4gICAgICAgIHN1YnRpdGxlOiAnRXZlcnkgZWdnIHRyYWRlZCB0aHJvdWdoIEVnZyBUcmFkZXJzIGlzIHN1cHBvcnRlZCBieSBmYXJtLWxldmVsIHF1YWxpdHkgaW5mb3JtYXRpb24sIGJhdGNoIHJlY29yZHMsIGFuZCBidXllciBmZWVkYmFjay4nLFxuICAgICAgfSxcclxuICAgICAgc29sdXRpb25zOiB7XHJcbiAgICAgICAgdGl0bGU6ICdTb2x1dGlvbnMnLFxyXG4gICAgICAgIHN1YnRpdGxlOiAnQ2hvb3NlIHRoZSByaWdodCB0cmFkaW5nIHBsYW4gZm9yIHlvdXIgYnVzaW5lc3MsIGZyb20gYmFzaWMgYWNjZXNzIHRvIGN1c3RvbSBjb21tZXJjaWFsIHN1cHBseSB0ZXJtcy4nLFxuICAgICAgfSxcclxuICAgICAgcHJvY2Vzczoge1xuICAgICAgICB0aXRsZTogJ1Byb2Nlc3MnLFxuICAgICAgICBzdWJ0aXRsZTogJ0EgY2xlYXIgcHJvY3VyZW1lbnQgcHJvY2VzcyBmb3IgY29tbWVyY2lhbCBidXllcnMgd2hvIG5lZWQgcmVsaWFibGUgc3VwcGx5IGFuZCB0cmFjZWFiaWxpdHkuJyxcbiAgICAgIH0sXG4gICAgfSxcclxuICB9LFxyXG4gIGN0YToge1xyXG4gICAgZXllYnJvdzogJycsXHJcbiAgICB0aXRsZTogJ05lZWQgYSBSZWxpYWJsZSBTdXBwbHkgUGFydG5lcj8nLFxyXG4gICAgc3ViOiAnVGVsbCB1cyB3aGF0IHlvdSBuZWVkLCBhbmQgb3VyIHRlYW0gd2lsbCBnZXQgYmFjayB0byB5b3Ugd2l0aCBhIHRhaWxvcmVkIHF1b3RlLicsXHJcbiAgICBwcmltYXJ5Q3RhOiB7IGxhYmVsOiAnUmVxdWVzdCBhIFF1b3RlJywgYWN0aW9uOiAnL2NvbnRhY3QnIH0sXHJcbiAgICBzZWNvbmRhcnlDdGE6IHsgbGFiZWw6ICdUYWxrIHRvIFVzJywgYWN0aW9uOiAnL2NvbnRhY3QnIH0sXHJcbiAgfSxcclxuICBhYm91dFNjZW5lczoge1xyXG4gICAgaGVybzoge1xyXG4gICAgICBjb29yZGluYXRlczogJ01hcmRhbiwgS2h5YmVyIFBha2h0dW5raHdhLCBQYWtpc3RhbicsXHJcbiAgICAgIGV5ZWJyb3c6ICcnLFxyXG4gICAgICBoMUxpbmUxOiAnQnVpbHQgb24nLFxyXG4gICAgICBoMUhpZ2hsaWdodDogJ1F1YWxpdHkgJiBUcnVzdCcsXHJcbiAgICAgIHBhcmFncmFwaDogXCJTaW5jZSAxOTYwLCBZb3VzYWZ6YWkgRWdncyBUcmFkZXJzIGhhcyBiZWVuIGEgdHJ1c3RlZCBuYW1lIGluIFBha2lzdGFuJ3MgcG91bHRyeSBhbmQgZWdnIGRpc3RyaWJ1dGlvbiBpbmR1c3RyeS4gV2l0aCBvdmVyIHNpeCBkZWNhZGVzIG9mIGV4cGVyaWVuY2UsIHdlIGNvbm5lY3QgY2VydGlmaWVkIGZhcm1zIHRvIGhvdGVscywgcmV0YWlsZXJzLCBtYW51ZmFjdHVyZXJzLCBhbmQgaW5zdGl0dXRpb25zIGFjcm9zcyBLUEssIFB1bmphYiwgYW5kIFNpbmRoIOKAlCBkZWxpdmVyaW5nIGZyZXNoLCBIYWxhbC1jZXJ0aWZpZWQgZWdncyB3aXRoIGZ1bGwgdHJhY2VhYmlsaXR5LlwiLFxyXG4gICAgICBjdGFMYWJlbDogJ0V4cGxvcmUgT3VyIEhlcml0YWdlJyxcclxuICAgICAgc3RhbXA6ICcnLFxyXG4gICAgICBzdGF0czogW1xyXG4gICAgICAgIHsgdmFsdWU6ICc2MCsnLCBsYWJlbDogJ1llYXJzIG9mIEV4cGVyaWVuY2UnIH0sXHJcbiAgICAgICAgeyB2YWx1ZTogJzUwMEsrJywgbGFiZWw6ICdFZ2dzIFRyYWRlZCBXZWVrbHknIH0sXHJcbiAgICAgICAgeyB2YWx1ZTogJzMnLCBsYWJlbDogJ1Byb3ZpbmNlcyBDb3ZlcmVkJyB9LFxyXG4gICAgICAgIHsgdmFsdWU6ICcxMDAlJywgbGFiZWw6ICdIYWxhbCBDZXJ0aWZpZWQnIH0sXHJcbiAgICAgIF0sXHJcbiAgICAgIHNsaWRlczogW1xyXG4gICAgICAgICdodHRwczovL2ltYWdlcy51bnNwbGFzaC5jb20vcGhvdG8tMTU0ODU1MDAyMy0yYmYzYzQ5YjcxZDk/dz0xOTIwJnE9ODAnLFxyXG4gICAgICAgICdodHRwczovL2ltYWdlcy51bnNwbGFzaC5jb20vcGhvdG8tMTU2OTI4ODA1MjM4OS1kYWM5YjAxYzljMDU/dz0xOTIwJnE9ODAnLFxyXG4gICAgICAgICdodHRwczovL2ltYWdlcy51bnNwbGFzaC5jb20vcGhvdG8tMTYxMjE3MDE1MzEzOS02Zjg4MWZmMDY3ZTA/dz0xOTIwJnE9ODAnLFxyXG4gICAgICAgICdodHRwczovL2ltYWdlcy51bnNwbGFzaC5jb20vcGhvdG8tMTU1OTgyNzI2MC1kYzY2ZDUyYmVmMTk/dz0xOTIwJnE9ODAnLFxyXG4gICAgICAgICdodHRwczovL2ltYWdlcy51bnNwbGFzaC5jb20vcGhvdG8tMTYyMzIzOTUyNDM4Ny0wYjU3YTBlYWI2NGU/dz0xOTIwJnE9ODAnLFxyXG4gICAgICAgICdodHRwczovL2ltYWdlcy51bnNwbGFzaC5jb20vcGhvdG8tMTYwNTg4MjE3NDE0Ni1hNDY0YjcwY2Y2OTE/dz0xOTIwJnE9ODAnLFxyXG4gICAgICAgICdodHRwczovL2ltYWdlcy51bnNwbGFzaC5jb20vcGhvdG8tMTU3NDc4MTMzMDg1NS1kMGRiOGNjNmE3OWM/dz0xOTIwJnE9ODAnLFxyXG4gICAgICAgICdodHRwczovL2ltYWdlcy51bnNwbGFzaC5jb20vcGhvdG8tMTU5MTE5NzE3MjA2Mi1jNzE4ZjgyYWJhMjA/dz0xOTIwJnE9ODAnLFxyXG4gICAgICAgICdodHRwczovL2ltYWdlcy51bnNwbGFzaC5jb20vcGhvdG8tMTU4MjcyMjg3MjQ0NS00NGRjNWY3ZTNjOGY/dz0xOTIwJnE9ODAnLFxyXG4gICAgICAgICdodHRwczovL2ltYWdlcy51bnNwbGFzaC5jb20vcGhvdG8tMTU5ODk2NTY3NTA0NS00NWM1ZTcyYzdkMDU/dz0xOTIwJnE9ODAnLFxyXG4gICAgICAgICdodHRwczovL2ltYWdlcy51bnNwbGFzaC5jb20vcGhvdG8tMTUwNjk3Njc4NTMwNy04NzMyZTg1NGFkMDM/dz0xOTIwJnE9ODAnLFxyXG4gICAgICAgICdodHRwczovL2ltYWdlcy51bnNwbGFzaC5jb20vcGhvdG8tMTQ4OTcyNjAyNDkyMC1iNWRkYzFjMDRiMDk/dz0xOTIwJnE9ODAnLFxyXG4gICAgICAgICdodHRwczovL2ltYWdlcy51bnNwbGFzaC5jb20vcGhvdG8tMTQ5ODY1NDA3NzgxMC0xMmMyMWQ0ZDZkYzM/dz0xOTIwJnE9ODAnLFxyXG4gICAgICAgICdodHRwczovL2ltYWdlcy51bnNwbGFzaC5jb20vcGhvdG8tMTU4NzQ4NjkxMzA0OS01M2ZjODg5ODBjZmM/dz0xOTIwJnE9ODAnLFxyXG4gICAgICAgICdodHRwczovL2ltYWdlcy51bnNwbGFzaC5jb20vcGhvdG8tMTYwNzY5MDQyNDU2MC0zNWQ5NjcwNzlhYWM/dz0xOTIwJnE9ODAnLFxyXG4gICAgICAgICdodHRwczovL2ltYWdlcy51bnNwbGFzaC5jb20vcGhvdG8tMTUxODU2OTY1NjU1OC0xZjI1ZTY5ZDkzZDc/dz0xOTIwJnE9ODAnLFxyXG4gICAgICAgICdodHRwczovL2ltYWdlcy51bnNwbGFzaC5jb20vcGhvdG8tMTU2NTI5OTYyNDk0Ni1iMjhmNDBhMGFlMzg/dz0xOTIwJnE9ODAnLFxyXG4gICAgICAgICdodHRwczovL2ltYWdlcy51bnNwbGFzaC5jb20vcGhvdG8tMTU1NjkwOTExNC1mNmU3YWQ3ZDMxMzY/dz0xOTIwJnE9ODAnLFxyXG4gICAgICAgICdodHRwczovL2ltYWdlcy51bnNwbGFzaC5jb20vcGhvdG8tMTU4MTA5MTIyNjgyNS1hNmEyYTVhZWUxNTg/dz0xOTIwJnE9ODAnLFxyXG4gICAgICAgICdodHRwczovL2ltYWdlcy51bnNwbGFzaC5jb20vcGhvdG8tMTYwNTAwMDc5NzQ5OS05NWE1MWM1MjY5YWU/dz0xOTIwJnE9ODAnLFxyXG4gICAgICAgICdodHRwczovL2ltYWdlcy51bnNwbGFzaC5jb20vcGhvdG8tMTU4NjUyODExNjMxMS1hZDhkZDNjODMxMGQ/dz0xOTIwJnE9ODAnLFxyXG4gICAgICAgICdodHRwczovL2ltYWdlcy51bnNwbGFzaC5jb20vcGhvdG8tMTYwMTU4NDExNTE5Ny0wNGVjYzBkYTMxZDc/dz0xOTIwJnE9ODAnLFxyXG4gICAgICAgICdodHRwczovL2ltYWdlcy51bnNwbGFzaC5jb20vcGhvdG8tMTU1MzQxMzA3Ny0xOTBkZDMwNTg3MWM/dz0xOTIwJnE9ODAnLFxyXG4gICAgICAgICdodHRwczovL2ltYWdlcy51bnNwbGFzaC5jb20vcGhvdG8tMTU2NjU3NjkxMjMyMS1kNThkZGQ3YTYwODg/dz0xOTIwJnE9ODAnLFxyXG4gICAgICAgICdodHRwczovL2ltYWdlcy51bnNwbGFzaC5jb20vcGhvdG8tMTQ5NDQxMjU3NDY0My1mZjExYjBhNWViMTk/dz0xOTIwJnE9ODAnLFxyXG4gICAgICAgICdodHRwczovL2ltYWdlcy51bnNwbGFzaC5jb20vcGhvdG8tMTU1Njc0MjA0OS0wY2ZlZDRmNmE0NWQ/dz0xOTIwJnE9ODAnLFxyXG4gICAgICAgICdodHRwczovL2ltYWdlcy51bnNwbGFzaC5jb20vcGhvdG8tMTQ1NDE2NTgwNDYwNi1jM2Q1N2JjODZiNDA/dz0xOTIwJnE9ODAnLFxyXG4gICAgICAgICdodHRwczovL2ltYWdlcy51bnNwbGFzaC5jb20vcGhvdG8tMTU3NjA5MTE2MDU1MC0yMTczZGJhOTk5ZWY/dz0xOTIwJnE9ODAnLFxyXG4gICAgICAgICdodHRwczovL2ltYWdlcy51bnNwbGFzaC5jb20vcGhvdG8tMTUzMjE4Nzg2MzQ4Ni1hYmY5ZGJhZDFiNjk/dz0xOTIwJnE9ODAnLFxyXG4gICAgICBdLFxyXG4gICAgfSxcclxuICAgIGNoYWlybWFuOiB7XHJcbiAgICAgIGV5ZWJyb3c6ICcnLFxyXG4gICAgICBxdW90ZTogJ1wiQXQgWW91c2FmemFpIEVnZ3MgVHJhZGVycywgd2UgYmVsaWV2ZSBpbiBxdWFsaXR5LCB0cnVzdCwgYW5kIGlubm92YXRpb24uIE91ciBnb2FsIGlzIG5vdCBvbmx5IHRvIHN1cHBseSBlZ2dzIGJ1dCB0byB0cmFuc2Zvcm0gdGhlIHBvdWx0cnkgaW5kdXN0cnkgYnkgaW50cm9kdWNpbmcgbW9kZXJuIHByb2Nlc3Npbmcgc29sdXRpb25zLlwiJyxcclxuICAgICAgbmFtZTogJ0NoYWlybWFuJyxcclxuICAgICAgcm9sZTogJ0NoYWlybWFuICYgRm91bmRlcicsXHJcbiAgICAgIGltYWdlOiAnaHR0cHM6Ly9pbWFnZXMudW5zcGxhc2guY29tL3Bob3RvLTE1NjAyNTAwOTctMGI5MzUyOGMzMTFhP3c9NDUwJmg9NTUwJmZpdD1jcm9wJyxcclxuICAgICAgc2VhbDogJycsXHJcbiAgICB9LFxyXG4gICAgb3VyU3Rvcnk6IHtcclxuICAgICAgZXllYnJvdzogJycsXHJcbiAgICAgIHRpdGxlOiAnT3VyIExlZ2FjeScsXHJcbiAgICAgIHN1YnRleHQ6ICdTaXggZGVjYWRlcyBvZiBncm93dGgg4oCUIGZyb20gYSBzaW5nbGUgcmV0YWlsIHNob3AgdG8gYSB2ZXJ0aWNhbGx5IGludGVncmF0ZWQgZW50ZXJwcmlzZS4nLFxyXG4gICAgICBtaWxlc3RvbmVzOiBbXHJcbiAgICAgICAge1xyXG4gICAgICAgICAgaWQ6ICcxOTYwJyxcclxuICAgICAgICAgIHllYXI6ICcxOTYwJyxcclxuICAgICAgICAgIHRpdGxlOiAnUmV0YWlsIE9yaWdpbnMnLFxyXG4gICAgICAgICAgZGVzYzogJ0VzdGFibGlzaGVkIGEgcmV0YWlsIHNob3AgaW4gTWFyZGFuIGZvciBlZ2cgdHJhZGluZy4nLFxyXG4gICAgICAgICAgaW1nOiAnaHR0cHM6Ly9pbWFnZXMudW5zcGxhc2guY29tL3Bob3RvLTE0OTg2NTQwNzc4MTAtMTJjMjFkNGQ2ZGMzP3c9MTkyMCZxPTgwJyxcclxuICAgICAgICAgIHN0YXRzOiAnUkVUQUlMIE9SSUdJTlMnLFxyXG4gICAgICAgICAgbWV0cmljOiAnNjArJyxcclxuICAgICAgICAgIG1ldHJpY0xhYmVsOiAnWWVhcnMgb2YgVHJ1c3QnLFxyXG4gICAgICAgIH0sXHJcbiAgICAgICAge1xyXG4gICAgICAgICAgaWQ6ICcyMDAwJyxcclxuICAgICAgICAgIHllYXI6ICcyMDAwJyxcclxuICAgICAgICAgIHRpdGxlOiAnU3VwcGx5IE5ldHdvcmsnLFxyXG4gICAgICAgICAgZGVzYzogJ0J1aWx0IGEgc3Ryb25nIHN1cHBseSBuZXR3b3JrIGNvbm5lY3RpbmcgZmFybXMgdG8gbWFya2V0cyBhY3Jvc3MgS1BLLicsXHJcbiAgICAgICAgICBpbWc6ICdodHRwczovL2ltYWdlcy51bnNwbGFzaC5jb20vcGhvdG8tMTU2OTI4ODA1MjM4OS1kYWM5YjAxYzljMDU/dz0xOTIwJnE9ODAnLFxyXG4gICAgICAgICAgc3RhdHM6ICdGQVJNIFRPIE1BUktFVCcsXHJcbiAgICAgICAgICBtZXRyaWM6ICcxMDArJyxcclxuICAgICAgICAgIG1ldHJpY0xhYmVsOiAnUGFydG5lciBGYXJtcycsXHJcbiAgICAgICAgfSxcclxuICAgICAgICB7XHJcbiAgICAgICAgICBpZDogJzIwMjAnLFxyXG4gICAgICAgICAgeWVhcjogJzIwMjAnLFxyXG4gICAgICAgICAgdGl0bGU6ICdTYWxlcyBFeHBhbnNpb24nLFxyXG4gICAgICAgICAgZGVzYzogJ09wZW5lZCBhIHNlY29uZCBzYWxlcyBwb2ludCBpbiBBdHRvY2suJyxcclxuICAgICAgICAgIGltZzogJ2h0dHBzOi8vaW1hZ2VzLnVuc3BsYXNoLmNvbS9waG90by0xNjA0NzE5MzEyNTY2LTg5MTJlOTIyN2M2YT93PTE5MjAmcT04MCcsXHJcbiAgICAgICAgICBzdGF0czogJ0FUVE9DSyBTQUxFUycsXHJcbiAgICAgICAgICBtZXRyaWM6ICcyJyxcclxuICAgICAgICAgIG1ldHJpY0xhYmVsOiAnU2FsZXMgUG9pbnRzJyxcclxuICAgICAgICB9LFxyXG4gICAgICAgIHtcclxuICAgICAgICAgIGlkOiAnMjAyMicsXHJcbiAgICAgICAgICB5ZWFyOiAnMjAyMicsXHJcbiAgICAgICAgICB0aXRsZTogJ1BvdWx0cnkgRmFybScsXHJcbiAgICAgICAgICBkZXNjOiAnRXN0YWJsaXNoZWQgYSBwb3VsdHJ5IGZhcm0gaW4gQXR0b2NrLCBQdW5qYWIuJyxcclxuICAgICAgICAgIGltZzogJ2h0dHBzOi8vaW1hZ2VzLnVuc3BsYXNoLmNvbS9waG90by0xNTk4OTY1Njc1MDQ1LTQ1YzVlNzJjN2QwNT93PTE5MjAmcT04MCcsXHJcbiAgICAgICAgICBzdGF0czogJ1BPVUxUUlkgRkFSTScsXHJcbiAgICAgICAgICBtZXRyaWM6ICcxMEsrJyxcclxuICAgICAgICAgIG1ldHJpY0xhYmVsOiAnRGFpbHkgQ2FwYWNpdHknLFxyXG4gICAgICAgIH0sXHJcbiAgICAgIF0sXHJcbiAgICB9LFxyXG4gICAgdmlzaW9uTWlzc2lvbjoge1xyXG4gICAgICBiZ0ltYWdlOiAnaHR0cHM6Ly9pbWFnZXMudW5zcGxhc2guY29tL3Bob3RvLTE1MDg2ODA0MTUzMDctZTE2MGUxNTc3N2JkP3c9MTkyMCZxPTgwJyxcclxuICAgICAgZXllYnJvdzogJycsXHJcbiAgICAgIHRpdGxlOiAnVmlzaW9uICYgTWlzc2lvbicsXHJcbiAgICAgIHZpc2lvbjoge1xyXG4gICAgICAgIGV5ZWJyb3c6ICcnLFxyXG4gICAgICAgIG1hcmtlcjogJycsXHJcbiAgICAgICAgdGl0bGU6ICdUcmFuc2Zvcm1pbmcgdGhlIFZhbHVlIENoYWluJyxcclxuICAgICAgICBkZXNjOiAnVG8gYmVjb21lIGEgbGVhZGluZyBFZ2dzLWZvb2QgY29tcGFueSBpbiBQYWtpc3RhbiBhbmQgaW50ZXJuYXRpb25hbCBtYXJrZXRzIGJ5IHByb3ZpZGluZyBoaWdoLXF1YWxpdHkgZWdnIHByb2R1Y3RzLCBpbmNsdWRpbmcgbGlxdWlkIGFuZCBwcm9jZXNzZWQgZWdncywgd2l0aCBnbG9iYWwgc3RhbmRhcmRzLicsXHJcbiAgICAgIH0sXHJcbiAgICAgIG1pc3Npb246IHtcclxuICAgICAgICBleWVicm93OiAnJyxcclxuICAgICAgICBtYXJrZXI6ICcnLFxyXG4gICAgICAgIHRpdGxlOiAnUXVhbGl0eSAmIFZhbHVlIENyZWF0aW9uJyxcclxuICAgICAgICBpdGVtczogW1xyXG4gICAgICAgICAgJ1N1cHBseSBmcmVzaCAmIGh5Z2llbmljIGVnZ3MnLFxyXG4gICAgICAgICAgJ01haW50YWluIHN0cmljdCBxdWFsaXR5IGNvbnRyb2wgJiBmb29kIHNhZmV0eScsXHJcbiAgICAgICAgICAnRXhwYW5kIGludG8gdmFsdWUtYWRkZWQgZWdnIHByb2R1Y3RzIGxpa2UgbGlxdWlkIGVnZ3MnLFxyXG4gICAgICAgICAgJ0J1aWxkIGxvbmctdGVybSB0cnVzdCB3aXRoIGNsaWVudHMgJiBwYXJ0bmVycycsXHJcbiAgICAgICAgXSxcclxuICAgICAgfSxcclxuICAgIH0sXHJcbiAgfSxcclxuICBmb290ZXI6IHtcclxuICAgIGNvcHlyaWdodDogJ8KpIDIwMjYgTS9TIFlvdXNhZnphaSBFZ2dzIFRyYWRlcnMgJiBQb3VsdHJ5IEZhcm1zLiBBbGwgcmlnaHRzIHJlc2VydmVkLicsXHJcbiAgICBsb2NhdGlvbnM6ICdNYXJkYW4gwrcgQXR0b2NrIMK3IE1hbGFrYW5kJyxcclxuICAgIHF1aWNrTGlua3M6IFtcclxuICAgICAgeyBsYWJlbDogJ0Fib3V0IFVzJywgaHJlZjogJy9hYm91dCcgfSxcclxuICAgICAgeyBsYWJlbDogJ0NvbXBhbnkgT3ZlcnZpZXcnLCBocmVmOiAnL2Fib3V0JyB9LFxyXG4gICAgICB7IGxhYmVsOiAnV2h5IENob29zZSBVcycsIGhyZWY6ICcvJyB9LFxyXG4gICAgICB7IGxhYmVsOiAnVGVzdGltb25pYWxzJywgaHJlZjogJy8nIH0sXHJcbiAgICBdLFxyXG4gICAgc29sdXRpb25zTGlua3M6IFtcclxuICAgICAgeyBsYWJlbDogJ1Byb2R1Y3RzJywgaHJlZjogJy9wcm9kdWN0cycgfSxcclxuICAgICAgeyBsYWJlbDogJ1RyYWRpbmcgU29sdXRpb25zJywgaHJlZjogJy9zb2x1dGlvbnMnIH0sXHJcbiAgICAgIHsgbGFiZWw6ICdTdXBwbHkgQ2hhaW4nLCBocmVmOiAnLycgfSxcclxuICAgICAgeyBsYWJlbDogJ0V4cG9ydCAmIERpc3RyaWJ1dGlvbicsIGhyZWY6ICcvJyB9LFxyXG4gICAgXSxcclxuICAgIHJlc291cmNlc0xpbmtzOiBbXHJcbiAgICAgIHsgbGFiZWw6ICdPdXIgUHJvY2VzcycsIGhyZWY6ICcvcHJvY2VzcycgfSxcclxuICAgICAgeyBsYWJlbDogJ1F1YWxpdHkgQXNzdXJhbmNlJywgaHJlZjogJy9xdWFsaXR5JyB9LFxyXG4gICAgICB7IGxhYmVsOiAnRkFRJywgaHJlZjogJy8nIH0sXHJcbiAgICAgIHsgbGFiZWw6ICdDb250YWN0IFVzJywgaHJlZjogJy9jb250YWN0JyB9LFxyXG4gICAgXSxcclxuICB9LFxyXG59O1xyXG4iXX0=
