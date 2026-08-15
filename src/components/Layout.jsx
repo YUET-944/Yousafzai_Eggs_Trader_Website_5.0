@@ -5,15 +5,28 @@ import FooterSection from './FooterSection';
 
 export default function Layout() {
   const [showBackTop, setShowBackTop] = useState(false);
-  const { pathname } = useLocation();
+  const { pathname, hash } = useLocation();
 
   useEffect(() => {
-    if (window.__lenis) {
-      window.__lenis.scrollTo(0, { immediate: true });
-    } else {
-      window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+    if (!hash) {
+      if (window.__lenis) {
+        window.__lenis.scrollTo(0, { immediate: true });
+      } else {
+        window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+      }
+      return;
     }
-  }, [pathname]);
+
+    const targetId = decodeURIComponent(hash.slice(1));
+    window.requestAnimationFrame(() => {
+      const target = document.getElementById(targetId);
+      if (target && window.__lenis) {
+        window.__lenis.scrollTo(target, { immediate: true, offset: -80 });
+      } else if (target) {
+        target.scrollIntoView({ block: 'start' });
+      }
+    });
+  }, [pathname, hash]);
 
   useEffect(() => {
     const onScroll = () => setShowBackTop(window.scrollY > 600);

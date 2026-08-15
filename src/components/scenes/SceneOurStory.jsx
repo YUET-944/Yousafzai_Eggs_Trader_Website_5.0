@@ -181,7 +181,7 @@ export default function SceneOurStory() {
   };
 
   return (
-    <section ref={sectionRef} className="leg-section">
+    <section id="legacy" ref={sectionRef} className="leg-section">
 
       {/* â”€â”€ Ambient background particles â”€â”€ */}
       <div className="leg-ambient">

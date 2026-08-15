@@ -9,7 +9,6 @@ import Layout from './components/Layout';
 import EggTradersLayout from './components/egg-traders/EggTradersLayout';
 import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
-import OurJourneyPage from './pages/OurJourneyPage';
 import ProductsPage from './pages/ProductsPage';
 import ProcessPage from './pages/ProcessPage';
 import QualityPage from './pages/QualityPage';
@@ -73,7 +72,7 @@ export default function App() {
             <Route element={<Layout />}>
               <Route path="/" element={<HomePage />} />
               <Route path="/about" element={<AboutPage />} />
-              <Route path="/our-journey" element={<OurJourneyPage />} />
+              <Route path="/our-journey" element={<Navigate to="/about#legacy" replace />} />
               <Route path="/products" element={<ProductsPage />} />
               <Route path="/solutions" element={<SolutionsPage />} />
               <Route path="/process" element={<ProcessPage />} />

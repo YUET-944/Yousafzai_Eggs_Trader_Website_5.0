@@ -2,6 +2,8 @@ import React from 'react';
 import StoryEngine from '../story/StoryEngine';
 import PageBanner from '../components/PageBanner';
 import SceneChairman from '../components/scenes/SceneChairman';
+import SceneOurStory from '../components/scenes/SceneOurStory';
+import SceneVisionMission from '../components/scenes/SceneVisionMission';
 import SceneCertificates from '../components/scenes/SceneCertificates';
 import OurCompaniesSection from '../components/OurCompaniesSection';
 import { useCMSStore } from '../store/useCMSStore';
@@ -27,10 +29,16 @@ export default function AboutPage() {
       {/* SCENE 2: Chairman's Message */}
       <SceneChairman />
 
-      {/* SCENE 3: Second Website Link (Egg Traders Marketplace) */}
+      {/* SCENE 3: Our Legacy */}
+      <SceneOurStory />
+
+      {/* SCENE 4: Vision & Mission */}
+      <SceneVisionMission />
+
+      {/* SCENE 5: Second Website Link (Egg Traders Marketplace) */}
       <OurCompaniesSection />
 
-      {/* SCENE 4: Certificates */}
+      {/* SCENE 6: Certificates */}
       <SceneCertificates />
 
       <style>{`
