@@ -20,6 +20,7 @@ export default function Navbar() {
 
   const navLinks = [
     { path: '/about', label: 'About Us' },
+    { path: '/our-journey', label: 'Our Journey' },
     { path: '/products', label: 'Products & Grades' },
     { path: '/process', label: 'Our Process' },
     { path: '/quality', label: 'Quality' },
