@@ -90,7 +90,7 @@ export default function FooterSection() {
             <div className="footer-meta">
               <span>{footerLocations}</span>
               <span className="developer-credit">
-                <span className="developer-credit-muted">Developed by</span>
+                <span className="developer-credit-muted">Designed and developed by</span>
                 <span className="developer-credit-name">Algohub</span>
               </span>
             </div>

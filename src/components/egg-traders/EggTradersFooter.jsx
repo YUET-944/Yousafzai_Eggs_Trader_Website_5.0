@@ -47,11 +47,11 @@ export default function EggTradersFooter() {
           </div>
         </div>
         <div className="et-footer-bottom">
-          <span>Copyright 2026 Egg Traders. A {companyName} company. All rights reserved.</span>
+          <span>Copyright 2026 {company.name} {company.sub}. All rights reserved.</span>
           <div className="et-footer-meta">
             <span>{locations}</span>
             <span className="et-developer-credit">
-              <span className="et-developer-credit-muted">Developed by</span>
+              <span className="et-developer-credit-muted">Designed and developed by</span>
               <span className="et-developer-credit-name">Algohub</span>
             </span>
           </div>

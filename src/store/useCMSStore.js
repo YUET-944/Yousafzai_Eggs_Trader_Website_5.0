@@ -75,7 +75,7 @@ const REQUIRED_EGG_TRADERS_HERO = {
 const SIMPLIFIED_EGG_TRADERS_BODY =
   'Egg Traders connects verified poultry farms with commercial buyers through clear pricing information, quality details, and a simpler ordering process.';
 
-const OFFICIAL_PHONE_DISPLAY = '+92 937 269601';
+const OFFICIAL_PHONE_DISPLAY = '+92 315 8266006';
 const OFFICIAL_PHONE_PATTERN = /^\+?0?92[-\s]?0?937[-\s]?269601$|^0937[-\s]?269601$/;
 const EGG_TRADERS_BANNER_TITLES = {
   about: 'About Us',
@@ -146,12 +146,38 @@ function normalizeBannersContent(banners = {}) {
   };
 }
 
+const UPDATED_FOOTER_COPYRIGHT =
+  '© 2026 M/S Yousafzai Agro Foods & Poultry Farms. All rights reserved.';
+
+function normalizeFooterContent(footer = {}) {
+  if (!isPlainObject(footer)) return footer;
+  const copyright = typeof footer.copyright === 'string' ? footer.copyright : '';
+  const usesLegacyName = /Yousafzai Eggs Traders/i.test(copyright);
+  return {
+    ...footer,
+    copyright: usesLegacyName
+      ? copyright.replace(/Eggs Traders/g, 'Agro Foods')
+      : copyright || UPDATED_FOOTER_COPYRIGHT,
+  };
+}
+
+function normalizeCompanyContent(company = {}) {
+  if (!isPlainObject(company)) return company;
+  const sub = typeof company.sub === 'string' ? company.sub : '';
+  return {
+    ...company,
+    sub: /^Eggs Traders/i.test(sub) ? 'Agro Foods' : sub,
+  };
+}
+
 function normalizeCmsState(state) {
   if (!isPlainObject(state)) return state;
   return {
     ...state,
     contact: normalizeContactContent(state.contact),
     banners: normalizeBannersContent(state.banners),
+    footer: normalizeFooterContent(state.footer),
+    company: normalizeCompanyContent(state.company),
     eggTraders: isPlainObject(state.eggTraders)
       ? normalizeEggTradersContent(state.eggTraders)
       : state.eggTraders,

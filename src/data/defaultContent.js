@@ -193,7 +193,7 @@ export const defaultContent = {
     title: 'Get in Touch — Yousafzai Eggs Traders',
     subtitle: 'Reach out for orders, partnerships, or inquiries. We are always happy to connect.',
     info: [
-      { icon: 'Phone', label: 'Phone', value: '+92 937 269601' },
+      { icon: 'Phone', label: 'Phone', value: '+92 315 8266006' },
       { icon: 'Mail', label: 'Email', value: 'info@yousafzaiagrifoods.com' },
       { icon: 'MapPin', label: 'Head Office', value: 'Opposite Mardan Press Club, Mardan, KPK, Pakistan' },
       { icon: 'Mail', label: 'Additional Emails', value: 'Sana-Ullah@yousafzaiagrifoods.com · Saeed_rehman@yousafzaiagrifoods.com' },
@@ -201,7 +201,7 @@ export const defaultContent = {
   },
   company: {
     name: 'YOUSAFZAI',
-    sub: 'Eggs Traders & Poultry Farms',
+    sub: 'Agro Foods',
     tagline: 'A trusted name in egg trading and poultry farming since 1960 — delivering quality, freshness, and reliability from farm to market.',
   },
   ourCompanies: {
@@ -354,7 +354,7 @@ export const defaultContent = {
       title: 'Contact Egg Traders',
       subtitle: 'Fill in the form below. Our team will reach out within 2 business hours to help with your request.',
       info: [
-      { icon: 'Phone', label: 'Phone', value: '+92 937 269601' },
+      { icon: 'Phone', label: 'Phone', value: '+92 315 8266006' },
       { icon: 'Mail', label: 'Email', value: 'info@yousafzaiagrifoods.com' },
       { icon: 'MapPin', label: 'Office', value: 'Opposite Mardan Press Club, Mardan, KPK' },
       { icon: 'Clock', label: 'Response Time', value: 'Within 2 business hours' },
@@ -555,7 +555,7 @@ export const defaultContent = {
     },
   },
   footer: {
-    copyright: '© 2026 M/S Yousafzai Eggs Traders & Poultry Farms. All rights reserved.',
+    copyright: '© 2026 M/S Yousafzai Agro Foods & Poultry Farms. All rights reserved.',
     locations: 'Mardan · Attock · Peshawar',
     quickLinks: [
       { label: 'About Us', href: '/about' },
