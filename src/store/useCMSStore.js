@@ -83,7 +83,26 @@ const EGG_TRADERS_BANNER_TITLES = {
   contact: 'Contact Us',
 };
 
-function normalizeContactInfoItems(info) {
+function normalizeCompanyAddress(value) {
+  if (typeof value !== 'string') return value;
+  const trimmed = value.trim();
+  return trimmed
+    .replace(/Opposite\s+Mardan\s+Press\s+Club[\s,]+Mardan[\s,]+KPK[\s,]*Pakistan/gi, 'Plot 11 F, Rashakai Special Economic Zone')
+    .replace(/Opposite\s+Mardan\s+Press\s+Club/gi, 'Plot 11 F, Rashakai Special Economic Zone')
+    .replace(/Plot\s*11\s*F\s*Rashakai\s*Special\s*Economic\s*zone/gi, 'Plot 11 F, Rashakai Special Economic Zone')
+    .replace(/Plot\s*11\s*F,?\s*Rashakai\s*Special\s*Economic\s*Zone/gi, 'Plot 11 F, Rashakai Special Economic Zone');
+}
+
+function normalizeContactContent(contact = {}, options = {}) {
+  if (!isPlainObject(contact)) return contact;
+  const { preserveMapPin = false } = options;
+  return {
+    ...contact,
+    info: normalizeContactInfoItems(contact.info, preserveMapPin),
+  };
+}
+
+function normalizeContactInfoItems(info, preserveMapPin = false) {
   if (!Array.isArray(info)) return info;
   return info.map((item) => {
     if (!isPlainObject(item)) return item;
@@ -91,16 +110,11 @@ function normalizeContactInfoItems(info) {
     if (item.icon === 'Phone' && typeof value === 'string' && OFFICIAL_PHONE_PATTERN.test(value)) {
       return { ...item, value: OFFICIAL_PHONE_DISPLAY };
     }
+    if (item.icon === 'MapPin' && typeof value === 'string') {
+      return { ...item, value: preserveMapPin ? value : normalizeCompanyAddress(value) };
+    }
     return item;
   });
-}
-
-function normalizeContactContent(contact = {}) {
-  if (!isPlainObject(contact)) return contact;
-  return {
-    ...contact,
-    info: normalizeContactInfoItems(contact.info),
-  };
 }
 
 function normalizeEggTradersContent(eggTraders = {}) {
@@ -117,7 +131,7 @@ function normalizeEggTradersContent(eggTraders = {}) {
         ? SIMPLIFIED_EGG_TRADERS_BODY
         : body,
     },
-    contact: normalizeContactContent(eggTraders.contact),
+    contact: normalizeContactContent(eggTraders.contact, { preserveMapPin: true }),
   };
 }
 
@@ -147,17 +161,18 @@ function normalizeBannersContent(banners = {}) {
 }
 
 const UPDATED_FOOTER_COPYRIGHT =
-  '© 2026 M/S Yousafzai Agro Foods & Poultry Farms. All rights reserved.';
+  '© 2026 M/S Yousafzai Agri Foods & Poultry Farms. All rights reserved.';
 
 function normalizeFooterContent(footer = {}) {
   if (!isPlainObject(footer)) return footer;
   const copyright = typeof footer.copyright === 'string' ? footer.copyright : '';
-  const usesLegacyName = /Yousafzai Eggs Traders/i.test(copyright);
+  const normalized = copyright
+    .replace(/Yousafzai Agro Foods/gi, 'Yousafzai Agri Foods')
+    .replace(/Yousafzai Eggs Traders/gi, 'Yousafzai Agri Foods')
+    .replace(/Agro Foods/gi, 'Agri Foods');
   return {
     ...footer,
-    copyright: usesLegacyName
-      ? copyright.replace(/Eggs Traders/g, 'Agro Foods')
-      : copyright || UPDATED_FOOTER_COPYRIGHT,
+    copyright: normalized || UPDATED_FOOTER_COPYRIGHT,
   };
 }
 
@@ -166,7 +181,50 @@ function normalizeCompanyContent(company = {}) {
   const sub = typeof company.sub === 'string' ? company.sub : '';
   return {
     ...company,
-    sub: /^Eggs Traders/i.test(sub) ? 'Agro Foods' : sub,
+    sub: /^Eggs Traders/i.test(sub) ? 'Agri Foods' : sub.replace(/Agro Foods/gi, 'Agri Foods'),
+  };
+}
+
+function normalizeChairmanContent(chairman = {}) {
+  if (!isPlainObject(chairman)) return chairman;
+  const name = typeof chairman.name === 'string' ? chairman.name : '';
+  const quote = typeof chairman.quote === 'string' ? chairman.quote : '';
+  return {
+    ...chairman,
+    quote: quote.replace(/^\s*["“”]+|["“”]+\s*$/g, '').trim() || chairman.quote,
+    name: name.replace(/Sana[-\s]?ullah/gi, 'Sanaullah') || 'Sanaullah',
+  };
+}
+
+function normalizeAboutScenesContent(aboutScenes = {}) {
+  if (!isPlainObject(aboutScenes)) return aboutScenes;
+  return {
+    ...aboutScenes,
+    chairman: normalizeChairmanContent(aboutScenes.chairman),
+  };
+}
+
+function normalizeProcessContent(process = []) {
+  if (!Array.isArray(process)) return process;
+
+  return process.map((item) => {
+    if (!isPlainObject(item)) return item;
+    const title = typeof item.title === 'string' ? item.title : '';
+    const normalizedTitle = title.replace(/Candling\s*&\s*Grading/gi, 'Grading');
+    return normalizedTitle !== title ? { ...item, title: normalizedTitle } : item;
+  });
+}
+
+function normalizeProductsContent(products = {}) {
+  if (!isPlainObject(products)) return products;
+  const defaults = Array.isArray(defaultContent.products?.items) ? defaultContent.products.items : [];
+  const currentItems = Array.isArray(products.items) ? products.items : [];
+  const seen = new Set(currentItems.map((item) => (isPlainObject(item) && typeof item.name === 'string' ? item.name : '')));
+  const missingDefaults = defaults.filter((item) => !(isPlainObject(item) && typeof item.name === 'string' && seen.has(item.name)));
+
+  return {
+    ...products,
+    items: currentItems.length >= defaults.length ? currentItems : [...currentItems, ...missingDefaults],
   };
 }
 
@@ -178,6 +236,9 @@ function normalizeCmsState(state) {
     banners: normalizeBannersContent(state.banners),
     footer: normalizeFooterContent(state.footer),
     company: normalizeCompanyContent(state.company),
+    aboutScenes: normalizeAboutScenesContent(state.aboutScenes),
+    process: normalizeProcessContent(state.process),
+    products: normalizeProductsContent(state.products),
     eggTraders: isPlainObject(state.eggTraders)
       ? normalizeEggTradersContent(state.eggTraders)
       : state.eggTraders,

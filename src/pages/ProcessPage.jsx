@@ -9,7 +9,7 @@ export default function ProcessPage() {
   const heroSubtitle = !banner?.subtitle || banner.subtitle === 'A documented, auditable process at every stage — from sourcing and grading to cold-chain delivery.'
     ? 'A clear process from sourcing and grading to cold-chain delivery.'
     : banner.subtitle;
-  const stagePreview = process.slice(0, 6);
+  const stagePreview = process.slice(0, 7);
   const heroImages = banner?.images?.length ? banner.images : ['/images/yousafzai-packaging.png'];
 
   return (
@@ -21,7 +21,7 @@ export default function ProcessPage() {
         fullScreen
         hideBreadcrumb
       >
-        <div className="process-journey-preview" aria-label="Six process stages">
+        <div className="process-journey-preview" aria-label="Seven process stages">
           <div className="process-journey-line" aria-hidden="true" />
           <div className="process-journey-steps">
             {stagePreview.map((stage, index) => (
@@ -97,7 +97,7 @@ export default function ProcessPage() {
         .process-journey-steps {
           position: relative;
           display: grid;
-          grid-template-columns: repeat(6, minmax(0, 1fr));
+          grid-template-columns: repeat(7, minmax(0, 1fr));
           gap: 12px;
         }
 
@@ -116,6 +116,7 @@ export default function ProcessPage() {
         .process-journey-step:nth-child(4) { animation-delay: 0.18s; }
         .process-journey-step:nth-child(5) { animation-delay: 0.24s; }
         .process-journey-step:nth-child(6) { animation-delay: 0.3s; }
+        .process-journey-step:nth-child(7) { animation-delay: 0.36s; }
 
         .process-journey-node {
           width: 34px;

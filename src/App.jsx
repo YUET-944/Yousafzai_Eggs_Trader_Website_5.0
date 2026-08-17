@@ -15,6 +15,9 @@ import ProcessPage from './pages/ProcessPage';
 import QualityPage from './pages/QualityPage';
 import ContactPage from './pages/ContactPage';
 import SolutionsPage from './pages/SolutionsPage';
+import OurTeamPage from './pages/OurTeamPage';
+import CareersPage from './pages/CareersPage';
+import CareerDetailPage from './pages/CareerDetailPage';
 import EggTradersPage from './pages/EggTradersPage';
 import EggTradersAbout from './pages/egg-traders/EggTradersAbout';
 import EggTradersProducts from './pages/egg-traders/EggTradersProducts';
@@ -78,6 +81,9 @@ export default function App() {
               <Route path="/solutions" element={<SolutionsPage />} />
               <Route path="/process" element={<ProcessPage />} />
               <Route path="/quality" element={<QualityPage />} />
+              <Route path="/our-team" element={<OurTeamPage />} />
+              <Route path="/careers" element={<CareersPage />} />
+              <Route path="/careers/:slug" element={<CareerDetailPage />} />
               <Route path="/contact" element={<ContactPage />} />
             </Route>
             <Route element={<EggTradersLayout />}>

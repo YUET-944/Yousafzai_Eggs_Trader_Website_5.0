@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
-import { ShieldCheck, Leaf, MoonStar, Building2, X, Award, ExternalLink } from 'lucide-react';
+import { ShieldCheck, Leaf, MoonStar, Building2, Award } from 'lucide-react';
 
 const CERTS = [
   {
@@ -48,30 +48,12 @@ function CertSeal({ icon: Ic, seal }) {
   );
 }
 
-function ArrowGlyph() {
-  return <span aria-hidden="true">-&gt;</span>;
-}
-
 export default function SceneCertificates() {
-  const [active, setActive] = useState(null);
-  const [frameLoading, setFrameLoading] = useState(true);
   const [previewIdx, setPreviewIdx] = useState(null);
   const [previewRect, setPreviewRect] = useState(null);
   const certSectionRef = useRef(null);
-  const viewerRef = useRef(null);
-  const closeRef = useRef(null);
   const previewTimerRef = useRef(null);
   const canHoverRef = useRef(false);
-
-  const openDoc = (idx) => {
-    setFrameLoading(true);
-    setActive(idx);
-  };
-
-  const closeDoc = () => {
-    setActive(null);
-    setFrameLoading(false);
-  };
 
   const clearPreviewTimer = () => {
     if (previewTimerRef.current) {
@@ -121,28 +103,11 @@ export default function SceneCertificates() {
     };
   }, []);
 
-  const pdfUrl = active !== null
-    ? `${import.meta.env.BASE_URL}certificates/${encodeURIComponent(CERTS[active].file)}#view=FitH&toolbar=1&navpanes=0`
-    : '';
-
   useEffect(() => {
-    if (active !== null) {
-      setPreviewIdx(null);
-      setPreviewRect(null);
-      clearPreviewTimer();
-      const onKey = (e) => { if (e.key === 'Escape') closeDoc(); };
-      const previousOverflow = document.body.style.overflow;
-      document.body.style.overflow = 'hidden';
-      window.addEventListener('keydown', onKey);
-      requestAnimationFrame(() => {
-        closeRef.current?.focus();
-      });
-      return () => {
-        window.removeEventListener('keydown', onKey);
-        document.body.style.overflow = previousOverflow;
-      };
-    }
-  }, [active]);
+    setPreviewIdx(null);
+    setPreviewRect(null);
+    clearPreviewTimer();
+  }, []);
 
   return (
     <section className="cert-section" id="certificates" ref={certSectionRef}>
@@ -166,15 +131,12 @@ export default function SceneCertificates() {
               <div
                 key={c.file}
                 className={`cert-token tok-${i}`}
-                onClick={() => openDoc(i)}
                 onMouseEnter={(e) => showPreview(i, e.currentTarget)}
                 onMouseLeave={schedulePreviewClose}
                 onFocus={(e) => showPreview(i, e.currentTarget)}
                 onBlur={schedulePreviewClose}
-                role="button"
                 tabIndex={0}
-                aria-label={`View ${c.title}`}
-                onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openDoc(i); } }}
+                aria-label={c.title}
               >
                 <div className="tok-inner">
                   <CertSeal icon={c.icon} seal={c.seal} />
@@ -191,69 +153,10 @@ export default function SceneCertificates() {
             style={{ left: previewRect.left, top: previewRect.top }}
             onMouseEnter={clearPreviewTimer}
             onMouseLeave={schedulePreviewClose}
-            onClick={() => openDoc(previewIdx)}
-            role="button"
-            tabIndex={-1}
             aria-hidden="true"
           >
             <strong>{CERTS[previewIdx].title}</strong>
             <span>{CERTS[previewIdx].sub}</span>
-            <em>View Certificate <ArrowGlyph /></em>
-          </div>
-        ), document.body)}
-
-        {active !== null && createPortal((
-          <div
-            className="cert-backdrop"
-            onMouseDown={(e) => {
-              if (e.target === e.currentTarget) closeDoc();
-            }}
-            onClick={(e) => {
-              if (e.target === e.currentTarget) closeDoc();
-            }}
-          >
-            <div
-              className="cert-viewer"
-              ref={viewerRef}
-              role="dialog"
-              aria-modal="true"
-              aria-labelledby="cert-modal-title"
-            >
-            <div className="cert-modal-head">
-              <div>
-                <strong id="cert-modal-title">{CERTS[active].title}</strong>
-                <span>{CERTS[active].sub}</span>
-              </div>
-              <button ref={closeRef} className="cert-close" onClick={closeDoc} aria-label="Close certificate viewer" autoFocus>
-                <X size={18} />
-              </button>
-            </div>
-            <div className="cert-frame-wrap">
-              {frameLoading && (
-                <div className="cert-loading">
-                  <span className="tok-loader big" />
-                  <p>Loading certificate...</p>
-                </div>
-              )}
-              <iframe
-                key={pdfUrl}
-                className="cert-frame"
-                src={pdfUrl}
-                title={CERTS[active].title}
-                onLoad={() => setFrameLoading(false)}
-              />
-            </div>
-            <div className="cert-frame-note">
-              <span>
-                <ExternalLink size={13} />
-                Not displaying?
-              </span>
-              <a href={pdfUrl} target="_blank" rel="noreferrer">
-                Open Full Document
-                <ExternalLink size={14} />
-              </a>
-            </div>
-            </div>
           </div>
         ), document.body)}
       </div>

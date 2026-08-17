@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, ArrowRight, ExternalLink } from 'lucide-react';
-import logo from '../../assets/logo.svg';
+import logo from '../../assets/internallogo.jpeg';
 
 const navLinks = [
   { path: '/egg-traders/about', label: 'About' },
@@ -35,12 +35,8 @@ export default function EggTradersNavbar({ scrolled, mobileOpen, setMobileOpen }
             aria-label="Yousafzai Egg Traders"
             onClick={() => setMobileOpen(false)}
           >
-            <span className="et-brand-copy" aria-hidden="true">
-              <span className="et-brand-primary">YOUSAFZAI</span>
-              <span className="et-brand-secondary">EGG TRADERS</span>
-            </span>
             <span className="et-logo-mark" aria-hidden="true">
-              <img src={logo} alt="" className="et-logo-mark-img" />
+              <img src={logo} alt="Yousafzai Egg Traders logo" className="et-logo-mark-img" />
             </span>
           </Link>
 
@@ -152,60 +148,35 @@ export default function EggTradersNavbar({ scrolled, mobileOpen, setMobileOpen }
         .et-nav-brand {
           display: flex;
           align-items: center;
-          gap: 10px;
+          justify-content: center;
           text-decoration: none;
           flex: 0 0 auto;
           min-width: 0;
-        }
-
-        .et-brand-copy {
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          line-height: 1;
-          min-width: 0;
-          white-space: nowrap;
-        }
-
-        .et-brand-primary {
-          font-family: Arial, Helvetica, sans-serif;
-          font-size: 18.5px;
-          line-height: 1;
-          font-weight: 700;
-          color: #F6AE00;
-          letter-spacing: 0;
-        }
-
-        .et-brand-secondary {
-          font-family: Arial, Helvetica, sans-serif;
-          font-size: 7.8px;
-          line-height: 1.15;
-          font-weight: 400;
-          color: #FFFFFF;
-          letter-spacing: 0.04em;
-          margin-left: 36px;
-          margin-top: 2px;
+          line-height: 0;
         }
 
         .et-logo-mark {
-          width: 50px;
-          height: 50px;
-          display: block;
-          overflow: hidden;
-          flex: 0 0 50px;
+          width: clamp(128px, 14vw, 200px);
+          min-width: 128px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          overflow: visible;
+          flex: 0 0 auto;
           position: relative;
         }
 
         .et-logo-mark-img {
-          height: 50px;
-          width: auto;
-          max-width: none;
           display: block;
-          transform: translateX(-121px);
+          width: 100%;
+          height: auto;
+          max-height: 52px;
+          object-fit: contain;
+          object-position: center;
           transition: transform .25s ease;
         }
 
-        .et-nav-brand:hover .et-logo-mark-img { transform: translateX(-121px) scale(1.03); }
+        .et-nav-brand:hover .et-logo-mark-img { transform: scale(1.02); }
 
         .et-nav-links-desktop {
           display: flex;

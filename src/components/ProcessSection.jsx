@@ -109,7 +109,7 @@ export default function ProcessSection() {
       'Refrigerated delivery with IoT temperature logging. Delivery receipts include delivery documentation.',
   };
 
-  const totalStages = process.length || 6;
+  const totalStages = process.length || 7;
 
   return (
     <section id="process" ref={sectionRef} className="proc-section">

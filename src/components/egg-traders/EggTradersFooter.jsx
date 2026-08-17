@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import logo from '../../assets/logo.svg';
+import logo from '../../assets/internallogo.jpeg';
 import { useCMSStore } from '../../store/useCMSStore';
 
 export default function EggTradersFooter() {
@@ -21,8 +21,8 @@ export default function EggTradersFooter() {
       <div className="container">
         <div className="et-footer-grid">
           <div>
-            <Link to="/egg-traders" style={{ display: 'flex', alignItems: 'center', marginBottom: 18, textDecoration: 'none' }}>
-              <img src={logo} alt={`${companyName} logo`} style={{ height: 56, width: 'auto', flexShrink: 0, display: 'block' }} />
+            <Link to="/egg-traders" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 18, textDecoration: 'none' }}>
+              <img src={logo} alt={`${companyName} logo`} style={{ height: 56, width: 'auto', maxWidth: '100%', objectFit: 'contain', flexShrink: 0, display: 'block' }} />
             </Link>
             <p style={{ fontSize: 13.5, color: 'rgba(255,255,255,0.62)', lineHeight: 1.7, maxWidth: 320 }}>
               A {companyName} company. Connecting verified poultry farms to commercial buyers with transparency and efficiency.

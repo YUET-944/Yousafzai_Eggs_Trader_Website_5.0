@@ -67,12 +67,12 @@ export default function SceneChairman() {
           <span className="chairman-divider" aria-hidden="true" />
         </div>
 
-        <blockquote className="quote-line chairman-quote">
+        <div className="quote-line chairman-quote">
           {chairman.quote}
-        </blockquote>
+        </div>
 
         <div className="quote-line chairman-signature">
-          <h3 className="chairman-name">{chairman.name || 'Chairman'}</h3>
+          <h3 className="chairman-name">{'Sana-Ullah'}</h3>
           <p className="chairman-role">{role}</p>
         </div>
       </div>

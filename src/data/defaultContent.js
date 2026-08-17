@@ -29,7 +29,7 @@ export const defaultContent = {
     eyebrow: 'About Yousafzai Eggs Traders',
     title: 'A Trusted Name in Egg Trading & Poultry Farming',
     subtitle: 'Yousafzai Eggs Traders is a trusted name in the poultry and egg distribution industry. With years of experience, we have built a strong supply network connecting farms to markets efficiently. Our focus is on quality assurance, timely delivery, and long-term business relationships.',
-    quote: '"At Yousafzai Eggs Traders, we believe in quality, trust, and innovation. Our goal is not only to supply eggs but to transform the poultry industry by introducing modern processing solutions such as liquid egg production."',
+    quote: 'At Yousafzai Eggs Traders, we believe in quality, trust, and innovation. Our goal is not only to supply eggs but to transform the poultry industry by introducing modern processing solutions such as liquid egg production.',
     quoteFooter: 'Chairman\'s Message',
     values: [
       { icon: 'Box', title: 'Quality Assurance', body: 'Eggs sourced from approved and traceable poultry farms with regular quality inspection, grading, and hygienic handling.' },
@@ -64,6 +64,8 @@ export const defaultContent = {
     subtitle: 'Compare available egg products, formats, and grade references. Final specifications can be confirmed with our team during quoting.',
     items: [
       { badge: 'Grade A', icon: 'Feather', gradient: 'from-navy to-navy-2', name: 'Commercial Grade A White Eggs', grade: 'Grade A', format: 'White shell eggs', packaging: 'Packaging options to be confirmed', suitableFor: 'Hotels, restaurants, caterers, and commercial kitchens', description: 'Consistent white shell eggs for commercial buyers, with final sizes and supply details confirmed during quoting.', tags: ['Daily Supply', 'S-XL'], image: 'https://images.unsplash.com/photo-1582722872445-44dc5f7e3c8f?w=600&h=400&fit=crop' },
+      { badge: 'White Eggs', icon: 'Feather', gradient: 'from-sky-700 to-sky-500', name: 'White Eggs — Medium', grade: 'Medium', format: 'White shell eggs', packaging: 'Packaging options to be confirmed', suitableFor: 'Commercial buyers requiring medium-size white eggs', description: 'Medium-size white shell eggs for commercial orders. Final size and supply details can be confirmed during quoting.', tags: ['White Eggs', 'Medium'], image: 'https://images.unsplash.com/photo-1582722872445-44dc5f7e3c8f?w=600&h=400&fit=crop' },
+      { badge: 'White Eggs', icon: 'Feather', gradient: 'from-sky-700 to-sky-500', name: 'White Eggs — Large', grade: 'Large', format: 'White shell eggs', packaging: 'Packaging options to be confirmed', suitableFor: 'Commercial buyers requiring large-size white eggs', description: 'Large-size white shell eggs for commercial orders. Final size and supply details can be confirmed during quoting.', tags: ['White Eggs', 'Large'], image: 'https://images.unsplash.com/photo-1582722872445-44dc5f7e3c8f?w=600&h=400&fit=crop' },
       { badge: 'Free Range', icon: 'Feather', gradient: 'from-amber-800 to-amber-600', name: 'Free-Range Brown Eggs', grade: 'Grade details pending verification', format: 'Brown shell eggs', packaging: 'Packaging options to be confirmed', suitableFor: 'Premium food service and retail-style requirements', description: 'Brown shell egg options for buyers who need a free-range product category. Certification details should be confirmed during quoting.', tags: ['Free Range', 'M, L'], image: 'https://images.unsplash.com/photo-1598965675045-45c5e72c7d05?w=600&h=400&fit=crop' },
       { badge: 'Organic', icon: 'Feather', gradient: 'from-green-800 to-green-600', name: 'Organic Egg Options', grade: 'Organic grade details pending verification', format: 'Shell eggs', packaging: 'Packaging options to be confirmed', suitableFor: 'Buyers seeking organic-positioned egg supply', description: 'Shell egg options for buyers seeking organic supply. Certification and documentation details should be confirmed during quoting.', tags: ['Organic', 'L'], image: 'https://images.unsplash.com/photo-1498654077810-12c21d4d6dc3?w=600&h=400&fit=crop' },
       { badge: 'Processing', icon: 'Package', gradient: 'from-indigo-800 to-indigo-600', name: 'Liquid Whole Egg', grade: 'Processing grade', format: 'Liquid whole egg', packaging: 'Bulk packaging to be confirmed', suitableFor: 'Food manufacturers, bakeries, and industrial kitchens', description: 'Liquid whole egg option for commercial food production. Processing and packaging details should be confirmed during quoting.', tags: ['Industrial', 'Bulk'], image: 'https://images.unsplash.com/photo-1587486913049-53fc88980cfc?w=600&h=400&fit=crop' },
@@ -143,10 +145,11 @@ export const defaultContent = {
   process: [
     { num: '01', icon: 'Feather', title: 'Collection', body: 'Eggs are collected from certified farms within 6 hours of laying. Each collection is logged with farm ID, flock ID, and timestamp.' },
     { num: '02', icon: 'FlaskConical', title: 'Laboratory Testing', body: 'Salmonella swabs, shell strength, interior quality (Haugh units), and yolk color measured on every batch.' },
-    { num: '03', icon: 'ScanLine', title: 'Candling & Grading', body: 'Automated candling detects cracks, blood spots and internal defects. Eggs are graded by size and shell quality.' },
+    { num: '03', icon: 'ScanLine', title: 'Grading', body: 'Automated candling detects cracks, blood spots and internal defects. Eggs are graded by size and shell quality.' },
     { num: '04', icon: 'Printer', title: 'Marking & Coding', body: 'Each egg is stamped with a batch code linking to the full digital audit trail accessible via our client portal.' },
     { num: '05', icon: 'Package', title: 'Packing', body: 'Packed under hygienic conditions in client-specified or standard packaging, with batch certificates included in every box.' },
-    { num: '06', icon: 'Truck', title: 'Cold-Chain Delivery', body: 'Refrigerated delivery with IoT temperature logging. Delivery receipts include delivery documentation.' },
+    { num: '06', icon: 'Warehouse', title: 'Supply Chain', body: 'Maintained across our cold-chain network and regional hubs with 2–5°C monitoring, full batch traceability, and documented handoff through every transfer point.' },
+    { num: '07', icon: 'Truck', title: 'Delivery', body: 'Refrigerated last-mile delivery with real-time GPS and temperature logging right to your dock. Delivery receipts include delivery documentation.' },
   ],
   quality: {
     eyebrow: 'Quality Assurance',
@@ -195,13 +198,13 @@ export const defaultContent = {
     info: [
       { icon: 'Phone', label: 'Phone', value: '+92 315 8266006' },
       { icon: 'Mail', label: 'Email', value: 'info@yousafzaiagrifoods.com' },
-      { icon: 'MapPin', label: 'Head Office', value: 'Opposite Mardan Press Club, Mardan, KPK, Pakistan' },
+      { icon: 'MapPin', label: 'Head Office', value: 'Plot 11 F, Rashakai Special Economic Zone' },
       { icon: 'Mail', label: 'Additional Emails', value: 'Sana-Ullah@yousafzaiagrifoods.com · Saeed_rehman@yousafzaiagrifoods.com' },
     ],
   },
   company: {
     name: 'YOUSAFZAI',
-    sub: 'Agro Foods',
+    sub: 'Agri Foods',
     tagline: 'A trusted name in egg trading and poultry farming since 1960 — delivering quality, freshness, and reliability from farm to market.',
   },
   ourCompanies: {
@@ -478,8 +481,8 @@ export const defaultContent = {
     },
     chairman: {
       eyebrow: '',
-      quote: '"At Yousafzai Eggs Traders, we believe in quality, trust, and innovation. Our goal is not only to supply eggs but to transform the poultry industry by introducing modern processing solutions."',
-      name: 'Chairman',
+      quote: 'At Yousafzai Eggs Traders, we believe in quality, trust, and innovation. Our goal is not only to supply eggs but to transform the poultry industry by introducing modern processing solutions and dependable service standards that strengthen the entire value chain. We are committed to delivering reliable value at every stage, from sourcing and quality assurance to the long-term relationships we build with farms, buyers, and partners.',
+      name: 'Sanaullah',
       role: 'Chairman & Founder',
       image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=450&h=550&fit=crop',
       seal: '',
@@ -555,7 +558,7 @@ export const defaultContent = {
     },
   },
   footer: {
-    copyright: '© 2026 M/S Yousafzai Agro Foods & Poultry Farms. All rights reserved.',
+    copyright: '© 2026 M/S Yousafzai Agri Foods & Poultry Farms. All rights reserved.',
     locations: 'Mardan · Attock · Peshawar',
     quickLinks: [
       { label: 'About Us', href: '/about' },

@@ -21,9 +21,11 @@ export default function Navbar() {
   const navLinks = [
     { path: '/about', label: 'About Us' },
     { path: '/our-journey', label: 'Our Journey' },
+    { path: '/our-team', label: 'Our Team' },
     { path: '/products', label: 'Products & Grades' },
     { path: '/process', label: 'Our Process' },
     { path: '/quality', label: 'Quality' },
+    { path: '/careers', label: 'Careers' },
     { path: '/contact', label: 'Contact Us' },
   ];
 
@@ -150,10 +152,11 @@ export default function Navbar() {
         }
 
         .nav-logo {
-          height: 50px;
+          height: 58px;
           width: auto;
           display: block;
           transition: transform 0.3s;
+          filter: drop-shadow(0 10px 18px rgba(0,0,0,0.18));
         }
 
         .nav-brand-text {
