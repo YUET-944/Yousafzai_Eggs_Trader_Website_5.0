@@ -1,5 +1,6 @@
 import PageBanner from '../components/PageBanner';
 import ContactSection from '../components/ContactSection';
+import LocationMapSection from '../components/LocationMapSection';
 import { useCMSStore } from '../store/useCMSStore';
 
 const CONTACT_HERO_SUBTITLE = 'Tell us what you need, and our commercial team will get back to you with a formal quotation.';
@@ -20,6 +21,7 @@ export default function ContactPage() {
         />
       </div>
       <ContactSection />
+      <LocationMapSection />
 
       <style>{`
         .contact-hero-wrap .page-hero {
