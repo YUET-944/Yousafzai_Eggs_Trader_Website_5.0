@@ -5,6 +5,7 @@ import SceneChairman from '../components/scenes/SceneChairman';
 import SceneVisionMission from '../components/scenes/SceneVisionMission';
 import SceneCertificates from '../components/scenes/SceneCertificates';
 import OurCompaniesSection from '../components/OurCompaniesSection';
+import OurPartnersSection from '../components/OurPartnersSection';
 import { useCMSStore } from '../store/useCMSStore';
 
 const ABOUT_HERO_IMAGE = '/images/yousafzai-packaging.png';
@@ -34,7 +35,10 @@ export default function AboutPage() {
       {/* SCENE 4: Second Website Link (Egg Traders Marketplace) */}
       <OurCompaniesSection />
 
-      {/* SCENE 5: Certificates */}
+      {/* SCENE 5: Our Partners */}
+      <OurPartnersSection />
+
+      {/* SCENE 6: Certificates */}
       <SceneCertificates />
 
       <style>{`

@@ -1,6 +1,9 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { getJobs } from '../lib/careersApi';
+import PageBanner from '../components/PageBanner';
+
+const CAREERS_HERO_IMAGE = 'https://images.unsplash.com/photo-1605882174146-a464b70cf691?w=1920&q=80';
 
 export default function CareersPage() {
   const [jobs, setJobs] = useState([]);
@@ -29,16 +32,15 @@ export default function CareersPage() {
 
   return (
     <div className="careers-page">
-      <section className="careers-hero">
-        <div className="container careers-hero-inner">
-          <span className="careers-kicker">Join Us</span>
-          <h1>Careers</h1>
-          <p>
-            We are building thoughtful teams around quality, operations, and long-term value.
-            We welcome future opportunities as they arise.
-          </p>
-        </div>
-      </section>
+      <div className="careers-hero-wrap">
+        <PageBanner
+          title="Careers"
+          subtitle="Explore opportunities to grow your career with Yousafzai."
+          slideshowImages={[CAREERS_HERO_IMAGE]}
+          hideBreadcrumb
+          fullScreen
+        />
+      </div>
 
       <section className="careers-content">
         <div className="container">
@@ -77,40 +79,91 @@ export default function CareersPage() {
           color: #111111;
         }
 
-        .careers-hero {
-          padding: 150px 0 50px;
-          background: linear-gradient(135deg, rgba(63,98,49,0.98), rgba(17,17,17,0.92));
-          color: #fff;
+        /* ─── HERO OVERRIDES — match Main Website hero visual language ─── */
+        .careers-hero-wrap .page-hero {
+          box-sizing: border-box;
+          min-height: 100svh;
+          padding: clamp(96px, 13svh, 132px) 0 clamp(42px, 8svh, 72px);
+          background-color: #1c2b20;
         }
 
-        .careers-hero-inner {
-          text-align: center;
+        @supports (height: 100dvh) {
+          .careers-hero-wrap .page-hero {
+            min-height: 100dvh;
+          }
         }
 
-        .careers-kicker {
-          display: inline-block;
-          margin-bottom: 16px;
-          font-size: 11px;
-          letter-spacing: 0.18em;
-          text-transform: uppercase;
-          color: rgba(255,255,255,0.82);
+        .careers-hero-wrap .page-hero > .container {
+          height: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
         }
 
-        .careers-hero h1 {
-          margin: 0;
+        .careers-hero-wrap .banner-slideshow .slide-img {
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-position: center 45%;
+          filter: saturate(88%) contrast(108%);
+        }
+
+        .careers-hero-wrap .banner-slideshow .slide-img.active {
+          opacity: 0.50;
+        }
+
+        .careers-hero-wrap .page-hero-bg {
+          background:
+            linear-gradient(180deg, rgba(17,17,17,0.55) 0%, rgba(17,17,17,0.28) 44%, rgba(17,17,17,0.62) 100%),
+            radial-gradient(90% 80% at 50% 35%, rgba(63,98,49,0.22) 0%, rgba(17,17,17,0.12) 52%, rgba(17,17,17,0.50) 100%);
+        }
+
+        .careers-hero-wrap .page-hero-bg::before {
+          opacity: 0.09;
+        }
+
+        .careers-hero-wrap .banner-bottom-fade {
+          height: 72px;
+          background: linear-gradient(to bottom, rgba(251,247,240,0), rgba(251,247,240,0.80));
+        }
+
+        .careers-hero-wrap .page-hero-title {
           font-family: 'Space Grotesk', sans-serif;
-          font-size: clamp(2.6rem, 6vw, 5rem);
-          line-height: 1;
+          color: #ffffff;
+          background: none;
+          -webkit-text-fill-color: #ffffff;
+          text-shadow: 0 16px 40px rgba(0,0,0,0.44);
+          filter: none;
+          font-size: clamp(3rem, 6vw, 5rem);
         }
 
-        .careers-hero p {
-          max-width: 720px;
-          margin: 18px auto 0;
-          font-size: 1.06rem;
-          line-height: 1.7;
-          color: rgba(255,255,255,0.85);
+        .careers-hero-wrap .page-hero-sub {
+          color: rgba(255,255,255,0.88);
+          text-shadow: 0 8px 24px rgba(0,0,0,0.40);
         }
 
+        @media (max-width: 860px) {
+          .careers-hero-wrap .page-hero {
+            min-height: 100svh;
+            padding: clamp(86px, 12svh, 112px) 0 clamp(34px, 7svh, 54px);
+          }
+
+          @supports (height: 100dvh) {
+            .careers-hero-wrap .page-hero {
+              min-height: 100dvh;
+            }
+          }
+
+          .careers-hero-wrap .page-hero-title {
+            font-size: clamp(2.4rem, 10vw, 3.2rem);
+            margin-bottom: 16px;
+          }
+
+          .careers-hero-wrap .banner-slideshow .slide-img {
+            background-position: center 42%;
+          }
+        }
+
+        /* ─── CONTENT SECTION ─── */
         .careers-content {
           padding: 72px 0 120px;
         }

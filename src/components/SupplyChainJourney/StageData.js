@@ -12,7 +12,7 @@ export const stages = [
     id: "quality",
     title: "Quality Laboratory",
     description: "Every egg passes through strict quality checks, including salmonella swabs, Haugh unit testing, candling, and USDA grading.",
-    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1200&q=80",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqTB7rfEf7JqZRALPchZu3rBiPq_nhnlR-oGwy0TrSmLiFZwyz038O-8aH&s=10",
     stats: "TRIPLE INSPECTION PROCESS"
   },
   {
@@ -26,7 +26,7 @@ export const stages = [
     id: "packaging",
     title: "Packaging",
     description: "Client-specified or standard 30-egg tray packaging with complete batch traceability labels.",
-    image: "/images/yousafzai-packaging.png",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhfkhA9esVj7FU0r8G7YuCWyB4cAQGLnRkwbNCCtOaWg&s=10",
     stats: "BATCH TRACEABILITY"
   },
   {

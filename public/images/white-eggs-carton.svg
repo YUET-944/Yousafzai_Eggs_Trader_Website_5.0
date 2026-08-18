@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" role="img" aria-label="White eggs in carton">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f7f3ea"/>
+      <stop offset="100%" stop-color="#ebe4d6"/>
+    </linearGradient>
+    <radialGradient id="eggShine" cx="35%" cy="28%" r="55%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="55%" stop-color="#f8f6f2"/>
+      <stop offset="100%" stop-color="#e8e3da"/>
+    </radialGradient>
+    <linearGradient id="carton" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#d8cbb8"/>
+      <stop offset="100%" stop-color="#b9a98f"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="400" fill="url(#bg)"/>
+  <path d="M95 275 L505 275 L485 330 L115 330 Z" fill="url(#carton)" stroke="#a89478" stroke-width="2"/>
+  <path d="M115 275 L130 220 L470 220 L485 275 Z" fill="#e6dccb" stroke="#a89478" stroke-width="2"/>
+  <ellipse cx="180" cy="248" rx="44" ry="34" fill="url(#eggShine)" stroke="#d8d0c4" stroke-width="1.5"/>
+  <ellipse cx="260" cy="242" rx="46" ry="35" fill="url(#eggShine)" stroke="#d8d0c4" stroke-width="1.5"/>
+  <ellipse cx="340" cy="246" rx="45" ry="34" fill="url(#eggShine)" stroke="#d8d0c4" stroke-width="1.5"/>
+  <ellipse cx="420" cy="241" rx="44" ry="33" fill="url(#eggShine)" stroke="#d8d0c4" stroke-width="1.5"/>
+  <ellipse cx="220" cy="206" rx="42" ry="31" fill="url(#eggShine)" stroke="#d8d0c4" stroke-width="1.5"/>
+  <ellipse cx="300" cy="202" rx="43" ry="32" fill="url(#eggShine)" stroke="#d8d0c4" stroke-width="1.5"/>
+  <ellipse cx="380" cy="205" rx="42" ry="31" fill="url(#eggShine)" stroke="#d8d0c4" stroke-width="1.5"/>
+  <ellipse cx="145" cy="292" rx="34" ry="24" fill="#000" opacity="0.04"/>
+  <ellipse cx="255" cy="292" rx="34" ry="24" fill="#000" opacity="0.04"/>
+  <ellipse cx="365" cy="292" rx="34" ry="24" fill="#000" opacity="0.04"/>
+</svg>
