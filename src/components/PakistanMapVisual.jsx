@@ -1,4 +1,5 @@
 import React from 'react';
+import { CONTACT_LOCATIONS } from '../data/locations';
 
 // Accurate geographical district locations of Pakistan from @svg-maps/pakistan.districts
 const LOCATIONS = [
@@ -148,9 +149,6 @@ const LOCATIONS = [
   {"name":"Skardu","id":"skardu","path":"m 1463.8663,273.3711 -10.9916,8.5913 10.3253,9.8376 2.6,11.4 -4.4,6.8 17,11.4 35.4,3.8 30,-18.2 9,3.6 33.4,-17.4 0.7728,-26.8218 -21.1839,-6.1938 -31.576,-17.9818 13.3898,-28.1715 33.5745,-20.3794 22.383,24.775 11.8398,-12.6267 -0.2,-13.4 -8.8,-9.2 -8,-4 -0.8,-13.8 -3.2,-1.4 -17,5.8 -4.8,3.8 -16.2,0 -1.6,-11.2 -6.8,-9.6 -9.0875,-0.49062 -5.5125,-5.70938 -9.9789,7.49174 -9.3929,-10.98889 -17.5866,-1.99797 -18.1862,-12.38748 -14.3891,4.19576 -16.7872,19.5802 -5.5957,-7.59232 -12.1908,6.39353 8.9932,20.77898 -22.1831,14.38545 13.9893,4.7952 -3.3974,10.5892 25.9803,22.1776 8.3936,15.1847 8.5934,10.5892 -5.7956,6.7932 z"}
 ];
 
-// Exact calculated center of Mardan's path bounds in this SVG's viewBox (27 28 1628 1544)
-const MARDAN_PIN = { x: 1152, y: 349 };
-
 export default function PakistanMapVisual({ className = '' }) {
   return (
     <div className={`pk-map-visual ${className}`.trim()} aria-hidden="true">
@@ -189,50 +187,52 @@ export default function PakistanMapVisual({ className = '' }) {
           ))}
         </g>
 
-        {/* ── Render the single verified location: Mardan ── */}
-        <g className="pk-city-pin">
-          {/* Pulse animation ring */}
-          <circle
-            cx={MARDAN_PIN.x}
-            cy={MARDAN_PIN.y}
-            r="28"
-            fill="#DE510A"
-            opacity="0.16"
-          />
-          {/* Main outer dot border */}
-          <circle
-            cx={MARDAN_PIN.x}
-            cy={MARDAN_PIN.y}
-            r="16"
-            fill="#DE510A"
-            stroke="#ffffff"
-            strokeWidth="5"
-          />
-          {/* Inner center dot */}
-          <circle
-            cx={MARDAN_PIN.x}
-            cy={MARDAN_PIN.y}
-            r="6"
-            fill="#ffffff"
-          />
+        {/* ── Render location pins: Mardan, Attock, Peshawar ── */}
+        {CONTACT_LOCATIONS.map((loc) => (
+          <g key={loc.name} className="pk-city-pin" id={`map-pin-${loc.name.toLowerCase()}`}>
+            {/* Pulse animation ring */}
+            <circle
+              cx={loc.x}
+              cy={loc.y}
+              r="28"
+              fill="#DE510A"
+              opacity="0.16"
+            />
+            {/* Main outer dot border */}
+            <circle
+              cx={loc.x}
+              cy={loc.y}
+              r="16"
+              fill="#DE510A"
+              stroke="#ffffff"
+              strokeWidth="5"
+            />
+            {/* Inner center dot */}
+            <circle
+              cx={loc.x}
+              cy={loc.y}
+              r="6"
+              fill="#ffffff"
+            />
 
-          {/* Text Label with white stroke background for premium legibility */}
-          <text
-            x={MARDAN_PIN.x + 28}
-            y={MARDAN_PIN.y + 10}
-            fontSize="32"
-            fontFamily="'Space Grotesk', 'Inter', system-ui, sans-serif"
-            fontWeight="750"
-            fill="#111111"
-            textAnchor="start"
-            paintOrder="stroke"
-            stroke="#ffffff"
-            strokeWidth="8"
-            strokeLinejoin="round"
-          >
-            Mardan
-          </text>
-        </g>
+            {/* Text Label with white stroke background for premium legibility */}
+            <text
+              x={loc.x + (loc.labelDx || 28)}
+              y={loc.y + (loc.labelDy || 10)}
+              fontSize="32"
+              fontFamily="'Space Grotesk', 'Inter', system-ui, sans-serif"
+              fontWeight="750"
+              fill="#111111"
+              textAnchor={loc.labelAnchor || 'start'}
+              paintOrder="stroke"
+              stroke="#ffffff"
+              strokeWidth="8"
+              strokeLinejoin="round"
+            >
+              {loc.name}
+            </text>
+          </g>
+        ))}
       </svg>
     </div>
   );
