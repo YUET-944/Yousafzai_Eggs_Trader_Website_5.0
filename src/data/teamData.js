@@ -4,8 +4,8 @@
 
 export const teamData = {
   id: 'root',
-  name: 'Name here',
-  role: 'Role title',
+  name: 'Sana-Ullah',
+  role: 'Chairman',
   children: [
     {
       id: 'node-1',
