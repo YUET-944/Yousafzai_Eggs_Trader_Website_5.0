@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import logo from '../../assets/internallogo.jpeg';
+import logo from '../../assets/internallogo-navbar.png';
 import { useCMSStore } from '../../store/useCMSStore';
 
 export default function EggTradersFooter() {

@@ -1,4 +1,5 @@
 import deliveryTruckImage from './image.png';
+import qualityInspectionImage from '../../assets/Qulatiy.png';
 
 export const stages = [
   {
@@ -12,7 +13,7 @@ export const stages = [
     id: "quality",
     title: "Quality Laboratory",
     description: "Every egg passes through strict quality checks, including salmonella swabs, Haugh unit testing, candling, and USDA grading.",
-    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqTB7rfEf7JqZRALPchZu3rBiPq_nhnlR-oGwy0TrSmLiFZwyz038O-8aH&s=10",
+    image: qualityInspectionImage,
     stats: "TRIPLE INSPECTION PROCESS"
   },
   {
@@ -26,7 +27,7 @@ export const stages = [
     id: "packaging",
     title: "Packaging",
     description: "Client-specified or standard 30-egg tray packaging with complete batch traceability labels.",
-    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhfkhA9esVj7FU0r8G7YuCWyB4cAQGLnRkwbNCCtOaWg&s=10",
+    image: "/images/yousafzai-packaging.png",
     stats: "BATCH TRACEABILITY"
   },
   {

@@ -9,13 +9,20 @@ const TEAM_HERO_IMAGE = '/images/yousafzai-packaging.png';
 ───────────────────────────────────────────── */
 function TeamNode({ node, level = 0 }) {
   const hasChildren = Array.isArray(node.children) && node.children.length > 0;
+  const isRoleOnly = !node.name;
 
   return (
     <div className="org-node-wrapper" data-level={level}>
-      <div className="org-card" style={{ '--stagger': level * 0.12 + 's' }}>
+      <div className={`org-card${isRoleOnly ? ' org-card-role-only' : ''}`} style={{ '--stagger': level * 0.12 + 's' }}>
         <div className="org-card-accent" />
-        <div className="org-card-name">{node.name || 'Name here'}</div>
-        <div className="org-card-role">{node.role || 'Role title'}</div>
+        {isRoleOnly ? (
+          <div className="org-card-placeholder-role">{node.role || 'Role title'}</div>
+        ) : (
+          <>
+            <div className="org-card-name">{node.name}</div>
+            <div className="org-card-role">{node.role || 'Role title'}</div>
+          </>
+        )}
       </div>
 
       {hasChildren && (
@@ -211,9 +218,8 @@ export default function OurTeamPage() {
         ─── */
         .org-tree-scroll {
           width: 100%;
-          overflow-x: auto;
-          overflow-y: visible;
-          padding: 0 24px 40px;
+          overflow: visible;
+          padding: 18px clamp(16px, 3vw, 32px) 72px;
           box-sizing: border-box;
         }
 
@@ -235,8 +241,9 @@ export default function OurTeamPage() {
         .org-tree {
           display: flex;
           justify-content: center;
-          min-width: max-content;
-          padding: 8px 32px 8px;
+          width: min(100%, 1240px);
+          margin: 0 auto;
+          padding: 8px 0;
         }
 
         /* ─── NODE WRAPPER ─── */
@@ -245,7 +252,22 @@ export default function OurTeamPage() {
           display: flex;
           flex-direction: column;
           align-items: center;
-          padding: 0 20px;
+          min-width: 0;
+          padding: 0 clamp(6px, 0.75vw, 10px);
+        }
+
+        .org-tree > .org-node-wrapper {
+          width: 100%;
+          padding: 0;
+        }
+
+        .org-tree > .org-node-wrapper > .org-children {
+          width: 100%;
+        }
+
+        .org-tree > .org-node-wrapper > .org-children > .org-node-wrapper {
+          flex: 1 1 0;
+          max-width: 620px;
         }
 
         /* Vertical connector: parent card → horizontal rail */
@@ -266,6 +288,7 @@ export default function OurTeamPage() {
           justify-content: center;
           position: relative;
           margin-top: 40px;
+          width: 100%;
         }
 
         /* Horizontal rail spanning all siblings */
@@ -312,7 +335,8 @@ export default function OurTeamPage() {
         /* ─── CARD DESIGN ─── */
         .org-card {
           position: relative;
-          width: min(220px, 76vw);
+          width: clamp(190px, 15vw, 220px);
+          max-width: 100%;
           background: #ffffff;
           border: 1px solid rgba(195,204,189,0.55);
           border-radius: 10px;
@@ -365,6 +389,66 @@ export default function OurTeamPage() {
           letter-spacing: 0.07em;
           text-transform: uppercase;
           line-height: 1.4;
+        }
+
+        .org-card-role-only {
+          width: clamp(154px, 11.5vw, 172px);
+          padding: 16px 14px 15px;
+          background: rgba(255,255,255,0.86);
+          border-color: rgba(195,204,189,0.45);
+          box-shadow:
+            0 1px 2px rgba(17,17,17,0.03),
+            0 5px 14px rgba(17,17,17,0.04);
+        }
+
+        .org-card-role-only .org-card-accent {
+          height: 2px;
+          background: linear-gradient(90deg, rgba(222,81,10,0.64), rgba(185,50,13,0.52));
+        }
+
+        .org-card-placeholder-role {
+          font-family: 'Space Grotesk', sans-serif;
+          font-size: 0.86rem;
+          font-weight: 650;
+          color: rgba(17,17,17,0.72);
+          line-height: 1.35;
+          letter-spacing: 0;
+        }
+
+        .org-node-wrapper[data-level="2"] > .org-children {
+          flex-direction: column;
+          align-items: center;
+          margin-top: 30px;
+        }
+
+        .org-node-wrapper[data-level="2"] > .org-children::before {
+          top: -30px;
+          height: 30px;
+        }
+
+        .org-node-wrapper[data-level="2"] > .org-children > .org-node-wrapper::after {
+          display: none;
+        }
+
+        .org-node-wrapper[data-level="2"] > .org-children > .org-node-wrapper::before {
+          top: -30px;
+          height: 30px;
+        }
+
+        .org-node-wrapper[data-level="3"] .org-card-role-only {
+          width: clamp(148px, 10.5vw, 164px);
+          padding: 15px 13px 14px;
+        }
+
+        .org-node-wrapper[data-level="4"] .org-card-role-only {
+          width: clamp(140px, 10vw, 156px);
+          padding: 14px 12px 13px;
+          background: rgba(255,255,255,0.72);
+        }
+
+        .org-node-wrapper[data-level="4"] .org-card-placeholder-role {
+          font-size: 0.8rem;
+          color: rgba(17,17,17,0.62);
         }
 
         /* ─── ENTRANCE ANIMATION ─── */
@@ -429,6 +513,59 @@ export default function OurTeamPage() {
         }
 
         /* ─── MOBILE ─── */
+        @media (max-width: 1100px) {
+          .org-tree {
+            width: 100%;
+            display: block;
+          }
+
+          .org-tree-scroll {
+            padding-inline: 20px;
+          }
+
+          .org-tree > .org-node-wrapper > .org-children > .org-node-wrapper {
+            flex: initial;
+            max-width: none;
+          }
+
+          .org-node-wrapper {
+            padding: 0;
+            align-items: center;
+          }
+
+          .org-children {
+            flex-direction: column;
+            align-items: center;
+            gap: 0;
+            margin-top: 28px;
+          }
+
+          .org-node-wrapper > .org-children::before {
+            height: 28px;
+            top: -28px;
+          }
+
+          .org-children > .org-node-wrapper::after {
+            display: none;
+          }
+
+          .org-children > .org-node-wrapper::before {
+            height: 28px;
+            top: -28px;
+          }
+
+          .org-children > .org-node-wrapper > .org-card {
+            margin-top: 28px;
+          }
+
+          .org-card,
+          .org-card-role-only,
+          .org-node-wrapper[data-level="3"] .org-card-role-only,
+          .org-node-wrapper[data-level="4"] .org-card-role-only {
+            width: min(300px, calc(100vw - 48px));
+          }
+        }
+
         @media (max-width: 768px) {
           .org-section {
             padding: 56px 0 96px;
@@ -449,7 +586,7 @@ export default function OurTeamPage() {
           }
 
           .org-tree-scroll {
-            overflow-x: hidden;
+            overflow: visible;
             padding: 0 20px 32px;
           }
 
@@ -487,7 +624,10 @@ export default function OurTeamPage() {
             margin-top: 28px;
           }
 
-          .org-card {
+          .org-card,
+          .org-card-role-only,
+          .org-node-wrapper[data-level="3"] .org-card-role-only,
+          .org-node-wrapper[data-level="4"] .org-card-role-only {
             width: min(300px, calc(100vw - 48px));
           }
         }

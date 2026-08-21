@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, ArrowRight, ExternalLink } from 'lucide-react';
-import logo from '../../assets/internallogo.jpeg';
+import logo from '../../assets/internallogo-navbar.png';
 
 const navLinks = [
   { path: '/egg-traders/about', label: 'About' },
