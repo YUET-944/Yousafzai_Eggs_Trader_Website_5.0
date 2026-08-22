@@ -55,15 +55,15 @@ export default function CareersPage() {
           ) : (
             <div className="jobs-grid">
               {jobs.map((job) => (
-                <Link key={job.id || job.slug} to={`/careers/${job.slug}`} className="job-card">
+                <Link key={job.id} to={`/careers/${job.id}`} className="job-card">
                   <div className="job-card-top">
                     <span className="job-department">{job.department || 'Department'}</span>
-                    <span className="job-status">{job.status || 'Open'}</span>
+                    <span className="job-status">{job.status || 'Active'}</span>
                   </div>
                   <h2>{job.title}</h2>
                   <div className="job-meta">
                     <span>{job.location || 'Location TBD'}</span>
-                    <span>{job.employmentType || 'Full time'}</span>
+                    <span>{job.type || 'Full-Time'}</span>
                   </div>
                   <p>{job.description || 'Learn more about this opportunity.'}</p>
                 </Link>

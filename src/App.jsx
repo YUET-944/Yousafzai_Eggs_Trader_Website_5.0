@@ -83,7 +83,7 @@ export default function App() {
               <Route path="/quality" element={<QualityPage />} />
               <Route path="/our-team" element={<OurTeamPage />} />
               <Route path="/careers" element={<CareersPage />} />
-              <Route path="/careers/:slug" element={<CareerDetailPage />} />
+              <Route path="/careers/:id" element={<CareerDetailPage />} />
               <Route path="/contact" element={<ContactPage />} />
             </Route>
             <Route element={<EggTradersLayout />}>

@@ -3,7 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import { getJob, submitApplication } from '../lib/careersApi';
 
 export default function CareerDetailPage() {
-    const { slug } = useParams();
+    const { id } = useParams();
     const [job, setJob] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
@@ -31,7 +31,7 @@ export default function CareerDetailPage() {
             setLoading(true);
             setError(null);
             try {
-                const data = await getJob(slug);
+                const data = await getJob(id);
                 if (active) {
                     setJob(data);
                 }
@@ -49,7 +49,7 @@ export default function CareerDetailPage() {
         return () => {
             active = false;
         };
-    }, [slug]);
+    }, [id]);
 
     const handleChange = (event) => {
         const { name, value } = event.target;
@@ -69,19 +69,19 @@ export default function CareerDetailPage() {
         setSubmitError('');
         setSubmitMessage('');
 
-        if (!form.fullName || !form.email || !form.phone) {
+        if (!form.fullName.trim() || !form.email.trim() || !form.phone.trim()) {
             setSubmitError('Please complete your full name, email, and phone number.');
             return;
         }
         if (!resumeFile) {
-            setSubmitError('Please upload your CV / Resume file.');
+            setSubmitError('Please upload your CV / Resume file (PDF, DOC, or DOCX).');
             return;
         }
 
         try {
             setIsSubmitting(true);
-            const jobId = job?.id || job?._id || job?.slug || slug;
-            await submitApplication(jobId, form, resumeFile);
+            const targetJobId = job?.id || id;
+            await submitApplication(targetJobId, form, resumeFile);
             setSubmitMessage('Your application has been submitted successfully!');
 
             // Reset form fields
@@ -229,9 +229,9 @@ export default function CareerDetailPage() {
                     <span className="career-detail-kicker">Current Opportunity</span>
                     <h1>{job.title}</h1>
                     <div className="job-pill-row">
-                        <span>{job.department || 'General'}</span>
-                        <span>{job.location || 'Pakistan'}</span>
-                        <span>{job.employmentType || 'Full-time'}</span>
+                        {job.department && <span>{job.department}</span>}
+                        {job.location && <span>{job.location}</span>}
+                        {job.type && <span>{job.type}</span>}
                     </div>
                 </div>
             </section>

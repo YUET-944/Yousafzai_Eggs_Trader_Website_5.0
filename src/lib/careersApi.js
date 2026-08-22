@@ -1,27 +1,21 @@
 import { api } from './api';
 
 export async function getJobs() {
-  const res = await api._request('/api/careers');
-
+  const res = await api._request('/api/jobs');
+  if (Array.isArray(res?.data)) return res.data;
   if (Array.isArray(res)) return res;
   if (Array.isArray(res?.jobs)) return res.jobs;
-  if (Array.isArray(res?.data)) return res.data;
-
   return [];
 }
 
-export async function getJob(slug) {
-  const res = await api._request(
-    `/api/careers/${encodeURIComponent(slug)}`
-  );
-
-  return res?.job ?? res?.data ?? res;
+export async function getJob(id) {
+  const res = await api._request(`/api/jobs/${encodeURIComponent(id)}`);
+  return res?.data ?? res?.job ?? res;
 }
 
 export async function submitApplication(jobId, fields, resumeFile) {
   const fd = new FormData();
 
-  fd.append('jobId', jobId);
   fd.append('fullName', fields.fullName);
   fd.append('email', fields.email);
   fd.append('phone', fields.phone);
@@ -36,8 +30,8 @@ export async function submitApplication(jobId, fields, resumeFile) {
   ];
 
   optional.forEach((key) => {
-    if (fields[key]) {
-      fd.append(key, fields[key]);
+    if (fields[key] !== undefined && fields[key] !== null && String(fields[key]).trim() !== '') {
+      fd.append(key, String(fields[key]).trim());
     }
   });
 
@@ -45,8 +39,11 @@ export async function submitApplication(jobId, fields, resumeFile) {
     fd.append('resume', resumeFile);
   }
 
-  return api._request('/api/careers/apply', {
-    method: 'POST',
-    formData: fd,
-  });
+  return api._request(
+    `/api/jobs/${encodeURIComponent(jobId)}/apply`,
+    {
+      method: 'POST',
+      formData: fd,
+    }
+  );
 }
