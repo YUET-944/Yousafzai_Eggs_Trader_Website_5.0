@@ -1,9 +1,5 @@
 import { useAuthStore } from '../store/useAuthStore';
 
-/* Backend API client
-   Empty default = same-origin requests proxied via vercel.json rewrites.
-   Put your real backend URL in VITE_API_BASE to call it directly. */
-
 const API_BASE = import.meta.env.VITE_API_BASE || '';
 
 function getToken() {
@@ -11,10 +7,10 @@ function getToken() {
     const raw = localStorage.getItem('yousafzai-auth');
     const state = raw ? JSON.parse(raw)?.state : null;
     if (state?.token) return state.token;
-  } catch {}
+  } catch { }
   try {
     return useAuthStore.getState().token;
-  } catch {}
+  } catch { }
   return null;
 }
 
@@ -40,7 +36,7 @@ async function request(endpoint, { method = 'GET', body, headers = {}, formData 
     try {
       const e = await res.json();
       msg = getSafeErrorMessage(res.status, endpoint, e.error || e.message);
-    } catch {}
+    } catch { }
     const err = new Error(msg);
     err.status = res.status;
     throw err;
@@ -62,6 +58,7 @@ function getSafeErrorMessage(status, endpoint, serverMessage = '') {
 }
 
 export const api = {
+  _request: request,
   login: (email, password) =>
     request('/api/auth/login', { method: 'POST', body: { email, password } }),
 

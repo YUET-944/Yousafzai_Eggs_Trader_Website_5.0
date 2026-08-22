@@ -1,175 +1,387 @@
-import { useMemo, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { useParams, Link } from 'react-router-dom';
 import { getJob, submitApplication } from '../lib/careersApi';
 
 export default function CareerDetailPage() {
-  const { slug } = useParams();
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitError, setSubmitError] = useState('');
-  const [submitMessage, setSubmitMessage] = useState('');
-  const [form, setForm] = useState({
-    fullName: '',
-    email: '',
-    phone: '',
-    city: '',
-    education: '',
-    experience: '',
-    linkedIn: '',
-    portfolio: '',
-    coverLetter: '',
-    resume: '',
-  });
+    const { slug } = useParams();
+    const [job, setJob] = useState(null);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
 
-  const job = useMemo(() => {
-    const fallback = {
-      id: slug,
-      slug,
-      title: 'Opportunity',
-      department: 'Operations',
-      location: 'Pakistan',
-      employmentType: 'Full time',
-      description: 'A role will be displayed here once the backend provides the live data.',
-      responsibilities: [
-        'Support delivery of the role scope and core responsibilities.',
-        'Collaborate with the internal team to keep execution aligned.',
-      ],
-      requirements: [
-        'Strong communication and professionalism.',
-        'Relevant experience or educational background.',
-      ],
-      deadline: 'To be announced',
-      status: 'Open',
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [submitError, setSubmitError] = useState('');
+    const [submitMessage, setSubmitMessage] = useState('');
+
+    const [form, setForm] = useState({
+        fullName: '',
+        email: '',
+        phone: '',
+        city: '',
+        education: '',
+        experience: '',
+        linkedinUrl: '',
+        portfolioUrl: '',
+        coverLetter: '',
+    });
+    const [resumeFile, setResumeFile] = useState(null);
+
+    useEffect(() => {
+        let active = true;
+        async function fetchJob() {
+            setLoading(true);
+            setError(null);
+            try {
+                const data = await getJob(slug);
+                if (active) {
+                    setJob(data);
+                }
+            } catch (err) {
+                if (active) {
+                    setError(err?.message || 'Failed to load job details.');
+                }
+            } finally {
+                if (active) {
+                    setLoading(false);
+                }
+            }
+        }
+        fetchJob();
+        return () => {
+            active = false;
+        };
+    }, [slug]);
+
+    const handleChange = (event) => {
+        const { name, value } = event.target;
+        setForm((current) => ({ ...current, [name]: value }));
     };
 
-    return fallback;
-  }, [slug]);
+    const handleFileChange = (event) => {
+        if (event.target.files && event.target.files[0]) {
+            setResumeFile(event.target.files[0]);
+        } else {
+            setResumeFile(null);
+        }
+    };
 
-  const handleChange = (event) => {
-    const { name, value } = event.target;
-    setForm((current) => ({ ...current, [name]: value }));
-  };
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+        setSubmitError('');
+        setSubmitMessage('');
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-    setSubmitError('');
-    setSubmitMessage('');
+        if (!form.fullName || !form.email || !form.phone) {
+            setSubmitError('Please complete your full name, email, and phone number.');
+            return;
+        }
+        if (!resumeFile) {
+            setSubmitError('Please upload your CV / Resume file.');
+            return;
+        }
 
-    if (!form.fullName || !form.email || !form.phone) {
-      setSubmitError('Please complete your full name, email, and phone number.');
-      return;
+        try {
+            setIsSubmitting(true);
+            const jobId = job?.id || job?._id || job?.slug || slug;
+            await submitApplication(jobId, form, resumeFile);
+            setSubmitMessage('Your application has been submitted successfully!');
+
+            // Reset form fields
+            setForm({
+                fullName: '',
+                email: '',
+                phone: '',
+                city: '',
+                education: '',
+                experience: '',
+                linkedinUrl: '',
+                portfolioUrl: '',
+                coverLetter: '',
+            });
+            setResumeFile(null);
+            // Reset input element visually
+            event.target.reset();
+        } catch (err) {
+            setSubmitError(err?.message || 'Submission failed. Please try again later.');
+        } finally {
+            setIsSubmitting(false);
+        }
+    };
+
+    const renderList = (items) => {
+        if (!items) return null;
+        if (Array.isArray(items)) {
+            return items.map((item, idx) => <li key={idx}>{item}</li>);
+        }
+        if (typeof items === 'string') {
+            return items
+                .split('\n')
+                .map((x) => x.trim())
+                .filter(Boolean)
+                .map((item, idx) => <li key={idx}>{item}</li>);
+        }
+        return null;
+    };
+
+    if (loading) {
+        return (
+            <div className="career-detail-page">
+                <section className="career-detail-hero">
+                    <div className="container">
+                        <span className="career-detail-kicker">Current Opportunity</span>
+                        <h1>Loading...</h1>
+                    </div>
+                </section>
+                <section className="career-detail-body">
+                    <div className="container" style={{ textAlign: 'center', padding: '100px 0' }}>
+                        <div className="loading-spinner"></div>
+                        <p style={{ marginTop: '20px', color: 'rgba(17,17,17,0.6)' }}>Loading opportunity details...</p>
+                    </div>
+                </section>
+                <style>{`
+          .career-detail-page {
+            background: #fbf7f0;
+            color: #111111;
+            min-height: 80vh;
+          }
+          .career-detail-hero {
+            padding: 150px 0 28px;
+            background: linear-gradient(135deg, rgba(63,98,49,0.98), rgba(17,17,17,0.92));
+            color: #fff;
+          }
+          .career-detail-kicker {
+            font-size: 11px;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.82);
+          }
+          .loading-spinner {
+            border: 4px solid rgba(63,98,49,0.1);
+            border-top: 4px solid #3f6231;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto;
+          }
+          @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+          }
+        `}</style>
+            </div>
+        );
     }
 
-    try {
-      setIsSubmitting(true);
-      await submitApplication(job.id, form);
-      setSubmitMessage('Application submission is ready for backend integration. The form is intentionally not connected to a live endpoint yet.');
-    } catch (err) {
-      setSubmitError(err?.message || 'Submission failed. Please try again later.');
-    } finally {
-      setIsSubmitting(false);
+    if (error || !job) {
+        return (
+            <div className="career-detail-page">
+                <section className="career-detail-hero">
+                    <div className="container">
+                        <span className="career-detail-kicker">Current Opportunity</span>
+                        <h1>Opportunity Not Found</h1>
+                    </div>
+                </section>
+                <section className="career-detail-body">
+                    <div className="container" style={{ textAlign: 'center', padding: '80px 0' }}>
+                        <p style={{ color: '#8a2b2b', marginBottom: '30px', fontSize: '1.1rem' }}>
+                            {error || "We couldn't find the job listing you are looking for."}
+                        </p>
+                        <Link to="/careers" className="submit-button" style={{ textDecoration: 'none', display: 'inline-block' }}>
+                            Back to Careers
+                        </Link>
+                    </div>
+                </section>
+                <style>{`
+          .career-detail-page {
+            background: #fbf7f0;
+            color: #111111;
+            min-height: 80vh;
+          }
+          .career-detail-hero {
+            padding: 150px 0 28px;
+            background: linear-gradient(135deg, rgba(63,98,49,0.98), rgba(17,17,17,0.92));
+            color: #fff;
+          }
+          .career-detail-kicker {
+            font-size: 11px;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.82);
+          }
+          .submit-button {
+            border: 0;
+            border-radius: 12px;
+            padding: 14px 28px;
+            background: linear-gradient(135deg, #de510a, #b9320d);
+            color: white;
+            font-weight: 700;
+            cursor: pointer;
+            box-shadow: 0 4px 14px rgba(222,81,10,0.3);
+          }
+        `}</style>
+            </div>
+        );
     }
-  };
 
-  return (
-    <div className="career-detail-page">
-      <section className="career-detail-hero">
-        <div className="container">
-          <span className="career-detail-kicker">Current Opportunity</span>
-          <h1>{job.title}</h1>
-          <div className="job-pill-row">
-            <span>{job.department}</span>
-            <span>{job.location}</span>
-            <span>{job.employmentType}</span>
-          </div>
-        </div>
-      </section>
+    return (
+        <div className="career-detail-page">
+            <section className="career-detail-hero">
+                <div className="container">
+                    <span className="career-detail-kicker">Current Opportunity</span>
+                    <h1>{job.title}</h1>
+                    <div className="job-pill-row">
+                        <span>{job.department || 'General'}</span>
+                        <span>{job.location || 'Pakistan'}</span>
+                        <span>{job.employmentType || 'Full-time'}</span>
+                    </div>
+                </div>
+            </section>
 
-      <section className="career-detail-body">
-        <div className="container detail-layout">
-          <div className="job-summary">
-            <h2>Role Overview</h2>
-            <p>{job.description}</p>
+            <section className="career-detail-body">
+                <div className="container detail-layout">
+                    <div className="job-summary">
+                        <h2>Role Overview</h2>
+                        <p>{job.description}</p>
 
-            <div className="detail-block">
-              <h3>Responsibilities</h3>
-              <ul>
-                {job.responsibilities.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
-            </div>
+                        {job.responsibilities && (
+                            <div className="detail-block">
+                                <h3>Responsibilities</h3>
+                                <ul>
+                                    {renderList(job.responsibilities)}
+                                </ul>
+                            </div>
+                        )}
 
-            <div className="detail-block">
-              <h3>Requirements</h3>
-              <ul>
-                {job.requirements.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
-            </div>
-          </div>
+                        {job.requirements && (
+                            <div className="detail-block">
+                                <h3>Requirements</h3>
+                                <ul>
+                                    {renderList(job.requirements)}
+                                </ul>
+                            </div>
+                        )}
+                    </div>
 
-          <form className="application-form" onSubmit={handleSubmit}>
-            <h2>Apply Now</h2>
-            <div className="field-grid">
-              <label>
-                Full Name
-                <input name="fullName" value={form.fullName} onChange={handleChange} required />
-              </label>
-              <label>
-                Email
-                <input name="email" type="email" value={form.email} onChange={handleChange} required />
-              </label>
-              <label>
-                Phone
-                <input name="phone" type="tel" value={form.phone} onChange={handleChange} required />
-              </label>
-              <label>
-                City
-                <input name="city" value={form.city} onChange={handleChange} />
-              </label>
-              <label>
-                Education
-                <input name="education" value={form.education} onChange={handleChange} />
-              </label>
-              <label>
-                Experience
-                <input name="experience" value={form.experience} onChange={handleChange} />
-              </label>
-              <label>
-                LinkedIn URL
-                <input name="linkedIn" value={form.linkedIn} onChange={handleChange} />
-              </label>
-              <label>
-                Portfolio URL
-                <input name="portfolio" value={form.portfolio} onChange={handleChange} />
-              </label>
-            </div>
+                    <form className="application-form" onSubmit={handleSubmit}>
+                        <h2>Apply Now</h2>
+                        <div className="field-grid">
+                            <label>
+                                Full Name *
+                                <input
+                                    name="fullName"
+                                    value={form.fullName}
+                                    onChange={handleChange}
+                                    required
+                                    placeholder="Your full name"
+                                />
+                            </label>
+                            <label>
+                                Email *
+                                <input
+                                    name="email"
+                                    type="email"
+                                    value={form.email}
+                                    onChange={handleChange}
+                                    required
+                                    placeholder="name@example.com"
+                                />
+                            </label>
+                            <label>
+                                Phone *
+                                <input
+                                    name="phone"
+                                    type="tel"
+                                    value={form.phone}
+                                    onChange={handleChange}
+                                    required
+                                    placeholder="e.g. +92 300 1234567"
+                                />
+                            </label>
+                            <label>
+                                City
+                                <input
+                                    name="city"
+                                    value={form.city}
+                                    onChange={handleChange}
+                                    placeholder="Your current city"
+                                />
+                            </label>
+                            <label>
+                                Education
+                                <input
+                                    name="education"
+                                    value={form.education}
+                                    onChange={handleChange}
+                                    placeholder="Highest degree obtained"
+                                />
+                            </label>
+                            <label>
+                                Experience
+                                <input
+                                    name="experience"
+                                    value={form.experience}
+                                    onChange={handleChange}
+                                    placeholder="Years of experience"
+                                />
+                            </label>
+                            <label>
+                                LinkedIn URL
+                                <input
+                                    name="linkedinUrl"
+                                    type="url"
+                                    value={form.linkedinUrl}
+                                    onChange={handleChange}
+                                    placeholder="https://linkedin.com/in/username"
+                                />
+                            </label>
+                            <label>
+                                Portfolio URL
+                                <input
+                                    name="portfolioUrl"
+                                    type="url"
+                                    value={form.portfolioUrl}
+                                    onChange={handleChange}
+                                    placeholder="https://portfolio-website.com"
+                                />
+                            </label>
+                        </div>
 
-            <label>
-              Cover Letter
-              <textarea name="coverLetter" rows="5" value={form.coverLetter} onChange={handleChange} />
-            </label>
+                        <label>
+                            Cover Letter
+                            <textarea
+                                name="coverLetter"
+                                rows="5"
+                                value={form.coverLetter}
+                                onChange={handleChange}
+                                placeholder="Write a brief cover letter..."
+                            />
+                        </label>
 
-            <label>
-              CV / Resume
-              <input name="resume" value={form.resume} onChange={handleChange} placeholder="Paste file reference or upload path placeholder" />
-            </label>
+                        <label>
+                            CV / Resume *
+                            <input
+                                name="resume"
+                                type="file"
+                                onChange={handleFileChange}
+                                required
+                                accept=".pdf,.doc,.docx"
+                            />
+                        </label>
 
-            {submitError && <div className="form-message error">{submitError}</div>}
-            {submitMessage && <div className="form-message success">{submitMessage}</div>}
+                        {submitError && <div className="form-message error">{submitError}</div>}
+                        {submitMessage && <div className="form-message success">{submitMessage}</div>}
 
-            <button type="submit" className="submit-button" disabled={isSubmitting}>
-              {isSubmitting ? 'Submitting…' : 'Submit Application'}
-            </button>
-          </form>
-        </div>
-      </section>
+                        <button type="submit" className="submit-button" disabled={isSubmitting}>
+                            {isSubmitting ? 'Submitting...' : 'Submit Application'}
+                        </button>
+                    </form>
+                </div>
+            </section>
 
-      <style>{`
+            <style>{`
         .career-detail-page {
           background: #fbf7f0;
           color: #111111;
+          min-height: 100vh;
         }
 
         .career-detail-hero {
@@ -330,6 +542,6 @@ export default function CareerDetailPage() {
           }
         }
       `}</style>
-    </div>
-  );
+        </div>
+    );
 }
