@@ -57,8 +57,12 @@ const startServer = async () => {
     await sequelize.authenticate();
     console.log('📡 MySQL Database connected successfully.');
 
-    await sequelize.sync({ alter: true });
-    console.log('⚙️ All models synchronized with MySQL.');
+    if (process.env.NODE_ENV === 'production') {
+      console.log('Production startup: schema sync skipped.');
+    } else {
+      await sequelize.sync({ alter: true });
+      console.log('⚙️ All models synchronized with MySQL.');
+    }
 
     const PORT = process.env.PORT || 5000;
     app.listen(PORT, () => {

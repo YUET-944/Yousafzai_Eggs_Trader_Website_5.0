@@ -31,6 +31,13 @@ export const createProduct = async (req, res) => {
   const { title, description, tags, icon, brandId } = req.body;
 
   try {
+    if (!title || typeof title !== 'string' || !title.trim()) {
+      return res.status(400).json({
+        success: false,
+        message: 'Product title is required'
+      });
+    }
+
     // Security Rule: BrandManager can ONLY create a product for their own brand
     let targetBrandId = brandId;
     if (req.user.role === 'BrandManager') {
@@ -50,6 +57,13 @@ export const createProduct = async (req, res) => {
       data: newProduct
     });
   } catch (error) {
+    if (error.name === 'SequelizeValidationError') {
+      return res.status(400).json({
+        success: false,
+        message: error.errors?.[0]?.message || 'Invalid product data'
+      });
+    }
+
     return res.status(500).json({ success: false, message: 'Server Error: ' + error.message });
   }
 };

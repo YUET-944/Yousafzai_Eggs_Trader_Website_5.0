@@ -64,3 +64,12 @@ export const getMe = async (req, res) => {
     data: req.user
   });
 };
+
+// @desc    Stateless logout compatibility endpoint
+// @route   POST /api/auth/logout
+export const logoutUser = async (req, res) => {
+  return res.status(200).json({
+    success: true,
+    message: 'Logged out successfully'
+  });
+};
