@@ -11,12 +11,7 @@ cloudinary.config({
   api_secret:process.env.CLOUDINARY_API_SECRET
 });
 
-// Safe Console Log to check if your .env keys are loading properly
-console.log("Cloudinary Config Check:", {
-  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
-  api_key: process.env.CLOUDINARY_API_KEY,
-  api_secret: process.env.CLOUDINARY_API_SECRET ? "HIDDEN_SECRET_LOADED" : "MISSING"
-});
+console.log('Cloudinary configured successfully');
 
 // 2. Define Storage Rules & Validation Limits (Max 5MB, format filter)
 const storage = new CloudinaryStorage({

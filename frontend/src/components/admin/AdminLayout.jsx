@@ -123,7 +123,7 @@ export default function AdminLayout({ activeSection, setActiveSection, children 
             <input
               value={query}
               onChange={(e) => setQuery(e.target.value)}
-              placeholder="Search sectionsâ€¦"
+              placeholder="Search sections..."
               className="search-input"
             />
             {query && (
@@ -132,13 +132,13 @@ export default function AdminLayout({ activeSection, setActiveSection, children 
                 onClick={() => setQuery('')}
                 aria-label="Clear section search"
               >
-                Ã—
+                x
               </button>
             )}
           </div>
         )}
 
-        <nav className="sidebar-nav">
+        <nav className="sidebar-nav" data-lenis-prevent-wheel data-lenis-prevent-touch>
           {!collapsed && <span className="nav-group-label">Admin & Main Website</span>}
           {filteredMain.map((item) => {
             const Icon = item.icon;
@@ -291,6 +291,9 @@ export default function AdminLayout({ activeSection, setActiveSection, children 
           position: sticky;
           top: 0;
           height: 100vh;
+          max-height: 100vh;
+          min-height: 0;
+          overflow: hidden;
           transition: width 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
           z-index: 40;
           border-right: 1px solid rgba(148, 163, 184, 0.1);
@@ -303,6 +306,7 @@ export default function AdminLayout({ activeSection, setActiveSection, children 
           gap: 12px;
           padding: 22px 20px;
           border-bottom: 1px solid rgba(148, 163, 184, 0.12);
+          flex-shrink: 0;
         }
         .brand-logo {
           width: 40px; height: 40px; border-radius: 11px;
@@ -323,6 +327,7 @@ export default function AdminLayout({ activeSection, setActiveSection, children 
         .sidebar-search {
           position: relative;
           margin: 16px 16px 6px;
+          flex-shrink: 0;
         }
         .search-icon { position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: #64748B; }
         .search-input {
@@ -345,8 +350,12 @@ export default function AdminLayout({ activeSection, setActiveSection, children 
 
         .sidebar-nav {
           flex-grow: 1;
+          min-height: 0;
           padding: 10px 12px 16px;
           overflow-y: auto;
+          overscroll-behavior: contain;
+          scrollbar-gutter: stable;
+          -webkit-overflow-scrolling: touch;
           display: flex;
           flex-direction: column;
           gap: 2px;
@@ -404,6 +413,7 @@ export default function AdminLayout({ activeSection, setActiveSection, children 
           display: flex;
           flex-direction: column;
           gap: 12px;
+          flex-shrink: 0;
         }
         .user-profile { display: flex; align-items: center; gap: 10px; }
         .user-avatar {
@@ -680,6 +690,7 @@ export default function AdminLayout({ activeSection, setActiveSection, children 
             width: min(340px, 88vw);
             max-width: 100vw;
             height: calc(100vh - 58px);
+            max-height: calc(100vh - 58px);
             position: fixed;
             inset: 58px auto 0 0;
             background: #0F172A;

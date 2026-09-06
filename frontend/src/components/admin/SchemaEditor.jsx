@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import AdminConfirmDialog from './AdminConfirmDialog';
 import ImageUpload from './ImageUpload';
 
@@ -119,14 +119,56 @@ function Field({ field, value, onChange }) {
 function ArrayField({ field, value, onChange }) {
   const items = Array.isArray(value) ? value : [];
   const [collapsed, setCollapsed] = useState({});
-  const [pendingRemoveIndex, setPendingRemoveIndex] = useState(null);
+  const [pendingRemove, setPendingRemove] = useState(null);
+  const itemKeysRef = useRef({ next: 0, weak: new WeakMap() });
   const visibleFields = (field.fields || []).filter((sub) => !sub.hidden);
 
   const isObjectItem = (v) => v && typeof v === 'object' && !Array.isArray(v);
 
+  const getItemKey = (item, index) => {
+    if (isObjectItem(item)) {
+      const keys = itemKeysRef.current;
+      if (!keys.weak.has(item)) {
+        keys.weak.set(item, `item-${keys.next}`);
+        keys.next += 1;
+      }
+      return keys.weak.get(item);
+    }
+    return `scalar-${index}-${String(item ?? '')}`;
+  };
+
+  const itemKeys = items.map((item, index) => getItemKey(item, index));
+
+  const createDefaultItem = () => {
+    const defaults = field.itemDefaults ?? {};
+    if (!defaults || typeof defaults !== 'object') return defaults;
+    if (typeof structuredClone === 'function') return structuredClone(defaults);
+    return JSON.parse(JSON.stringify(defaults));
+  };
+
+  const getItemSummary = (item) => {
+    if (!isObjectItem(item)) return String(item || '').trim();
+    return [
+      item.name,
+      item.title,
+      item.label,
+      item.question,
+      item.companyName,
+      item.heading,
+    ].find((part) => typeof part === 'string' && part.trim()) || '';
+  };
+
   const update = (index, patch) => {
     const next = items.map((item, i) =>
-      i === index ? (typeof patch === 'function' ? patch(item) : { ...item, ...patch }) : item
+      i === index
+        ? (() => {
+          const updated = typeof patch === 'function' ? patch(item) : { ...item, ...patch };
+          if (isObjectItem(item) && isObjectItem(updated)) {
+            itemKeysRef.current.weak.set(updated, itemKeys[index]);
+          }
+          return updated;
+        })()
+        : item
     );
     onChange(next);
   };
@@ -137,19 +179,25 @@ function ArrayField({ field, value, onChange }) {
   };
 
   const add = () => {
-    const blank = field.itemDefaults || {};
+    const blank = createDefaultItem();
     const next = [...items, blank];
+    const key = getItemKey(blank, items.length);
     onChange(next);
-    setCollapsed((c) => ({ ...c, [next.length - 1]: true }));
+    setCollapsed((c) => ({ ...c, [key]: true }));
   };
 
   const confirmRemove = () => {
-    if (pendingRemoveIndex === null) return;
-    onChange(items.filter((_, i) => i !== pendingRemoveIndex));
-    setPendingRemoveIndex(null);
+    if (!pendingRemove) return;
+    const currentIndex = itemKeys.indexOf(pendingRemove.key);
+    if (currentIndex !== -1) {
+      onChange(items.filter((_, i) => i !== currentIndex));
+    }
+    setPendingRemove(null);
   };
 
-  const move = (index, dir) => {
+  const move = (key, dir) => {
+    const index = itemKeys.indexOf(key);
+    if (index === -1) return;
     const next = [...items];
     const target = index + dir;
     if (target < 0 || target >= next.length) return;
@@ -171,28 +219,37 @@ function ArrayField({ field, value, onChange }) {
         <div className="cm-array-empty">No {field.itemLabel || 'items'} yet. Click "Add {field.itemLabel || 'Item'}" to create one.</div>
       )}
 
-      {items.map((item, index) => (
-        <div key={index} className={`cm-array-item ${collapsed[index] ? 'is-collapsed' : ''}`}>
+      {items.map((item, index) => {
+        const itemKey = itemKeys[index];
+        return (
+        <div key={itemKey} className={`cm-array-item ${collapsed[itemKey] ? 'is-collapsed' : ''}`}>
           <div className="cm-array-item-bar">
             <button
               type="button"
               className="cm-item-toggle"
-              onClick={() => setCollapsed((c) => ({ ...c, [index]: !c[index] }))}
-              aria-label={collapsed[index] ? 'Expand' : 'Collapse'}
+              onClick={() => setCollapsed((c) => ({ ...c, [itemKey]: !c[itemKey] }))}
+              aria-label={collapsed[itemKey] ? 'Expand' : 'Collapse'}
             >
-              {collapsed[index] ? '>' : 'v'}
+              {collapsed[itemKey] ? '>' : 'v'}
             </button>
             <span className="cm-item-label">
               {field.itemLabel || 'Item'} {index + 1}
             </span>
             <div className="cm-item-actions">
-              <button type="button" className="cm-icon-btn" onClick={() => move(index, -1)} title="Move up" disabled={index === 0}>Up</button>
-              <button type="button" className="cm-icon-btn" onClick={() => move(index, 1)} title="Move down" disabled={index === items.length - 1}>Down</button>
-              <button type="button" className="cm-icon-btn cm-icon-btn-danger" onClick={() => setPendingRemoveIndex(index)} title="Delete">Delete</button>
+              <button type="button" className="cm-icon-btn" onClick={() => move(itemKey, -1)} title="Move up" disabled={index === 0}>Up</button>
+              <button type="button" className="cm-icon-btn" onClick={() => move(itemKey, 1)} title="Move down" disabled={index === items.length - 1}>Down</button>
+              <button
+                type="button"
+                className="cm-icon-btn cm-icon-btn-danger"
+                onClick={() => setPendingRemove({ key: itemKey, index, summary: getItemSummary(item) })}
+                title="Delete"
+              >
+                Delete
+              </button>
             </div>
           </div>
 
-          {!collapsed[index] && (
+          {!collapsed[itemKey] && (
             <div className="cm-array-item-body">
               {isObjectItem(item) ? (
                 <div className="cm-array-fields">
@@ -218,19 +275,21 @@ function ArrayField({ field, value, onChange }) {
             </div>
           )}
         </div>
-      ))}
+        );
+      })}
 
       <AdminConfirmDialog
-        open={pendingRemoveIndex !== null}
+        open={pendingRemove !== null}
         title="Remove Content Item?"
         message={(<>Are you sure you want to remove this content item?<br />This action cannot be undone.</>)}
         confirmLabel="Remove Item"
-        onCancel={() => setPendingRemoveIndex(null)}
+        onCancel={() => setPendingRemove(null)}
         onConfirm={confirmRemove}
       >
-        {pendingRemoveIndex !== null && (
+        {pendingRemove !== null && (
           <>
-            <strong>{field.itemLabel || 'Item'} {pendingRemoveIndex + 1}</strong>
+            <strong>{field.itemLabel || 'Item'} {pendingRemove.index + 1}</strong>
+            {pendingRemove.summary && <span>{pendingRemove.summary}</span>}
             <span>{field.label}</span>
           </>
         )}

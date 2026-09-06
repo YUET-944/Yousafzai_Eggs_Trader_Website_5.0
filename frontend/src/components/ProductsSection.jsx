@@ -200,7 +200,6 @@ export default function ProductsSection() {
                     </span>
                   </div>
                   <div className="grade-rows">
-                    <DetailRow label="Grade" value={spec.grade} />
                     <DetailRow label="Sizes / format" value={spec.sizes} />
                     <DetailRow label="Minimum order" value={spec.moq} />
                     <DetailRow label="Lead time" value={spec.lead} />
