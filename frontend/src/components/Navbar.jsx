@@ -19,14 +19,12 @@ export default function Navbar() {
   }, [isHome]);
 
   const navLinks = [
-    { path: '/about', label: 'About Us' },
-    { path: '/our-journey', label: 'Our Journey' },
-    { path: '/our-team', label: 'Our Team' },
-    { path: '/products', label: 'Products & Grades' },
-    { path: '/process', label: 'Our Process' },
-    { path: '/quality', label: 'Quality' },
-    { path: '/careers', label: 'Careers' },
-    { path: '/contact', label: 'Contact Us' },
+    { path: '/#about', label: 'About Us' },
+    { path: '/#products', label: 'Products' },
+    { path: '/#applications', label: 'Applications' },
+    { path: '/#process', label: 'Our Process' },
+    { path: '/#quality', label: 'Quality' },
+    { path: '/contact', label: 'Contact' },
   ];
 
   const isActive = (path) => pathname === path;

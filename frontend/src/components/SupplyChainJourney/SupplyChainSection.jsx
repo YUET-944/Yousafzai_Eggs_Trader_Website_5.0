@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { stages } from './StageData';
+import { defaultContent } from '../../data/defaultContent';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -56,15 +57,15 @@ export default function SupplyChainSection() {
   const activeStage = stages[activeStageIndex] || stages[0];
 
   return (
-    <div ref={containerRef} className="sc-journey-wrapper" style={{ position: 'relative' }}>
+    <div ref={containerRef} id="process" className="sc-journey-wrapper" style={{ position: 'relative' }}>
       
       <div className={`journey-layout ${isMobile ? 'mobile' : 'desktop'}`}>
 
         {isMobile ? (
           <div className="mobile-journey-panel">
             <div className="story-intro mobile-story-intro">
-              <h2 className="sec-title">The Live Journey of an Egg</h2>
-              <p className="sec-sub">Follow our guide through precision, reliability, and trust at every stage.</p>
+              <h2 className="sec-title">{defaultContent.productionProcess.title}</h2>
+              <p className="sec-sub">Follow our precision process from receiving to cold storage.</p>
             </div>
 
             <div className="mobile-stage-image">
@@ -122,8 +123,8 @@ export default function SupplyChainSection() {
             {/* SCROLLABLE STORY CONTENT */}
             <div className="journey-content">
               <div className="story-intro">
-                <h2 className="sec-title">The Live Journey of an Egg</h2>
-                <p className="sec-sub">Follow our guide through precision, reliability, and trust at every stage.</p>
+                <h2 className="sec-title">{defaultContent.productionProcess.title}</h2>
+                <p className="sec-sub">Follow our precision process from receiving to cold storage.</p>
               </div>
 
               <div className="stages-list">

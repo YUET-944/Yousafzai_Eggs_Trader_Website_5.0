@@ -1,582 +1,172 @@
 export const defaultContent = {
+  websiteImages: {
+    hero: 'HERO_LIQUID_EGG_FACTORY',
+    factoryExterior: 'FACTORY_EXTERIOR',
+    factoryEntrance: 'FACTORY_ENTRANCE',
+    factoryProductionFloor: 'FACTORY_PRODUCTION_FLOOR',
+    factoryWorkers: 'FACTORY_WORKERS',
+    wholeEgg: 'PRODUCT_WHOLE_EGG',
+    eggWhite: 'PRODUCT_EGG_WHITE',
+    eggYolk: 'PRODUCT_EGG_YOLK',
+    processReceiving: 'PROCESS_EGG_RECEIVING',
+    processInspection: 'PROCESS_INSPECTION',
+    processBreaking: 'PROCESS_EGG_BREAKING',
+    processSeparation: 'PROCESS_SEPARATION',
+    processFiltration: 'PROCESS_FILTRATION',
+    processPasteurization: 'PROCESS_PASTEURIZATION',
+    processPackaging: 'PROCESS_PACKAGING',
+    processColdStorage: 'PROCESS_COLD_STORAGE',
+    qualityLab: 'QUALITY_LAB',
+    qualityTesting: 'QUALITY_TESTING',
+    qualityInspection: 'QUALITY_INSPECTION',
+    packagingProduct: 'PACKAGING_PRODUCT',
+    packagingLabel: 'PACKAGING_LABEL',
+    packagingMultiple: 'PACKAGING_MULTIPLE',
+    industryBakery: 'INDUSTRY_BAKERY',
+    industryHotel: 'INDUSTRY_HOTEL',
+    industryRestaurant: 'INDUSTRY_RESTAURANT',
+    industryFoodMfg: 'INDUSTRY_FOOD_MANUFACTURING',
+    industryCatering: 'INDUSTRY_CATERING',
+    industryInstitutional: 'INDUSTRY_INSTITUTIONAL',
+    logisticsWarehouse: 'LOGISTICS_WAREHOUSE',
+    logisticsDispatch: 'LOGISTICS_DISPATCH',
+  },
   hero: {
-    eyebrow: 'Egg Trading & Poultry Farms — Since 1960',
-    backgroundImage: '',
-    h1Line1: 'Trusted Egg Traders',
-    h1Highlight: 'Quality & Trust',
-    h1Line2: 'Built on',
-    body: 'Yousafzai AGRI is a leading supplier and distributor of high-quality fresh eggs in KPK, Pakistan. We deliver hygienic, farm-fresh eggs with consistent quality and reliable service.',
-    primaryCta: { label: 'Contact Us', action: '/contact' },
-    secondaryCta: { label: 'Explore Our Supply Chain', action: '/' },
-    trustItems: [
-      { icon: 'ShieldCheck', text: 'HACCP Certified' },
-      { icon: 'CheckCircle2', text: 'IHC Halal Certified' },
-      { icon: 'Home', text: 'KPK, Punjab & Sindh' },
-    ],
-    cards: [
-      { value: '60+', label: 'Years of experience' },
-      { value: '100%', label: 'Halal certified' },
-      { value: '500K+', label: 'Eggs traded weekly' },
-    ],
-    stats: [
-      { value: '60', suffix: '+', label: 'Years of experience' },
-      { value: '500', suffix: 'K+', label: 'Eggs traded weekly' },
-      { value: '3', suffix: '', label: 'Provinces covered' },
-      { value: '100', suffix: '%', label: 'Halal certified supply' },
-    ],
-  },
-  about: {
-    eyebrow: 'About Yousafzai AGRI',
-    title: 'A Trusted Name in Egg Trading & Poultry Farming',
-    subtitle: 'Yousafzai AGRI is a trusted name in the poultry and egg distribution industry. With years of experience, we have built a strong supply network connecting farms to markets efficiently. Our focus is on quality assurance, timely delivery, and long-term business relationships.',
-    quote: 'At Yousafzai AGRI, we believe in quality, trust, and innovation. Our goal is not only to supply eggs but to transform the poultry industry by introducing modern processing solutions such as liquid egg production.',
-    quoteFooter: 'Chairman\'s Message',
-    values: [
-      { icon: 'Box', title: 'Quality Assurance', body: 'Eggs sourced from approved and traceable poultry farms with regular quality inspection, grading, and hygienic handling.' },
-      { icon: 'ShieldCheck', title: 'Food Safety', body: 'Compliance with HACCP, Halal, and local food authority regulations. Hygienic storage and temperature-controlled transportation.' },
-      { icon: 'Clock', title: 'Reliable Supply', body: 'Consistent quality and grading with timely delivery and flexible order volumes through our strong supplier network.' },
-    ],
-    paragraphs: [
-      'Established in 1960 in Mardan, Khyber Pakhtunkhwa, M/S Yousafzai Eggs Traders (Registration No. C955423) has over six decades of experience in the egg trading business. The company specializes in the procurement, candling, and distribution of fresh, Halal-certified table eggs to households, retailers, hotels, and institutional customers across KPK and other regions of Pakistan.',
-      'Over the years, the company has evolved from a traditional trading operation into a vertically integrated enterprise by investing in modern poultry farms at China Chowk, Attock (est. 2022) and Phalai Interchange, Malakand (est. 2025), and expanding its distribution network across KPK, Punjab, and Sindh.',
-      'Understanding the growing demand for processed and value-added food products, the company is expanding under the name Yousafzai Agri Foods (Pvt Ltd), establishing an Egg Liquid Processing Plant at Rashakai SEZ with a capacity to process 45,000 eggs per hour. Commercial production is planned by end of 2026.',
-    ],
-    team: [],
-    leadership: [
-      { name: 'Chairman', role: 'Chairman & Founder', bio: 'At Yousafzai AGRI, we believe in quality, trust, and innovation. Our goal is not only to supply eggs but to transform the poultry industry by introducing modern processing solutions.', image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=400&fit=crop' },
-    ]
-  },
-  overview: {
-    rows: [
-      { label: 'Company Name', value: 'M/S Yousafzai AGRI & Poultry Farms' },
-      { label: 'Registration', value: 'C955423 (SECP Registered)' },
-      { label: 'Established', value: '1960, Mardan, Khyber Pakhtunkhwa' },
-      { label: 'Business Type', value: 'Egg Trading, Poultry Farming & Distribution' },
-      { label: 'Trading Volume', value: '500,000+ eggs / week' },
-      { label: 'Coverage', value: 'KPK, Punjab & Sindh — All major dealers' },
-      { label: 'Farms', value: 'China Chowk, Attock (2022) · Phalai, Malakand (2025)' },
-      { label: 'Future Expansion', value: 'Yousafzai Agri Foods (Pvt Ltd) — Rashakai SEZ' },
-    ],
+    title: 'Premium Pasteurized Liquid Egg Products',
+    subtitle: 'High-quality pasteurized liquid egg solutions designed for bakeries, food manufacturers, hotels, restaurants, caterers and commercial kitchens.',
+    primaryCta: { label: 'Explore Our Products', action: '#products' },
+    secondaryCta: { label: 'Request a Quote', action: '#quote' }
   },
   products: {
-    eyebrow: 'Products',
-    title: 'Egg Products for Commercial Supply',
-    subtitle: 'Compare available egg products, formats, and grade references. Final specifications can be confirmed with our team during quoting.',
+    title: 'Our Liquid Egg Products',
     items: [
-      { badge: 'Grade A', icon: 'Feather', gradient: 'from-navy to-navy-2', name: 'Commercial Grade A White Eggs', grade: 'Grade A', format: 'White shell eggs', packaging: 'Packaging options to be confirmed', suitableFor: 'Hotels, restaurants, caterers, and commercial kitchens', description: 'Consistent white shell eggs for commercial buyers, with final sizes and supply details confirmed during quoting.', tags: ['Daily Supply', 'S-XL'], image: '/images/white-eggs-product.jpg' },
-      { badge: 'White Eggs', icon: 'Feather', gradient: 'from-sky-700 to-sky-500', name: 'White Eggs — Medium', grade: 'Medium', format: 'White shell eggs', packaging: 'Packaging options to be confirmed', suitableFor: 'Commercial buyers requiring medium-size white eggs', description: 'Medium-size white shell eggs for commercial orders. Final size and supply details can be confirmed during quoting.', tags: ['White Eggs', 'Medium'], image: '/images/white-eggs-product.jpg' },
-      { badge: 'White Eggs', icon: 'Feather', gradient: 'from-sky-700 to-sky-500', name: 'White Eggs — Large', grade: 'Large', format: 'White shell eggs', packaging: 'Packaging options to be confirmed', suitableFor: 'Commercial buyers requiring large-size white eggs', description: 'Large-size white shell eggs for commercial orders. Final size and supply details can be confirmed during quoting.', tags: ['White Eggs', 'Large'], image: '/images/white-eggs-product.jpg' },
-      { badge: 'Free Range', icon: 'Feather', gradient: 'from-amber-800 to-amber-600', name: 'Free-Range Brown Eggs', grade: 'Grade details pending verification', format: 'Brown shell eggs', packaging: 'Packaging options to be confirmed', suitableFor: 'Premium food service and retail-style requirements', description: 'Brown shell egg options for buyers who need a free-range product category. Certification details should be confirmed during quoting.', tags: ['Free Range', 'M, L'], image: 'https://images.unsplash.com/photo-1598965675045-45c5e72c7d05?w=600&h=400&fit=crop' },
-      { badge: 'Organic', icon: 'Feather', gradient: 'from-green-800 to-green-600', name: 'Organic Egg Options', grade: 'Organic grade details pending verification', format: 'Shell eggs', packaging: 'Packaging options to be confirmed', suitableFor: 'Buyers seeking organic-positioned egg supply', description: 'Shell egg options for buyers seeking organic supply. Certification and documentation details should be confirmed during quoting.', tags: ['Organic', 'L'], image: 'https://images.unsplash.com/photo-1498654077810-12c21d4d6dc3?w=600&h=400&fit=crop' },
-      { badge: 'Processing', icon: 'Package', gradient: 'from-indigo-800 to-indigo-600', name: 'Liquid Whole Egg', grade: 'Processing grade', format: 'Liquid whole egg', packaging: 'Bulk packaging to be confirmed', suitableFor: 'Food manufacturers, bakeries, and industrial kitchens', description: 'Liquid whole egg option for commercial food production. Processing and packaging details should be confirmed during quoting.', tags: ['Industrial', 'Bulk'], image: 'https://images.unsplash.com/photo-1587486913049-53fc88980cfc?w=600&h=400&fit=crop' },
-    ],
-    specs: [
-      { name: 'White Shell Eggs', grade: 'Grade A', sizes: 'S, M, L, XL', moq: '500 trays/week', lead: '24 hrs', status: 'In Stock', statusClass: 'stock' },
-      { name: 'Brown Farm Eggs', grade: 'Grade A', sizes: 'M, L', moq: '200 trays/week', lead: '48 hrs', status: 'In Stock', statusClass: 'stock' },
-      { name: 'Organic Eggs', grade: 'Organic Grade A', sizes: 'L', moq: '50 trays/week', lead: '72 hrs', status: 'Limited', statusClass: 'limited' },
-      { name: 'Omega-3 Eggs', grade: 'Specialty', sizes: 'L, XL', moq: '100 trays/week', lead: '72 hrs', status: 'In Stock', statusClass: 'stock' },
-      { name: 'Liquid Whole Egg', grade: 'Processing Grade', sizes: 'N/A (kg)', moq: '500 kg/week', lead: '72 hrs', status: 'In Stock', statusClass: 'stock' },
-    ],
+      {
+        id: 'liquid-whole-egg',
+        name: 'Liquid Whole Egg',
+        description: 'Pasteurized whole egg in convenient liquid form for commercial food production.',
+        image: 'PRODUCT_WHOLE_EGG',
+        applications: ['Baking', 'Prepared Foods', 'Sauces'],
+        confirmed: true
+      },
+      {
+        id: 'liquid-egg-white',
+        name: 'Liquid Egg White',
+        description: 'Pasteurized liquid egg white for applications requiring consistent protein and functional performance.',
+        image: 'PRODUCT_EGG_WHITE',
+        applications: ['Bakery', 'Confectionery', 'Protein Supplements'],
+        confirmed: false
+      },
+      {
+        id: 'liquid-egg-yolk',
+        name: 'Liquid Egg Yolk',
+        description: 'Pasteurized liquid egg yolk for bakery, sauces, confectionery and food-processing applications.',
+        image: 'PRODUCT_EGG_YOLK',
+        applications: ['Mayonnaise', 'Sauces', 'Pastries'],
+        confirmed: false
+      }
+    ]
   },
-  solutions: {
-    eyebrow: 'Trading Solutions',
-    title: 'Grow With Us — Three Tiers, One Mission',
-    subtitle: 'Whether you\'re a corner store or a national chain, our Partner Program gives you preferential pricing, dedicated support, and the tools to grow — backed by weekly market intelligence and ESG-aligned trading practices.',
-    tiers: [
-      { badge: 'Silver Partner', name: 'Silver', desc: '100–499 trays per week', featured: false, features: ['5% volume discount', 'Email account support', 'Weekly supply forecast', 'Standard packaging'] },
-      { badge: 'Gold Partner', name: 'Gold', desc: '500–1,999 trays per week', featured: true, features: ['12% volume discount', 'Dedicated account manager', 'Priority supply access', 'Co-branded packaging', 'Monthly market reports', 'Net-30 payment terms'] },
-      { badge: 'Platinum Partner', name: 'Platinum', desc: '2,000+ trays per week', featured: false, features: ['20%+ custom discount', 'C-Suite relationship access', 'Guaranteed supply contracts', 'Full private label support', 'Net-60 payment terms', 'ESG co-reporting'] },
-    ],
+  whyLiquidEgg: {
+    title: 'Why Choose Liquid Egg?',
+    benefits: [
+      {
+        title: 'Consistent Quality',
+        description: 'Reliable quality and performance across commercial production.'
+      },
+      {
+        title: 'Ready to Use',
+        description: 'Reduce preparation time and simplify food production.'
+      },
+      {
+        title: 'Hygienic Processing',
+        description: 'Produced through controlled food-processing procedures.'
+      },
+      {
+        title: 'Reduced Waste',
+        description: 'Less shell handling and preparation waste.'
+      },
+      {
+        title: 'Easy Handling',
+        description: 'Convenient solution for high-volume food production.'
+      }
+    ]
   },
-  supplyChain: {
-    eyebrow: 'Supply Chain',
-    title: 'A fully integrated cold chain',
-    subtitle: 'From farm gate to your delivery dock — every stage is monitored, documented, and quality-checked.',
+  productionProcess: {
+    title: 'Our Production Process',
     steps: [
-      { icon: 'Feather', title: 'Farm Sourcing', desc: 'Vetted partner farms across KP, Punjab, and Sindh — audited quarterly' },
-      { icon: 'FlaskConical', title: 'Quality Check', desc: 'Salmonella swabs, Haugh unit testing, candling, and USDA grading' },
-      { icon: 'Snowflake', title: 'Cold Storage', desc: '2–5°C controlled storage across 3 regional hubs with IoT monitoring' },
-      { icon: 'Package', title: 'Packing', desc: 'Client-specified or standard 30-egg tray packaging with batch labels' },
-      { icon: 'Truck', title: 'Delivery', desc: 'Refrigerated last-mile delivery with real-time GPS and temp logging' },
-    ],
-    features: [
-      { icon: 'Sun', title: 'Cold Chain Management', body: 'Continuous 2–5°C temperature monitoring from collection to delivery, with IoT loggers and real-time GPS on every vehicle.' },
-      { icon: 'Home', title: 'Regional Distribution Hubs', body: 'Three hubs in Lahore, Karachi, and Mardan ensure next-day delivery to 25+ cities at a 98% success rate.' },
-      { icon: 'Share2', title: 'Farm Network', body: '40+ vetted farm partners across Pakistan, audited annually for animal welfare, hygiene, and environmental compliance.' },
-    ],
+      { id: '01', title: 'Egg Receiving', desc: 'Quality eggs arrive at the processing facility.', img: 'PROCESS_EGG_RECEIVING' },
+      { id: '02', title: 'Inspection', desc: 'Eggs undergo quality inspection before processing.', img: 'PROCESS_INSPECTION' },
+      { id: '03', title: 'Breaking', desc: 'Eggs are mechanically broken for processing.', img: 'PROCESS_EGG_BREAKING' },
+      { id: '04', title: 'Separation', desc: 'The egg components are processed according to product requirements.', img: 'PROCESS_SEPARATION' },
+      { id: '05', title: 'Filtration', desc: 'The liquid egg is filtered for consistency.', img: 'PROCESS_FILTRATION' },
+      { id: '06', title: 'Pasteurization', desc: 'The liquid egg undergoes controlled pasteurization.', img: 'PROCESS_PASTEURIZATION' },
+      { id: '07', title: 'Filling & Packaging', desc: 'The finished product is hygienically filled into suitable packaging.', img: 'PROCESS_PACKAGING' },
+      { id: '08', title: 'Cold Storage', desc: 'Finished products are stored under appropriate controlled conditions.', img: 'PROCESS_COLD_STORAGE' }
+    ]
   },
-  distribution: {
-    eyebrow: 'Export & Distribution',
-    title: 'A distribution network built for reliable volume',
-    subtitle: 'A cold-chain fleet and regional hub network designed to move volume reliably — with fast B2B quoting and dependable delivery.',
-    features: [
-      { icon: 'Truck', title: '35-Vehicle Cold-Chain Fleet', body: 'A dedicated refrigerated fleet running fixed and on-demand routes across our full delivery footprint.' },
-      { icon: 'Globe2', title: '25+ Cities Covered', body: 'Distribution from Lahore, Karachi, and Mardan hubs reaches every major commercial center in the region.' },
-      { icon: 'CheckCircle2', title: '4-Hour B2B Quoting', body: 'Submit a quote request and receive a formal proposal within 4 business hours, with contracts active in 3 working days.' },
-    ],
-  },
-  whyUs: {
-    eyebrow: 'Supply Chain Control',
-    title: 'Supply Chain Control Center',
-    reasons: [
-      { num: '01', icon: 'Warehouse', title: 'Certified Farms', body: 'Only certified partner farms with continuous quality monitoring.', kpi: '120 Certified Farms', status: 'VERIFIED' },
-      { num: '02', icon: 'PackageOpen', title: 'Collection Center', body: 'GPS-verified hubs consolidating daily farm yields.', kpi: 'Daily Output Logged', status: 'CONSOLIDATED' },
-      { num: '03', icon: 'Microscope', title: 'Quality Inspection', body: 'AI vision, shell testing, and temperature checks.', kpi: '98.6% Pass Rate', status: 'QUALITY PASSED' },
-      { num: '04', icon: 'FileCheck2', title: 'Documentation', body: 'Immutable batch certificates and lab results generated.', kpi: 'Blockchain Verified', status: 'CLEARED' },
-      { num: '05', icon: 'Snowflake', title: 'Cold Chain', body: 'Maintained via IoT sensors across 3 regional hubs.', kpi: '2-5°C Maintained', status: 'TEMP CONTROLLED' },
-      { num: '06', icon: 'Truck', title: 'Customer Delivery', body: 'Refrigerated last-mile deployment to your dock.', kpi: '100% On-Time', status: 'COMPLETED' },
-    ],
-  },
-  statsBand: {
-    stats: [
-      { value: '280', suffix: '+', label: 'Active partners & B2B clients' },
-      { value: '500', suffix: 'K', label: 'Eggs traded & supplied weekly' },
-      { value: '92', suffix: '/100', label: 'ESG sustainability score' },
-      { value: '100', suffix: '%', label: 'Batches fully traceable' },
-    ],
-  },
-  industries: [
-    { icon: 'Building2', name: 'Hotels & Restaurants' },
-    { icon: 'ChefHat', name: 'Bakery & Confectionery' },
-    { icon: 'Store', name: 'Retail & Supermarkets' },
-    { icon: 'Factory', name: 'Food Manufacturers' },
-    { icon: 'Hospital', name: 'Hospitals & Institutions' },
-  ],
-  process: [
-    { num: '01', icon: 'Feather', title: 'Collection', body: 'Eggs are collected from certified farms within 6 hours of laying. Each collection is logged with farm ID, flock ID, and timestamp.' },
-    { num: '02', icon: 'FlaskConical', title: 'Laboratory Testing', body: 'Salmonella swabs, shell strength, interior quality (Haugh units), and yolk color measured on every batch.' },
-    { num: '03', icon: 'ScanLine', title: 'Grading', body: 'Automated candling detects cracks, blood spots and internal defects. Eggs are graded by size and shell quality.' },
-    { num: '04', icon: 'Printer', title: 'Marking & Coding', body: 'Each egg is stamped with a batch code linking to the full digital audit trail accessible via our client portal.' },
-    { num: '05', icon: 'Package', title: 'Packing', body: 'Packed under hygienic conditions in client-specified or standard packaging, with batch certificates included in every box.' },
-    { num: '06', icon: 'Warehouse', title: 'Supply Chain', body: 'Maintained across our cold-chain network and regional hubs with 2–5°C monitoring, full batch traceability, and documented handoff through every transfer point.' },
-    { num: '07', icon: 'Truck', title: 'Delivery', body: 'Refrigerated last-mile delivery with real-time GPS and temperature logging right to your dock. Delivery receipts include delivery documentation.' },
-  ],
   quality: {
-    eyebrow: 'Quality Assurance',
-    title: 'Quality You Can Verify',
-    subtitle: 'Our traceability process helps customers follow each batch from collection to delivery.',
-    batch: {
-      id: 'BATCH-2025-06-22-A47',
-      title: 'Sample Batch Trace',
-      subtitle: 'Sample batch delivered 22 June 2025',
-      steps: [
-        { title: 'Farm Collected', time: '06:15 AM' },
-        { title: 'Lab Tested', time: '09:30 AM' },
-        { title: 'Graded & Packed', time: '11:00 AM' },
-        { title: 'Dispatched', time: '01:00 PM' },
-        { title: 'Delivered', time: '04:45 PM' },
-      ],
-    },
-    certs: [
-      { icon: 'ClipboardList', name: 'SECP Registration', body: 'Certificate of Incorporation — Registration No. C955423', status: 'Active' },
-      { icon: 'ShieldCheck', name: 'FBR NTN Certificate', body: 'Federal Board of Revenue — National Tax Number', status: 'Active' },
-      { icon: 'CheckCircle2', name: 'STRN', body: 'Sales Tax Registration Number — Provincial Revenue', status: 'Active' },
-      { icon: 'Users', name: 'Chamber of Commerce', body: 'Mardan Chamber of Commerce & Industry Membership', status: 'Active' },
-      { icon: 'FlaskConical', name: 'ACI HACCP', body: 'Hazard Analysis Critical Control Points — Yousafzai Agri Foods (2026–2029)', status: 'Active' },
-      { icon: 'Leaf', name: 'IHC Halal', body: 'International Halal Certification — Yousafzai Agri Foods (2026–2029)', status: 'Active' },
-    ],
+    title: 'Quality You Can Trust',
+    description: 'We are committed to delivering the highest standards of food safety, hygiene, and product consistency for our commercial partners.',
+    points: ['Quality control', 'Product inspection', 'Controlled processing', 'Pasteurization', 'Batch consistency', 'Laboratory testing']
   },
-  testimonials: [
-    { initials: 'LD', name: 'Local Distributor', role: 'KPK Region', company: '', rating: 4.8, text: 'Our experience with Yousafzai Eggs Traders has been excellent. Their quality and service have been consistently reliable.' },
-    { initials: 'RP', name: 'Retail Partner', role: 'Punjab', company: '', rating: 4.5, text: 'Reliable supplier with consistent quality and timely delivery. We have been working with them for years.' },
-    { initials: 'RO', name: 'Restaurant Owner', role: 'Lahore', company: '', rating: 4.6, text: 'Egg Traders has completely changed how I source eggs. I can compare farms, check quality scores, and order in minutes.' },
-    { initials: 'FM', name: 'Farm Manager', role: 'Mardan', company: '', rating: 4.4, text: 'Being on the platform has given us direct access to commercial buyers we could never reach before.' },
-    { initials: 'PH', name: 'Procurement Head', role: 'Karachi', company: '', rating: 4.7, text: 'Every batch is documented and every delivery is on time.' },
-  ],
-  faq: [
-    { q: 'How quickly can I receive a formal B2B quote?', a: 'Submit a quote request and our commercial team responds with a formal quotation within 4 business hours. Contracts can be activated within 3 working days.' },
-    { q: 'What is the minimum order quantity?', a: 'Minimum orders vary by product — from 50 trays/week for organic eggs up to 500 trays/week for standard Grade A white shell eggs. Liquid whole egg starts at 500kg/week.' },
-    { q: 'Which certifications and standards do you comply with?', a: 'All products meet ISO 22000:2018, PSQCA, and PNAC-accredited Halal standards, alongside active Animal Welfare, Environmental Audit, and HACCP certifications.' },
-    { q: 'Can I trace a specific delivered batch?', a: 'Yes. Every box carries a batch code — scan it or look it up in the client portal to see farm collection, lab testing, grading, dispatch and delivery timestamps.' },
-    { q: 'How does the Partner Program pricing work?', a: 'Pricing is tiered by weekly volume — Silver (100–499 trays), Gold (500–1,999 trays), and Platinum (2,000+ trays) — each unlocking deeper discounts and additional services.' },
-    { q: 'Which cities and regions do you deliver to?', a: 'Our distribution hubs in Mardan, Attock, and Malakand serve 25+ cities directly, with next-day delivery at a 98% success rate.' },
-  ],
+  industries: {
+    title: 'Industries We Serve',
+    items: [
+      { name: 'Bakeries', desc: 'Liquid egg solutions for commercial bakery production.', img: 'INDUSTRY_BAKERY' },
+      { name: 'Hotels', desc: 'Convenient egg solutions for professional hotel kitchens.', img: 'INDUSTRY_HOTEL' },
+      { name: 'Restaurants', desc: 'Reliable liquid egg for commercial food preparation.', img: 'INDUSTRY_RESTAURANT' },
+      { name: 'Food Manufacturers', desc: 'Liquid egg solutions for industrial food production.', img: 'INDUSTRY_FOOD_MANUFACTURING' },
+      { name: 'Catering', desc: 'Efficient solutions for high-volume food preparation.', img: 'INDUSTRY_CATERING' },
+      { name: 'Institutional Kitchens', desc: 'Reliable supply for large-scale food operations.', img: 'INDUSTRY_INSTITUTIONAL' }
+    ]
+  },
+  applications: {
+    title: 'Applications',
+    items: ['Cakes', 'Pastries', 'Bread', 'Biscuits', 'Mayonnaise', 'Sauces', 'Dressings', 'Prepared foods', 'Breakfast products', 'Food manufacturing']
+  },
+  about: {
+    title: 'From Quality Eggs to Better Food Solutions',
+    description: 'Yousafzai Agri Foods is a food-processing company focused on producing and supplying high-quality pasteurized liquid egg products for commercial and industrial customers. With a commitment to quality and controlled production, we deliver reliable food solutions tailored to the needs of modern businesses.'
+  },
+  packaging: {
+    title: 'Packaging Solutions',
+    specs: {
+      weight: '[CLIENT TO CONFIRM]',
+      packagingType: '[CLIENT TO CONFIRM]',
+      storageTemperature: '[CLIENT TO CONFIRM]',
+      shelfLife: '[CLIENT TO CONFIRM]'
+    }
+  },
+  logistics: {
+    title: 'Logistics & Supply',
+    description: 'Our dedicated cold-chain supply and professional warehousing ensure that your liquid egg products arrive fresh and ready to use.',
+    highlights: ['Warehouse storage', 'Finished products handling', 'Cold storage facility', 'Efficient dispatch', 'Cold-chain transportation']
+  },
+  faq: {
+    title: 'Frequently Asked Questions',
+    items: [
+      { q: 'What is liquid egg?', a: 'Liquid egg is fresh egg that has been broken, filtered, and pasteurized for safe, convenient use in commercial food production.' },
+      { q: 'Is your liquid egg pasteurized?', a: 'Yes, our products undergo controlled pasteurization to ensure food safety and extended shelf life while maintaining functional properties.' },
+      { q: 'What liquid egg products do you supply?', a: 'We currently supply premium Pasteurized Liquid Whole Egg. (Additional product lines may be available upon request).' },
+      { q: 'Which industries use your liquid egg products?', a: 'We serve commercial bakeries, food manufacturers, hotels, restaurants, caterers, and institutional kitchens.' },
+      { q: 'How should liquid egg products be stored?', a: '[CLIENT TO CONFIRM]' },
+      { q: 'What packaging options are available?', a: '[CLIENT TO CONFIRM]' },
+      { q: 'What is the shelf life?', a: '[CLIENT TO CONFIRM]' },
+      { q: 'Do you supply bulk orders?', a: 'Yes, we are a B2B supplier equipped to handle bulk and commercial order volumes.' },
+      { q: 'Do you provide delivery?', a: '[CLIENT TO CONFIRM]' },
+      { q: 'How can I request a quotation?', a: 'You can request a quote directly through our website by filling out the "Request a Quote" form.' }
+    ]
+  },
   contact: {
-    eyebrow: 'Contact Us',
-    title: 'Get in Touch — Yousafzai AGRI',
-    subtitle: 'Reach out for orders, partnerships, or inquiries. We are always happy to connect.',
-    info: [
-      { icon: 'Phone', label: 'Phone', value: '+92 315 8266006' },
-      { icon: 'Mail', label: 'Email', value: 'info@yousafzaiagrifoods.com' },
-      { icon: 'MapPin', label: 'Head Office', value: 'Plot 11 F, Rashakai Special Economic Zone' },
-      { icon: 'Mail', label: 'Additional Emails', value: 'Sana-Ullah@yousafzaiagrifoods.com · Saeed_rehman@yousafzaiagrifoods.com' },
-    ],
-  },
-  company: {
-    name: 'YOUSAFZAI',
-    sub: 'Agri Foods',
-    tagline: 'A trusted name in egg trading and poultry farming since 1960 — delivering quality, freshness, and reliability from farm to market.',
-  },
-  ourCompanies: {
-    eyebrow: '',
-    title: 'Our Companies',
-    subtitle: 'Explore the specialized brands under the Yousafzai AGRI group — each serving distinct market segments with the same commitment to quality and compliance.',
-    companies: [
-      {
-        id: 'yousafzai-agri',
-        name: 'Yousafzai AGRI',
-        tagline: 'International B2B Egg Trading & Supply',
-        description: 'Our flagship brand for international B2B egg trading, supply chain management, and compliance-first distribution across Pakistan and beyond.',
-        color: '#B8860B',
-        url: '/',
-        logo: null,
-      },
-      {
-        id: 'egg-traders',
-        name: 'Yousafzai Egg Traders',
-        tagline: 'Specialized Poultry & Egg Marketplace',
-        description: 'A dedicated platform connecting verified poultry farms directly to commercial buyers with real-time pricing, quality scores, and seamless procurement.',
-        color: '#0D6B3D',
-        url: '/egg-traders',
-        logo: null,
-      },
-    ],
-  },
-  eggTraders: {
-    company: {
-      name: 'Egg Traders',
-      sub: 'Poultry Trading',
-      tagline: 'A Yousafzai AGRI company connecting verified poultry farms with commercial buyers through a clear supply process.',
-    },
-    hero: {
-      eyebrow: '',
-      backgroundImage: '',
-      h1Line1: 'Your trusted',
-      h1Highlight: 'egg marketplace',
-      h1Line2: '',
-      body: 'Egg Traders connects verified poultry farms with commercial buyers through clear pricing information, quality details, and a simpler ordering process.',
-      primaryCta: { label: 'Request a Quote', action: '/egg-traders/contact' },
-      secondaryCta: { label: 'How it works', action: '/egg-traders/about' },
-      trustItems: [
-        { icon: 'ShieldCheck', text: 'Verified farms' },
-        { icon: 'CheckCircle2', text: 'Quality guaranteed' },
-        { icon: 'Home', text: 'Delivery coordination' },
-      ],
-      stats: [
-        { value: '200', suffix: '+', label: 'Verified poultry farms' },
-        { value: '12', suffix: 'K+', label: 'Completed transactions' },
-        { value: '98', suffix: '%', label: 'Buyer satisfaction rate' },
-        { value: '28', suffix: '+', label: 'Cities covered' },
-      ],
-    },
-    about: {
-      eyebrow: '',
-      title: 'A clearer way to trade eggs',
-      subtitle: 'Egg Traders brings clearer communication and traceability to the poultry supply chain, giving buyers direct access to verified farms.',
-      quote: 'Our goal is to make commercial egg procurement clearer, faster, and easier to manage for both buyers and farms.',
-      quoteFooter: 'Our Mission',
-      paragraphs: [
-        'Founded as a Yousafzai AGRI venture, Egg Traders was built to connect verified farms directly with commercial buyers.',
-        'The service helps buyers compare supply options, review quality information, and manage orders through a clearer procurement process.',
-        'Egg Traders supports commercial egg procurement across Pakistan with a focus on traceability, reliability, and responsive service.',
-      ],
-      features: [
-        { icon: 'Feather', title: 'Verified farms only', body: 'Sellers are reviewed before listing so buyers can make decisions with more confidence.' },
-        { icon: 'TrendingUp', title: 'Clear pricing', body: 'Buyers receive practical pricing information for commercial supply.' },
-        { icon: 'Package', title: 'Simple procurement', body: 'From order to delivery, the process is organized around clear communication and reliable follow-up.' },
-      ],
-      team: [
-        { initials: 'CH', name: 'Chairman', role: 'Founder', bio: 'Leads the Egg Traders vision with deep experience in poultry commodity markets.' },
-        { initials: 'AK', name: 'Ahmed Khan', role: 'Operations lead', bio: 'Supports service development and buyer-seller coordination across operating cities.' },
-      ],
-    },
-    services: [
-      { num: '01', title: 'Farm Discovery', body: 'Browse and connect with verified poultry farms ranked by quality score, delivery reliability, and buyer reviews from real commercial buyers.' },
-      { num: '02', title: 'Smart Matching', body: 'Our algorithm matches your order requirements with the best-suited farms based on location, weekly capacity, and active certifications.' },
-      { num: '03', title: 'Secure Trading', body: 'Every transaction is secured with escrow protection, quality-based release, and dispute resolution support for both parties.' },
-      { num: '04', title: 'Logistics Support', body: 'Coordinated cold-chain logistics with real-time tracking, IoT temperature monitoring, and delivery confirmation at every stop.' },
-    ],
-    products: {
-      eyebrow: '',
-      title: 'Egg products for commercial buyers',
-      subtitle: 'Browse verified egg products from our poultry farm network for direct commercial supply.',
-      items: [
-        { badge: 'Premium', grade: 'Grade A / select large', name: 'Farm-fresh white eggs', description: 'Grade A white shell eggs from verified farms, available in small to extra-large sizes with traceability support.', specs: ['Weight: 53g - 63g+', 'Shell strength: high', 'Packaging: 30-egg trays / cartons'], tags: ['Daily supply', 'S to XL'], image: 'https://images.unsplash.com/photo-1582722872445-44dc5f7e3c8f?w=600&h=400&fit=crop' },
-        { badge: 'Free range', grade: 'Free range', name: 'Free-range brown eggs', description: 'Brown egg options for buyers with premium food-service requirements. Final documentation can be confirmed during quoting.', specs: ['Free-range option', 'Premium food service', 'Eco-pulp packaging'], tags: ['Free range', 'M, L'], image: 'https://images.unsplash.com/photo-1598965675045-45c5e72c7d05?w=600&h=400&fit=crop' },
-        { badge: 'Organic', grade: 'Organic option', name: 'Organic egg options', description: 'Organic egg options for buyers seeking documented supply. Certification details can be confirmed during quoting.', specs: ['Organic option', 'Documentation available', 'Eco-pulp packaging'], tags: ['Organic', 'L'], image: 'https://images.unsplash.com/photo-1498654077810-12c21d4d6dc3?w=600&h=400&fit=crop' },
-        { badge: 'Bulk', grade: 'Processing grade', name: 'Liquid whole egg', description: 'Liquid whole egg for food manufacturers, bakeries, and industrial kitchens. Processing and packaging details are confirmed during quoting.', specs: ['Whole egg option', 'Bulk packaging', 'Chilled supply'], tags: ['Industrial', 'kg'], image: 'https://images.unsplash.com/photo-1587486913049-53fc88980cfc?w=600&h=400&fit=crop' },
-      ],
-      specs: [
-        { name: 'White shell eggs', grade: 'Grade A', sizes: 'S, M, L, XL', moq: '100 trays', lead: '24 hrs', status: 'Available', statusClass: 'stock' },
-        { name: 'Brown farm eggs', grade: 'Grade A', sizes: 'M, L', moq: '50 trays', lead: '48 hrs', status: 'Available', statusClass: 'stock' },
-        { name: 'Organic eggs', grade: 'Organic A', sizes: 'L', moq: '20 trays', lead: '72 hrs', status: 'Limited', statusClass: 'limited' },
-        { name: 'Liquid whole egg', grade: 'Processing', sizes: 'N/A (kg)', moq: '200 kg', lead: '72 hrs', status: 'Available', statusClass: 'stock' },
-      ],
-    },
-    solutions: {
-      eyebrow: '',
-      title: 'Choose your trading plan',
-      subtitle: 'Choose a plan based on your buying or selling needs.',
-      tiers: [
-        { badge: 'Basic buyer', name: 'Basic', desc: 'Up to 50 trays/week', featured: false, features: ['Access to verified farms', 'Standard pricing', 'Email support', 'Order tracking'] },
-        { badge: 'Premium buyer', name: 'Premium', desc: '50-500 trays/week', featured: true, features: ['Priority farm matching', 'Volume pricing', 'Dedicated account manager', 'Order tracking', 'Monthly summaries', 'Flexible payment terms'] },
-        { badge: 'Enterprise', name: 'Enterprise', desc: '500+ trays/week', featured: false, features: ['Custom contracts', 'Custom supply terms', 'Account coordination', 'Dedicated support team', 'Flexible payment terms', 'Procurement reporting'] },
-      ],
-    },
-    process: {
-      eyebrow: '',
-      title: 'From farm to business in four steps',
-      subtitle: 'A clear procurement process for commercial buyers who need reliable supply and traceability.',
-      steps: [
-        { num: '01', icon: 'Search', title: 'Browse and select', body: 'Browse verified farms, compare quality information, and select the best match for your volume and delivery needs.' },
-        { num: '02', icon: 'FileText', title: 'Place order', body: 'Submit your purchase order with your requirements. Receive confirmation and an estimated delivery window.' },
-        { num: '03', icon: 'Package', title: 'Quality check', body: 'Each batch is checked before dispatch. Quality details and batch records are shared for review.' },
-        { num: '04', icon: 'Truck', title: 'Delivery and confirmation', body: 'Receive delivery updates, confirm receipt, and complete the order record in one organized process.' },
-      ],
-    },
-    quality: {
-      eyebrow: '',
-      title: 'Quality you can verify every time',
-      subtitle: 'Every egg traded through Egg Traders is supported by farm-level quality information, batch records, and buyer feedback.',
-      batch: {
-        id: 'Batch ET-2026-07-14-A01',
-        title: 'Sample batch trace',
-        subtitle: 'Example from a recent transaction',
-        steps: [
-          { title: 'Order placed', time: '08:00 AM' },
-          { title: 'Farm confirmed', time: '09:15 AM' },
-          { title: 'Quality checked', time: '11:30 AM' },
-          { title: 'Dispatched', time: '01:00 PM' },
-          { title: 'Delivered', time: '04:30 PM' },
-        ],
-      },
-      certs: [
-        { icon: 'ShieldCheck', name: 'Farm verified', body: 'Every farm is audited before listing', status: 'Active' },
-        { icon: 'CheckCircle2', name: 'Quality score', body: 'Updated quality rating process', status: 'Active' },
-        { icon: 'Users', name: 'Buyer support', body: 'Transaction support for commercial buyers', status: 'Active' },
-        { icon: 'Leaf', name: 'Responsible sourcing', body: 'Supplier practices reviewed during onboarding', status: 'Active' },
-      ],
-      testimonials: [
-        { initials: 'RM', name: 'Restaurant Owner', role: 'Lahore', text: 'Egg Traders has made sourcing eggs easier. I can compare farms, review quality information, and place orders quickly.' },
-        { initials: 'AK', name: 'Farm Manager', role: 'Mardan', text: 'Egg Traders has given us direct access to commercial buyers we could not reach before.' },
-        { initials: 'SN', name: 'Procurement Head', role: 'Karachi', text: 'The traceability is helpful. Every batch is documented, and delivery information is easy to follow.' },
-      ],
-    },
-    contact: {
-      eyebrow: '',
-      title: 'Contact Egg Traders',
-      subtitle: 'Fill in the form below. Our team will reach out within 2 business hours to help with your request.',
-      info: [
-      { icon: 'Phone', label: 'Phone', value: '+92 315 8266006' },
-      { icon: 'Mail', label: 'Email', value: 'info@yousafzaiagrifoods.com' },
-      { icon: 'MapPin', label: 'Office', value: 'Opposite Mardan Press Club, Mardan, KPK' },
-      { icon: 'Clock', label: 'Response Time', value: 'Within 2 business hours' },
-      ],
-    },
-  },
-  banners: {
-    main: {
-      contact: {
-        title: 'Contact Us',
-        subtitle: 'Ready to partner? Get a formal B2B quotation in 4 business hours or speak with our partnerships team.',
-        images: [],
-      },
-      process: {
-        title: 'Our Process',
-        subtitle: 'A clear process from sourcing and grading to cold-chain delivery.',
-        images: [],
-      },
-      products: {
-        title: 'Products & Grades',
-        subtitle: 'Explore egg products, formats, and grade references for commercial supply.',
-        images: [],
-        video: '',
-      },
-      quality: {
-        title: 'Quality',
-        subtitle: 'Focused on quality, traceability, and responsible handling at every stage.',
-        images: ['/images/yousafzai-packaging.png'],
-      },
-      solutions: {
-        title: 'Solutions',
-        subtitle: 'Tailored B2B trading partnerships designed for hotels, distributors, bakeries, and institutional buyers.',
-        images: [],
-      },
-      team: {
-        title: 'Leadership & Operations',
-        subtitle: 'Meet the experienced executives and agricultural specialists driving Yousafzai AGRI.',
-        images: [],
-      },
-    },
-    eggTraders: {
-      about: {
-        title: 'About Us',
-        subtitle: "Learn about Egg Traders, our mission, values, and the team behind the poultry trading service.",
-      },
-      contact: {
-        title: 'Contact Us',
-        subtitle: 'Share your requirements and our team will respond within 2 business hours.',
-      },
-      products: {
-        title: 'Our Products',
-        subtitle: 'Browse verified egg products from our poultry farm network for direct commercial supply.',
-      },
-      quality: {
-        title: 'Quality',
-        subtitle: 'Every egg traded through Egg Traders is supported by farm-level quality information, batch records, and buyer feedback.',
-      },
-      solutions: {
-        title: 'Solutions',
-        subtitle: 'Choose the right trading plan for your business, from basic access to custom commercial supply terms.',
-      },
-      process: {
-        title: 'Process',
-        subtitle: 'A clear procurement process for commercial buyers who need reliable supply and traceability.',
-      },
-    },
-  },
-  cta: {
-    eyebrow: '',
-    title: 'Need a Reliable Supply Partner?',
-    sub: 'Tell us what you need, and our team will get back to you with a tailored quote.',
-    primaryCta: { label: 'Request a Quote', action: '/contact' },
-    secondaryCta: { label: 'Talk to Us', action: '/contact' },
-  },
-  aboutScenes: {
-    hero: {
-      coordinates: 'Mardan, Khyber Pakhtunkhwa, Pakistan',
-      eyebrow: '',
-      h1Line1: 'Built on',
-      h1Highlight: 'Quality & Trust',
-      paragraph: "Since 1960, Yousafzai AGRI has been a trusted name in Pakistan's poultry and egg distribution industry. With over six decades of experience, we connect certified farms to hotels, retailers, manufacturers, and institutions across KPK, Punjab, and Sindh — delivering fresh, Halal-certified eggs with full traceability.",
-      ctaLabel: 'Explore Our Heritage',
-      stamp: '',
-      stats: [
-        { value: '60+', label: 'Years of Experience' },
-        { value: '500K+', label: 'Eggs Traded Weekly' },
-        { value: '3', label: 'Provinces Covered' },
-        { value: '100%', label: 'Halal Certified' },
-      ],
-      slides: [
-        'https://images.unsplash.com/photo-1548550023-2bf3c49b71d9?w=1920&q=80',
-        'https://images.unsplash.com/photo-1569288052389-dac9b01c9c05?w=1920&q=80',
-        'https://images.unsplash.com/photo-1612170153139-6f881ff067e0?w=1920&q=80',
-        'https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=1920&q=80',
-        'https://images.unsplash.com/photo-1623239524387-0b57a0eab64e?w=1920&q=80',
-        'https://images.unsplash.com/photo-1605882174146-a464b70cf691?w=1920&q=80',
-        'https://images.unsplash.com/photo-1574781330855-d0db8cc6a79c?w=1920&q=80',
-        'https://images.unsplash.com/photo-1591197172062-c718f82aba20?w=1920&q=80',
-        'https://images.unsplash.com/photo-1582722872445-44dc5f7e3c8f?w=1920&q=80',
-        'https://images.unsplash.com/photo-1598965675045-45c5e72c7d05?w=1920&q=80',
-        'https://images.unsplash.com/photo-1506976785307-8732e854ad03?w=1920&q=80',
-        'https://images.unsplash.com/photo-1489726024920-b5ddc1c04b09?w=1920&q=80',
-        'https://images.unsplash.com/photo-1498654077810-12c21d4d6dc3?w=1920&q=80',
-        'https://images.unsplash.com/photo-1587486913049-53fc88980cfc?w=1920&q=80',
-        'https://images.unsplash.com/photo-1607690424560-35d967079aac?w=1920&q=80',
-        'https://images.unsplash.com/photo-1518569656558-1f25e69d93d7?w=1920&q=80',
-        'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=1920&q=80',
-        'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1920&q=80',
-        'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1920&q=80',
-        'https://images.unsplash.com/photo-1605000797499-95a51c5269ae?w=1920&q=80',
-        'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1920&q=80',
-        'https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=1920&q=80',
-        'https://images.unsplash.com/photo-1553413077-190dd305871c?w=1920&q=80',
-        'https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?w=1920&q=80',
-        'https://images.unsplash.com/photo-1494412574643-ff11b0a5eb19?w=1920&q=80',
-        'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1920&q=80',
-        'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1920&q=80',
-        'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=1920&q=80',
-        'https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=1920&q=80',
-      ],
-    },
-    chairman: {
-      eyebrow: '',
-      quote: 'At Yousafzai AGRI Foods, we believe in quality, trust, and innovation. Our goal is not only to supply eggs but to transform the poultry industry by introducing modern processing solutions and dependable service standards that strengthen the entire value chain. We are committed to delivering reliable value at every stage, from sourcing and quality assurance to the long-term relationships we build with farms, buyers, and partners.',
-      name: 'Sanaullah',
-      role: 'Chairman & Founder',
-      image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=450&h=550&fit=crop',
-      seal: '',
-    },
-    ourStory: {
-      eyebrow: '',
-      title: 'Our Legacy',
-      subtext: 'Six decades of growth — from a single retail shop to a vertically integrated enterprise.',
-      milestones: [
-        {
-          id: '1960',
-          year: '1960',
-          title: 'Retail Origins',
-          desc: 'Established a retail shop in Mardan for egg trading.',
-          img: 'https://images.unsplash.com/photo-1498654077810-12c21d4d6dc3?w=1920&q=80',
-          stats: 'RETAIL ORIGINS',
-          metric: '60+',
-          metricLabel: 'Years of Trust',
-        },
-        {
-          id: '2000',
-          year: '2000',
-          title: 'Supply Network',
-          desc: 'Built a strong supply network connecting farms to markets across KPK.',
-          img: 'https://images.unsplash.com/photo-1569288052389-dac9b01c9c05?w=1920&q=80',
-          stats: 'FARM TO MARKET',
-          metric: '100+',
-          metricLabel: 'Partner Farms',
-        },
-        {
-          id: '2020',
-          year: '2020',
-          title: 'Sales Expansion',
-          desc: 'Opened a second sales point in Attock.',
-          img: 'https://images.unsplash.com/photo-1604719312566-8912e9227c6a?w=1920&q=80',
-          stats: 'ATTOCK SALES',
-          metric: '2',
-          metricLabel: 'Sales Points',
-        },
-        {
-          id: '2022',
-          year: '2022',
-          title: 'Poultry Farm',
-          desc: 'Established a poultry farm in Attock, Punjab.',
-          img: 'https://images.unsplash.com/photo-1598965675045-45c5e72c7d05?w=1920&q=80',
-          stats: 'POULTRY FARM',
-          metric: '10K+',
-          metricLabel: 'Daily Capacity',
-        },
-      ],
-    },
-    visionMission: {
-      bgImage: 'https://images.unsplash.com/photo-1508680415307-e160e15777bd?w=1920&q=80',
-      eyebrow: '',
-      title: 'Vision & Mission',
-      vision: {
-        eyebrow: '',
-        marker: '',
-        title: 'Transforming the Value Chain',
-        desc: 'To become a leading Eggs-food company in Pakistan and international markets by providing high-quality egg products, including liquid and processed eggs, with global standards.',
-      },
-      mission: {
-        eyebrow: '',
-        marker: '',
-        title: 'Quality & Value Creation',
-        items: [
-          'Supply fresh & hygienic eggs',
-          'Maintain strict quality control & food safety',
-          'Expand into value-added egg products like liquid eggs',
-          'Build long-term trust with clients & partners',
-        ],
-      },
-    },
+    title: 'Looking for a Reliable Liquid Egg Supplier?',
+    description: 'Tell us about your requirements and our team will help you find the right liquid egg solution for your business.'
   },
   footer: {
-    copyright: '© 2026 M/S Yousafzai Agri Foods & Poultry Farms. All rights reserved.',
-    locations: 'Mardan · Attock · Peshawar',
-    quickLinks: [
-      { label: 'About Us', href: '/about' },
-      { label: 'Company Overview', href: '/about' },
-      { label: 'Why Choose Us', href: '/' },
-      { label: 'Testimonials', href: '/' },
-    ],
-    solutionsLinks: [
-      { label: 'Products', href: '/products' },
-      { label: 'Trading Solutions', href: '/solutions' },
-      { label: 'Supply Chain', href: '/' },
-      { label: 'Export & Distribution', href: '/' },
-    ],
-    resourcesLinks: [
-      { label: 'Our Process', href: '/process' },
-      { label: 'Quality Assurance', href: '/quality' },
-      { label: 'FAQ', href: '/' },
-      { label: 'Contact Us', href: '/contact' },
-    ],
-  },
+    description: 'Premium Pasteurized Liquid Egg Solutions for Professional Food Businesses.',
+    copyright: '© 2026 Yousafzai Agri Foods (Pvt) Ltd. All rights reserved.',
+    address: '[CLIENT TO CONFIRM]',
+    email: '[CLIENT TO CONFIRM]',
+    phone: '[CLIENT TO CONFIRM]',
+    socials: { facebook: '#', linkedin: '#', twitter: '#' }
+  }
 };
