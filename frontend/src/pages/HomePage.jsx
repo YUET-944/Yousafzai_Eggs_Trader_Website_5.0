@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import { defaultContent } from '../data/defaultContent';
 
 import HeroSection from '../components/HeroSection';
@@ -15,6 +16,21 @@ import FAQSection from '../components/FAQSection';
 import ContactSection from '../components/ContactSection';
 
 export default function HomePage() {
+  const { hash } = useLocation();
+
+  useEffect(() => {
+    if (hash) {
+      const element = document.getElementById(hash.replace('#', ''));
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }, 100);
+      }
+    } else {
+      window.scrollTo(0, 0);
+    }
+  }, [hash]);
+
   const { 
     hero, 
     websiteImages, 
