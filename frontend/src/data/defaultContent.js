@@ -1,35 +1,39 @@
+import heroImg from '../assets/images/hero_liquid_egg_factory.jpg';
+import wholeEggImg from '../assets/images/product_whole_egg.jpg';
+import exteriorImg from '../assets/images/factory_exterior.jpg';
+
 export const defaultContent = {
   websiteImages: {
-    hero: 'HERO_LIQUID_EGG_FACTORY',
-    factoryExterior: 'FACTORY_EXTERIOR',
-    factoryEntrance: 'FACTORY_ENTRANCE',
-    factoryProductionFloor: 'FACTORY_PRODUCTION_FLOOR',
-    factoryWorkers: 'FACTORY_WORKERS',
-    wholeEgg: 'PRODUCT_WHOLE_EGG',
-    eggWhite: 'PRODUCT_EGG_WHITE',
-    eggYolk: 'PRODUCT_EGG_YOLK',
-    processReceiving: 'PROCESS_EGG_RECEIVING',
-    processInspection: 'PROCESS_INSPECTION',
-    processBreaking: 'PROCESS_EGG_BREAKING',
-    processSeparation: 'PROCESS_SEPARATION',
-    processFiltration: 'PROCESS_FILTRATION',
-    processPasteurization: 'PROCESS_PASTEURIZATION',
-    processPackaging: 'PROCESS_PACKAGING',
-    processColdStorage: 'PROCESS_COLD_STORAGE',
-    qualityLab: 'QUALITY_LAB',
-    qualityTesting: 'QUALITY_TESTING',
-    qualityInspection: 'QUALITY_INSPECTION',
-    packagingProduct: 'PACKAGING_PRODUCT',
-    packagingLabel: 'PACKAGING_LABEL',
-    packagingMultiple: 'PACKAGING_MULTIPLE',
-    industryBakery: 'INDUSTRY_BAKERY',
-    industryHotel: 'INDUSTRY_HOTEL',
-    industryRestaurant: 'INDUSTRY_RESTAURANT',
-    industryFoodMfg: 'INDUSTRY_FOOD_MANUFACTURING',
-    industryCatering: 'INDUSTRY_CATERING',
-    industryInstitutional: 'INDUSTRY_INSTITUTIONAL',
-    logisticsWarehouse: 'LOGISTICS_WAREHOUSE',
-    logisticsDispatch: 'LOGISTICS_DISPATCH',
+    hero: heroImg,
+    factoryExterior: exteriorImg,
+    factoryEntrance: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=80', // clean corporate entrance
+    factoryProductionFloor: 'https://images.unsplash.com/photo-1580982327559-c1202864be05?w=1200&q=80', // stainless factory
+    factoryWorkers: 'https://images.unsplash.com/photo-1587301669837-9d54ce580bb6?w=1200&q=80', // factory workers
+    wholeEgg: wholeEggImg,
+    eggWhite: 'https://images.unsplash.com/photo-1598965675045-45c5e72c7d05?w=800&q=80',
+    eggYolk: 'https://images.unsplash.com/photo-1598965675045-45c5e72c7d05?w=800&q=80',
+    processReceiving: 'https://images.unsplash.com/photo-1587293852726-70cdb56c2866?w=1200&q=80', // warehouse receiving
+    processInspection: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1200&q=80', // lab inspection
+    processBreaking: 'https://images.unsplash.com/photo-1628187886470-7ec829b39868?w=1200&q=80', // food processing
+    processSeparation: 'https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=1200&q=80', // machinery
+    processFiltration: 'https://images.unsplash.com/photo-1574781330855-d0db8cc6a79c?w=1200&q=80', // stainless pipes
+    processPasteurization: 'https://images.unsplash.com/photo-1605882174146-a464b70cf691?w=1200&q=80', // tanks
+    processPackaging: 'https://images.unsplash.com/photo-1591197172062-c718f82aba20?w=1200&q=80', // packaging line
+    processColdStorage: 'https://images.unsplash.com/photo-1553413077-190dd305871c?w=1200&q=80', // cold storage
+    qualityLab: 'https://images.unsplash.com/photo-1576086213369-97a306d36557?w=1200&q=80', // lab
+    qualityTesting: 'https://images.unsplash.com/photo-1581093458791-9f3c3900df4b?w=1200&q=80', // testing
+    qualityInspection: 'https://images.unsplash.com/photo-1582719508461-905c673771fd?w=1200&q=80', // inspection
+    packagingProduct: 'https://images.unsplash.com/photo-1626804475297-41609ea004eb?w=800&q=80',
+    packagingLabel: 'https://images.unsplash.com/photo-1606162386708-316886e0df07?w=800&q=80',
+    packagingMultiple: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1200&q=80',
+    industryBakery: 'https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=800&q=80',
+    industryHotel: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=800&q=80',
+    industryRestaurant: 'https://images.unsplash.com/photo-1556155092-490a1ba16284?w=800&q=80',
+    industryFoodMfg: 'https://images.unsplash.com/photo-1563720224214-5d513813a48e?w=800&q=80',
+    industryCatering: 'https://images.unsplash.com/photo-1555243896-c709bfa0b564?w=800&q=80',
+    industryInstitutional: 'https://images.unsplash.com/photo-1577903264627-862d38562140?w=800&q=80',
+    logisticsWarehouse: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1200&q=80',
+    logisticsDispatch: 'https://images.unsplash.com/photo-1580674285054-bed31e145f59?w=1200&q=80',
   },
   hero: {
     title: 'Premium Pasteurized Liquid Egg Products',
