@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
-import { ShieldCheck, Leaf, MoonStar, Building2, Award } from 'lucide-react';
+import { Award } from 'lucide-react';
 
 const CERTS = [
   {
@@ -36,6 +36,13 @@ const CERTS = [
     title: 'Chamber of Commerce',
     sub: 'Mardan Chamber of Commerce & Industry',
     icon: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT79sSV66WSBVKNS21gaRbmC7dy01N55o3HCVOFMyB-8w&s=10',
+    seal: '#3F6231',
+  },
+  {
+    file: 'Islamabad Chamber of Commerce.pdf',
+    title: 'Islamabad Chamber of Commerce',
+    sub: 'Islamabad Chamber of Commerce',
+    icon: '/images/certificates/islamabad-chamber-commerce.png',
     seal: '#3F6231',
   },
 ];
@@ -281,10 +288,11 @@ export default function SceneCertificates() {
         }
 
         .cert-token.tok-0 { transform: rotate(0deg) translateX(var(--ring)); }
-        .cert-token.tok-1 { transform: rotate(72deg) translateX(var(--ring)); }
-        .cert-token.tok-2 { transform: rotate(144deg) translateX(var(--ring)); }
-        .cert-token.tok-3 { transform: rotate(216deg) translateX(var(--ring)); }
-        .cert-token.tok-4 { transform: rotate(288deg) translateX(var(--ring)); }
+        .cert-token.tok-1 { transform: rotate(60deg) translateX(var(--ring)); }
+        .cert-token.tok-2 { transform: rotate(120deg) translateX(var(--ring)); }
+        .cert-token.tok-3 { transform: rotate(180deg) translateX(var(--ring)); }
+        .cert-token.tok-4 { transform: rotate(240deg) translateX(var(--ring)); }
+        .cert-token.tok-5 { transform: rotate(300deg) translateX(var(--ring)); }
 
         .tok-inner {
           width: 100%;
@@ -293,10 +301,11 @@ export default function SceneCertificates() {
         }
 
         .cert-token.tok-0 .tok-inner { animation-delay: 0s; }
-        .cert-token.tok-1 .tok-inner { animation-delay: -5.2s; }
-        .cert-token.tok-2 .tok-inner { animation-delay: -10.4s; }
-        .cert-token.tok-3 .tok-inner { animation-delay: -15.6s; }
-        .cert-token.tok-4 .tok-inner { animation-delay: -20.8s; }
+        .cert-token.tok-1 .tok-inner { animation-delay: -4.33s; }
+        .cert-token.tok-2 .tok-inner { animation-delay: -8.66s; }
+        .cert-token.tok-3 .tok-inner { animation-delay: -13s; }
+        .cert-token.tok-4 .tok-inner { animation-delay: -17.33s; }
+        .cert-token.tok-5 .tok-inner { animation-delay: -21.66s; }
 
         .cert-seal-wrap {
           width: var(--cert-size);

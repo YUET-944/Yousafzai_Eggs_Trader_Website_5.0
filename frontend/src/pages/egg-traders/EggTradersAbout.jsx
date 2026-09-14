@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react';
 import { useCMSStore } from '../../store/useCMSStore';
 import EggTradersPageBanner from '../../components/egg-traders/EggTradersPageBanner';
 
-const HERO_IMAGE = '/images/yousafzai-packaging.png';
+const HERO_IMAGE = '/images/client-final/processing-line-product.png';
 
 export default function EggTradersAbout() {
   const data = useCMSStore((s) => s.eggTraders.about);

@@ -8,7 +8,7 @@ import OurCompaniesSection from '../components/OurCompaniesSection';
 import OurPartnersSection from '../components/OurPartnersSection';
 import { useCMSStore } from '../store/useCMSStore';
 
-const ABOUT_HERO_IMAGE = '/images/yousafzai-packaging.png';
+const ABOUT_HERO_IMAGE = '/images/client-final/processing-line-product.png';
 
 export default function AboutPage() {
   const about = useCMSStore((s) => s.about);

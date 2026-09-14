@@ -9,10 +9,10 @@ const fallbackMilestones = [
   {
     id: '1960',
     year: '1960',
-    title: 'Retail Origins',
+    title: 'Foundation',
     desc: 'Established a retail shop in Mardan for egg trading.',
-    img: 'https://images.unsplash.com/photo-1498654077810-12c21d4d6dc3?w=1920&q=80',
-    stats: 'RETAIL ORIGINS',
+    img: '/images/white-eggs-product.jpg',
+    stats: 'FOUNDATION',
     metric: '60+',
     metricLabel: 'Years of Trust'
   },
@@ -21,36 +21,83 @@ const fallbackMilestones = [
     year: '2000',
     title: 'Supply Network',
     desc: 'Built a strong supply network connecting farms to markets across KPK.',
-    img: 'https://images.unsplash.com/photo-1569288052389-dac9b01c9c05?w=1920&q=80',
+    img: '/images/placeholders/truck_delievry.png',
     stats: 'FARM TO MARKET',
-    metric: '100+',
-    metricLabel: 'Partner Farms'
+    metric: 'KPK',
+    metricLabel: 'Market Network'
   },
   {
     id: '2020',
     year: '2020',
     title: 'Sales Expansion',
-    desc: 'Opened a second sales point in Attock.',
-    img: 'https://images.unsplash.com/photo-1604719312566-8912e9227c6a?w=1920&q=80',
-    stats: 'ATTOCK SALES',
+    desc: 'Opened a second sales point in Peshawar.',
+    img: '/images/client-final/Sale_Expansion.png',
+    stats: 'PESHAWAR SALES',
     metric: '2',
     metricLabel: 'Sales Points'
   },
   {
-    id: '2022',
-    year: '2022',
-    title: 'Poultry Farm',
-    desc: 'Established a poultry farm in Attock, Punjab.',
-    img: 'https://images.unsplash.com/photo-1601444571669-02e5bb5756eb?w=1920&q=80',
-    stats: 'POULTRY FARM',
-    metric: '10K+',
-    metricLabel: 'Daily Capacity'
+    id: 'end-2026',
+    year: 'End 2026',
+    title: 'Rashakai Processing',
+    desc: 'Commercial production is planned for the Egg Liquid Processing Plant at Rashakai SEZ.',
+    img: '/images/client-final/processing-line-product.png',
+    stats: 'AGRI FOODS',
+    metric: '150 Kg',
+    metricLabel: 'Production Capacity'
   }
 ];
 
+function isMilestoneObject(value) {
+  return value && typeof value === 'object' && !Array.isArray(value);
+}
+
+function isRemovedLegacyMilestone(milestone) {
+  if (!isMilestoneObject(milestone)) return false;
+  return (
+    milestone.id === '2022'
+    || milestone.year === '2022'
+    || milestone.title === 'Poultry Farm'
+    || milestone.id === '2025'
+    || milestone.year === '2025'
+    || milestone.title === 'Phalai Farm'
+  );
+}
+
+function normalizeLegacyMilestones(sourceMilestones) {
+  const source = (Array.isArray(sourceMilestones) && sourceMilestones.length
+    ? sourceMilestones
+    : fallbackMilestones
+  ).filter((milestone) => !isRemovedLegacyMilestone(milestone));
+
+  const hasMilestone = (items, fallback) => items.some((item) => {
+    if (!isMilestoneObject(item)) return false;
+    return item.id === fallback.id || item.year === fallback.year || item.title === fallback.title;
+  });
+
+  const normalized = source.map((milestone) => {
+    if (!isMilestoneObject(milestone)) return milestone;
+    const fallback = fallbackMilestones.find((item) => (
+      item.id === milestone.id
+      || item.year === milestone.year
+      || item.title === milestone.title
+      || (milestone.title === 'Retail Origins' && item.id === '1960')
+    ));
+    return fallback ? { ...milestone, ...fallback } : milestone;
+  });
+
+  fallbackMilestones.forEach((fallback) => {
+    if (!hasMilestone(normalized, fallback)) {
+      normalized.push(fallback);
+    }
+  });
+
+  return normalized;
+}
+
 export default function SceneOurStory() {
   const story = useCMSStore((s) => s.aboutScenes?.ourStory) || {};
-  const milestones = Array.isArray(story.milestones) && story.milestones.length ? story.milestones : fallbackMilestones;
+  const milestones = normalizeLegacyMilestones(story.milestones);
   const sectionRef = useRef(null);
   const headerRef = useRef(null);
   const [activeIdx, setActiveIdx] = useState(-1);
@@ -60,7 +107,7 @@ export default function SceneOurStory() {
 
     let ctx = gsap.context(() => {
 
-      // â”€â”€ Header reveal â”€â”€
+      // Header reveal
       const headerTl = gsap.timeline({
         scrollTrigger: {
           trigger: headerRef.current,
@@ -72,7 +119,7 @@ export default function SceneOurStory() {
         .fromTo('.leg-subtext', { y: 20, autoAlpha: 0 }, { y: 0, autoAlpha: 1, duration: 0.6, ease: 'power3.out' }, '-=0.4')
         .fromTo('.leg-divider-line', { scaleX: 0 }, { scaleX: 1, duration: 1.2, ease: 'power2.inOut' }, '-=0.3');
 
-      // â”€â”€ Vertical line draw â”€â”€
+      // Vertical line draw
       gsap.fromTo('.leg-vline-fill',
         { scaleY: 0 },
         {
@@ -87,7 +134,7 @@ export default function SceneOurStory() {
         }
       );
 
-      // â”€â”€ Each card â”€â”€
+      // Each card
       gsap.utils.toArray('.leg-milestone').forEach((card, i) => {
         const isLeft = i % 2 === 0;
 
@@ -99,6 +146,7 @@ export default function SceneOurStory() {
             autoAlpha: 1,
             rotationY: 0,
             duration: 1,
+            immediateRender: false,
             ease: 'power3.out',
             scrollTrigger: {
               trigger: card,
@@ -140,6 +188,7 @@ export default function SceneOurStory() {
             {
               autoAlpha: 1, y: 0, scale: 1,
               duration: 0.8,
+              immediateRender: false,
               ease: 'back.out(1.7)',
               scrollTrigger: {
                 trigger: card,
@@ -155,7 +204,7 @@ export default function SceneOurStory() {
     return () => ctx.revert();
   }, []);
 
-  // â”€â”€ 3D tilt on hover â”€â”€
+  // 3D tilt on hover
   const handleMouseMove = (e) => {
     const card = e.currentTarget.querySelector('.leg-card-body');
     if (!card) return;
@@ -183,20 +232,20 @@ export default function SceneOurStory() {
   return (
     <section id="legacy" ref={sectionRef} className="leg-section">
 
-      {/* â”€â”€ Ambient background particles â”€â”€ */}
+      {/* Ambient background particles */}
       <div className="leg-ambient">
         <div className="leg-orb leg-orb-1" />
         <div className="leg-orb leg-orb-2" />
       </div>
 
-      {/* â”€â”€ Header â”€â”€ */}
+      {/* Header */}
       <div ref={headerRef} className="leg-header">
         <h2 className="leg-heading">{story.title || 'Our Legacy'}</h2>
         <p className="leg-subtext">{story.subtext || 'Six decades of growth — from a single retail shop to a vertically integrated enterprise.'}</p>
         <div className="leg-divider-line" />
       </div>
 
-      {/* â”€â”€ Timeline â”€â”€ */}
+      {/* Timeline */}
       <div className="leg-timeline">
 
         {/* Vertical Line */}
@@ -215,19 +264,19 @@ export default function SceneOurStory() {
               onMouseMove={handleMouseMove}
               onMouseLeave={handleMouseLeave}
             >
-              {/* â”€â”€ Node on line â”€â”€ */}
+              {/* Node on line */}
               <div className={`leg-node ${isActive ? 'node-active' : ''}`}>
                 <div className="leg-node-ring" />
                 <div className="leg-node-dot" />
                 {isActive && <div className="leg-node-pulse" />}
               </div>
 
-              {/* â”€â”€ Year Label â”€â”€ */}
+              {/* Year Label */}
               <div className={`leg-year-label ${isActive ? 'year-active' : ''}`}>
                 {item.year}
               </div>
 
-              {/* â”€â”€ Card â”€â”€ */}
+              {/* Card */}
               <div className="leg-card-body">
                 {/* Hover Glow */}
                 <div className="leg-card-glow" />
@@ -258,9 +307,7 @@ export default function SceneOurStory() {
       </div>
 
       <style>{`
-        /* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-           SECTION BASE
-           â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+        /* SECTION BASE */
         .leg-section {
           background: #FBF7F0;
           color: #111111;
@@ -269,7 +316,7 @@ export default function SceneOurStory() {
           overflow: hidden;
         }
 
-        /* â”€â”€ Ambient orbs â”€â”€ */
+        /* Ambient orbs */
         .leg-ambient {
           position: absolute;
           inset: 0;
@@ -300,9 +347,7 @@ export default function SceneOurStory() {
           right: -150px;
         }
 
-        /* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-           HEADER
-           â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+        /* HEADER */
         .leg-header {
           position: relative;
           z-index: 2;
@@ -341,9 +386,7 @@ export default function SceneOurStory() {
           border-radius: 2px;
         }
 
-        /* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-           TIMELINE
-           â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+        /* TIMELINE */
         .leg-timeline {
           position: relative;
           max-width: 1100px;
@@ -375,9 +418,7 @@ export default function SceneOurStory() {
           box-shadow: 0 0 16px rgba(222,81,10,0.25);
         }
 
-        /* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-           MILESTONE CARD
-           â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+        /* MILESTONE CARD */
         .leg-milestone {
           position: relative;
           width: 50%;
@@ -394,7 +435,7 @@ export default function SceneOurStory() {
           padding-left: 60px;
         }
 
-        /* â”€â”€ Node â”€â”€ */
+        /* Node */
         .leg-node {
           position: absolute;
           top: 40px;
@@ -445,7 +486,7 @@ export default function SceneOurStory() {
           border: 2px solid rgba(222,81,10,0.3);
         }
 
-        /* â”€â”€ Year Label â”€â”€ */
+        /* Year Label */
         .leg-year-label {
           position: absolute;
           top: 30px;
@@ -470,7 +511,7 @@ export default function SceneOurStory() {
           text-shadow: 0 0 20px rgba(222,81,10,0.3);
         }
 
-        /* â”€â”€ Card Body â”€â”€ */
+        /* Card Body */
         .leg-card-body {
           position: relative;
           border-radius: 20px;
@@ -481,7 +522,6 @@ export default function SceneOurStory() {
           -webkit-backdrop-filter: blur(16px);
           transition: border-color 0.5s, box-shadow 0.5s;
           transform-style: preserve-3d;
-          visibility: hidden; /* GSAP autoAlpha handles */
         }
 
         .leg-milestone:hover .leg-card-body {
@@ -511,7 +551,7 @@ export default function SceneOurStory() {
           opacity: 1;
         }
 
-        /* â”€â”€ Image â”€â”€ */
+        /* Image */
         .leg-card-img {
           position: relative;
           width: 100%;
@@ -523,6 +563,7 @@ export default function SceneOurStory() {
           width: 100%;
           height: 100%;
           object-fit: cover;
+          object-position: center top;
           transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
 
@@ -554,7 +595,7 @@ export default function SceneOurStory() {
           letter-spacing: -0.03em;
         }
 
-        /* â”€â”€ Info â”€â”€ */
+        /* Info */
         .leg-card-info {
           padding: 30px;
           position: relative;
@@ -592,7 +633,6 @@ export default function SceneOurStory() {
           font-weight: 700;
           color: #DE510A;
           line-height: 1;
-          visibility: hidden; /* GSAP handles */
         }
 
         .leg-metric-label {
@@ -618,9 +658,7 @@ export default function SceneOurStory() {
           margin: 0;
         }
 
-        /* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-           MOBILE
-           â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+        /* MOBILE */
         @media (max-width: 900px) {
           .leg-section {
             padding: 100px 16px 80px;

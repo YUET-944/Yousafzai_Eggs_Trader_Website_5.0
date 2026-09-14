@@ -164,10 +164,30 @@ export default function WhyUsSection() {
           </div>
           <div className="industry-grid">
             {industries.map((ind, i) => (
-              <div key={i} className="industry-card ind-card-animate">
+              <div key={i} className="industry-card ind-card-animate" style={{ position: 'relative', overflow: 'hidden' }}>
+                <div className="ind-watermark" style={{
+                  position: 'absolute',
+                  bottom: '8px',
+                  right: '8px',
+                  width: '60px',
+                  height: '60px',
+                  opacity: 0.07,
+                  pointerEvents: 'none',
+                  color: '#B9320D',
+                  zIndex: 0,
+                  transition: 'opacity 0.35s, transform 0.35s'
+                }}>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" width="100%" height="100%">
+                    {ind.icon === 'Building2' ? <path d="M12 3v7M6 10a6 6 0 0012 0V6a2 2 0 00-4 0v4M4 14h16a2 2 0 012 2v2H2v-2a2 2 0 012-2z" /> :
+                     ind.icon === 'ChefHat' ? <path d="M12 2a4 4 0 00-4 4 4 4 0 00-7 3c0 2.2 1.8 4 4 4h14a4 4 0 004-4 4 4 0 00-7-3 4 4 0 00-4-4zM6 13v7a2 2 0 002 2h8a2 2 0 002-2v-7" /> :
+                     ind.icon === 'Store' ? <path d="M4 10V4a2 2 0 012-2h12a2 2 0 012 2v6M2 10h20l-2 11H4L2 10zm7 4a3 3 0 006 0" /> :
+                     ind.icon === 'Factory' ? <path d="M2 20h20M4 20V9l5 3V9l5 3V4l6 4v12M9 17h1M15 17h1" /> :
+                     <path d="M12 2v20M5 7h14M5 12h14M5 17h14" />}
+                  </svg>
+                </div>
                 <div className="ind-icon">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" width="22" height="22">
-                    {ind.icon === 'Building2' ? <path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6" /> :
+                    {ind.icon === 'Building2' ? <path d="M12 3v7M6 10a6 6 0 0012 0V6a2 2 0 00-4 0v4M4 14h16a2 2 0 012 2v2H2v-2a2 2 0 012-2z" /> :
                      ind.icon === 'ChefHat' ? <path d="M4 14h16l-1.5 6h-13L4 14zM6 14V8a6 6 0 0112 0v6" /> :
                      ind.icon === 'Store' ? <path d="M3 9l1-5h16l1 5M4 9v11h16V9M9 21v-5h6v5" /> :
                      ind.icon === 'Factory' ? <><rect x="3" y="7" width="18" height="13" rx="2" /><path d="M8 7V5a2 2 0 012-2h4a2 2 0 012 2v2" /></> :

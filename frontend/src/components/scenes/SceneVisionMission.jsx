@@ -142,7 +142,7 @@ export default function SceneVisionMission() {
         style={{
           position: 'absolute',
           inset: -50, // Slightly larger to allow scale effect
-          backgroundImage: `url("${vm.bgImage || 'https://images.unsplash.com/photo-1508680415307-e160e15777bd?w=1920&q=80'}")`, // Dramatic cinematic sunrise / industry
+          backgroundImage: `url("${vm.bgImage || '/images/client-final/processing-line-product.png'}")`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           zIndex: 0

@@ -18,8 +18,7 @@ const PRODUCT_OPTIONS = [
 const INITIAL_FORM = {
   companyName: '', industry: 'Hotel / Restaurant / Cafe',
   contactName: '', jobTitle: '', email: '', phone: '',
-  productType: '', weeklyVolume: 'Under 50',
-  deliveryLocation: '', notes: '',
+  productType: '', deliveryLocation: '', notes: '',
 };
 
 const FIELD_IDS = {
@@ -30,7 +29,6 @@ const FIELD_IDS = {
   email: 'quote-email',
   phone: 'quote-phone',
   productType: 'quote-product-type',
-  weeklyVolume: 'quote-weekly-volume',
   deliveryLocation: 'quote-delivery-location',
   notes: 'quote-notes',
 };
@@ -53,21 +51,20 @@ export default function ContactSection() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setSubmitResult(null);
-    if (!form.companyName || !form.contactName || !form.email || !form.phone || !form.productType || !form.deliveryLocation) {
+    if (!form.contactName || !form.email || !form.phone || !form.productType || !form.deliveryLocation) {
       setSubmitResult({ ok: false, msg: 'Please fill in all required fields marked with *.' });
       return;
     }
     setSubmitting(true);
     try {
       const payload = {
-        companyName: form.companyName,
-        industry: form.industry,
+        companyName: form.companyName || 'Not Specified',
+        industry: form.industry || 'General Inquiry',
         contactName: form.contactName,
-        jobTitle: form.jobTitle,
+        jobTitle: form.jobTitle || 'Buyer / Customer',
         email: form.email,
         phone: form.phone,
         productType: form.productType,
-        weeklyVolume: form.weeklyVolume,
         deliveryLocation: form.deliveryLocation,
         notes: form.notes,
       };
@@ -151,6 +148,15 @@ export default function ContactSection() {
       );
     }
 
+    if (item.icon === 'MapPin') {
+      const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent('34.1205,72.0305')}`;
+      return (
+        <a href={mapsUrl} target="_blank" rel="noopener noreferrer" className="cnt-info-link cnt-info-link-address">
+          {value}
+        </a>
+      );
+    }
+
     return value;
   };
 
@@ -200,7 +206,7 @@ export default function ContactSection() {
           </div>
 
           {/* RIGHT: Form */}
-          <div ref={formRef} className="cnt-form-card" style={{ visibility: 'hidden' }}>
+          <div id="request-quote" ref={formRef} className="cnt-form-card" style={{ visibility: 'hidden', scrollMarginTop: '110px' }}>
             <div className="form-card-glow" />
 
             <div className="form-header-bar">
@@ -221,7 +227,7 @@ export default function ContactSection() {
                 {/* Company Name */}
                 <div className="form-group">
                   <label className="form-label" htmlFor={FIELD_IDS.companyName}>
-                    <Building2 size={13} /> Company Name *
+                    <Building2 size={13} /> Company Name (Optional)
                   </label>
                   <input
                     id={FIELD_IDS.companyName}
@@ -231,8 +237,6 @@ export default function ContactSection() {
                     value={form.companyName}
                     onChange={set('companyName')}
                     disabled={submitting}
-                    required
-                    aria-required="true"
                     autoComplete="organization"
                   />
                 </div>
@@ -240,7 +244,7 @@ export default function ContactSection() {
                 {/* Industry */}
                 <div className="form-group">
                   <label className="form-label" htmlFor={FIELD_IDS.industry}>
-                    <Briefcase size={13} /> Industry *
+                    <Briefcase size={13} /> Industry (Optional)
                   </label>
                   <select
                     id={FIELD_IDS.industry}
@@ -248,8 +252,6 @@ export default function ContactSection() {
                     value={form.industry}
                     onChange={set('industry')}
                     disabled={submitting}
-                    required
-                    aria-required="true"
                   >
                     <option>Hotel / Restaurant / Cafe</option>
                     <option>Bakery / Confectionery</option>
@@ -333,7 +335,7 @@ export default function ContactSection() {
                 </div>
 
                 {/* Product Type */}
-                <div className="form-group">
+                <div className="form-group" style={{ gridColumn: 'span 2' }}>
                   <label className="form-label" htmlFor={FIELD_IDS.productType}>
                     <Package size={13} /> Product Category *
                   </label>
@@ -350,26 +352,6 @@ export default function ContactSection() {
                     {PRODUCT_OPTIONS.map((option) => (
                       <option key={option.value} value={option.value}>{option.label}</option>
                     ))}
-                  </select>
-                </div>
-
-                {/* Weekly Volume */}
-                <div className="form-group">
-                  <label className="form-label" htmlFor={FIELD_IDS.weeklyVolume}>Weekly Volume (Trays) *</label>
-                  <select
-                    id={FIELD_IDS.weeklyVolume}
-                    className="form-input"
-                    value={form.weeklyVolume}
-                    onChange={set('weeklyVolume')}
-                    disabled={submitting}
-                    required
-                    aria-required="true"
-                  >
-                    <option>Under 50</option>
-                    <option>50-199</option>
-                    <option>200-499</option>
-                    <option>500-1,999</option>
-                    <option>2,000+</option>
                   </select>
                 </div>
               </div>
@@ -705,13 +687,13 @@ export default function ContactSection() {
            Ã¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢Â */
         .cnt-form-card {
           position: relative;
-          border-radius: 24px;
-          padding: 44px;
+          border-radius: 20px;
+          padding: 28px 32px;
           background: #FFFFFF;
           border: 1px solid rgba(63,98,49,0.45);
           backdrop-filter: blur(20px);
           -webkit-backdrop-filter: blur(20px);
-          box-shadow: 0 30px 60px rgba(63,98,49,0.14);
+          box-shadow: 0 20px 45px rgba(63,98,49,0.12);
           box-sizing: border-box;
           width: 100%;
           min-width: 0;
@@ -721,9 +703,9 @@ export default function ContactSection() {
           display: flex;
           justify-content: space-between;
           align-items: flex-start;
-          margin-bottom: 32px;
+          margin-bottom: 20px;
           border-bottom: 1px solid rgba(20,20,20,0.08);
-          padding-bottom: 20px;
+          padding-bottom: 14px;
         }
 
         .form-eyebrow {
@@ -732,12 +714,12 @@ export default function ContactSection() {
           color: #DE510A;
           letter-spacing: 0.15em;
           display: block;
-          margin-bottom: 6px;
+          margin-bottom: 4px;
         }
 
         .form-heading {
           font-family: 'Space Grotesk', sans-serif;
-          font-size: 24px;
+          font-size: 21px;
           font-weight: 700;
           margin: 0;
           color: #111111;
@@ -758,11 +740,11 @@ export default function ContactSection() {
         .form-alert {
           display: flex;
           align-items: center;
-          gap: 12px;
-          padding: 14px 18px;
-          border-radius: 10px;
-          font-size: 13.5px;
-          margin-bottom: 24px;
+          gap: 10px;
+          padding: 10px 14px;
+          border-radius: 8px;
+          font-size: 13px;
+          margin-bottom: 16px;
         }
 
         .alert-success {
@@ -780,12 +762,12 @@ export default function ContactSection() {
         .form-grid {
           display: grid;
           grid-template-columns: 1fr 1fr;
-          gap: 18px;
+          gap: 14px;
           min-width: 0;
         }
 
         .form-group {
-          margin-bottom: 20px;
+          margin-bottom: 14px;
           min-width: 0;
         }
 
@@ -794,17 +776,17 @@ export default function ContactSection() {
           align-items: center;
           gap: 6px;
           font-family: 'Space Grotesk', sans-serif;
-          font-size: 12.5px;
+          font-size: 12px;
           font-weight: 600;
           color: #3F6231;
-          margin-bottom: 8px;
+          margin-bottom: 6px;
         }
 
         .form-input {
           width: 100%;
-          padding: 14px 18px;
-          border-radius: 10px;
-          font-size: 14px;
+          padding: 10px 14px;
+          border-radius: 8px;
+          font-size: 13.5px;
           font-family: 'Inter', sans-serif;
           color: #111111;
           background: #FFFFFF;
@@ -828,8 +810,8 @@ export default function ContactSection() {
           appearance: none;
           background-image: url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L5 5L9 1' stroke='%233F6231' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
           background-repeat: no-repeat;
-          background-position: right 18px center;
-          padding-right: 42px;
+          background-position: right 14px center;
+          padding-right: 36px;
         }
 
         select.form-input option {
@@ -839,8 +821,8 @@ export default function ContactSection() {
 
         .form-textarea {
           resize: vertical;
-          min-height: 100px;
-          line-height: 1.6;
+          min-height: 72px;
+          line-height: 1.5;
         }
 
         .form-submit-btn {

@@ -50,7 +50,11 @@ export default function PageBanner({ title, subtitle, fullScreen = false, slides
     <div ref={ref}>
       <header className={`page-hero ${fullScreen ? 'fullscreen' : ''}`}>
         
-        <BannerSlideshow images={slideshowImages && slideshowImages.length > 0 ? slideshowImages : ['/images/yousafzai-packaging.png']} />
+        <BannerSlideshow images={
+          slideshowImages && slideshowImages.length > 0 
+            ? (slideshowImages.includes('/images/client-final/processing-line-product.png') ? slideshowImages : ['/images/client-final/processing-line-product.png', ...slideshowImages])
+            : ['/images/client-final/processing-line-product.png']
+        } />
         <div className="page-hero-bg" />
         
         <div className="banner-glow" />

@@ -3,6 +3,7 @@ import { Outlet, useLocation } from 'react-router-dom';
 import Navbar from './Navbar';
 import FooterSection from './FooterSection';
 import FloatingSocials from './FloatingSocials';
+import QuoteModal from './QuoteModal';
 
 export default function Layout() {
   const [showBackTop, setShowBackTop] = useState(false);
@@ -48,6 +49,7 @@ export default function Layout() {
       </main>
       <FooterSection />
       <FloatingSocials />
+      <QuoteModal />
 
       <div className={`back-top ${showBackTop ? 'show' : ''}`} onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} aria-label="Back to top">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="18" height="18">

@@ -8,7 +8,7 @@ export default function QualityPage() {
   return (
     <>
       <PageBanner
-        title={banner?.title || 'Quality'}
+        title={banner?.title && banner.title !== 'Quality' ? banner.title : 'Our Quality'}
         subtitle={banner?.subtitle || 'Focused on quality, traceability, and responsible handling at every stage.'}
         slideshowImages={banner?.images || null}
         fullScreen

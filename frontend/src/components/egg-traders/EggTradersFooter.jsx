@@ -31,12 +31,11 @@ export default function EggTradersFooter() {
           <div>
             <div className="et-f-col-title">Company</div>
             <Link to="/egg-traders/about" style={linkStyle}>About</Link>
-            <Link to="/egg-traders/products" style={linkStyle}>Products</Link>
+            <Link to="/egg-traders/products" style={linkStyle}>Products & Grades</Link>
             <Link to="/egg-traders/contact" style={linkStyle}>Contact</Link>
           </div>
           <div>
             <div className="et-f-col-title">Website</div>
-            <Link to="/egg-traders/solutions" style={linkStyle}>Plans</Link>
             <Link to="/egg-traders/process" style={linkStyle}>How it works</Link>
             <Link to="/egg-traders/quality" style={linkStyle}>Quality</Link>
           </div>

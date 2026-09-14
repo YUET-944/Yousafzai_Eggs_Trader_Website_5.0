@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { getJobs } from '../lib/careersApi';
 import PageBanner from '../components/PageBanner';
 
-const CAREERS_HERO_IMAGE = 'https://images.unsplash.com/photo-1605882174146-a464b70cf691?w=1920&q=80';
+const CAREERS_HERO_IMAGE = '/images/client-final/processing-line-product.png';
 
 export default function CareersPage() {
   const [jobs, setJobs] = useState([]);

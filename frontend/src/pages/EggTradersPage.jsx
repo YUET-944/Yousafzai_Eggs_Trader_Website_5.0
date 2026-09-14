@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useCMSStore } from '../store/useCMSStore';
 import { ShieldCheck, CheckCircle2, ArrowRight, Truck, Thermometer, Feather, TrendingUp, Package, Home } from 'lucide-react';
+import SupplyChainControlCenter from '../components/SupplyChainControlCenter';
 
 const heroEggBg = '/images/yousafzai-packaging.png';
 
@@ -296,6 +297,7 @@ export default function EggTradersHomePage() {
     <>
       <CalMaineHero data={eggTraders.hero} />
       <CalMaineAbout data={eggTraders.about} />
+      <SupplyChainControlCenter />
     </>
   );
 }

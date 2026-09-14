@@ -2,17 +2,20 @@ import { useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, ArrowRight, ExternalLink } from 'lucide-react';
 import logo from '../../assets/internallogo-navbar.png';
+import { useQuoteModalStore } from '../../store/useQuoteModalStore';
 
 const navLinks = [
-  { path: '/egg-traders/about', label: 'About' },
-  { path: '/egg-traders/products', label: 'Products' },
+  { path: '/egg-traders', label: 'Home' },
+  { path: '/egg-traders/about', label: 'About Us' },
+  { path: '/egg-traders/products', label: 'Products & Grades' },
   { path: '/egg-traders/process', label: 'Process' },
   { path: '/egg-traders/quality', label: 'Quality' },
-  { path: '/egg-traders/contact', label: 'Contact' },
+  { path: '/egg-traders/contact', label: 'Contact Us' },
 ];
 
 export default function EggTradersNavbar({ scrolled, mobileOpen, setMobileOpen }) {
   const { pathname } = useLocation();
+  const openQuoteModal = useQuoteModalStore((s) => s.openModal);
 
   useEffect(() => {
     if (!mobileOpen) return undefined;
@@ -57,10 +60,17 @@ export default function EggTradersNavbar({ scrolled, mobileOpen, setMobileOpen }
 
           {/* Right Action */}
           <div className="et-nav-actions">
-            <Link to="/egg-traders/contact" className="et-cta-gold">
+            <button
+              type="button"
+              className="et-cta-gold"
+              onClick={() => {
+                setMobileOpen(false);
+                openQuoteModal();
+              }}
+            >
               <span>Request a Quote</span>
               <ArrowRight size={14} className="cta-arrow" />
-            </Link>
+            </button>
 
             <Link to="/" className="et-main-site-btn">
               <ExternalLink size={13} />
@@ -93,14 +103,17 @@ export default function EggTradersNavbar({ scrolled, mobileOpen, setMobileOpen }
                 {link.label}
               </Link>
             ))}
-            <Link
-              to="/egg-traders/contact"
+            <button
+              type="button"
               className="et-mobile-cta"
-              onClick={() => setMobileOpen(false)}
+              onClick={() => {
+                setMobileOpen(false);
+                openQuoteModal();
+              }}
             >
               <span>Request a Quote</span>
               <ArrowRight size={16} />
-            </Link>
+            </button>
             <Link
               to="/"
               className="et-mobile-secondary"
@@ -181,18 +194,19 @@ export default function EggTradersNavbar({ scrolled, mobileOpen, setMobileOpen }
         .et-nav-links-desktop {
           display: flex;
           align-items: center;
-          gap: 28px;
+          gap: 18px;
           min-width: 0;
         }
 
         .et-nav-link-item {
           position: relative;
           font-family: 'Space Grotesk', sans-serif;
-          font-size: 14px;
+          font-size: 13.5px;
           font-weight: 500;
           color: rgba(255, 255, 255, 0.82);
           padding: 6px 0;
           text-decoration: none;
+          white-space: nowrap;
           transition: color 0.3s;
         }
 

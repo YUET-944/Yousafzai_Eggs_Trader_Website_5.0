@@ -382,14 +382,18 @@ export default function SupplyChainControlCenter() {
            CARDS GRID
            â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
         .sccc-grid {
-          display: grid;
-          grid-template-columns: repeat(6, 1fr);
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          align-items: stretch;
           gap: 20px;
           position: relative;
           z-index: 2;
         }
 
         .sccc-card {
+          flex: 0 1 calc((100% - 80px) / 5);
+          min-width: 180px;
           position: relative;
           background: #FFFFFF;
           border: 1px solid #3F6231;
@@ -655,16 +659,16 @@ export default function SupplyChainControlCenter() {
            RESPONSIVE
            â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
         @media (max-width: 1200px) {
-          .sccc-grid { grid-template-columns: repeat(3, 1fr); gap: 28px; }
+          .sccc-card { flex-basis: calc((100% - 56px) / 3); }
         }
         @media (max-width: 900px) {
-          .sccc-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+          .sccc-card { flex-basis: calc((100% - 20px) / 2); }
           .sccc-indicator-map { display: none; }
           .industry-grid { grid-template-columns: repeat(2, 1fr); }
           .stats-band-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
         }
         @media (max-width: 600px) {
-          .sccc-grid { grid-template-columns: 1fr; }
+          .sccc-card { flex-basis: 100%; }
           .industry-grid { grid-template-columns: 1fr; }
           .stats-band-grid { grid-template-columns: 1fr; }
         }

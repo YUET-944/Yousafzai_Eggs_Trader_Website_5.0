@@ -1,14 +1,36 @@
+import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import PageBanner from '../components/PageBanner';
 import ContactSection from '../components/ContactSection';
 import LocationMapSection from '../components/LocationMapSection';
 import { useCMSStore } from '../store/useCMSStore';
 
-const CONTACT_HERO_SUBTITLE = 'Tell us what you need, and our commercial team will get back to you with a formal quotation.';
-const CONTACT_HERO_IMAGE = '/images/yousafzai-packaging.png';
+const CONTACT_HERO_SUBTITLE = 'Tell us what you need, and our commercial team will be in touch shortly.';
+const CONTACT_HERO_IMAGE = '/images/client-final/processing-line-product.png';
 
 export default function ContactPage() {
   const banner = useCMSStore((s) => s.banners?.main?.contact);
   const heroImages = banner?.images?.length ? banner.images : [CONTACT_HERO_IMAGE];
+  const { hash } = useLocation();
+
+  useEffect(() => {
+    if (hash === '#request-quote') {
+      const scroll = () => {
+        const el = document.getElementById('request-quote');
+        if (el) {
+          if (window.__lenis) {
+            window.__lenis.scrollTo(el, { offset: -100 });
+          } else {
+            el.scrollIntoView({ behavior: 'smooth' });
+          }
+        }
+      };
+
+      scroll();
+      const timer = setTimeout(scroll, 300);
+      return () => clearTimeout(timer);
+    }
+  }, [hash]);
 
   return (
     <div className="contact-page">
@@ -103,7 +125,6 @@ export default function ContactPage() {
             font-size: clamp(2.5rem, 12vw, 3rem);
             margin-bottom: 18px;
           }
-
         }
       `}</style>
     </div>

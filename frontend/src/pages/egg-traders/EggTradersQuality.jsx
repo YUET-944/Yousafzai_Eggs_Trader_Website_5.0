@@ -106,30 +106,75 @@ export default function EggTradersQuality() {
           </div>
         </section>
 
-        <section style={{ background: '#FFFFFF' }}>
+        <section style={{ background: '#F8FAFC', padding: '88px 0 100px', borderTop: '1px solid rgba(0,27,77,0.08)' }}>
           <div className="container">
-            <div className="sec-head center reveal" style={{ marginLeft: 'auto', marginRight: 'auto' }}>
-              <h2 className="sec-title">Trusted by Buyers and Sellers</h2>
+            <div className="sec-head center reveal" style={{ marginLeft: 'auto', marginRight: 'auto', marginBottom: 44 }}>
+              <h2 className="sec-title">Trusted by Commercial Buyers</h2>
+              <p className="sec-sub">Hear from distributors, retailers, and commercial partners across Pakistan.</p>
             </div>
-            <div className="et-test-grid reveal-stagger">
-              {data.testimonials.map((t, i) => (
-                <div key={i} className="et-test-card">
-                  <div className="et-test-quote-icon">
-                    <svg viewBox="0 0 24 24" fill="currentColor" width="30" height="30" style={{ color: '#0047BB' }}>
-                      <path d="M7 7h4v4l-3 6H5l2-6H4V7zm9 0h4v4l-3 6h-3l2-6h-3V7z" />
-                    </svg>
-                  </div>
-                  <div className="et-test-text">{t.text}</div>
-                  <div className="et-test-person">
-                    <div className="et-test-avatar">{t.initials}</div>
-                    <div>
-                      <div className="et-test-name">{t.name}</div>
-                      <div className="et-test-role">{t.role}</div>
+
+            {(() => {
+              const list = [
+                ...(data.testimonials || []),
+                {
+                  text: "Our experience with Yousafzai Egg Traders in Attock has been outstanding. Consistently top quality, seamless communication, and fast delivery.",
+                  name: "Naveed Ali",
+                  role: "Commercial Partner, Attock",
+                  initials: "NA"
+                }
+              ];
+              const railDuration = `${Math.max(24, list.length * 7)}s`;
+              return (
+                <div className="et-test-carousel" style={{ '--rail-duration': railDuration }}>
+                  <div className="et-test-viewport" role="region" aria-label="Commercial buyer reviews rail" tabIndex={0}>
+                    <div className="et-test-track">
+                      <div className="et-test-set">
+                        {list.map((t, i) => (
+                          <div key={i} className="et-test-card">
+                            <div>
+                              <div className="et-test-quote-icon">
+                                <svg viewBox="0 0 24 24" fill="currentColor" width="30" height="30" style={{ color: '#0047BB' }}>
+                                  <path d="M7 7h4v4l-3 6H5l2-6H4V7zm9 0h4v4l-3 6h-3l2-6h-3V7z" />
+                                </svg>
+                              </div>
+                              <div className="et-test-text">{t.text}</div>
+                            </div>
+                            <div className="et-test-person">
+                              <div className="et-test-avatar">{t.initials}</div>
+                              <div>
+                                <div className="et-test-name">{t.name}</div>
+                                <div className="et-test-role">{t.role}</div>
+                              </div>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                      <div className="et-test-set" aria-hidden="true">
+                        {list.map((t, i) => (
+                          <div key={`dup-${i}`} className="et-test-card">
+                            <div>
+                              <div className="et-test-quote-icon">
+                                <svg viewBox="0 0 24 24" fill="currentColor" width="30" height="30" style={{ color: '#0047BB' }}>
+                                  <path d="M7 7h4v4l-3 6H5l2-6H4V7zm9 0h4v4l-3 6h-3l2-6h-3V7z" />
+                                </svg>
+                              </div>
+                              <div className="et-test-text">{t.text}</div>
+                            </div>
+                            <div className="et-test-person">
+                              <div className="et-test-avatar">{t.initials}</div>
+                              <div>
+                                <div className="et-test-name">{t.name}</div>
+                                <div className="et-test-role">{t.role}</div>
+                              </div>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
                     </div>
                   </div>
                 </div>
-              ))}
-            </div>
+              );
+            })()}
           </div>
         </section>
 
@@ -152,18 +197,29 @@ export default function EggTradersQuality() {
           .et-cert-ic { width: 44px; height: 44px; border-radius: 11px; background: rgba(0,27,77,0.06); border: 1px solid rgba(0,27,77,0.22); display: flex; align-items: center; justify-content: center; color: #001B4D; flex-shrink: 0; }
           .et-cert-name { font-weight: 700; font-size: 13.5px; color: #001B4D; }
           .et-cert-body { font-size: 11.5px; color: rgba(0,27,77,0.6); margin-top: 3px; }
-          .et-test-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; }
-           .et-test-card { background: #FFFFFF; border: 1px solid rgba(0,27,77,0.18); border-radius: 20px; padding: 32px; backdrop-filter: blur(12px); transition: transform .4s cubic-bezier(.22,1,.36,1), box-shadow .4s cubic-bezier(.22,1,.36,1), border-color .4s; }
-           .et-test-card:hover { transform: translateY(-4px); box-shadow: 0 20px 50px rgba(0,27,77,0.12); border-color: rgba(0,71,187,0.42); }
-          .et-test-quote-icon { margin-bottom: 18px; }
-          .et-test-text { font-size: 14.5px; color: rgba(0,27,77,0.74); line-height: 1.75; margin-bottom: 24px; }
-          .et-test-person { display: flex; align-items: center; gap: 14px; border-top: 1px solid rgba(0,27,77,0.1); padding-top: 18px; }
-          .et-test-avatar { width: 42px; height: 42px; border-radius: 50%; background: #EFF6FF; border: 1px solid rgba(0,71,187,0.24); color: #0047BB; display: flex; align-items: center; justify-content: center; font-family: 'Space Grotesk',sans-serif; font-weight: 700; font-size: 14px; }
-          .et-test-name { font-weight: 700; font-size: 13.5px; color: #001B4D; }
-          .et-test-role { font-size: 11.5px; color: rgba(0,27,77,0.55); }
-          @media (max-width: 1080px) { .et-cert-grid { grid-template-columns: repeat(2,1fr); } .et-test-grid { grid-template-columns: repeat(2,1fr); } }
+          /* Marquee Carousel Animation */
+          .et-test-carousel { --review-gap: 24px; position: relative; max-width: 1180px; margin: 0 auto; }
+          .et-test-viewport { overflow-x: auto; overflow-y: visible; padding: 14px 4px 18px; margin: -14px -4px -18px; scrollbar-width: none; cursor: grab; mask-image: linear-gradient(90deg, transparent 0, #000 32px, #000 calc(100% - 32px), transparent 100%); -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 32px, #000 calc(100% - 32px), transparent 100%); }
+          .et-test-viewport::-webkit-scrollbar { display: none; }
+          .et-test-track { display: flex; width: max-content; gap: var(--review-gap); animation: etTestRail var(--rail-duration) linear infinite; will-change: transform; }
+          .et-test-carousel:hover .et-test-track, .et-test-carousel:focus-within .et-test-track, .et-test-viewport:active .et-test-track { animation-play-state: paused; }
+          .et-test-set { display: flex; gap: var(--review-gap); }
+          .et-test-card { width: clamp(310px, 30vw, 368px); background: #FFFFFF; border: 1px solid rgba(0,27,77,0.16); border-radius: 20px; padding: 32px; backdrop-filter: blur(12px); display: flex; flex-direction: column; justify-content: space-between; transition: transform .4s cubic-bezier(.22,1,.36,1), box-shadow .4s cubic-bezier(.22,1,.36,1), border-color .4s; flex-shrink: 0; }
+          .et-test-card:hover { transform: translateY(-4px); box-shadow: 0 20px 50px rgba(0,27,77,0.12); border-color: rgba(0,71,187,0.42); }
+          .et-test-quote-icon { margin-bottom: 16px; color: #0047BB; }
+          .et-test-text { font-size: 14.5px; color: rgba(0,27,77,0.76); line-height: 1.75; margin-bottom: 24px; font-style: italic; }
+          .et-test-person { display: flex; align-items: center; gap: 14px; border-top: 1px solid rgba(0,27,77,0.1); padding-top: 18px; margin-top: auto; }
+          .et-test-avatar { width: 42px; height: 42px; border-radius: 50%; background: #EFF6FF; border: 1px solid rgba(0,71,187,0.24); color: #0047BB; display: flex; align-items: center; justify-content: center; font-family: 'Space Grotesk',sans-serif; font-weight: 700; font-size: 14px; flex-shrink: 0; }
+          .et-test-name { font-weight: 700; font-size: 14px; color: #001B4D; }
+          .et-test-role { font-size: 12px; color: rgba(0,27,77,0.58); margin-top: 2px; }
+
+          @keyframes etTestRail {
+            0% { transform: translate3d(0,0,0); }
+            100% { transform: translate3d(calc(-50% - (var(--review-gap) / 2)), 0, 0); }
+          }
+          @media (max-width: 1080px) { .et-cert-grid { grid-template-columns: repeat(2,1fr); } }
           @media (max-width: 860px) { .et-trace-steps { flex-direction: column; gap: 24px; align-items: flex-start; padding-left: 40px; } .et-flow-line { display: none; } .et-flow-step { flex-direction: row; gap: 16px; width: 100%; } .et-flow-title { margin-top: 0; } }
-          @media (max-width: 640px) { .et-test-grid { grid-template-columns: 1fr; } .et-cert-grid { grid-template-columns: 1fr; } }
+          @media (max-width: 640px) { .et-cert-grid { grid-template-columns: 1fr; } }
         `}</style>
       </div>
     </>

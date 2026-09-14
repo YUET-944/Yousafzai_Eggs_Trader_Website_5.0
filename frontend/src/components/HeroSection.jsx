@@ -43,9 +43,9 @@ function Counter({ end, suffix }) {
 }
 
 const slideImages = [
-  '/images/yousafzai-packaging.png', // Farm
-  'https://images.unsplash.com/photo-1587486913049-53fc88980cfc?w=1920&q=80', // Processing
-  'https://images.unsplash.com/photo-1582722872445-44dc5f7e3c8f?w=1920&q=80', // Eggs
+  '/images/client-final/whole-egg-liquid-product.png',
+  '/images/client-final/processing-line-product.png',
+  '/images/client-final/cold-storage-products.png',
 ];
 
 function HeroSlideshow({ images }) {
@@ -159,7 +159,7 @@ export default function HeroSection() {
             {hero.cards.map((card, i) => {
               // Extract numeric part for counter
               const numericValue = parseInt(card.value.replace(/[^0-9]/g, ''), 10);
-              const suffix = card.value.replace(/[0-9kK,]/g, '');
+              const suffix = card.value.replace(/[0-9,]/g, '');
               
               return (
                 <div key={i} className={`hv-card c${i + 1}`}>

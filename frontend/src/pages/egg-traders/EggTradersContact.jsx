@@ -5,7 +5,7 @@ import { api } from '../../lib/api';
 import EggTradersPageBanner from '../../components/egg-traders/EggTradersPageBanner';
 
 const OFFICIAL_PHONE_TEL = '+92937269601';
-const HERO_IMAGE = '/images/yousafzai-packaging.png';
+const HERO_IMAGE = '/images/client-final/processing-line-product.png';
 
 export default function EggTradersContact() {
   const data = useCMSStore((s) => s.eggTraders.contact);
@@ -95,13 +95,44 @@ export default function EggTradersContact() {
                       <div className="et-ci-value">
                         {item.icon === 'Phone' ? (
                           <a href={`tel:${OFFICIAL_PHONE_TEL}`} className="et-ci-link">{item.value}</a>
+                        ) : item.icon === 'MapPin' ? (
+                          <div>
+                            <div>{item.value}</div>
+                            <div style={{ marginTop: '8px' }}>
+                              <a
+                                href="https://www.google.com/maps/dir/?api=1&destination=34.190814,72.048577"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                style={{
+                                  display: 'inline-flex',
+                                  alignItems: 'center',
+                                  gap: '6px',
+                                  padding: '6px 14px',
+                                  borderRadius: '6px',
+                                  backgroundColor: '#0047BB',
+                                  color: '#FFFFFF',
+                                  fontSize: '12.5px',
+                                  fontWeight: 600,
+                                  textDecoration: 'none',
+                                  boxShadow: '0 2px 8px rgba(0,71,187,0.25)',
+                                  transition: 'all 0.2s ease'
+                                }}
+                              >
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="14" height="14">
+                                  <path d="M12 21s7-7.5 7-12a7 7 0 10-14 0c0 4.5 7 12 7 12z" />
+                                  <circle cx="12" cy="9" r="2.4" />
+                                </svg>
+                                Get Directions
+                              </a>
+                            </div>
+                          </div>
                         ) : item.value}
                       </div>
                     </div>
                   </div>
                 ))}
               </div>
-              <div className="et-form-card reveal">
+              <div className="et-form-card reveal" data-lenis-prevent="false">
                 <form onSubmit={handleSubmit}>
                   {submitResult && (
                     <div style={{ display: 'flex', alignItems: 'center', gap: 8, padding: '10px 14px', borderRadius: 9, fontSize: 13, marginBottom: 16, background: submitResult.ok ? '#F0FDF4' : '#FEF2F2', color: submitResult.ok ? '#166534' : '#B91C1C' }}>

@@ -100,6 +100,7 @@ export default function QualitySection() {
         <div className="container">
           {/* Header */}
           <div className="q-head">
+            <div className="tag-eyebrow" style={{ justifyContent: 'center', marginBottom: '12px' }}>Our Quality</div>
             <h2 className="q-heading">{quality.title || 'Uncompromised Quality & Compliance'}</h2>
             <p className="q-sub">{quality.subtitle}</p>
           </div>

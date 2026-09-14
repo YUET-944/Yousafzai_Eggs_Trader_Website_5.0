@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="716" height="147" viewBox="0 0 716 147" role="img" aria-label="Yousafzai Agri Foods (PVT LTD) logo">
+  <defs>
+    <style>
+      .brand { font-family: Arial, Helvetica, sans-serif; }
+    </style>
+  </defs>
+    <text x="0" y="100" class="brand" font-size="78" font-weight="700" letter-spacing="1" fill="#F0B10A">YOUSAFZAI</text>
+  <text x="209" y="139" class="brand" font-size="28" font-weight="500" letter-spacing="0.5" fill="#184B34">AGRI FOODS (PVT LTD)</text>
+
+  <!-- Globe icon -->
+  <g transform="translate(547,4)" fill="none" stroke="#184B34" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="88" cy="69" r="56" stroke-width="4"/>
+    <!-- vertical axis -->
+    <path d="M88 13v112" stroke-width="3"/>
+    <!-- horizontal latitudes -->
+    <path d="M36 43c20 6 84 6 104 0" stroke-width="3"/>
+    <path d="M32 69h112" stroke-width="3"/>
+    <path d="M36 95c20-6 84-6 104 0" stroke-width="3"/>
+    <!-- meridians -->
+    <path d="M61 18c-10 16-16 33-16 51s6 35 16 51" stroke-width="3"/>
+    <path d="M115 18c10 16 16 33 16 51s-6 35-16 51" stroke-width="3"/>
+    <!-- droplet ring -->
+    <path d="M116 44
+             C128 54 134 65 134 79
+             C134 96 121 109 104 109
+             C88 109 76 96 76 79
+             C76 66 82 55 93 45
+             C100 39 106 32 110 24
+             C112 31 114 38 116 44Z" stroke-width="4" fill="white"/>
+    <!-- golden seed inside droplet -->
+    <circle cx="105" cy="88" r="9" fill="#F0B10A" stroke="#184B34" stroke-width="2"/>
+  </g>
+</svg>

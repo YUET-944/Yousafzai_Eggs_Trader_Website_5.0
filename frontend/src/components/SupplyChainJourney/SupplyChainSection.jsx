@@ -63,7 +63,7 @@ export default function SupplyChainSection() {
         {isMobile ? (
           <div className="mobile-journey-panel">
             <div className="story-intro mobile-story-intro">
-              <h2 className="sec-title">The Live Journey of an Egg</h2>
+              <h2 className="sec-title">Egg Products Journey</h2>
               <p className="sec-sub">Follow our guide through precision, reliability, and trust at every stage.</p>
             </div>
 
@@ -71,7 +71,7 @@ export default function SupplyChainSection() {
               <img
                 src={activeStage.image}
                 alt={activeStage.title}
-                className={activeStage.id === 'delivery' ? 'delivery-image' : ''}
+                className={`${activeStage.id === 'delivery' ? 'delivery-image' : ''} ${activeStage.id === 'packaging' ? 'packshot-image' : ''}`}
               />
               <div className="visual-overlay" />
             </div>
@@ -109,7 +109,7 @@ export default function SupplyChainSection() {
                   return (
                     <div 
                       key={stage.id} 
-                      className={`visual-slide ${stage.id === 'delivery' ? 'delivery-slide' : ''} ${isActive ? 'active' : ''}`}
+                      className={`visual-slide ${stage.id === 'delivery' ? 'delivery-slide' : ''} ${stage.id === 'packaging' ? 'packshot-slide' : ''} ${isActive ? 'active' : ''}`}
                     >
                       <img src={stage.image} alt={stage.title} />
                       <div className="visual-overlay" />
@@ -122,7 +122,7 @@ export default function SupplyChainSection() {
             {/* SCROLLABLE STORY CONTENT */}
             <div className="journey-content">
               <div className="story-intro">
-                <h2 className="sec-title">The Live Journey of an Egg</h2>
+                <h2 className="sec-title">Egg Products Journey</h2>
                 <p className="sec-sub">Follow our guide through precision, reliability, and trust at every stage.</p>
               </div>
 
@@ -200,6 +200,16 @@ export default function SupplyChainSection() {
 
         .visual-slide.delivery-slide img {
           object-position: 44% center;
+        }
+
+        .visual-slide.packshot-slide {
+          background: #FFFFFF;
+        }
+
+        .visual-slide.packshot-slide img {
+          object-fit: contain;
+          padding: 28px;
+          box-sizing: border-box;
         }
 
         .visual-overlay {
@@ -342,6 +352,13 @@ export default function SupplyChainSection() {
 
         .mobile-stage-image img.delivery-image {
           object-position: 43% center;
+        }
+
+        .mobile-stage-image img.packshot-image {
+          object-fit: contain;
+          padding: 18px;
+          box-sizing: border-box;
+          background: #FFFFFF;
         }
 
         .mobile-stage-image .visual-overlay {

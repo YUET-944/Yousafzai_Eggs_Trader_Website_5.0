@@ -3,6 +3,7 @@ import { createPortal } from 'react-dom';
 import { Link } from 'react-router-dom';
 import { ArrowRight, PackageCheck, X } from 'lucide-react';
 import { useCMSStore } from '../store/useCMSStore';
+import { useQuoteModalStore } from '../store/useQuoteModalStore';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -26,6 +27,7 @@ function DetailRow({ label, value }) {
 
 export default function ProductsSection() {
   const products = useCMSStore((s) => s.products) || {};
+  const openQuoteModal = useQuoteModalStore((s) => s.openModal);
   const items = Array.isArray(products.items) ? products.items : [];
   const specs = Array.isArray(products.specs) ? products.specs : [];
   const [brokenImgs, setBrokenImgs] = useState(new Set());
@@ -215,10 +217,10 @@ export default function ProductsSection() {
             <h2>Looking for a specific product or grade?</h2>
             <p>Tell us what you need, and our team will help you find the right supply option.</p>
           </div>
-          <Link to="/contact" className="products-quote-btn">
+          <button type="button" onClick={() => openQuoteModal()} className="products-quote-btn">
             Request a Quote
             <ArrowRight size={17} />
-          </Link>
+          </button>
         </div>
       </div>
 

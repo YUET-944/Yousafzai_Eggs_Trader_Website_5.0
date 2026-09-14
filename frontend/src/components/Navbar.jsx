@@ -3,9 +3,11 @@ import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, ArrowRight } from 'lucide-react';
 import logo from '../assets/logo.svg';
 import { useCMSStore } from '../store/useCMSStore';
+import { useQuoteModalStore } from '../store/useQuoteModalStore';
 
 export default function Navbar() {
   const company = useCMSStore((s) => s.company) || {};
+  const openQuoteModal = useQuoteModalStore((s) => s.openModal);
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const { pathname } = useLocation();
@@ -19,10 +21,11 @@ export default function Navbar() {
   }, [isHome]);
 
   const navLinks = [
+    { path: '/', label: 'Home' },
     { path: '/about', label: 'About Us' },
     { path: '/our-journey', label: 'Our Journey' },
     { path: '/our-team', label: 'Our Team' },
-    { path: '/products', label: 'Products & Grades' },
+    { path: '/products', label: 'Our Products' },
     { path: '/process', label: 'Our Process' },
     { path: '/quality', label: 'Quality' },
     { path: '/careers', label: 'Careers' },
@@ -61,14 +64,17 @@ export default function Navbar() {
 
           {/* Right Action */}
           <div className="nav-actions">
-            <Link
-              to="/contact"
+            <button
+              type="button"
               className="nav-cta-btn"
-              onClick={() => setMobileOpen(false)}
+              onClick={() => {
+                setMobileOpen(false);
+                openQuoteModal();
+              }}
             >
               <span>Request Quote</span>
               <ArrowRight size={14} className="cta-arrow" />
-            </Link>
+            </button>
 
             <button
               className="nav-mobile-toggle"
@@ -95,14 +101,17 @@ export default function Navbar() {
                 {link.label}
               </Link>
             ))}
-            <Link
-              to="/contact"
+            <button
+              type="button"
               className="mobile-cta"
-              onClick={() => setMobileOpen(false)}
+              onClick={() => {
+                setMobileOpen(false);
+                openQuoteModal();
+              }}
             >
               <span>Request Quote</span>
               <ArrowRight size={16} />
-            </Link>
+            </button>
           </div>
         </div>
       )}
@@ -163,295 +172,167 @@ export default function Navbar() {
           filter: drop-shadow(0 10px 18px rgba(0,0,0,0.18));
         }
 
-        .nav-glass:not(.is-scrolled) .nav-logo {
-          height: 64px;
+        .nav-glass.is-scrolled .nav-logo {
+          height: 42px;
         }
-
-        .nav-brand-text {
-          display: flex;
-          flex-direction: column;
-          line-height: 1.2;
-        }
-
-        .nav-brand-name {
-          font-family: 'Space Grotesk', sans-serif;
-          font-weight: 700;
-          font-size: 15px;
-          color: #0F172A;
-        }
-
-        .nav-brand-sub {
-          font-family: monospace;
-          font-size: 9px;
-          color: #F59E0B;
-          letter-spacing: 0.12em;
-        }
-
-        .nav-glass.is-scrolled .nav-brand-name { color: #FFFFFF; }
-        .nav-glass.is-scrolled .nav-brand-sub { color: #F76B0D; }
 
         .nav-brand:hover .nav-logo {
-          transform: scale(1.03);
+          transform: translateY(-1px) scale(1.02);
         }
 
-        /* Nav Links */
         .nav-links-desktop {
           display: flex;
           align-items: center;
-          gap: 30px;
+          gap: 22px;
         }
 
         .nav-link-item {
           position: relative;
+          color: rgba(255, 255, 255, 0.88);
           font-family: 'Space Grotesk', sans-serif;
           font-size: 14px;
           font-weight: 500;
-          color: rgba(255, 255, 255, 0.78);
-          padding: 6px 0;
+          letter-spacing: -0.01em;
           text-decoration: none;
-          transition: color 0.3s;
           white-space: nowrap;
+          padding: 6px 0;
+          transition: color 0.25s ease;
         }
 
-        .nav-link-item:hover {
-          color: #DE510A;
-        }
-
+        .nav-link-item:hover,
         .nav-link-item.active {
-          color: #DE510A;
-          font-weight: 600;
+          color: #FFFFFF;
         }
 
         .nav-link-underline {
           position: absolute;
-          left: 0;
           bottom: 0;
-          width: 0;
+          left: 0;
+          right: 0;
           height: 2px;
-          background: linear-gradient(90deg, #B9320D, #B9320D);
+          background: #DE510A;
           border-radius: 2px;
-          transition: width 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+          transform: scaleX(0);
+          transform-origin: center;
+          transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
 
         .nav-link-item:hover .nav-link-underline,
         .nav-link-underline.is-active {
-          width: 100%;
+          transform: scaleX(1);
         }
 
-        /* Actions */
         .nav-actions {
           display: flex;
           align-items: center;
           gap: 16px;
-          flex-shrink: 0;
         }
 
         .nav-cta-btn {
           display: inline-flex;
           align-items: center;
           gap: 8px;
+          padding: 10px 20px;
+          background: #DE510A;
+          color: #FFFFFF;
           font-family: 'Space Grotesk', sans-serif;
-          font-weight: 700;
           font-size: 13.5px;
-          padding: 10px 22px;
-          border-radius: 12px;
-          background: linear-gradient(135deg, #DE510A 0%, #B9320D 100%);
-          color: #ffffff;
+          font-weight: 600;
           text-decoration: none;
-          transition: transform 0.3s, box-shadow 0.3s;
-          box-shadow: 0 8px 24px rgba(185,50,13,0.3);
+          border-radius: 8px;
+          box-shadow: 0 4px 16px rgba(222, 81, 10, 0.3);
+          transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
 
         .nav-cta-btn:hover {
-          transform: translateY(-2px);
-          box-shadow: 0 12px 30px rgba(185,50,13,0.42);
+          background: #C44305;
+          transform: translateY(-1px);
+          box-shadow: 0 6px 20px rgba(222, 81, 10, 0.45);
         }
 
         .cta-arrow {
-          transition: transform 0.3s;
+          transition: transform 0.25s ease;
         }
 
         .nav-cta-btn:hover .cta-arrow {
-          transform: translateX(4px);
+          transform: translateX(3px);
         }
 
         .nav-mobile-toggle {
           display: none;
-          width: 40px;
-          height: 40px;
-          border-radius: 12px;
-          background: rgba(255, 255, 255, 0.08);
-          border: 1px solid rgba(255, 255, 255, 0.2);
-          align-items: center;
-          justify-content: center;
+          background: transparent;
+          border: none;
           cursor: pointer;
+          padding: 4px;
         }
 
-        /* Mobile Drawer */
         .mobile-drawer {
           position: fixed;
-          inset: 0;
+          top: 70px;
+          left: 0;
+          right: 0;
           background: rgba(44, 71, 36, 0.98);
           backdrop-filter: blur(24px);
-          -webkit-backdrop-filter: blur(24px);
-          z-index: 480;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          padding: 40px 24px;
-          overflow-y: auto;
+          padding: 24px;
+          border-bottom: 1px solid rgba(222, 81, 10, 0.4);
+          z-index: 499;
+          animation: slideDown 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        @keyframes slideDown {
+          from { opacity: 0; transform: translateY(-10px); }
+          to { opacity: 1; transform: translateY(0); }
         }
 
         .mobile-nav-list {
           display: flex;
           flex-direction: column;
-          align-items: center;
-          gap: 22px;
-          width: 100%;
-          max-width: 320px;
+          gap: 16px;
         }
 
         .mobile-link {
-          font-family: 'Space Grotesk', sans-serif;
-          font-size: 20px;
-          font-weight: 600;
           color: rgba(255, 255, 255, 0.85);
+          font-family: 'Space Grotesk', sans-serif;
+          font-size: 16px;
+          font-weight: 500;
           text-decoration: none;
-          transition: color 0.3s;
-        }
-
-        .mobile-link:hover {
-          color: #DE510A;
         }
 
         .mobile-cta {
           display: flex;
           align-items: center;
           justify-content: center;
-          gap: 10px;
-          width: 100%;
+          gap: 8px;
+          padding: 12px;
+          background: #DE510A;
+          color: #FFFFFF;
           font-family: 'Space Grotesk', sans-serif;
           font-size: 15px;
-          font-weight: 700;
-          padding: 14px 0;
-          border-radius: 12px;
-          background: linear-gradient(135deg, #DE510A 0%, #B9320D 100%);
-          color: #ffffff;
+          font-weight: 600;
           text-decoration: none;
-          margin-top: 16px;
+          border-radius: 8px;
+          margin-top: 8px;
         }
 
-        /* Responsive */
-        @media (min-width: 961px) and (max-width: 1120px) {
-          .nav-container {
-            padding: 0 24px;
-            gap: 18px;
-          }
+        @media (max-width: 1080px) {
           .nav-links-desktop {
-            gap: 20px;
+            gap: 14px;
           }
           .nav-link-item {
             font-size: 13px;
           }
-          .nav-cta-btn {
-            padding: 9px 16px;
-            font-size: 12.5px;
-            border-radius: 10px;
-          }
-        }
-
-        @media (min-width: 961px) and (max-width: 1024px) {
-          .nav-container {
-            padding: 0 20px;
-            gap: 14px;
-          }
-          .nav-links-desktop {
-            gap: 16px;
-          }
-          .nav-link-item {
-            font-size: 12.5px;
-          }
-          .nav-logo { height: 46px; }
-          .nav-glass:not(.is-scrolled) .nav-logo { height: 56px; }
         }
 
         @media (max-width: 960px) {
-          .nav-links-desktop { display: none; }
-          .nav-mobile-toggle { display: flex; }
-          .nav-container { gap: 18px; }
-          .nav-actions { gap: 10px; margin-left: auto; }
+          .nav-links-desktop {
+            display: none;
+          }
           .nav-cta-btn {
-            padding: 9px 16px;
-            font-size: 12.5px;
-            border-radius: 10px;
-            white-space: nowrap;
+            display: none;
           }
-          .nav-logo { height: 48px; }
-          .nav-glass:not(.is-scrolled) .nav-logo { height: 58px; }
-        }
-
-        @media (max-height: 560px) {
-          .mobile-drawer {
-            align-items: flex-start;
-            padding-top: 92px;
-            padding-bottom: 28px;
-          }
-        }
-
-        @media (max-width: 480px) {
-          .nav-glass { --nav-pad: 14px; }
-          .nav-glass.is-scrolled { --nav-pad: 8px; }
-          .nav-container { padding: 0 14px; gap: 10px; }
-          .nav-logo { height: 42px; }
-          .nav-glass:not(.is-scrolled) .nav-logo { height: 50px; }
-          .nav-brand-name { font-size: 12px; }
-          .nav-brand-sub { display: none; }
-          .nav-actions { gap: 8px; }
-          .nav-cta-btn {
-            padding: 8px 10px;
-            font-size: 11.5px;
-            gap: 6px;
-            min-height: 36px;
-          }
-          .nav-cta-btn .cta-arrow { width: 12px; height: 12px; }
           .nav-mobile-toggle {
-            width: 36px;
-            height: 36px;
-            border-radius: 10px;
-            flex: 0 0 36px;
+            display: block;
           }
-        }
-
-        @media (max-width: 640px) {
-          .nav-cta-btn {
-            width: 36px;
-            padding: 0;
-            justify-content: center;
-            flex: 0 0 36px;
-          }
-          .nav-cta-btn span {
-            position: absolute;
-            width: 1px;
-            height: 1px;
-            padding: 0;
-            margin: -1px;
-            overflow: hidden;
-            clip: rect(0, 0, 0, 0);
-            white-space: nowrap;
-            border: 0;
-          }
-          .nav-cta-btn .cta-arrow {
-            width: 15px;
-            height: 15px;
-          }
-        }
-
-        @media (max-width: 380px) {
-          .nav-container { padding: 0 10px; gap: 8px; }
-          .nav-logo { height: 38px; }
-          .nav-glass:not(.is-scrolled) .nav-logo { height: 44px; }
-          .nav-actions { gap: 6px; }
-          .nav-cta-btn { width: 34px; flex-basis: 34px; min-height: 34px; }
         }
       `}</style>
     </>

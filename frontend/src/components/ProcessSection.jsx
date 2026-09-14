@@ -65,32 +65,36 @@ export default function ProcessSection() {
   };
 
   const stepIcons = {
-    Feather: (
+    Egg: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
         <path d="M12 2C8 7 5 11.5 5 15a7 7 0 0014 0c0-3.5-3-8-7-13z" />
       </svg>
     ),
-    FlaskConical: (
+    Sparkles: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
-        <path d="M9 3h6M10 3v5l-5 9a2 2 0 002 3h10a2 2 0 002-3l-5-9V3" />
+        <path d="M12 3v3m0 12v3m9-9h-3M6 12H3m15.364-6.364l-2.121 2.121M7.757 16.243l-2.121 2.121m12.728 0l-2.121-2.121M7.757 7.757L5.636 5.636" />
       </svg>
     ),
-    ScanLine: (
+    Split: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
-        <path d="M12 3v2m0 14v2m9-9h-2M5 12H3m14.5-6.5l-1.4 1.4M7 17.5l-1.4 1.4m11.9 0L16 17.5M7 6.5L5.6 5.1" />
-        <circle cx="12" cy="12" r="4" />
+        <path d="M16 3h5v5M8 3H3v5M12 21v-9M12 12L5 5M12 12l7-7" />
       </svg>
     ),
-    Printer: (
+    Filter: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
-        <rect x="3" y="6" width="18" height="13" rx="2" />
-        <path d="M3 10h18M7 14h2" />
+        <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3" />
       </svg>
     ),
-    Package: (
+    PackageCheck: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
-        <rect x="4" y="8" width="16" height="11" rx="1.5" />
-        <path d="M8 8V6a4 4 0 018 0v2" />
+        <path d="M21 10V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l2-1.14" />
+        <path d="M16.5 17.5L18 19l4-4" />
+      </svg>
+    ),
+    Warehouse: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
+        <path d="M22 8.35V20a2 2 0 01-2 2H4a2 2 0 01-2-2V8.35A2 2 0 013.26 6.6l8-3.2a2 2 0 011.48 0l8 3.2A2 2 0 0122 8.35z" />
+        <path d="M6 18h12M6 14h12" />
       </svg>
     ),
     Truck: (
@@ -98,15 +102,6 @@ export default function ProcessSection() {
         <path d="M3 16V8a1 1 0 011-1h9v9M3 16h11M16 16h2l2-3v-3h-4M6 18a2 2 0 100-4 2 2 0 000 4zM17 18a2 2 0 100-4 2 2 0 000 4z" />
       </svg>
     ),
-  };
-
-  const bodyCopy = {
-    'Eggs collected from certified farms within 6 hours of laying. Each collection logged with farm ID, flock ID and timestamp.':
-      'Eggs are collected from certified farms within 6 hours of laying. Each collection is logged with farm ID, flock ID, and timestamp.',
-    'Packed under hygienic conditions in client-specified or standard packaging, with batch certs included in every box.':
-      'Packed under hygienic conditions in client-specified or standard packaging, with batch certificates included in every box.',
-    'Refrigerated delivery with IoT temperature logging. Delivery receipts include full chain-of-custody sign-off.':
-      'Refrigerated delivery with IoT temperature logging. Delivery receipts include delivery documentation.',
   };
 
   const totalStages = process.length || 7;
@@ -144,14 +139,14 @@ export default function ProcessSection() {
               {/* Card Header Row */}
               <div className="proc-card-top">
                 <div className="proc-icon-box">
-                  {stepIcons[item.icon] || stepIcons.Feather}
+                  {stepIcons[item.icon] || stepIcons.Egg}
                 </div>
                 <div className="proc-num">{item.num}</div>
               </div>
 
               {/* Title & Body */}
               <h3 className="proc-card-title">{item.title}</h3>
-              <p className="proc-card-body">{bodyCopy[item.body] || item.body}</p>
+              <p className="proc-card-body">{item.body}</p>
 
               {/* Bottom Step Indicator */}
               <div className="proc-card-footer">

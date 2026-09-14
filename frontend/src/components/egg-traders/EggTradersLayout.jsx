@@ -3,6 +3,7 @@ import { Outlet, useLocation } from 'react-router-dom';
 import EggTradersNavbar from './EggTradersNavbar';
 import EggTradersFooter from './EggTradersFooter';
 import FloatingSocials from '../FloatingSocials';
+import QuoteModal from '../QuoteModal';
 
 export default function EggTradersLayout({ noFooter }) {
   const [scrolled, setScrolled] = useState(false);
@@ -42,6 +43,7 @@ export default function EggTradersLayout({ noFooter }) {
       </main>
       {!noFooter && <EggTradersFooter />}
       <FloatingSocials />
+      <QuoteModal />
 
       <button
         type="button"

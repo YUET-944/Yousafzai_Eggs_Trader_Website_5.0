@@ -3,12 +3,14 @@ import { Link } from 'react-router-dom';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useCMSStore } from '../store/useCMSStore';
+import { useQuoteModalStore } from '../store/useQuoteModalStore';
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function CTASection() {
   const containerRef = useRef(null);
   const cta = useCMSStore((s) => s.cta);
+  const openQuoteModal = useQuoteModalStore((s) => s.openModal);
 
   useEffect(() => {
     let ctx = gsap.context(() => {
@@ -37,12 +39,12 @@ export default function CTASection() {
           </div>
 
           <div className="cta-actions cta-animate">
-            <Link to={cta?.primaryCta?.action || '/contact'} className="btn-cta-primary">
+            <button type="button" onClick={() => openQuoteModal()} className="btn-cta-primary">
               <span>{cta?.primaryCta?.label || 'Request a Quote'}</span>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" width="18" height="18" className="btn-arrow">
                 <path d="M5 12h14M12 5l7 7-7 7" />
               </svg>
-            </Link>
+            </button>
             <Link to={cta?.secondaryCta?.action || '/contact'} className="btn-cta-secondary">
               <span>{cta?.secondaryCta?.label || 'Talk to Us'}</span>
             </Link>

@@ -49,6 +49,7 @@ export default function App() {
       smoothTouch: false,
       touchMultiplier: 2,
       infinite: false,
+      prevent: (node) => node.tagName === 'TEXTAREA' || node.tagName === 'SELECT' || node.classList.contains('lenis-prevent') || Boolean(node.closest('[data-lenis-prevent]')),
     });
 
     window.__lenis = lenis;

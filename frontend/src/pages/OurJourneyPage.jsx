@@ -2,7 +2,7 @@ import React from 'react';
 import StoryEngine from '../story/StoryEngine';
 import SceneOurStory from '../components/scenes/SceneOurStory';
 
-const JOURNEY_HERO_IMAGE = '/images/yousafzai-packaging.png';
+const JOURNEY_HERO_IMAGE = '/images/client-final/processing-line-product.png';
 
 export default function OurJourneyPage() {
   return (

@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react';
 import { teamData } from '../data/teamData';
 import PageBanner from '../components/PageBanner';
 
-const TEAM_HERO_IMAGE = '/images/yousafzai-packaging.png';
+const TEAM_HERO_IMAGE = '/images/client-final/processing-line-product.png';
 
 /* ─────────────────────────────────────────────
    Organogram node — uses data-level for stagger
@@ -79,7 +79,7 @@ export default function OurTeamPage() {
       {/* ── ORGANOGRAM ── */}
       <section className="org-section" aria-label="Organisation chart" ref={orgRef}>
         <div className="org-section-head">
-          <h2 className="org-section-title">Our Leadership Structure</h2>
+          <h2 className="org-section-title">Our Leadership Hierarchy</h2>
           <p className="org-section-sub">A dedicated hierarchy committed to quality, operations, and growth.</p>
         </div>
         <div className="org-tree-scroll">
