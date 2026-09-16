@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react';
 import { useCMSStore } from '../../store/useCMSStore';
 import EggTradersPageBanner from '../../components/egg-traders/EggTradersPageBanner';
 
-const HERO_IMAGE = '/images/yousafzai-packaging.png';
+const HERO_IMAGE = '/images/Brown_Eggs.png';
 
 export default function EggTradersQuality() {
   const data = useCMSStore((s) => s.eggTraders.quality);
@@ -56,6 +56,10 @@ export default function EggTradersQuality() {
             <div className="sec-head reveal">
               <h2 className="sec-title">{data.title}</h2>
               <p className="sec-sub">{data.subtitle}</p>
+            </div>
+
+            <div className="reveal" style={{ marginBottom: 40, borderRadius: 20, overflow: 'hidden', border: '1px solid rgba(0,27,77,0.12)', boxShadow: '0 12px 32px rgba(0,27,77,0.08)' }}>
+              <img src="/images/placeholders/retail-display.jpg" alt="Commercial Shell Egg Quality Inspection" style={{ width: '100%', maxHeight: '260px', objectFit: 'cover', display: 'block' }} />
             </div>
 
             <div className="et-trace-panel reveal">

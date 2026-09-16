@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react';
 import { useCMSStore } from '../../store/useCMSStore';
 import EggTradersPageBanner from '../../components/egg-traders/EggTradersPageBanner';
 
-const HERO_IMAGE = '/images/client-final/processing-line-product.png';
+const HERO_IMAGE = '/images/client-final/White.png';
 
 const icons = {
   Farm: (

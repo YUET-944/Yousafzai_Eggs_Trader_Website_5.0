@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { useCMSStore } from '../../store/useCMSStore';
 import EggTradersPageBanner from '../../components/egg-traders/EggTradersPageBanner';
 
-const HERO_IMAGE = '/images/client-final/processing-line-product.png';
+const HERO_IMAGE = '/images/client-final/yellow.png';
 
 export default function EggTradersSolutions() {
   const data = useCMSStore((s) => s.eggTraders.solutions);
