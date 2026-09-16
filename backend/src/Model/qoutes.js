@@ -12,18 +12,13 @@ Quote.init(
     },
     companyName: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
+      defaultValue: 'Not Specified',
     },
     industry: {
-      type: DataTypes.ENUM(
-        'Hotel / Restaurant / Café',
-        'Bakery / Confectionery',
-        'Retail / Supermarket',
-        'Food Manufacturer',
-        'Hospital / Institution',
-        'Other'
-      ),
-      allowNull: false,
+      type: DataTypes.STRING,
+      allowNull: true,
+      defaultValue: 'General Inquiry',
     },
     contactName: {
       type: DataTypes.STRING,
@@ -31,7 +26,8 @@ Quote.init(
     },
     jobTitle: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
+      defaultValue: 'Buyer / Customer',
     },
     email: {
       type: DataTypes.STRING,
@@ -45,18 +41,13 @@ Quote.init(
       allowNull: false,
     },
     productType: {
-      type: DataTypes.ENUM(
-        'Commercial Grade A White',
-        'Free-Range Brown',
-        'Certified Organic',
-        'Processing Grade',
-        'Mixed / Multiple'
-      ),
+      type: DataTypes.STRING,
       allowNull: false,
     },
     weeklyVolume: {
-      type: DataTypes.ENUM('Under 50', '50-199', '500–1,999', '2,000+'),
-      allowNull: false,
+      type: DataTypes.STRING,
+      allowNull: true,
+      defaultValue: 'Not Specified',
     },
     deliveryLocation: {
       type: DataTypes.STRING,

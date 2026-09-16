@@ -1,14 +1,10 @@
 import Quote from '../Model/qoutes.js';
 
 const requiredQuoteFields = [
-  'companyName',
-  'industry',
   'contactName',
-  'jobTitle',
   'email',
   'phone',
   'productType',
-  'weeklyVolume',
   'deliveryLocation'
 ];
 
@@ -49,16 +45,16 @@ export const createQuote = async (req, res) => {
 
     // Create record in MySQL database
     const newQuote = await Quote.create({
-      companyName,
-      industry,
-      contactName,
-      jobTitle,
-      email,
-      phone,
-      productType,
-      weeklyVolume,
-      deliveryLocation,
-      notes
+      companyName: companyName && companyName.trim() ? companyName.trim() : 'Not Specified',
+      industry: industry && industry.trim() ? industry.trim() : 'General Inquiry',
+      contactName: contactName.trim(),
+      jobTitle: jobTitle && jobTitle.trim() ? jobTitle.trim() : 'Buyer / Customer',
+      email: email.trim(),
+      phone: phone.trim(),
+      productType: productType.trim(),
+      weeklyVolume: weeklyVolume && weeklyVolume.trim() ? weeklyVolume.trim() : 'Not Specified',
+      deliveryLocation: deliveryLocation.trim(),
+      notes: notes ? notes.trim() : ''
     });
 
     // Match output format exactly to contract spec section 3
@@ -76,6 +72,48 @@ export const createQuote = async (req, res) => {
     }
 
     return res.status(500).json({ 
+      success: false,
+      message: 'Server Error: ' + error.message
+    });
+  }
+};
+
+// @desc    Get all quote requests
+// @route   GET /api/quotes
+export const getQuotes = async (req, res) => {
+  try {
+    const quotes = await Quote.findAll({
+      order: [['createdAt', 'DESC']]
+    });
+    return res.status(200).json(quotes);
+  } catch (error) {
+    return res.status(500).json({
+      success: false,
+      message: 'Server Error: ' + error.message
+    });
+  }
+};
+
+// @desc    Delete a quote request
+// @route   DELETE /api/quotes/:id
+export const deleteQuote = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const quote = await Quote.findByPk(id);
+    if (!quote) {
+      return res.status(404).json({
+        success: false,
+        message: 'Quote request not found'
+      });
+    }
+
+    await quote.destroy();
+    return res.status(200).json({
+      success: true,
+      message: 'Quote request deleted successfully'
+    });
+  } catch (error) {
+    return res.status(500).json({
       success: false,
       message: 'Server Error: ' + error.message
     });

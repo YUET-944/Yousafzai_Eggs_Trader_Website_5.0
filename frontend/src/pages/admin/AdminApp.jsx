@@ -7,6 +7,7 @@ import SchemaEditor from '../../components/admin/SchemaEditor';
 import AdminApplications from '../../components/admin/AdminApplications';
 import AdminDashboard from '../../components/admin/AdminDashboard';
 import AdminJobs from '../../components/admin/AdminJobs';
+import AdminQuotes from '../../components/admin/AdminQuotes';
 import { MAIN_SITE_SCHEMAS, EGG_TRADERS_SCHEMAS } from '../../components/admin/schemas';
 import '../../components/admin/adminViews.css';
 
@@ -56,6 +57,7 @@ export default function AdminApp() {
 
   const renderEditor = () => {
     if (active === 'dashboard') return <AdminDashboard />;
+    if (active === 'quotes') return <AdminQuotes />;
     if (active === 'applications') return <AdminApplications />;
     if (active === 'jobs') return <AdminJobs />;
 

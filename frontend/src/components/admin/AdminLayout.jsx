@@ -6,11 +6,12 @@ import {
   Menu, X, ShieldCheck, LogOut, ExternalLink, LayoutDashboard,
   Home, FileText, Package, Boxes, Truck, Shield, Star, HelpCircle,
   Building2, BadgeCheck, Layers, Settings2, Newspaper, ListChecks,
-  Search, PanelLeftClose, PanelLeft, Globe, ChefHat, Image as ImageIcon, Briefcase, Users,
+  Search, PanelLeftClose, PanelLeft, Globe, ChefHat, Image as ImageIcon, Briefcase, Users, MessageSquare,
 } from 'lucide-react';
 
 const mainNavItems = [
   { label: 'Dashboard', key: 'dashboard', icon: LayoutDashboard },
+  { label: 'Quote Requests', key: 'quotes', icon: MessageSquare },
   { label: 'Jobs', key: 'jobs', icon: Briefcase },
   { label: 'Applications', key: 'applications', icon: Users },
   { label: 'Home Hero', key: 'hero', icon: Home },

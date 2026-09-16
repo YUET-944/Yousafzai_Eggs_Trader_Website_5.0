@@ -1,7 +1,7 @@
 import express from 'express';
 import dotenv from 'dotenv';
 import cors from 'cors';
-import sequelize from './src/Config/db.js';
+import sequelize, { ensureDatabase } from './src/Config/db.js';
 
 
 // 1. Import Models
@@ -54,6 +54,7 @@ app.use('/api/jobs', jobRoutes);
 // Sync MySQL database and start server
 const startServer = async () => {
   try {
+    await ensureDatabase();
     await sequelize.authenticate();
     console.log('📡 MySQL Database connected successfully.');
 

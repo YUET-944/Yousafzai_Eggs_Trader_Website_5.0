@@ -90,9 +90,9 @@ export default function QuoteModal() {
       });
       setForm(INITIAL_FORM);
     } catch (err) {
-      const msg = err.status === 400
+      const msg = err.message || (err.status === 400
         ? 'Please check your information and try again.'
-        : "We couldn't submit your request. Please check your details and try again.";
+        : "We couldn't submit your request. Please check your details and try again.");
       setSubmitResult({ ok: false, msg });
     } finally {
       setSubmitting(false);

@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="176" height="176" viewBox="0 0 176 176" role="img" aria-label="Globe Icon">
+  <!-- Green Background -->
+  <rect width="176" height="176" rx="30" fill="#184B34" />
+  
+  <g transform="translate(0, 19)" fill="none" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="88" cy="69" r="56" stroke-width="4"/>
+    <!-- vertical axis -->
+    <path d="M88 13v112" stroke-width="3"/>
+    <!-- horizontal latitudes -->
+    <path d="M36 43c20 6 84 6 104 0" stroke-width="3"/>
+    <path d="M32 69h112" stroke-width="3"/>
+    <path d="M36 95c20-6 84-6 104 0" stroke-width="3"/>
+    <!-- meridians -->
+    <path d="M61 18c-10 16-16 33-16 51s6 35 16 51" stroke-width="3"/>
+    <path d="M115 18c10 16 16 33 16 51s-6 35-16 51" stroke-width="3"/>
+    <!-- droplet ring -->
+    <path d="M116 44
+             C128 54 134 65 134 79
+             C134 96 121 109 104 109
+             C88 109 76 96 76 79
+             C76 66 82 55 93 45
+             C100 39 106 32 110 24
+             C112 31 114 38 116 44Z" stroke-width="4" fill="white" stroke="#184B34"/>
+    <!-- golden seed inside droplet -->
+    <circle cx="105" cy="88" r="9" fill="#F0B10A" stroke="#184B34" stroke-width="2"/>
+  </g>
+</svg>

@@ -102,6 +102,12 @@ export const api = {
   submitQuote: (quoteData) =>
     request('/api/quotes', { method: 'POST', body: quoteData }),
 
+  getAllQuotes: () =>
+    request('/api/quotes'),
+
+  deleteQuote: (id) =>
+    request(`/api/quotes/${encodeURIComponent(id)}`, { method: 'DELETE' }),
+
   uploadImage: (file) => {
     const fd = new FormData();
     fd.append('file', file);

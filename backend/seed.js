@@ -1,5 +1,5 @@
 import dotenv from 'dotenv';
-import sequelize from './src/Config/db.js';
+import sequelize, { ensureDatabase } from './src/Config/db.js';
 import User from './src/Model/user.js';
 
 dotenv.config();
@@ -53,6 +53,7 @@ async function bootstrapSuperAdmin() {
   }
 
   try {
+    await ensureDatabase();
     await sequelize.authenticate();
     await User.sync();
 
