@@ -18,7 +18,7 @@ function BannerSlideshow({ images }) {
         <div 
           key={idx} 
           className={`slide-img ${idx === current ? 'active' : ''}`} 
-          style={{ backgroundImage: `url(${src})` }} 
+          style={{ backgroundImage: `url(${src + (src.includes('?') ? '' : '?v=20260917')})` }} 
         />
       ))}
     </div>

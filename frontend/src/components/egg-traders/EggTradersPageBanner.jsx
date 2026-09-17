@@ -32,7 +32,7 @@ export default function EggTradersPageBanner({
     <div ref={ref}>
       <header className="et-page-hero">
         <div className="et-page-hero-media" aria-hidden="true">
-          <img src={image || DEFAULT_HERO_IMAGE} alt="" style={{ objectPosition: imagePosition }} />
+          <img src={(image || DEFAULT_HERO_IMAGE) + ((image || DEFAULT_HERO_IMAGE).includes('?') ? '' : '?v=20260917')} alt="" style={{ objectPosition: imagePosition }} />
         </div>
         <div className="et-page-hero-bg" />
         <div className="et-page-hero-inner">
