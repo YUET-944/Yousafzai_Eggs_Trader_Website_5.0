@@ -45,9 +45,6 @@ export default function EggTradersAbout() {
                   <p className="et-quote-text">{data.quote}</p>
                   <div className="et-quote-foot">{data.quoteFooter}</div>
                 </div>
-                <div style={{ marginTop: 24, borderRadius: 16, overflow: 'hidden', border: '1px solid rgba(0,27,77,0.12)', boxShadow: '0 10px 28px rgba(0,27,77,0.08)' }}>
-                  <img src="/images/client-final/mixed.png" alt="Fresh shell eggs trading supply" style={{ width: '100%', height: '220px', objectFit: 'cover', display: 'block' }} />
-                </div>
                 <div className="et-value-list">
                   {data.features.map((f, i) => (
                     <div key={i} className="et-value-item">
