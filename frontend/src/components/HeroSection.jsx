@@ -122,9 +122,7 @@ export default function HeroSection() {
                 </span>
                 <div className="shine-element"></div>
               </Link>
-              <Link to={hero.secondaryCta.action} className="btn btn-outline" data-ripple>
-                <span>{hero.secondaryCta.label}</span>
-              </Link>
+
             </div>
             <div className="trust-row">
               <div className="t-item">

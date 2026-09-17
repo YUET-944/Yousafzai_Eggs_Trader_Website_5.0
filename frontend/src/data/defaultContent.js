@@ -7,7 +7,7 @@ export const defaultContent = {
     h1Line2: 'Built on',
     body: 'Yousafzai Agri Foods is a leading supplier and distributor of high-quality fresh eggs in KPK, Pakistan. We deliver hygienic, farm-fresh eggs with consistent quality and reliable service.',
     primaryCta: { label: 'Contact Us', action: '/contact' },
-    secondaryCta: { label: 'Explore Our Supply Chain', action: '/' },
+    secondaryCta: { label: '', action: '' },
     trustItems: [
       { icon: 'ShieldCheck', text: 'HACCP Certified' },
       { icon: 'CheckCircle2', text: 'IHC Halal Certified' },
