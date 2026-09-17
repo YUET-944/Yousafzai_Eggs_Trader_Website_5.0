@@ -8,7 +8,7 @@ import OurCompaniesSection from '../components/OurCompaniesSection';
 import OurPartnersSection from '../components/OurPartnersSection';
 import { useCMSStore } from '../store/useCMSStore';
 
-const ABOUT_HERO_IMAGE = '/images/client-final/processing-line-product.png';
+const ABOUT_HERO_IMAGE = 'https://images.unsplash.com/photo-1498654077810-12c21d4d6dc3?w=1920&q=80';
 
 export default function AboutPage() {
   const about = useCMSStore((s) => s.about);
