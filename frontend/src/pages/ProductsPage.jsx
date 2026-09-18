@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 import { useCMSStore } from '../store/useCMSStore';
 import { useQuoteModalStore } from '../store/useQuoteModalStore';
 
-const heroPoster = '/images/client-final/processing-line-product.png';
-const packingImage = '/images/client-final/whole-egg-liquid-product.png';
+const heroPoster = '/images/client-final/processing-line-product.webp';
+const packingImage = '/images/client-final/whole-egg-liquid-product.webp';
 const oldProductsSubtitle = 'Explore egg products, formats, and grade references for commercial supply.';
 const newProductsSubtitle = 'Explore our liquid egg product categories for commercial food production.';
 
@@ -13,42 +13,42 @@ const mainProducts = [
     name: 'Whole Egg Liquid',
     description: 'For cereal-based product industries such as biscuit, cake, and cookie manufacturers; hotels, restaurants, catering companies; and other food-product manufacturing industries.',
     icon: Droplet,
-    image: '/images/client-final/whole-egg-liquid-product.png',
+    image: '/images/client-final/whole-egg-liquid-product.webp',
   },
   {
     name: 'Liquid Egg Yolk',
     description: 'For bakery-product manufacturers and condiment manufacturers such as mayonnaise and sauce producers.',
     icon: FlaskConical,
-    image: '/images/client-final/liquid-egg-yolk-product.png',
+    image: '/images/client-final/liquid-egg-yolk-product.webp',
   },
   {
     name: 'Liquid Egg White or Albumen',
     description: 'For the confectionery and bakery industries, especially for products such as angel cake and meringue.',
     icon: PackageCheck,
-    image: '/images/client-final/liquid-egg-white-product.png',
+    image: '/images/client-final/liquid-egg-white-product.webp',
   },
   {
     name: 'Mixed Liquid Blend',
     description: 'Customized formulations for specific industries, food products, or functional requirements.',
     icon: Blend,
-    image: '/images/client-final/processing-line-product.png',
+    image: '/images/client-final/processing-line-product.webp',
   },
 ];
 
 const packingProducts = [
   {
     title: 'Liquid Egg White',
-    image: '/images/client-final/White.png',
+    image: '/images/client-final/White.webp',
     sizes: ['10 kg', '20 kg', '50 kg', '100 kg', '250 kg', '500 kg', '750 kg', '1000 kg'],
   },
   {
     title: 'Liquid Egg Yolk',
-    image: '/images/client-final/yellow.png',
+    image: '/images/client-final/yellow.webp',
     sizes: ['10 kg', '20 kg', '50 kg', '100 kg', '250 kg', '500 kg', '750 kg', '1000 kg'],
   },
   {
     title: 'Mixed Liquid Blend',
-    image: '/images/client-final/mixed.png',
+    image: '/images/client-final/mixed.webp',
     sizes: ['10 kg', '20 kg', '50 kg', '100 kg', '250 kg', '500 kg', '750 kg', '1000 kg'],
   },
 ];

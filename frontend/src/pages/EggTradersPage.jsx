@@ -3,7 +3,7 @@ import { useCMSStore } from '../store/useCMSStore';
 import { ShieldCheck, CheckCircle2, ArrowRight, Truck, Thermometer, Feather, TrendingUp, Package, Home } from 'lucide-react';
 import SupplyChainControlCenter from '../components/SupplyChainControlCenter';
 
-const heroEggBg = '/images/yousafzai-packaging.png';
+const heroEggBg = '/images/yousafzai-packaging.webp';
 
 const featIcons = {
   Feather,

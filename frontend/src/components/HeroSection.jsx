@@ -43,9 +43,9 @@ function Counter({ end, suffix }) {
 }
 
 const slideImages = [
-  '/images/client-final/whole-egg-liquid-product.png',
-  '/images/client-final/processing-line-product.png',
-  '/images/client-final/cold-storage-products.png',
+  '/images/client-final/whole-egg-liquid-product.webp',
+  '/images/client-final/processing-line-product.webp',
+  '/images/client-final/cold-storage-products.webp',
 ];
 
 function HeroSlideshow({ images }) {

@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 
-const DEFAULT_HERO_IMAGE = '/images/white-eggs-product.jpg';
+const DEFAULT_HERO_IMAGE = '/images/white-eggs-product.webp';
 
 export default function EggTradersPageBanner({
   title,

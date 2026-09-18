@@ -63,10 +63,10 @@ export const defaultContent = {
     title: 'Egg Products for Commercial Supply',
     subtitle: 'Compare available egg products, formats, and grade references. Final specifications can be confirmed with our team during quoting.',
     items: [
-      { badge: 'Grade A', icon: 'Feather', gradient: 'from-navy to-navy-2', name: 'Commercial Grade A White Eggs', grade: 'Grade A', format: 'White shell eggs', packaging: 'Packaging options to be confirmed', suitableFor: 'Hotels, restaurants, caterers, and commercial kitchens', description: 'Consistent white shell eggs for commercial buyers, with final sizes and supply details confirmed during quoting.', tags: ['Daily Supply', 'S-XL'], image: '/images/white-eggs-product.jpg' },
-      { badge: 'White Eggs', icon: 'Feather', gradient: 'from-sky-700 to-sky-500', name: 'White Eggs — Medium', grade: 'Medium', format: 'White shell eggs', packaging: 'Packaging options to be confirmed', suitableFor: 'Commercial buyers requiring medium-size white eggs', description: 'Medium-size white shell eggs for commercial orders. Final size and supply details can be confirmed during quoting.', tags: ['White Eggs', 'Medium'], image: '/images/white-eggs-product.jpg' },
-      { badge: 'White Eggs', icon: 'Feather', gradient: 'from-sky-700 to-sky-500', name: 'White Eggs — Large', grade: 'Large', format: 'White shell eggs', packaging: 'Packaging options to be confirmed', suitableFor: 'Commercial buyers requiring large-size white eggs', description: 'Large-size white shell eggs for commercial orders. Final size and supply details can be confirmed during quoting.', tags: ['White Eggs', 'Large'], image: '/images/white-eggs-product.jpg' },
-      { badge: 'Free Range', icon: 'Feather', gradient: 'from-amber-800 to-amber-600', name: 'Free-Range Brown Eggs', grade: 'Grade details pending verification', format: 'Brown shell eggs', packaging: 'Packaging options to be confirmed', suitableFor: 'Premium food service and retail-style requirements', description: 'Brown shell egg options for buyers who need a free-range product category. Certification details should be confirmed during quoting.', tags: ['Free Range', 'M, L'], image: '/images/Brown_Eggs.png' },
+      { badge: 'Grade A', icon: 'Feather', gradient: 'from-navy to-navy-2', name: 'Commercial Grade A White Eggs', grade: 'Grade A', format: 'White shell eggs', packaging: 'Packaging options to be confirmed', suitableFor: 'Hotels, restaurants, caterers, and commercial kitchens', description: 'Consistent white shell eggs for commercial buyers, with final sizes and supply details confirmed during quoting.', tags: ['Daily Supply', 'S-XL'], image: '/images/white-eggs-product.webp' },
+      { badge: 'White Eggs', icon: 'Feather', gradient: 'from-sky-700 to-sky-500', name: 'White Eggs — Medium', grade: 'Medium', format: 'White shell eggs', packaging: 'Packaging options to be confirmed', suitableFor: 'Commercial buyers requiring medium-size white eggs', description: 'Medium-size white shell eggs for commercial orders. Final size and supply details can be confirmed during quoting.', tags: ['White Eggs', 'Medium'], image: '/images/white-eggs-product.webp' },
+      { badge: 'White Eggs', icon: 'Feather', gradient: 'from-sky-700 to-sky-500', name: 'White Eggs — Large', grade: 'Large', format: 'White shell eggs', packaging: 'Packaging options to be confirmed', suitableFor: 'Commercial buyers requiring large-size white eggs', description: 'Large-size white shell eggs for commercial orders. Final size and supply details can be confirmed during quoting.', tags: ['White Eggs', 'Large'], image: '/images/white-eggs-product.webp' },
+      { badge: 'Free Range', icon: 'Feather', gradient: 'from-amber-800 to-amber-600', name: 'Free-Range Brown Eggs', grade: 'Grade details pending verification', format: 'Brown shell eggs', packaging: 'Packaging options to be confirmed', suitableFor: 'Premium food service and retail-style requirements', description: 'Brown shell egg options for buyers who need a free-range product category. Certification details should be confirmed during quoting.', tags: ['Free Range', 'M, L'], image: '/images/Brown_Eggs.webp' },
       { badge: 'Organic', icon: 'Feather', gradient: 'from-green-800 to-green-600', name: 'Organic Egg Options', grade: 'Organic grade details pending verification', format: 'Shell eggs', packaging: 'Packaging options to be confirmed', suitableFor: 'Buyers seeking organic-positioned egg supply', description: 'Shell egg options for buyers seeking organic supply. Certification and documentation details should be confirmed during quoting.', tags: ['Organic', 'L'], image: 'https://images.unsplash.com/photo-1498654077810-12c21d4d6dc3?w=600&h=400&fit=crop' },
       { badge: 'Processing', icon: 'Package', gradient: 'from-indigo-800 to-indigo-600', name: 'Liquid Whole Egg', grade: 'Processing grade', format: 'Liquid whole egg', packaging: 'Bulk packaging to be confirmed', suitableFor: 'Food manufacturers, bakeries, and industrial kitchens', description: 'Liquid whole egg option for commercial food production. Processing and packaging details should be confirmed during quoting.', tags: ['Industrial', 'Bulk'], image: 'https://images.unsplash.com/photo-1587486913049-53fc88980cfc?w=600&h=400&fit=crop' },
     ],
@@ -292,7 +292,7 @@ export const defaultContent = {
       subtitle: 'Browse verified egg products from our poultry farm network for direct commercial supply.',
       items: [
         { badge: 'Premium', grade: 'Grade A / select large', name: 'Farm-fresh white eggs', description: 'Grade A white shell eggs from verified farms, available in small to extra-large sizes with traceability support.', specs: ['Weight: 53g - 63g+', 'Shell strength: high', 'Packaging: 30-egg trays / cartons'], tags: ['Daily supply', 'S to XL'], image: 'https://images.unsplash.com/photo-1582722872445-44dc5f7e3c8f?w=600&h=400&fit=crop' },
-        { badge: 'Free range', grade: 'Free range', name: 'Free-range brown eggs', description: 'Brown egg options for buyers with premium food-service requirements. Final documentation can be confirmed during quoting.', specs: ['Free-range option', 'Premium food service', 'Eco-pulp packaging'], tags: ['Free range', 'M, L'], image: '/images/Brown_Eggs.png' },
+        { badge: 'Free range', grade: 'Free range', name: 'Free-range brown eggs', description: 'Brown egg options for buyers with premium food-service requirements. Final documentation can be confirmed during quoting.', specs: ['Free-range option', 'Premium food service', 'Eco-pulp packaging'], tags: ['Free range', 'M, L'], image: '/images/Brown_Eggs.webp' },
         { badge: 'Organic', grade: 'Organic option', name: 'Organic egg options', description: 'Organic egg options for buyers seeking documented supply. Certification details can be confirmed during quoting.', specs: ['Organic option', 'Documentation available', 'Eco-pulp packaging'], tags: ['Organic', 'L'], image: 'https://images.unsplash.com/photo-1498654077810-12c21d4d6dc3?w=600&h=400&fit=crop' },
         { badge: 'Bulk', grade: 'Processing grade', name: 'Liquid whole egg', description: 'Liquid whole egg for food manufacturers, bakeries, and industrial kitchens. Processing and packaging details are confirmed during quoting.', specs: ['Whole egg option', 'Bulk packaging', 'Chilled supply'], tags: ['Industrial', 'kg'], image: 'https://images.unsplash.com/photo-1587486913049-53fc88980cfc?w=600&h=400&fit=crop' },
       ],
@@ -388,7 +388,7 @@ export const defaultContent = {
       quality: {
         title: 'Our Quality',
         subtitle: 'Focused on quality, traceability, and responsible handling at every stage.',
-        images: ['/images/yousafzai-packaging.png'],
+        images: ['/images/yousafzai-packaging.webp'],
       },
       solutions: {
         title: 'Solutions',
@@ -520,7 +520,7 @@ export const defaultContent = {
           year: '2020',
           title: 'Sales Expansion',
           desc: 'Opened a second sales point in Peshawar.',
-          img: '/images/client-final/Sale_Expansion.png',
+          img: '/images/client-final/Sale_Expansion.webp',
           stats: 'PESHAWAR SALES',
           metric: '2',
           metricLabel: 'Sales Points',

@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react';
 import { teamData } from '../data/teamData';
 import PageBanner from '../components/PageBanner';
 
-const TEAM_HERO_IMAGE = '/images/client-final/processing-line-product.png';
+const TEAM_HERO_IMAGE = '/images/client-final/processing-line-product.webp';
 
 /* ─────────────────────────────────────────────
    Organogram node — uses data-level for stagger

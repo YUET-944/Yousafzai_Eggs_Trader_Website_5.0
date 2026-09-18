@@ -42,7 +42,7 @@ const CERTS = [
     file: 'Islamabad Chamber of Commerce.pdf',
     title: 'Islamabad Chamber of Commerce',
     sub: 'Islamabad Chamber of Commerce',
-    icon: '/images/certificates/islamabad-chamber-commerce.png',
+    icon: '/images/certificates/islamabad-chamber-commerce.webp',
     seal: '#3F6231',
   },
 ];

@@ -2,7 +2,7 @@ import { useCMSStore } from '../../store/useCMSStore';
 import ProductsSection from '../../components/ProductsSection';
 import EggTradersPageBanner from '../../components/egg-traders/EggTradersPageBanner';
 
-const HERO_IMAGE = '/images/white-eggs-product.jpg';
+const HERO_IMAGE = '/images/white-eggs-product.webp';
 
 export default function EggTradersProducts() {
   const banner = useCMSStore((s) => s.banners?.eggTraders?.products);

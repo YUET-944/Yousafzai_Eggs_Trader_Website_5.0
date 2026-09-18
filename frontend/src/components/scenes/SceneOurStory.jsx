@@ -11,7 +11,7 @@ const fallbackMilestones = [
     year: '1960',
     title: 'Foundation',
     desc: 'Established a retail shop in Mardan for egg trading.',
-    img: '/images/white-eggs-product.jpg',
+    img: '/images/white-eggs-product.webp',
     stats: 'FOUNDATION',
     metric: '60+',
     metricLabel: 'Years of Trust'
@@ -21,7 +21,7 @@ const fallbackMilestones = [
     year: '2000',
     title: 'Supply Network',
     desc: 'Built a strong supply network connecting farms to markets across KPK.',
-    img: '/images/placeholders/truck_delievry.png',
+    img: '/images/placeholders/truck_delievry.webp',
     stats: 'FARM TO MARKET',
     metric: 'KPK',
     metricLabel: 'Market Network'
@@ -31,7 +31,7 @@ const fallbackMilestones = [
     year: '2020',
     title: 'Sales Expansion',
     desc: 'Opened a second sales point in Peshawar.',
-    img: '/images/client-final/Sale_Expansion.png',
+    img: '/images/client-final/Sale_Expansion.webp',
     stats: 'PESHAWAR SALES',
     metric: '2',
     metricLabel: 'Sales Points'
@@ -41,7 +41,7 @@ const fallbackMilestones = [
     year: 'End 2026',
     title: 'Rashakai Processing',
     desc: 'Commercial production is planned for the Egg Liquid Processing Plant at Rashakai SEZ.',
-    img: '/images/client-final/processing-line-product.png',
+    img: '/images/client-final/processing-line-product.webp',
     stats: 'AGRI FOODS',
     metric: '150 Kg',
     metricLabel: 'Production Capacity'
