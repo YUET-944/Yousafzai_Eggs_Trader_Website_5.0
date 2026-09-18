@@ -3,7 +3,7 @@ export const stages = [
     id: "quality",
     title: "Quality Laboratory",
     description: "Every egg passes through strict quality checks, including salmonella swabs, Haugh unit testing, candling, and USDA grading.",
-    image: "/images/placeholders/liquid-product-lab.webp",
+    image: "/images/client-final/Process_line.webp",
     stats: "TRIPLE INSPECTION PROCESS"
   },
   {

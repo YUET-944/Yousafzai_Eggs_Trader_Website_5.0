@@ -53,9 +53,12 @@ export default function EggTradersContact() {
           if (entry.isIntersecting) { entry.target.classList.add('in'); observer.unobserve(entry.target); }
         });
       },
-      { threshold: 0.15 }
+      { threshold: 0.05 }
     );
-    el.querySelectorAll('.reveal').forEach((e) => observer.observe(e));
+    el.querySelectorAll('.reveal').forEach((e) => {
+      e.classList.add('in');
+      observer.observe(e);
+    });
     return () => observer.disconnect();
   }, []);
 
@@ -132,7 +135,7 @@ export default function EggTradersContact() {
                   </div>
                 ))}
               </div>
-              <div className="et-form-card reveal" data-lenis-prevent="false">
+              <div className="et-form-card reveal">
                 <form onSubmit={handleSubmit}>
                   {submitResult && (
                     <div style={{ display: 'flex', alignItems: 'center', gap: 8, padding: '10px 14px', borderRadius: 9, fontSize: 13, marginBottom: 16, background: submitResult.ok ? '#F0FDF4' : '#FEF2F2', color: submitResult.ok ? '#166534' : '#B91C1C' }}>

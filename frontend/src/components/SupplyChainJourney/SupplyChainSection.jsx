@@ -63,7 +63,7 @@ export default function SupplyChainSection() {
         {isMobile ? (
           <div className="mobile-journey-panel">
             <div className="story-intro mobile-story-intro">
-              <h2 className="sec-title">Egg Products Journey</h2>
+              <h2 className="sec-title">Egg Liquid Journey</h2>
               <p className="sec-sub">Follow our guide through precision, reliability, and trust at every stage.</p>
             </div>
 
@@ -122,7 +122,7 @@ export default function SupplyChainSection() {
             {/* SCROLLABLE STORY CONTENT */}
             <div className="journey-content">
               <div className="story-intro">
-                <h2 className="sec-title">Egg Products Journey</h2>
+                <h2 className="sec-title">Egg Liquid Journey</h2>
                 <p className="sec-sub">Follow our guide through precision, reliability, and trust at every stage.</p>
               </div>
 
