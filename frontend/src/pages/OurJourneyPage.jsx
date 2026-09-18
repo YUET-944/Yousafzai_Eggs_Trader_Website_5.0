@@ -2,7 +2,7 @@ import React from 'react';
 import StoryEngine from '../story/StoryEngine';
 import SceneOurStory from '../components/scenes/SceneOurStory';
 
-const JOURNEY_HERO_IMAGE = '/images/client-final/processing-line-product.webp';
+const JOURNEY_HERO_IMAGE = '/images/client-final/Process_line.webp';
 
 export default function OurJourneyPage() {
   return (

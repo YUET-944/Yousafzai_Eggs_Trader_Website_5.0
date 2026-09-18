@@ -40,11 +40,11 @@ const fallbackMilestones = [
     id: 'end-2026',
     year: 'End 2026',
     title: 'Rashakai Processing',
-    desc: 'Commercial production is planned for the Egg Liquid Processing Plant at Rashakai SEZ.',
-    img: '/images/client-final/processing-line-product.webp',
+    desc: 'Commercial production is planned for the Egg Liquid Processing Plant at Rashakai Economic Zone.',
+    img: '/images/client-final/Process_line.webp',
     stats: 'AGRI FOODS',
     metric: '150 Kg',
-    metricLabel: 'Production Capacity'
+    metricLabel: 'Production / hour'
   }
 ];
 

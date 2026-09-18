@@ -52,8 +52,8 @@ export default function PageBanner({ title, subtitle, fullScreen = false, slides
         
         <BannerSlideshow images={
           slideshowImages && slideshowImages.length > 0 
-            ? (slideshowImages.includes('/images/client-final/processing-line-product.webp') ? slideshowImages : ['/images/client-final/processing-line-product.webp', ...slideshowImages])
-            : ['/images/client-final/processing-line-product.webp']
+            ? (slideshowImages.includes('/images/client-final/Process_line.webp') ? slideshowImages : ['/images/client-final/Process_line.webp', ...slideshowImages])
+            : ['/images/client-final/Process_line.webp']
         } />
         <div className="page-hero-bg" />
         

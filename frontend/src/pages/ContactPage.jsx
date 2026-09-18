@@ -6,7 +6,7 @@ import LocationMapSection from '../components/LocationMapSection';
 import { useCMSStore } from '../store/useCMSStore';
 
 const CONTACT_HERO_SUBTITLE = 'Tell us what you need, and our commercial team will be in touch shortly.';
-const CONTACT_HERO_IMAGE = '/images/b-g2.webp';
+const CONTACT_HERO_IMAGE = '/images/client-final/Process_line.webp';
 
 export default function ContactPage() {
   const banner = useCMSStore((s) => s.banners?.main?.contact);

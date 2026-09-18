@@ -5,7 +5,7 @@ import { api } from '../../lib/api';
 import EggTradersPageBanner from '../../components/egg-traders/EggTradersPageBanner';
 
 const OFFICIAL_PHONE_TEL = '+92937269601';
-const HERO_IMAGE = '/images/b-g2.webp';
+const HERO_IMAGE = '/images/B-g.webp';
 
 export default function EggTradersContact() {
   const data = useCMSStore((s) => s.eggTraders.contact);

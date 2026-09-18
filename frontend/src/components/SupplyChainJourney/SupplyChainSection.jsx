@@ -207,8 +207,8 @@ export default function SupplyChainSection() {
         }
 
         .visual-slide.packshot-slide img {
-          object-fit: contain;
-          padding: 28px;
+          object-fit: cover;
+          padding: 0;
           box-sizing: border-box;
         }
 
@@ -355,8 +355,8 @@ export default function SupplyChainSection() {
         }
 
         .mobile-stage-image img.packshot-image {
-          object-fit: contain;
-          padding: 18px;
+          object-fit: cover;
+          padding: 0;
           box-sizing: border-box;
           background: #FFFFFF;
         }

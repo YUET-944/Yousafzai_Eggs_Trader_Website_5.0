@@ -39,7 +39,7 @@ export const defaultContent = {
     paragraphs: [
       'Established in 1960 in Mardan, Khyber Pakhtunkhwa, M/S Yousafzai Eggs Traders (Registration No. C955423) has over six decades of experience in the egg trading business. The company specializes in the procurement, candling, and distribution of fresh, Halal-certified table eggs to households, retailers, hotels, and institutional customers across KPK and other regions of Pakistan.',
       'Over the years, the company has evolved from a traditional trading operation into a vertically integrated enterprise by investing in modern poultry farms at China Chowk, Attock (est. 2022) and Phalai Interchange, Malakand (est. 2025), and expanding its distribution network across KPK, Punjab, and Sindh.',
-      'Understanding the growing demand for processed and value-added food products, the company is expanding under the name Yousafzai Agri Foods (Pvt Ltd), establishing an Egg Liquid Processing Plant at Rashakai SEZ with a capacity to process 45,000 eggs per hour. Commercial production is planned by end of 2026.',
+      'Understanding the growing demand for processed and value-added food products, the company is expanding under the name Yousafzai Agri Foods (Pvt Ltd), establishing an Egg Liquid Processing Plant at Rashakai Economic Zone with a capacity to process 45,000 eggs per hour. Commercial production is planned by end of 2026.',
     ],
     team: [],
     leadership: [
