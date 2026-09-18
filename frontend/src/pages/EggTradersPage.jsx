@@ -77,8 +77,7 @@ function CalMaineHero({ data }) {
       <style>{`
         .cm-hero {
           position: relative;
-          min-height: 100svh;
-          min-height: 100dvh;
+          min-height: 100vh;
           display: flex;
           align-items: center;
           justify-content: center;

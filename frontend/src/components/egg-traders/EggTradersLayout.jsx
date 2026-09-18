@@ -15,6 +15,8 @@ export default function EggTradersLayout({ noFooter }) {
   useEffect(() => {
     if (window.__lenis) {
       window.__lenis.scrollTo(0, { immediate: true });
+      // Force Lenis to recalculate scroll height after new page renders
+      setTimeout(() => { if (window.__lenis) window.__lenis.resize(); }, 120);
     } else {
       window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
     }
