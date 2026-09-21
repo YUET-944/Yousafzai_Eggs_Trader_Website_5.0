@@ -474,6 +474,7 @@ export const useCMSStore = create(
     }),
     {
       name: 'yousafzai-cms',
+      version: 2,
       storage: createJSONStorage(() => localStorage),
       merge: (persisted, current) => deepMerge(current, persisted),
       partialize: (state) => {

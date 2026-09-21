@@ -29,7 +29,7 @@ export const defaultContent = {
     eyebrow: 'About Yousafzai AGRI',
     title: 'A Trusted Name in Egg Trading & Poultry Farming',
     subtitle: 'Yousafzai AGRI is a trusted name in the poultry and egg distribution industry. With years of experience, we have built a strong supply network connecting farms to markets efficiently. Our focus is on quality assurance, timely delivery, and long-term business relationships.',
-    quote: 'At Yousafzai AGRI, we believe in quality, trust, and innovation. Our goal is not only to supply eggs but to transform the poultry industry by introducing modern processing solutions such as liquid egg production.',
+    quote: 'At Yousafzai AGRI, we believe in quality, trust, and innovation. Our mission is to lead the transition from traditional egg trading to modern liquid egg processing — delivering value-added products that meet global food safety standards.',
     quoteFooter: 'Chairman\'s Message',
     values: [
       { icon: 'Box', title: 'Quality Assurance', body: 'Eggs sourced from approved and traceable poultry farms with regular quality inspection, grading, and hygienic handling.' },
@@ -96,7 +96,7 @@ export const defaultContent = {
       { icon: 'Feather', title: 'Farm Sourcing', desc: 'Vetted partner farms across KP, Punjab, and Sindh — audited quarterly' },
       { icon: 'FlaskConical', title: 'Quality Check', desc: 'Salmonella swabs, Haugh unit testing, candling, and USDA grading' },
       { icon: 'Snowflake', title: 'Cold Storage', desc: '2–5°C controlled storage across 3 regional hubs with IoT monitoring' },
-      { icon: 'Package', title: 'Packing', desc: 'Client-specified or standard 30-egg tray packaging with batch labels' },
+      { icon: 'Package', title: 'Packing', desc: 'Liquid egg products filled into food-grade aseptic cartons or bulk containers with full batch traceability labels' },
       { icon: 'Truck', title: 'Delivery', desc: 'Refrigerated last-mile delivery with real-time GPS and temp logging' },
     ],
     features: [
@@ -129,7 +129,7 @@ export const defaultContent = {
   statsBand: {
     stats: [
       { value: '280', suffix: '+', label: 'Active partners & B2B clients' },
-      { value: '500', suffix: 'K', label: 'Eggs traded & supplied weekly' },
+      { value: '500', suffix: 'K', label: 'Liquid eggs processed weekly' },
       { value: '92', suffix: '/100', label: 'ESG sustainability score' },
       { value: '100', suffix: '%', label: 'Batches fully traceable' },
     ],
@@ -484,7 +484,7 @@ export const defaultContent = {
     },
     chairman: {
       eyebrow: '',
-      quote: 'At Yousafzai AGRI Foods, we believe in quality, trust, and innovation. Our goal is not only to supply eggs but to transform the poultry industry by introducing modern processing solutions and dependable service standards that strengthen the entire value chain. We are committed to delivering reliable value at every stage, from sourcing and quality assurance to the long-term relationships we build with farms, buyers, and partners.',
+      quote: 'At Yousafzai AGRI Foods, we believe in quality, trust, and innovation. Our mission is to lead the transition from traditional egg trading to modern liquid egg processing — establishing a world-class processing facility at Rashakai Economic Zone that meets global food safety standards and delivers reliable, value-added liquid egg products to food manufacturers across Pakistan and beyond.',
       name: 'Sanaullah',
       role: 'Chairman & Founder',
       image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=450&h=550&fit=crop',
@@ -552,10 +552,10 @@ export const defaultContent = {
         marker: '',
         title: 'Quality & Value Creation',
         items: [
-          'Supply fresh & hygienic eggs',
-          'Maintain strict quality control & food safety',
-          'Expand into value-added egg products like liquid eggs',
-          'Build long-term trust with clients & partners',
+          'Process & supply high-quality liquid egg products',
+          'Maintain strict food safety, HACCP & halal compliance',
+          'Lead value-added liquid egg production at Rashakai Economic Zone',
+          'Build long-term trust with food manufacturers, clients & partners',
         ],
       },
     },
