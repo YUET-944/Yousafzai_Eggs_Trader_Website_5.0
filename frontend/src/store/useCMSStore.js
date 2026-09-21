@@ -205,11 +205,36 @@ function normalizeChairmanContent(chairman = {}) {
   };
 }
 
+const MISSION_ITEMS_LIQUID = [
+  'Supply fresh & hygienic liquid eggs',
+  'Maintain strict quality control & food safety',
+  'Expand into value-added liquid egg products',
+  'Build long-term trust with clients & partners',
+];
+
+function normalizeMissionContent(mission = {}) {
+  if (!isPlainObject(mission)) return mission;
+  const items = Array.isArray(mission.items) ? mission.items : [];
+  const fixedItems = items.map((item) => {
+    if (typeof item !== 'string') return item;
+    return item
+      .replace(/\bSupply fresh\s*&\s*hygienic eggs\b/gi, 'Supply fresh & hygienic liquid eggs')
+      .replace(/\bExpand into value-added egg products like liquid eggs\b/gi, 'Expand into value-added liquid egg products')
+      .replace(/\bExpand into value-added egg products\b/gi, 'Expand into value-added liquid egg products');
+  });
+  // If items are empty or missing, use defaults
+  return {
+    ...mission,
+    items: fixedItems.length ? fixedItems : MISSION_ITEMS_LIQUID,
+  };
+}
+
 function normalizeAboutScenesContent(aboutScenes = {}) {
   if (!isPlainObject(aboutScenes)) return aboutScenes;
   return {
     ...aboutScenes,
     chairman: normalizeChairmanContent(aboutScenes.chairman),
+    mission: normalizeMissionContent(aboutScenes.mission),
   };
 }
 
