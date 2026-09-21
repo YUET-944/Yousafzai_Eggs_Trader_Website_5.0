@@ -16,7 +16,7 @@ export const stages = [
   {
     id: "packaging",
     title: "Packaging",
-    description: "Client-specified or standard 30-egg tray packaging with complete batch traceability labels.",
+    description: "Client-specified liquid egg packaging with complete batch traceability labels.",
     image: "/images/client-final/whole-egg-liquid-product.webp",
     stats: "BATCH TRACEABILITY"
   },

@@ -179,9 +179,14 @@ function normalizeFooterContent(footer = {}) {
 function normalizeCompanyContent(company = {}) {
   if (!isPlainObject(company)) return company;
   const sub = typeof company.sub === 'string' ? company.sub : '';
+  const tagline = typeof company.tagline === 'string' ? company.tagline : '';
   return {
     ...company,
     sub: /^Eggs Traders/i.test(sub) ? 'Agri Foods' : sub.replace(/Agro Foods/gi, 'Agri Foods'),
+    tagline: tagline
+      ? tagline.replace(/A trusted name in egg trading and poultry farming since 1960[^'"]*/gi,
+          "From farm-fresh eggs to liquid egg processing — Yousafzai AGRI Foods has been a trusted partner in Pakistan's poultry industry since 1960.")
+      : tagline,
   };
 }
 
@@ -189,9 +194,13 @@ function normalizeChairmanContent(chairman = {}) {
   if (!isPlainObject(chairman)) return chairman;
   const name = typeof chairman.name === 'string' ? chairman.name : '';
   const quote = typeof chairman.quote === 'string' ? chairman.quote : '';
+  const fixedQuote = quote
+    .replace(/^\s*["""]+|["""]+\s*$/g, '')
+    .trim()
+    .replace(/\bsupply eggs\b/gi, 'supply liquid eggs');
   return {
     ...chairman,
-    quote: quote.replace(/^\s*["“”]+|["“”]+\s*$/g, '').trim() || chairman.quote,
+    quote: fixedQuote || chairman.quote,
     name: name.replace(/Sana[-\s]?ullah/gi, 'Sanaullah') || 'Sanaullah',
   };
 }
@@ -243,10 +252,20 @@ function normalizeOurCompaniesContent(ourCompanies = {}) {
   };
 }
 
+function normalizeAboutContent(about = {}) {
+  if (!isPlainObject(about)) return about;
+  const quote = typeof about.quote === 'string' ? about.quote : '';
+  return {
+    ...about,
+    quote: quote.replace(/\bsupply eggs\b/gi, 'supply liquid eggs'),
+  };
+}
+
 function normalizeCmsState(state) {
   if (!isPlainObject(state)) return state;
   return {
     ...state,
+    about: normalizeAboutContent(state.about),
     contact: normalizeContactContent(state.contact),
     banners: normalizeBannersContent(state.banners),
     footer: normalizeFooterContent(state.footer),
@@ -474,7 +493,6 @@ export const useCMSStore = create(
     }),
     {
       name: 'yousafzai-cms',
-      version: 2,
       storage: createJSONStorage(() => localStorage),
       merge: (persisted, current) => deepMerge(current, persisted),
       partialize: (state) => {
