@@ -10,8 +10,6 @@ import { useCMSStore } from '../store/useCMSStore';
 
 const ABOUT_SLIDESHOW_IMAGES = [
   '/images/client-final/Process_line.webp',
-  '/images/client-final/cold-storage-products.webp',
-  '/images/client-final/whole-egg-liquid-product.webp',
 ];
 
 export default function AboutPage() {
