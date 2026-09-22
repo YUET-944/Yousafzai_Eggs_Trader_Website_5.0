@@ -208,7 +208,7 @@ export default function OurCompaniesSection() {
           content: '';
           position: absolute;
           inset: 0;
-          background-image: url('/images/client-final/whole-egg-liquid-product.webp');
+          background-image: url('/images/Brown_Eggs.webp');
           background-size: cover;
           background-position: center;
           opacity: 0.12;
