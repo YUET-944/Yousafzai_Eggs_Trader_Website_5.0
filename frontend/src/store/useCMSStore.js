@@ -185,7 +185,7 @@ function normalizeCompanyContent(company = {}) {
     sub: /^Eggs Traders/i.test(sub) ? 'Agri Foods' : sub.replace(/Agro Foods/gi, 'Agri Foods'),
     tagline: tagline
       ? tagline.replace(/A trusted name in egg trading and poultry farming since 1960[^'"]*/gi,
-          "From farm-fresh eggs to liquid egg processing — Yousafzai AGRI Foods has been a trusted partner in Pakistan's poultry industry since 1960.")
+          "From farm-fresh eggs to liquid egg processing — Yousafzai Agri Foods has been a trusted partner in Pakistan's poultry industry since 1960.")
       : tagline,
   };
 }
@@ -296,15 +296,34 @@ function normalizeOurCompaniesContent(ourCompanies = {}) {
 function normalizeAboutContent(about = {}) {
   if (!isPlainObject(about)) return about;
   const quote = typeof about.quote === 'string' ? about.quote : '';
+  const subtitle = typeof about.subtitle === 'string' ? about.subtitle : '';
   return {
     ...about,
     quote: quote.replace(/\bsupply eggs\b/gi, 'supply liquid eggs'),
+    subtitle: subtitle.replace(/\bYousafzai Agri is a trusted name\b/gi, 'Yousafzai Agri Foods is a trusted name'),
   };
+}
+
+function fixAgriText(obj) {
+  if (typeof obj === 'string') {
+    return obj.replace(/\bYousafzai AGRI\b/g, 'Yousafzai Agri');
+  }
+  if (Array.isArray(obj)) {
+    return obj.map(fixAgriText);
+  }
+  if (isPlainObject(obj)) {
+    const res = {};
+    for (const k of Object.keys(obj)) {
+      res[k] = fixAgriText(obj[k]);
+    }
+    return res;
+  }
+  return obj;
 }
 
 function normalizeCmsState(state) {
   if (!isPlainObject(state)) return state;
-  return {
+  const normalized = {
     ...state,
     about: normalizeAboutContent(state.about),
     contact: normalizeContactContent(state.contact),
@@ -319,6 +338,7 @@ function normalizeCmsState(state) {
       ? normalizeEggTradersContent(state.eggTraders)
       : state.eggTraders,
   };
+  return fixAgriText(normalized);
 }
 
 const saveTimers = {};

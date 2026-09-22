@@ -26,10 +26,10 @@ export const defaultContent = {
     ],
   },
   about: {
-    eyebrow: 'About Yousafzai AGRI',
+    eyebrow: 'About Yousafzai Agri',
     title: 'A Trusted Name in Egg Trading & Poultry Farming',
-    subtitle: 'Yousafzai AGRI is a trusted name in the poultry and egg distribution industry. With years of experience, we have built a strong supply network connecting farms to markets efficiently. Our focus is on quality assurance, timely delivery, and long-term business relationships.',
-    quote: 'At Yousafzai AGRI, we believe in quality, trust, and innovation. Our goal is not only to supply liquid eggs but to transform the poultry industry by introducing modern processing solutions such as liquid egg production.',
+    subtitle: 'Yousafzai Agri Foods is a trusted name in the poultry and egg distribution industry. With years of experience, we have built a strong supply network connecting farms to markets efficiently. Our focus is on quality assurance, timely delivery, and long-term business relationships.',
+    quote: 'At Yousafzai Agri, we believe in quality, trust, and innovation. Our goal is not only to supply liquid eggs but to transform the poultry industry by introducing modern processing solutions such as liquid egg production.',
     quoteFooter: 'Chairman\'s Message',
     values: [
       { icon: 'Box', title: 'Quality Assurance', body: 'Eggs sourced from approved and traceable poultry farms with regular quality inspection, grading, and hygienic handling.' },
@@ -43,12 +43,12 @@ export const defaultContent = {
     ],
     team: [],
     leadership: [
-      { name: 'Chairman', role: 'Chairman & Founder', bio: 'At Yousafzai AGRI, we believe in quality, trust, and innovation. Our goal is not only to supply liquid eggs but to transform the poultry industry by introducing modern processing solutions.', image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=400&fit=crop' },
+      { name: 'Chairman', role: 'Chairman & Founder', bio: 'At Yousafzai Agri, we believe in quality, trust, and innovation. Our goal is not only to supply liquid eggs but to transform the poultry industry by introducing modern processing solutions.', image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=400&fit=crop' },
     ]
   },
   overview: {
     rows: [
-      { label: 'Company Name', value: 'M/S Yousafzai AGRI & Poultry Farms' },
+      { label: 'Company Name', value: 'M/S Yousafzai Agri & Poultry Farms' },
       { label: 'Registration', value: 'C955423 (SECP Registered)' },
       { label: 'Established', value: '1960, Mardan, Khyber Pakhtunkhwa' },
       { label: 'Business Type', value: 'Egg Trading, Poultry Farming & Distribution' },
@@ -193,7 +193,7 @@ export const defaultContent = {
   ],
   contact: {
     eyebrow: 'Contact Us',
-    title: 'Get in Touch — Yousafzai AGRI',
+    title: 'Get in Touch — Yousafzai Agri',
     subtitle: 'Reach out for orders, partnerships, or inquiries. We are always happy to connect.',
     info: [
       { icon: 'Phone', label: 'Phone', value: '+92 315 8266006' },
@@ -205,16 +205,16 @@ export const defaultContent = {
   company: {
     name: 'YOUSAFZAI',
     sub: 'Agri Foods',
-    tagline: 'From farm-fresh eggs to liquid egg processing — Yousafzai AGRI Foods has been a trusted partner in Pakistan\'s poultry industry since 1960.',
+    tagline: 'From farm-fresh eggs to liquid egg processing — Yousafzai Agri Foods has been a trusted partner in Pakistan\'s poultry industry since 1960.',
   },
   ourCompanies: {
     eyebrow: '',
     title: 'Our Companies',
-    subtitle: 'Explore the specialized brands under the Yousafzai AGRI group — each serving distinct market segments with the same commitment to quality and compliance.',
+    subtitle: 'Explore the specialized brands under the Yousafzai Agri group — each serving distinct market segments with the same commitment to quality and compliance.',
     companies: [
       {
         id: 'yousafzai-agri',
-        name: 'Yousafzai AGRI',
+        name: 'Yousafzai Agri',
         tagline: 'International B2B Egg Trading & Supply',
         description: 'Our flagship brand for international B2B egg trading, supply chain management, and compliance-first distribution across Pakistan and beyond.',
         color: '#B8860B',
@@ -236,7 +236,7 @@ export const defaultContent = {
     company: {
       name: 'Egg Traders',
       sub: 'Poultry Trading',
-      tagline: 'A Yousafzai AGRI company connecting verified poultry farms with commercial buyers through a clear supply process.',
+      tagline: 'A Yousafzai Agri company connecting verified poultry farms with commercial buyers through a clear supply process.',
     },
     hero: {
       eyebrow: '',
@@ -266,7 +266,7 @@ export const defaultContent = {
       quote: 'Our goal is to make commercial egg procurement clearer, faster, and easier to manage for both buyers and farms.',
       quoteFooter: 'Our Mission',
       paragraphs: [
-        'Founded as a Yousafzai AGRI venture, Egg Traders was built to connect verified farms directly with commercial buyers.',
+        'Founded as a Yousafzai Agri venture, Egg Traders was built to connect verified farms directly with commercial buyers.',
         'The service helps buyers compare supply options, review quality information, and manage orders through a clearer procurement process.',
         'Egg Traders supports commercial egg procurement across Pakistan with a focus on traceability, reliability, and responsive service.',
       ],
@@ -397,7 +397,7 @@ export const defaultContent = {
       },
       team: {
         title: 'Leadership & Operations',
-        subtitle: 'Meet the experienced executives and agricultural specialists driving Yousafzai AGRI.',
+        subtitle: 'Meet the experienced executives and agricultural specialists driving Yousafzai Agri.',
         images: [],
       },
     },
@@ -441,7 +441,7 @@ export const defaultContent = {
       eyebrow: '',
       h1Line1: 'Built on',
       h1Highlight: 'Quality & Trust',
-      paragraph: "Since 1960, Yousafzai AGRI has been a trusted name in Pakistan's poultry and egg distribution industry. With over six decades of experience, we connect certified farms to hotels, retailers, manufacturers, and institutions across KPK, Punjab, and Sindh — delivering fresh, Halal-certified eggs with full traceability.",
+      paragraph: "Since 1960, Yousafzai Agri has been a trusted name in Pakistan's poultry and egg distribution industry. With over six decades of experience, we connect certified farms to hotels, retailers, manufacturers, and institutions across KPK, Punjab, and Sindh — delivering fresh, Halal-certified eggs with full traceability.",
       ctaLabel: 'Explore Our Heritage',
       stamp: '',
       stats: [
@@ -484,7 +484,7 @@ export const defaultContent = {
     },
     chairman: {
       eyebrow: '',
-      quote: 'At Yousafzai AGRI Foods, we believe in quality, trust, and innovation. Our goal is not only to supply liquid eggs but to transform the poultry industry by introducing modern processing solutions and dependable service standards that strengthen the entire value chain. We are committed to delivering reliable value at every stage, from sourcing and quality assurance to the long-term relationships we build with farms, buyers, and partners.',
+      quote: 'At Yousafzai Agri Foods, we believe in quality, trust, and innovation. Our goal is not only to supply liquid eggs but to transform the poultry industry by introducing modern processing solutions and dependable service standards that strengthen the entire value chain. We are committed to delivering reliable value at every stage, from sourcing and quality assurance to the long-term relationships we build with farms, buyers, and partners.',
       name: 'Sanaullah',
       role: 'Chairman & Founder',
       image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=450&h=550&fit=crop',
