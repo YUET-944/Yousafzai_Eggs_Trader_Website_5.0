@@ -8,7 +8,11 @@ import OurCompaniesSection from '../components/OurCompaniesSection';
 import OurPartnersSection from '../components/OurPartnersSection';
 import { useCMSStore } from '../store/useCMSStore';
 
-const ABOUT_HERO_IMAGE = 'https://images.unsplash.com/photo-1498654077810-12c21d4d6dc3?w=1920&q=80';
+const ABOUT_SLIDESHOW_IMAGES = [
+  '/images/client-final/Process_line.webp',
+  '/images/client-final/cold-storage-products.webp',
+  '/images/client-final/whole-egg-liquid-product.webp',
+];
 
 export default function AboutPage() {
   const about = useCMSStore((s) => s.about);
@@ -20,7 +24,7 @@ export default function AboutPage() {
         <PageBanner
           title="About Us"
           subtitle={heroSubtitle}
-          slideshowImages={[ABOUT_HERO_IMAGE]}
+          slideshowImages={ABOUT_SLIDESHOW_IMAGES}
           fullScreen
           hideBreadcrumb
         />
