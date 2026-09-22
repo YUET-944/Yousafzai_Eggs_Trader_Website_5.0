@@ -5,10 +5,10 @@ export default function SceneAboutHero() {
   const hero = useCMSStore((s) => s.aboutScenes?.hero) || {};
   const h1Line1 = hero.h1Line1 === 'Engineered for' ? 'Built on' : hero.h1Line1 || 'Built on';
   const ctaLabel = /^EXPLORE OUR HERITAGE/i.test(hero.ctaLabel || '') ? 'Explore Our Heritage' : hero.ctaLabel || 'Explore Our Heritage';
-  const heroSlides = Array.isArray(hero.slides) && hero.slides.length ? hero.slides : [
-    '/images/Brown_Eggs.webp',
-    'https://images.unsplash.com/photo-1582722872445-44dc5f7e3c8f?auto=format&fit=crop&w=1200&q=60',
-    'https://images.unsplash.com/photo-1587486913049-53fc88980cfc?auto=format&fit=crop&w=1200&q=60',
+  const heroSlides = [
+    '/images/client-final/Process_line.webp',
+    '/images/client-final/cold-storage-products.webp',
+    '/images/client-final/whole-egg-liquid-product.webp',
   ];
   const stats = Array.isArray(hero.stats) && hero.stats.length ? hero.stats : [
     { value: '60+', label: 'Years of Experience' },

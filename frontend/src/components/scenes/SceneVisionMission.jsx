@@ -142,7 +142,7 @@ export default function SceneVisionMission() {
         style={{
           position: 'absolute',
           inset: -50, // Slightly larger to allow scale effect
-          backgroundImage: `url("${vm.bgImage || '/images/client-final/Process_line.webp'}")`,
+          backgroundImage: `url('/images/client-final/Process_line.webp')`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           zIndex: 0
