@@ -10,7 +10,7 @@ export default function QualityPage() {
       <PageBanner
         title={banner?.title && banner.title !== 'Quality' ? banner.title : 'Our Quality'}
         subtitle={banner?.subtitle || 'Focused on quality, traceability, and responsible handling at every stage.'}
-        slideshowImages={banner?.images || null}
+        slideshowImages={['/images/client-final/Process_line.webp']}
         fullScreen
         hideBreadcrumb
       >

@@ -10,7 +10,7 @@ export default function ProcessPage() {
     ? 'A clear process from sourcing and grading to cold-chain delivery.'
     : banner.subtitle;
   const stagePreview = process.slice(0, 7);
-  const heroImages = banner?.images?.length ? banner.images : ['/images/B-g.webp', '/images/client-final/cold-storage-products.webp'];
+  const heroImages = ['/images/client-final/Process_line.webp'];
 
   return (
     <div className="process-page">

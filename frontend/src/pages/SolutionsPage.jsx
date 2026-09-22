@@ -8,7 +8,7 @@ export default function SolutionsPage() {
 
   return (
     <>
-      <PageBanner title={banner?.title || 'Solutions'} subtitle={banner?.subtitle || ''} slideshowImages={heroImages} />
+      <PageBanner title={banner?.title || 'Solutions'} subtitle={banner?.subtitle || ''} slideshowImages={['/images/client-final/Process_line.webp']} />
       <TradingSolutionsSection />
     </>
   );

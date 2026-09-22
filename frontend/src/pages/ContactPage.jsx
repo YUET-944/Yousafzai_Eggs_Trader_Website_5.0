@@ -10,7 +10,7 @@ const CONTACT_HERO_IMAGE = '/images/client-final/Process_line.webp';
 
 export default function ContactPage() {
   const banner = useCMSStore((s) => s.banners?.main?.contact);
-  const heroImages = banner?.images?.length ? banner.images : [CONTACT_HERO_IMAGE];
+  const heroImages = [CONTACT_HERO_IMAGE];
   const { hash } = useLocation();
 
   useEffect(() => {
