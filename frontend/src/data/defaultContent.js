@@ -538,7 +538,7 @@ export const defaultContent = {
       ],
     },
     visionMission: {
-      bgImage: 'https://images.unsplash.com/photo-1508680415307-e160e15777bd?w=1920&q=80',
+      bgImage: '/images/client-final/Process_line.webp',
       eyebrow: '',
       title: 'Vision & Mission',
       vision: {

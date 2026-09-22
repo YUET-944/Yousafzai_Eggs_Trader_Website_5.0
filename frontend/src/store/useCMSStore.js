@@ -231,10 +231,15 @@ function normalizeMissionContent(mission = {}) {
 
 function normalizeAboutScenesContent(aboutScenes = {}) {
   if (!isPlainObject(aboutScenes)) return aboutScenes;
+  const vm = isPlainObject(aboutScenes.visionMission) ? aboutScenes.visionMission : {};
   return {
     ...aboutScenes,
     chairman: normalizeChairmanContent(aboutScenes.chairman),
     mission: normalizeMissionContent(aboutScenes.mission),
+    visionMission: {
+      ...vm,
+      bgImage: '/images/client-final/Process_line.webp',
+    },
   };
 }
 
