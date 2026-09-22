@@ -200,12 +200,37 @@ export default function OurCompaniesSection() {
         .oc-card.card-egg-traders {
           background: #FFFFFF;
           border: 1px solid #3F6231;
+          position: relative;
+          overflow: hidden;
+        }
+
+        .oc-card.card-egg-traders::before {
+          content: '';
+          position: absolute;
+          inset: 0;
+          background-image: url('/images/client-final/whole-egg-liquid-product.webp');
+          background-size: cover;
+          background-position: center;
+          opacity: 0.12;
+          z-index: 0;
+          pointer-events: none;
+          transition: opacity 0.4s ease, transform 0.4s ease;
+        }
+
+        .oc-card.card-egg-traders > * {
+          position: relative;
+          z-index: 1;
         }
 
         .oc-card.card-egg-traders:hover {
           border-color: #3F6231;
           box-shadow: 0 30px 80px rgba(63,98,49,0.18);
           transform: translateY(-6px);
+        }
+
+        .oc-card.card-egg-traders:hover::before {
+          opacity: 0.22;
+          transform: scale(1.03);
         }
 
         /* Parent Green / Gold Card */
