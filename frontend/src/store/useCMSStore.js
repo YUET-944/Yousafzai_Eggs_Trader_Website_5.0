@@ -229,11 +229,22 @@ function normalizeMissionContent(mission = {}) {
   };
 }
 
+const ABOUT_HERO_SLIDES = [
+  '/images/client-final/Process_line.webp',
+  '/images/client-final/cold-storage-products.webp',
+  '/images/client-final/whole-egg-liquid-product.webp',
+];
+
 function normalizeAboutScenesContent(aboutScenes = {}) {
   if (!isPlainObject(aboutScenes)) return aboutScenes;
   const vm = isPlainObject(aboutScenes.visionMission) ? aboutScenes.visionMission : {};
+  const hero = isPlainObject(aboutScenes.hero) ? aboutScenes.hero : {};
   return {
     ...aboutScenes,
+    hero: {
+      ...hero,
+      slides: ABOUT_HERO_SLIDES,
+    },
     chairman: normalizeChairmanContent(aboutScenes.chairman),
     mission: normalizeMissionContent(aboutScenes.mission),
     visionMission: {
