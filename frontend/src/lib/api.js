@@ -1,6 +1,15 @@
 import { useAuthStore } from '../store/useAuthStore';
 
-const API_BASE = import.meta.env.VITE_API_BASE || '';
+// Determine the API base URL:
+// 1. Explicit environment variable (e.g. set in Coolify / Vite build: VITE_API_BASE)
+// 2. Production fallback: https://main-api.yousafzaiagrifoods.com
+// 3. Local development fallback: http://localhost:4000
+const DEFAULT_API_BASE = import.meta.env.DEV
+  ? 'http://localhost:4000'
+  : 'https://main-api.yousafzaiagrifoods.com';
+
+const RAW_API_BASE = import.meta.env.VITE_API_BASE || DEFAULT_API_BASE;
+export const API_BASE = RAW_API_BASE.replace(/\/+$/, '');
 
 function getToken() {
   try {

@@ -7,8 +7,16 @@ export const loginUser = async (req, res) => {
   const { email, password } = req.body;
 
   try {
+    const normalizedEmail = typeof email === 'string' ? email.trim().toLowerCase() : '';
+    if (!normalizedEmail || !password) {
+      return res.status(400).json({ 
+        success: false, 
+        message: 'Email and password are required' 
+      });
+    }
+
     // 1. Find user by email in MySQL
-    const user = await User.findOne({ where: { email } });
+    const user = await User.findOne({ where: { email: normalizedEmail } });
 
     // 2. If user doesn't exist, return 401 error
     if (!user) {

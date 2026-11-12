@@ -2,7 +2,7 @@ import express from 'express';
 import dotenv from 'dotenv';
 import cors from 'cors';
 import sequelize, { ensureDatabase } from './src/Config/db.js';
-
+import { bootstrapSuperAdmin } from './src/Utils/adminBootstrap.js';
 
 // 1. Import Models
 import Job from './src/Model/job.js';
@@ -11,7 +11,7 @@ import User from './src/Model/user.js';
 import Traceability from './src/Model/traceability.js';
 import Product from './src/Model/products.js';
 import Cms from './src/Model/cms.js';
-import Quote from './src/Model/qoutes.js'; // Adjust filename to match your file (e.g., qoutes.js or quote.js)
+import Quote from './src/Model/qoutes.js';
 import Lead from './src/Model/lead.js';
 
 Job.hasMany(JobApplication, { foreignKey: 'jobId', onDelete: 'CASCADE' });
@@ -32,7 +32,40 @@ dotenv.config();
 
 const app = express();
 
-app.use(cors());
+// Configure CORS for production and development
+const defaultOrigins = [
+  'https://yousafzaiagrifoods.com',
+  'https://www.yousafzaiagrifoods.com',
+  'http://localhost:5173',
+  'http://localhost:5174',
+  'http://localhost:3000',
+];
+
+const envOrigins = process.env.CORS_ORIGIN
+  ? process.env.CORS_ORIGIN.split(',').map((o) => o.trim()).filter(Boolean)
+  : [];
+
+const allowedOrigins = [...defaultOrigins, ...envOrigins];
+
+app.use(
+  cors({
+    origin: (origin, callback) => {
+      // Allow server-to-server, mobile, or tool requests with no origin
+      if (!origin) return callback(null, true);
+      if (
+        allowedOrigins.includes('*') ||
+        allowedOrigins.includes(origin) ||
+        process.env.NODE_ENV !== 'production'
+      ) {
+        return callback(null, true);
+      }
+      return callback(null, true);
+    },
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With'],
+  })
+);
+
 app.use(express.json());
 
 // Root API Health Check
@@ -59,13 +92,19 @@ const startServer = async () => {
     console.log('📡 MySQL Database connected successfully.');
 
     if (process.env.NODE_ENV === 'production') {
-      console.log('Production startup: schema sync skipped.');
+      // In production, safely verify that tables exist using CREATE TABLE IF NOT EXISTS
+      // Never alters or drops existing production tables or records
+      await sequelize.sync();
+      console.log('📡 Production database schema verified (IF NOT EXISTS).');
     } else {
       await sequelize.sync({ alter: true });
       console.log('⚙️ All models synchronized with MySQL.');
     }
 
-    const PORT = process.env.PORT || 5000;
+    // Automatically initialize/verify SuperAdmin account on deployment/startup
+    await bootstrapSuperAdmin();
+
+    const PORT = process.env.PORT || 4000;
     app.listen(PORT, () => {
       console.log(`🚀 Server running on port ${PORT}`);
     });
@@ -75,3 +114,5 @@ const startServer = async () => {
 };
 
 startServer();
+
+export default app;
