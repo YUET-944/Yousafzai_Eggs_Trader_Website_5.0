@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { ArrowRight } from 'lucide-react';
 import { getJobs } from '../lib/careersApi';
 import PageBanner from '../components/PageBanner';
 
@@ -35,7 +36,7 @@ export default function CareersPage() {
       <div className="careers-hero-wrap">
         <PageBanner
           title="Careers"
-          subtitle="Explore opportunities to grow your career with Yousafzai."
+          subtitle="Explore opportunities to grow your career with Yousafzai Agri Foods."
           slideshowImages={[CAREERS_HERO_IMAGE]}
           hideBreadcrumb
           fullScreen
@@ -44,6 +45,12 @@ export default function CareersPage() {
 
       <section className="careers-content">
         <div className="container">
+          <div className="careers-section-header">
+            <span className="careers-kicker">Open Positions</span>
+            <h2>Current Opportunities</h2>
+            <p>Select a position below to view full role details, responsibilities, and how to apply.</p>
+          </div>
+
           {loading ? (
             <div className="careers-state loading">Loading opportunities…</div>
           ) : error ? (
@@ -57,15 +64,18 @@ export default function CareersPage() {
               {jobs.map((job) => (
                 <Link key={job.id} to={`/careers/${job.id}`} className="job-card">
                   <div className="job-card-top">
-                    <span className="job-department">{job.department || 'Department'}</span>
-                    <span className="job-status">{job.status || 'Active'}</span>
+                    <span className="job-availability">
+                      <span className="availability-dot" aria-hidden="true" />
+                      {job.status === 'active' || !job.status ? 'Currently Hiring' : job.status}
+                    </span>
                   </div>
-                  <h2>{job.title}</h2>
-                  <div className="job-meta">
-                    <span>{job.location || 'Location TBD'}</span>
-                    <span>{job.type || 'Full-Time'}</span>
+                  <div className="job-card-body">
+                    <h3>{job.title}</h3>
                   </div>
-                  <p>{job.description || 'Learn more about this opportunity.'}</p>
+                  <div className="job-card-footer">
+                    <span>View Role &amp; Apply</span>
+                    <ArrowRight size={16} className="job-card-arrow" />
+                  </div>
                 </Link>
               ))}
             </div>
@@ -77,6 +87,7 @@ export default function CareersPage() {
         .careers-page {
           background: #fbf7f0;
           color: #111111;
+          min-height: 100vh;
         }
 
         /* ─── HERO OVERRIDES — match Main Website hero visual language ─── */
@@ -165,17 +176,48 @@ export default function CareersPage() {
 
         /* ─── CONTENT SECTION ─── */
         .careers-content {
-          padding: 72px 0 120px;
+          padding: 84px 0 128px;
+        }
+
+        .careers-section-header {
+          max-width: 640px;
+          margin-bottom: 44px;
+        }
+
+        .careers-kicker {
+          display: inline-block;
+          font-size: 0.74rem;
+          font-weight: 700;
+          letter-spacing: 0.16em;
+          text-transform: uppercase;
+          color: #3f6231;
+          margin-bottom: 10px;
+        }
+
+        .careers-section-header h2 {
+          margin: 0 0 12px;
+          font-family: 'Space Grotesk', sans-serif;
+          font-size: clamp(1.9rem, 3.5vw, 2.6rem);
+          font-weight: 700;
+          color: #111111;
+          letter-spacing: -0.02em;
+        }
+
+        .careers-section-header p {
+          margin: 0;
+          font-size: 1.02rem;
+          line-height: 1.6;
+          color: rgba(17,17,17,0.68);
         }
 
         .careers-state {
           max-width: 760px;
           margin: 0 auto;
-          padding: 28px 24px;
-          border-radius: 18px;
-          background: #fff;
-          border: 1px solid rgba(63,98,49,0.18);
-          box-shadow: 0 12px 28px rgba(17,17,17,0.04);
+          padding: 36px 28px;
+          border-radius: 16px;
+          background: #ffffff;
+          border: 1px solid rgba(17,17,17,0.08);
+          box-shadow: 0 10px 30px rgba(17,17,17,0.04);
           text-align: center;
           font-size: 1.02rem;
           line-height: 1.7;
@@ -191,70 +233,120 @@ export default function CareersPage() {
 
         .jobs-grid {
           display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-          gap: 22px;
+          grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+          gap: 24px;
         }
 
         .job-card {
           display: flex;
           flex-direction: column;
-          gap: 16px;
+          justify-content: space-between;
+          min-height: 196px;
           text-decoration: none;
           color: inherit;
-          background: #fff;
-          border: 1px solid rgba(63,98,49,0.18);
-          border-radius: 18px;
-          padding: 24px 20px;
-          box-shadow: 0 12px 28px rgba(17,17,17,0.04);
-          transition: transform 0.2s ease, box-shadow 0.2s ease;
+          background: #ffffff;
+          border: 1px solid rgba(17,17,17,0.1);
+          border-radius: 16px;
+          padding: 28px 26px 24px;
+          box-shadow: 0 6px 24px rgba(17,17,17,0.03);
+          transition: transform 0.22s cubic-bezier(0.22, 1, 0.36, 1),
+                      box-shadow 0.22s cubic-bezier(0.22, 1, 0.36, 1),
+                      border-color 0.22s ease;
         }
 
         .job-card:hover {
-          transform: translateY(-2px);
-          box-shadow: 0 18px 38px rgba(17,17,17,0.08);
+          transform: translateY(-4px);
+          border-color: rgba(63,98,49,0.5);
+          box-shadow: 0 18px 40px rgba(63,98,49,0.09);
+        }
+
+        .job-card:focus-visible {
+          outline: 2px solid #3f6231;
+          outline-offset: 3px;
         }
 
         .job-card-top {
           display: flex;
-          justify-content: space-between;
           align-items: center;
-          gap: 12px;
+          justify-content: space-between;
+          margin-bottom: 18px;
         }
 
-        .job-department {
-          background: rgba(222,81,10,0.12);
-          color: #b9320d;
+        .job-availability {
+          display: inline-flex;
+          align-items: center;
+          gap: 8px;
+          padding: 5px 12px;
           border-radius: 999px;
-          padding: 6px 10px;
-          font-size: 0.7rem;
-          letter-spacing: 0.08em;
+          background: rgba(63,98,49,0.09);
+          color: #2f5222;
+          font-size: 0.74rem;
+          font-weight: 700;
+          letter-spacing: 0.06em;
           text-transform: uppercase;
         }
 
-        .job-status {
-          font-size: 0.7rem;
-          letter-spacing: 0.08em;
-          text-transform: uppercase;
+        .availability-dot {
+          width: 7px;
+          height: 7px;
+          border-radius: 50%;
+          background: #3f6231;
+          box-shadow: 0 0 0 3px rgba(63,98,49,0.2);
+        }
+
+        .job-card-body {
+          flex: 1;
+          display: flex;
+          align-items: flex-start;
+        }
+
+        .job-card h3 {
+          margin: 0;
+          font-family: 'Space Grotesk', sans-serif;
+          font-size: 1.4rem;
+          font-weight: 700;
+          line-height: 1.3;
+          color: #111111;
+          letter-spacing: -0.015em;
+        }
+
+        .job-card:hover h3 {
+          color: #2f5222;
+        }
+
+        .job-card-footer {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          margin-top: 26px;
+          padding-top: 16px;
+          border-top: 1px solid rgba(17,17,17,0.07);
+          font-size: 0.88rem;
+          font-weight: 600;
           color: #3f6231;
         }
 
-        .job-card h2 {
-          margin: 0;
-          font-size: 1.3rem;
+        .job-card-arrow {
+          transition: transform 0.2s ease;
         }
 
-        .job-meta {
-          display: flex;
-          flex-wrap: wrap;
-          gap: 10px;
-          font-size: 0.85rem;
-          color: rgba(17,17,17,0.72);
+        .job-card:hover .job-card-arrow {
+          transform: translateX(4px);
         }
 
-        .job-card p {
-          margin: 0;
-          line-height: 1.7;
-          color: rgba(17,17,17,0.72);
+        @media (max-width: 640px) {
+          .careers-content {
+            padding: 56px 0 88px;
+          }
+
+          .jobs-grid {
+            grid-template-columns: 1fr;
+          }
+
+          .job-card {
+            min-height: 172px;
+            padding: 24px 20px 20px;
+          }
         }
       `}</style>
     </div>
