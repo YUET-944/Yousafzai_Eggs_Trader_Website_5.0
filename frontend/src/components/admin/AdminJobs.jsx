@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { CheckCircle2, Edit3, Loader2, RefreshCw, Save, Trash2 } from 'lucide-react';
+import { CheckCircle2, Edit3, ExternalLink, Loader2, RefreshCw, Save, Trash2 } from 'lucide-react';
 import { api } from '../../lib/api';
 import AdminConfirmDialog from './AdminConfirmDialog';
 import AdminState from './AdminState';
@@ -14,6 +14,7 @@ const emptyJobForm = {
   location: '',
   type: 'Full-Time',
   status: 'active',
+  applicationFormUrl: '',
   description: '',
   requirements: '',
 };
@@ -34,7 +35,7 @@ export default function AdminJobs() {
     setLoading(true);
     setError('');
     try {
-      const res = await api.getJobs();
+      const res = await api.getJobs('all=true');
       setJobs(toArray(res));
     } catch (err) {
       setError(err.message || 'Jobs could not be loaded.');
@@ -65,6 +66,7 @@ export default function AdminJobs() {
       location: job.location || '',
       type: job.type || 'Full-Time',
       status: job.status || 'active',
+      applicationFormUrl: job.applicationFormUrl || '',
       description: job.description || '',
       requirements: job.requirements || '',
     });
@@ -76,11 +78,19 @@ export default function AdminJobs() {
     setError('');
     setSuccess('');
 
+    const trimmedUrl = form.applicationFormUrl.trim();
+    if (trimmedUrl && !/^https?:\/\/.+/i.test(trimmedUrl)) {
+      setError('Google Form Application URL must be a valid web address starting with http:// or https://');
+      setSaving(false);
+      return;
+    }
+
     const payload = {
       title: form.title.trim(),
       department: form.department.trim(),
       location: form.location.trim(),
       type: form.type,
+      applicationFormUrl: trimmedUrl || null,
       description: form.description.trim(),
       requirements: form.requirements.trim(),
       ...(editingJob ? { status: form.status } : {}),
@@ -186,6 +196,15 @@ export default function AdminJobs() {
               </label>
             )}
             <label className="wide">
+              <span>Google Form Application URL (Optional)</span>
+              <input
+                type="url"
+                value={form.applicationFormUrl}
+                onChange={setField('applicationFormUrl')}
+                placeholder="https://docs.google.com/forms/d/e/.../viewform or https://forms.gle/..."
+              />
+            </label>
+            <label className="wide">
               <span>Description</span>
               <textarea value={form.description} onChange={setField('description')} required rows={5} />
             </label>
@@ -214,6 +233,7 @@ export default function AdminJobs() {
                     <th>Job</th>
                     <th>Type</th>
                     <th>Status</th>
+                    <th>Form</th>
                     <th>Created</th>
                     <th>Actions</th>
                   </tr>
@@ -227,6 +247,22 @@ export default function AdminJobs() {
                       </td>
                       <td>{job.type || 'Full-Time'}</td>
                       <td><span className="admin-status-pill">{job.status || 'active'}</span></td>
+                      <td>
+                        {job.applicationFormUrl ? (
+                          <a
+                            href={job.applicationFormUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="admin-link-button"
+                            style={{ display: 'inline-flex', alignItems: 'center', gap: '4px', fontSize: '12px' }}
+                            title={job.applicationFormUrl}
+                          >
+                            <ExternalLink size={12} /> Google Form
+                          </a>
+                        ) : (
+                          <span style={{ color: '#999', fontSize: '12px' }}>Direct CV</span>
+                        )}
+                      </td>
                       <td>{formatDate(job.createdAt)}</td>
                       <td>
                         <div className="admin-action-row">

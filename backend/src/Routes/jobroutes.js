@@ -11,6 +11,8 @@ import {
   getApplicationsByJob,
   getAllApplications,
   deleteApplication,
+  downloadResume,
+  downloadResumeByFilename,
 } from '../Controllers/jobApplicationController.js';
 import { handleResumeUpload } from '../Controllers/uploadcontroller.js';
 import { protect, authorize } from '../Middleware/Auth.js';
@@ -28,6 +30,10 @@ router.get('/', getJobs);
 
 // Fetch ALL applications across all jobs (Put this BEFORE /:id)
 router.get('/applications/all', protect, authorize('SuperAdmin'), getAllApplications);
+
+// Download / View resume files (Protected SuperAdmin - supports Bearer token and ?token= query)
+router.get('/applications/:applicationId/resume', protect, authorize('SuperAdmin'), downloadResume);
+router.get('/applications/resumes/:filename', protect, authorize('SuperAdmin'), downloadResumeByFilename);
 
 // Delete one application by its primary key
 router.delete('/applications/:applicationId', protect, authorize('SuperAdmin'), deleteApplication);

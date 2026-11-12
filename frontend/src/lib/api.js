@@ -90,8 +90,8 @@ export const api = {
     request('/api/stats'),
 
 
-  getJobs: () =>
-    request('/api/jobs'),
+  getJobs: (query = '') =>
+    request(`/api/jobs${query ? (query.startsWith('?') ? query : `?${query}`) : ''}`),
 
   createJob: (jobData) =>
     request('/api/jobs', { method: 'POST', body: jobData }),
@@ -107,6 +107,38 @@ export const api = {
 
   deleteApplication: (id) =>
     request(`/api/jobs/applications/${encodeURIComponent(id)}`, { method: 'DELETE' }),
+
+  downloadResume: async (appId) => {
+    const token = getToken();
+    const headers = {};
+    if (token) headers['Authorization'] = `Bearer ${token}`;
+
+    const res = await fetch(`${API_BASE}/api/jobs/applications/${encodeURIComponent(appId)}/resume`, {
+      method: 'GET',
+      headers,
+    });
+
+    if (!res.ok) {
+      let msg = 'Failed to download resume.';
+      try {
+        const errJson = await res.json();
+        msg = errJson.message || errJson.error || msg;
+      } catch { }
+      const err = new Error(msg);
+      err.status = res.status;
+      throw err;
+    }
+
+    const blob = await res.blob();
+    const disposition = res.headers.get('content-disposition');
+    let filename = 'Candidate_Resume.pdf';
+    if (disposition && disposition.includes('filename=')) {
+      const match = disposition.match(/filename="?([^";]+)"?/);
+      if (match && match[1]) filename = match[1];
+    }
+
+    return { blob, filename };
+  },
 
   submitQuote: (quoteData) =>
     request('/api/quotes', { method: 'POST', body: quoteData }),

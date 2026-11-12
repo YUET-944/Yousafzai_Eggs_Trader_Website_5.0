@@ -38,6 +38,20 @@ Job.init(
       type: DataTypes.ENUM('active', 'closed'),
       defaultValue: 'active',
     },
+    applicationFormUrl: {
+      type: DataTypes.STRING(2048),
+      allowNull: true,
+      defaultValue: null,
+      validate: {
+        isUrlOrEmpty(value) {
+          if (value && String(value).trim() !== '') {
+            if (!/^https?:\/\/.+/i.test(String(value).trim())) {
+              throw new Error('Google Form URL must be a valid HTTP or HTTPS URL.');
+            }
+          }
+        },
+      },
+    },
   },
   {
     sequelize,

@@ -4,3 +4,9 @@ dist-ssr
 *.local
 .env
 .env.*.local
+
+# Server uploads
+backend/uploads/*
+!backend/uploads/resumes/
+backend/uploads/resumes/*
+!backend/uploads/resumes/.gitkeep

@@ -1,5 +1,50 @@
+import fs from 'fs';
+import path from 'path';
 import JobApplication from '../Model/application.js';
 import Job from '../Model/job.js';
+import { RESUME_UPLOAD_DIR } from './uploadcontroller.js';
+
+const MIME_TYPES = {
+  '.pdf': 'application/pdf',
+  '.doc': 'application/msword',
+  '.docx': 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+};
+
+// Helper to serve resume file safely with security headers
+const serveResumeFile = (res, filename, applicantName) => {
+  const safeFilename = path.basename(filename || '');
+  if (!safeFilename || safeFilename === '.' || safeFilename === '..') {
+    return res.status(400).json({ success: false, message: 'Invalid resume file name.' });
+  }
+
+  const uploadDirResolved = path.resolve(RESUME_UPLOAD_DIR);
+  const filePath = path.resolve(uploadDirResolved, safeFilename);
+
+  // Strict path traversal defense: must stay inside RESUME_UPLOAD_DIR
+  if (!filePath.startsWith(uploadDirResolved)) {
+    return res.status(403).json({ success: false, message: 'Access denied: invalid file path.' });
+  }
+
+  if (!fs.existsSync(filePath)) {
+    return res.status(404).json({ success: false, message: 'Resume file not found on server.' });
+  }
+
+  const ext = path.extname(safeFilename).toLowerCase();
+  const contentType = MIME_TYPES[ext] || 'application/octet-stream';
+  const downloadName = applicantName
+    ? `${applicantName.replace(/[^a-zA-Z0-9_-]/g, '_')}_Resume${ext}`
+    : safeFilename;
+
+  // Strict security headers: prevent execution as script, force correct MIME
+  res.setHeader('Content-Type', contentType);
+  res.setHeader('Content-Disposition', `inline; filename="${downloadName}"`);
+  res.setHeader('X-Content-Type-Options', 'nosniff');
+  res.setHeader('Content-Security-Policy', "default-src 'none'");
+  res.setHeader('X-Frame-Options', 'SAMEORIGIN');
+  res.setHeader('Cache-Control', 'private, no-cache, no-store, must-revalidate');
+
+  return res.sendFile(filePath);
+};
 
 // @desc    Submit job application (Public)
 // @route   POST /api/jobs/:jobId/apply
@@ -66,15 +111,16 @@ export const applyForJob = async (req, res) => {
       });
     }
 
-    // Validate resume file
-    if (!req.file || !req.file.path) {
+    // Validate resume file stored on disk
+    if (!req.file || !req.file.filename) {
       return res.status(400).json({
         success: false,
         message: 'Resume file is required (PDF, DOC, or DOCX).',
       });
     }
 
-    const resumeUrl = req.file.path;
+    // Store relative API route to download resume
+    const resumeUrl = `/api/jobs/applications/resumes/${req.file.filename}`;
 
     const application = await JobApplication.create({
       jobId: parsedJobId,
@@ -103,6 +149,38 @@ export const applyForJob = async (req, res) => {
   }
 };
 
+// @desc    Download / View resume by application ID (Admin Only)
+// @route   GET /api/jobs/applications/:applicationId/resume
+export const downloadResume = async (req, res) => {
+  try {
+    const application = await JobApplication.findByPk(req.params.applicationId);
+    if (!application || !application.resume) {
+      return res.status(404).json({ success: false, message: 'Application or resume not found.' });
+    }
+
+    // Support legacy Cloudinary or external URLs
+    if (/^https?:\/\//i.test(application.resume)) {
+      return res.redirect(application.resume);
+    }
+
+    const filename = path.basename(application.resume);
+    return serveResumeFile(res, filename, application.fullName);
+  } catch (err) {
+    return res.status(500).json({ success: false, message: 'Error retrieving resume: ' + err.message });
+  }
+};
+
+// @desc    Download / View resume by filename (Admin Only)
+// @route   GET /api/jobs/applications/resumes/:filename
+export const downloadResumeByFilename = async (req, res) => {
+  try {
+    const filename = path.basename(req.params.filename || '');
+    return serveResumeFile(res, filename);
+  } catch (err) {
+    return res.status(500).json({ success: false, message: 'Error retrieving resume: ' + err.message });
+  }
+};
+
 // @desc    Get applications for a job (Admin Only)
 // @route   GET /api/jobs/:jobId/applications
 export const getApplicationsByJob = async (req, res) => {
@@ -126,10 +204,10 @@ export const getAllApplications = async (req, res) => {
       include: [
         {
           model: Job,
-          attributes: ['title', 'department', 'location'], // Include associated job details
+          attributes: ['title', 'department', 'location'],
         },
       ],
-      order: [['createdAt', 'DESC']], // Newest applications first
+      order: [['createdAt', 'DESC']],
     });
 
     return res.status(200).json({
@@ -141,6 +219,7 @@ export const getAllApplications = async (req, res) => {
     return res.status(500).json({ success: false, message: 'Server Error: ' + error.message });
   }
 };
+
 // @desc    Delete one job application (Admin Only)
 // @route   DELETE /api/jobs/applications/:applicationId
 export const deleteApplication = async (req, res) => {
@@ -152,6 +231,20 @@ export const deleteApplication = async (req, res) => {
         success: false,
         message: 'Application not found',
       });
+    }
+
+    // Clean up server-stored resume file if exists
+    if (application.resume && !/^https?:\/\//i.test(application.resume)) {
+      const filename = path.basename(application.resume);
+      const uploadDirResolved = path.resolve(RESUME_UPLOAD_DIR);
+      const filePath = path.resolve(uploadDirResolved, filename);
+      if (filePath.startsWith(uploadDirResolved) && fs.existsSync(filePath)) {
+        try {
+          fs.unlinkSync(filePath);
+        } catch (unlinkErr) {
+          console.warn(`Could not delete resume file ${filePath}: ${unlinkErr.message}`);
+        }
+      }
     }
 
     await application.destroy();

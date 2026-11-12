@@ -1,14 +1,15 @@
 import { useEffect, useState } from 'react';
-import { CheckCircle2, ExternalLink, Eye, FileText, Loader2, RefreshCw, Trash2, X } from 'lucide-react';
+import { CheckCircle2, Download, Eye, FileText, Loader2, RefreshCw, Trash2, X } from 'lucide-react';
 import { api } from '../../lib/api';
 import AdminConfirmDialog from './AdminConfirmDialog';
 import AdminState from './AdminState';
-import { formatDate, getJobMeta, getJobTitle, isUsableUrl, toArray } from './adminDataUtils';
+import { formatDate, getJobMeta, getJobTitle, toArray } from './adminDataUtils';
 
 export default function AdminApplications() {
   const [applications, setApplications] = useState([]);
   const [loading, setLoading] = useState(true);
   const [deletingId, setDeletingId] = useState(null);
+  const [downloadingId, setDownloadingId] = useState(null);
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
   const [selected, setSelected] = useState(null);
@@ -65,13 +66,45 @@ export default function AdminApplications() {
     }
   };
 
+  // Secure resume download using Authorization Bearer header + Blob
+  const handleDownloadResume = async (app) => {
+    if (!app || !app.resume) return;
+
+    // Legacy external or Cloudinary URL: open directly
+    if (/^https?:\/\//i.test(app.resume)) {
+      window.open(app.resume, '_blank', 'noopener,noreferrer');
+      return;
+    }
+
+    try {
+      setDownloadingId(app.id);
+      const { blob, filename } = await api.downloadResume(app.id);
+      const blobUrl = window.URL.createObjectURL(blob);
+
+      const link = document.createElement('a');
+      link.href = blobUrl;
+      link.download = filename;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+
+      setTimeout(() => {
+        window.URL.revokeObjectURL(blobUrl);
+      }, 1000);
+    } catch (err) {
+      alert(err.message || 'Failed to download resume.');
+    } finally {
+      setDownloadingId(null);
+    }
+  };
+
   return (
     <div className="admin-panel-wrap">
       <div className="admin-section-head">
         <div>
           <span className="admin-kicker">Recruitment</span>
           <h2>Job Applications</h2>
-          <p>Applications are loaded from the protected backend endpoint. No sample applicants are shown.</p>
+          <p>Applications are loaded from the protected backend endpoint. Resumes are securely downloaded via authorized tokens.</p>
         </div>
         <button className="admin-secondary-btn" onClick={loadApplications} disabled={loading || Boolean(deletingId)}>
           <RefreshCw size={14} className={loading ? 'spin' : ''} />
@@ -105,6 +138,7 @@ export default function AdminApplications() {
               <tbody>
                 {applications.map((app) => {
                   const isDeleting = deletingId === app.id;
+                  const isDownloading = downloadingId === app.id;
                   return (
                     <tr key={app.id}>
                       <td>
@@ -124,6 +158,17 @@ export default function AdminApplications() {
                       <td>{formatDate(app.createdAt)}</td>
                       <td>
                         <div className="admin-action-row">
+                          {app.resume && (
+                            <button
+                              className="admin-icon-action"
+                              onClick={() => handleDownloadResume(app)}
+                              aria-label={`Download resume for ${app.fullName || 'applicant'}`}
+                              title="Download Resume"
+                              disabled={isDownloading || isDeleting}
+                            >
+                              {isDownloading ? <Loader2 size={15} className="spin" /> : <FileText size={15} />}
+                            </button>
+                          )}
                           <button className="admin-icon-action" onClick={() => setSelected(app)} aria-label={`View ${app.fullName || 'application'}`} disabled={isDeleting}>
                             <Eye size={15} />
                           </button>
@@ -141,7 +186,15 @@ export default function AdminApplications() {
         </div>
       )}
 
-      {selected && <ApplicationDetail application={selected} onClose={() => setSelected(null)} />}
+      {selected && (
+        <ApplicationDetail
+          application={selected}
+          onDownload={handleDownloadResume}
+          isDownloading={downloadingId === selected.id}
+          onClose={() => setSelected(null)}
+        />
+      )}
+
       <AdminConfirmDialog
         open={Boolean(pendingDelete)}
         title="Delete Application?"
@@ -168,7 +221,7 @@ export default function AdminApplications() {
   );
 }
 
-function ApplicationDetail({ application, onClose }) {
+function ApplicationDetail({ application, onDownload, isDownloading, onClose }) {
   const fields = [
     ['Full Name', application.fullName],
     ['Email', application.email],
@@ -203,17 +256,28 @@ function ApplicationDetail({ application, onClose }) {
           ))}
         </div>
 
-        <div className="admin-link-row">
-
-          {isUsableUrl(application.resume) && (
-            <a href={application.resume} target="_blank" rel="noreferrer"><FileText size={14} /> Resume</a>
-          )}
-        </div>
-
-        {!isUsableUrl(application.resume) && application.resume && (
-          <div className="admin-detail-item full">
-            <span>Resume reference</span>
-            <strong>{application.resume}</strong>
+        {application.resume && (
+          <div className="admin-link-row" style={{ marginTop: '18px' }}>
+            <button
+              onClick={() => onDownload(application)}
+              disabled={isDownloading}
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '8px',
+                padding: '10px 18px',
+                background: '#3f6231',
+                color: '#ffffff',
+                border: 'none',
+                borderRadius: '10px',
+                cursor: isDownloading ? 'wait' : 'pointer',
+                fontWeight: '600',
+                fontSize: '0.88rem',
+              }}
+            >
+              {isDownloading ? <Loader2 size={15} className="spin" /> : <Download size={15} />}
+              {isDownloading ? 'Downloading...' : 'Download Candidate Resume'}
+            </button>
           </div>
         )}
 

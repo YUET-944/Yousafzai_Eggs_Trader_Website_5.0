@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
+import { ExternalLink } from 'lucide-react';
 import { getJob, submitApplication } from '../lib/careersApi';
 
 export default function CareerDetailPage() {
@@ -229,6 +230,19 @@ export default function CareerDetailPage() {
                         {job.location && <span>{job.location}</span>}
                         {job.type && <span>{job.type}</span>}
                     </div>
+                    {job.applicationFormUrl && (
+                        <div style={{ marginTop: '22px' }}>
+                            <a
+                                href={job.applicationFormUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="hero-google-form-btn"
+                            >
+                                <span>Apply via Google Form</span>
+                                <ExternalLink size={16} />
+                            </a>
+                        </div>
+                    )}
                 </div>
             </section>
 
@@ -257,9 +271,30 @@ export default function CareerDetailPage() {
                         )}
                     </div>
 
-                    <form className="application-form" onSubmit={handleSubmit}>
-                        <h2>Apply Now</h2>
-                        <div className="field-grid">
+                    <div className="application-column">
+                        {job.applicationFormUrl && (
+                            <div className="google-form-card">
+                                <span className="google-form-badge">Fast Track Application</span>
+                                <h3>Apply via Google Form</h3>
+                                <p>Prefer to submit via Google Forms? Open our official application form in a new tab.</p>
+                                <a
+                                    href={job.applicationFormUrl}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="google-form-btn"
+                                >
+                                    <span>Apply via Google Form</span>
+                                    <ExternalLink size={16} />
+                                </a>
+                                <div className="google-form-divider">
+                                    <span>OR SUBMIT APPLICATION DIRECTLY</span>
+                                </div>
+                            </div>
+                        )}
+
+                        <form className="application-form" onSubmit={handleSubmit}>
+                            <h2>{job.applicationFormUrl ? 'Direct Application' : 'Apply Now'}</h2>
+                            <div className="field-grid">
                             <label>
                                 Full Name *
                                 <input
@@ -352,7 +387,8 @@ export default function CareerDetailPage() {
                         </button>
                     </form>
                 </div>
-            </section>
+            </div>
+        </section>
 
             <style>{`
         .career-detail-page {
@@ -507,6 +543,115 @@ export default function CareerDetailPage() {
         .form-message.success {
           background: rgba(63,98,49,0.08);
           color: #2b5d2a;
+        }
+
+        .hero-google-form-btn {
+          display: inline-flex;
+          align-items: center;
+          gap: 8px;
+          background: #ffffff;
+          color: #3f6231;
+          font-weight: 700;
+          font-size: 0.95rem;
+          padding: 12px 22px;
+          border-radius: 12px;
+          text-decoration: none;
+          box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+          transition: transform 0.15s ease, background 0.15s ease, box-shadow 0.15s ease;
+        }
+
+        .hero-google-form-btn:hover {
+          background: #f4f8f2;
+          transform: translateY(-2px);
+          box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+        }
+
+        .application-column {
+          display: flex;
+          flex-direction: column;
+          gap: 24px;
+        }
+
+        .google-form-card {
+          background: #ffffff;
+          border: 2px solid rgba(63,98,49,0.22);
+          border-radius: 18px;
+          padding: 24px;
+          box-shadow: 0 14px 30px rgba(17,17,17,0.04);
+        }
+
+        .google-form-badge {
+          display: inline-block;
+          background: #3f6231;
+          color: #ffffff;
+          font-size: 0.72rem;
+          font-weight: 700;
+          letter-spacing: 0.08em;
+          text-transform: uppercase;
+          padding: 4px 10px;
+          border-radius: 999px;
+          margin-bottom: 12px;
+        }
+
+        .google-form-card h3 {
+          margin: 0 0 8px;
+          font-family: 'Space Grotesk', sans-serif;
+          font-size: 1.3rem;
+          color: #111111;
+        }
+
+        .google-form-card p {
+          margin: 0 0 18px;
+          font-size: 0.92rem;
+          color: rgba(17,17,17,0.7);
+          line-height: 1.5;
+        }
+
+        .google-form-btn {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 10px;
+          background: #3f6231;
+          color: #ffffff;
+          font-weight: 700;
+          font-size: 0.95rem;
+          padding: 14px 20px;
+          border-radius: 12px;
+          text-decoration: none;
+          transition: background 0.15s ease, transform 0.15s ease;
+          box-shadow: 0 4px 12px rgba(63,98,49,0.2);
+        }
+
+        .google-form-btn:hover {
+          background: #325026;
+          transform: translateY(-1px);
+        }
+
+        .google-form-divider {
+          position: relative;
+          text-align: center;
+          margin-top: 24px;
+        }
+
+        .google-form-divider::before {
+          content: '';
+          position: absolute;
+          left: 0;
+          top: 50%;
+          width: 100%;
+          height: 1px;
+          background: rgba(17,17,17,0.12);
+        }
+
+        .google-form-divider span {
+          position: relative;
+          background: #ffffff;
+          padding: 0 12px;
+          font-size: 0.72rem;
+          font-weight: 700;
+          letter-spacing: 0.12em;
+          color: rgba(17,17,17,0.5);
         }
 
         @media (max-width: 840px) {

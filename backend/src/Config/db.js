@@ -80,4 +80,24 @@ const sequelize = new Sequelize(
   sequelizeOptions
 );
 
+export async function ensureJobSchema() {
+  try {
+    const [columns] = await sequelize.query(`
+      SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS
+      WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = 'jobs' AND COLUMN_NAME = 'applicationFormUrl';
+    `);
+
+    if (!columns || columns.length === 0) {
+      await sequelize.query(`
+        ALTER TABLE \`jobs\` ADD COLUMN \`applicationFormUrl\` VARCHAR(2048) NULL DEFAULT NULL;
+      `);
+      console.log('✅ [Schema Migration] Added applicationFormUrl column to jobs table.');
+    } else {
+      console.log('ℹ️ [Schema Migration] jobs.applicationFormUrl column verified.');
+    }
+  } catch (err) {
+    console.warn(`⚠️ [Schema Migration] Could not verify jobs.applicationFormUrl: ${err.message}`);
+  }
+}
+
 export default sequelize;

@@ -1,7 +1,7 @@
 import express from 'express';
 import dotenv from 'dotenv';
 import cors from 'cors';
-import sequelize, { ensureDatabase } from './src/Config/db.js';
+import sequelize, { ensureDatabase, ensureJobSchema } from './src/Config/db.js';
 import { bootstrapSuperAdmin } from './src/Utils/adminBootstrap.js';
 
 // 1. Import Models
@@ -101,10 +101,13 @@ const startServer = async () => {
       console.log('⚙️ All models synchronized with MySQL.');
     }
 
+    // Safely ensure applicationFormUrl column exists without alter/drop
+    await ensureJobSchema();
+
     // Automatically initialize/verify SuperAdmin account on deployment/startup
     await bootstrapSuperAdmin();
 
-    const PORT = process.env.PORT || 4000;
+    const PORT = process.env.PORT || 3000;
     app.listen(PORT, () => {
       console.log(`🚀 Server running on port ${PORT}`);
     });
